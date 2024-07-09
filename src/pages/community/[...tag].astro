@@ -1,0 +1,137 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import {
+  COMMUNITY_TAG,
+  COMMUNITY_DATA,
+  COMMUNITY_BANNER_DATA,
+} from "@/constant";
+import BlogTop from "@components/markdownSet/BlogTop.astro";
+import LearningData from "@components/learning/LearningData.astro";
+import CommunityBanner from "@components/community/CommunityBanner.astro";
+import SimpleContainer from "@components/markdownSet/SimpleContainer.astro";
+import ArticleContainer from "@components/home/ArticleByTag/ArticleContainer.astro";
+import ActiveCard from "@components/home/ActiveCard/index.astro";
+import { useTranslations } from "@i18n/util";
+
+const t = useTranslations(Astro);
+
+const { tag } = Astro.params;
+export async function getStaticPaths() {
+  const allTags = COMMUNITY_TAG.map((item) => item.type);
+
+  return allTags.flatMap((tag) => {
+    return [
+      {
+        params: { tag },
+      },
+    ];
+  });
+}
+
+const cardData = COMMUNITY_DATA.filter((it) => it.tag === tag);
+---
+
+<BaseLayout title={t("home.title")}>
+  <div class="m-[2.5rem] flex justify-center">
+    <div class="community-box">
+      <CommunityBanner data={COMMUNITY_BANNER_DATA} />
+      <BlogTop
+        type="community-sub"
+        source="community"
+        category={COMMUNITY_TAG}
+        activeCategory={tag}
+      />
+      <div class="activecard-box">
+        {
+          cardData?.map((item) => (
+            <ActiveCard active={item} source="community" />
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</BaseLayout>
+
+<style is:global>
+  .community-box {
+    width: 85.125rem;
+
+    .activecard-box {
+      display: flex;
+      flex-wrap: wrap;
+      margin-right: -1rem; /* 补偿右外边距的合并 */
+      .item-content {
+        display: flex;
+        flex-direction: column;
+        flex: 0 0 calc(25% - 1rem); /* 每个元素占25%的宽度并减去1rem的右外边距 */
+        padding: 12px 12px 24px 12px;
+        margin-bottom: 1.5rem;
+        margin-right: 1rem;
+        background-color: #f4f4f6;
+        border-radius: 16px;
+        .item-content-top {
+          height: 10rem;
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+
+        .active-des {
+          height: 9.625rem;
+        }
+
+        p {
+          color: #9295a5;
+          margin-top: 14px;
+          margin-bottom: 12px;
+        }
+
+        .item-content-bottom {
+          padding-top: 12px;
+          .content-bottom-title {
+            font-size: 0.75rem;
+            line-height: 1.125rem;
+          }
+        }
+      }
+
+      /* 最后一个元素去除右外边距 */
+      .item-content:nth-child(4n) {
+        margin-right: 0;
+      }
+    }
+  }
+  @media (max-width: 50rem) {
+    .community-box {
+      width: 100%;
+
+      .activecard-box {
+        display: block;
+        .item-content {
+          flex: 0 0 calc(100% - 1rem); /* 每个元素占100%的宽度并减去1rem的右外边距 */
+        }
+      }
+    }
+  }
+
+  @media (min-width: 50rem) and (max-width: 86rem) {
+    .community-box {
+      width: 100%;
+
+      .activecard-box {
+        display: flex;
+        flex-wrap: wrap;
+        margin-right: -1rem; /* 补偿右外边距的合并 */
+        .item-content {
+          flex: 0 0 calc(50% - 1rem); /* 每个元素占50%的宽度并减去1rem的右外边距 */
+
+          /* 最后一个元素去除右外边距 */
+          .item-content:nth-child(2n) {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+</style>

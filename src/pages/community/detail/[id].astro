@@ -1,0 +1,92 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { Button } from "@serverless-cd/goat-ui";
+import { Icon } from "@astrojs/starlight/components";
+import CommunityBanner from "@components/community/CommunityBanner.astro";
+import VideoReview from "@components/community/VideoReview.astro";
+import AuthorIntroduce from "@components/community/AuthorIntroduce.astro";
+import MeetItem from "@components/community/MeetItem.astro";
+import { useTranslations } from "@i18n/util";
+import { COMMUNITY_DATA } from "@/constant";
+
+const t = useTranslations(Astro);
+const { id } = Astro.params;
+
+export async function getStaticPaths() {
+  return COMMUNITY_DATA.map((it) => ({
+    params: { id: it.id },
+  }));
+}
+
+const data = COMMUNITY_DATA.filter((it) => it.id === id)[0];
+---
+
+<BaseLayout title={t("home.title")}>
+  <div class="m-[2.5rem] flex justify-center">
+    <div class="community-detail">
+      <div id="back-btn-community" class="flex items-start w-[100%]">
+        <Button variant="secondary" target="_self" class="rounded-3xl">
+          <Icon name="left-arrow" class="text-lg align-middle" />
+          <span class="ml-0.5">BACK</span>
+        </Button>
+      </div>
+      <div class="flex mt-[1rem]">
+        <div class="w-[70%] detail-left">
+          <CommunityBanner data={data} />
+          <VideoReview data={data} />
+          <AuthorIntroduce data={data} />
+        </div>
+        <div class="w-[30%] detail-right">
+          <MeetItem data={data} />
+        </div>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
+<script>
+  function addBackBtnClick() {
+    const url = new URL(window.location.href);
+    let source = url.searchParams.get("source");
+    if (source) {
+      source = source.replace(/_/g, "/");
+    }
+    const backBtn: HTMLAnchorElement = document.querySelector(
+      "#back-btn-community a"
+    );
+    if (backBtn) {
+      backBtn.onclick = (e) => {
+        e.preventDefault();
+        const params = new URLSearchParams(window.location.search);
+        params.delete("source");
+
+        let newPathname = "";
+        if (source && source !== "undefined") {
+          newPathname = `/${source}/`;
+        } else {
+          newPathname = "/community/meetup/";
+        }
+        const newUrl = `${newPathname}?${params.toString()}`;
+
+        window.location.href = newUrl;
+      };
+    }
+  }
+  document.addEventListener("astro:page-load", addBackBtnClick);
+  document.addEventListener("DOMContentLoaded", addBackBtnClick);
+</script>
+<style is:global>
+  .community-detail {
+    width: 85.125rem;
+  }
+  @media (max-width: 50rem) {
+    .detail-left {
+      width: 100%;
+    }
+    .detail-right {
+      display: none;
+    }
+  }
+
+  @media (min-width: 50rem) and (max-width: 86rem) {
+  }
+</style>

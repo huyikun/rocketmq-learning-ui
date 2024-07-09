@@ -1,0 +1,138 @@
+---
+import Event from "@components/home/PanoramicView/Event.astro";
+import Analysis from "@components/home/PanoramicView/Analysis.astro";
+
+import {
+  ANALYSIS_PRODUCTS,
+  NOTICE_PRODUCTS,
+  COMPUTE_PRODUCTS,
+  SERVICE_PRODUCTS,
+} from "@/constant";
+---
+
+<div class="flex items-center flex-col mt-[2.25rem]">
+  <div class="text-center text-no-active text-xs">ABOUT US</div>
+  <div class="text-center text-[2.75rem] font-medium mt-[1.5rem] mb-[5rem]">
+    Apache RocketMQ事件驱动架构全景图
+  </div>
+  <div class="max-w-[100%] overflow-x-auto overflow-y-hidden">
+    <div class="view-box flex justify-center text-[#DDDEE4]">
+      <div class="w-[16%] mr-[-2px]">
+        <div class="mb-[2.75rem]">
+          <Analysis data={SERVICE_PRODUCTS} title="微服务" type="two"/>
+        </div>
+        <div>
+          <Analysis data={SERVICE_PRODUCTS} title="通知" type="two"/>
+        </div>
+      </div>
+      <div class="left-lines">
+        <div class="mb-[0.6rem]">
+          <img src="/img/home/tlline.svg" class="w-line" />
+        </div>
+        <div>
+          <img src="/img/home/blline.svg" class="w-line" />
+        </div>
+      </div>
+      <div class="w-[50%] view-center">
+        <Event />
+        <div class="flex justify-center translate-y-[-1px]">
+          <div>
+            <img src="/img/home/clline.svg" class="center-l-line" />
+          </div>
+          <div class="ml-[1.5rem] mr-[1.5rem] center-line">
+            <img src="/img/home/cline.svg" />
+          </div>
+          <div>
+            <img src="/img/home/crline.svg" class="center-r-line" />
+          </div>
+        </div>
+        <div class="cb-box">
+          <div class="cb-item">
+            <Analysis data={COMPUTE_PRODUCTS} title="分析" />
+          </div>
+          <div class="cb-item">
+            <Analysis data={COMPUTE_PRODUCTS} title="分析" />
+          </div>
+          <div class="cb-item">
+            <Analysis data={COMPUTE_PRODUCTS} title="分析" />
+          </div>
+        </div>
+      </div>
+      <div class="right-lines">
+        <div class="mb-[0.6rem]">
+          <img src="/img/home/trline.svg" class="w-line" />
+        </div>
+        <div>
+          <img src="/img/home/brline.svg" class="w-line" />
+        </div>
+      </div>
+      <div class="w-[16%] ml-[-2px]">
+        <div class="mb-[1.5rem]">
+          <Analysis data={ANALYSIS_PRODUCTS} title="分析" />
+        </div>
+        <div>
+          <Analysis data={NOTICE_PRODUCTS} title="通知" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style is:global>
+  .view-box {
+    width: 85.125rem;
+    .left-lines {
+      transform: translate(1px, 23%);
+    }
+    .right-lines {
+      transform: translate(-1px, 23%);
+    }
+    .cb-box {
+      display: flex;
+      margin-right: -1rem;
+      margin-top: -11px;
+      .cb-item {
+        flex: 0 0 calc(33.33% - 1rem);
+        margin-right: 1rem;
+      }
+      .cb-item:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  @media (max-width: 86rem) {
+    .view-box {
+      width: 70rem;
+      .view-center {
+        width: 40%;
+      }
+      .w-line {
+        width: 5rem;
+      }
+      .center-line {
+        margin: 0 5rem;
+        img {
+          height: 4rem;
+        }
+      }
+      .center-l-line {
+        height: 4rem;
+      }
+      .center-r-line {
+        height: 4rem;
+      }
+
+      .cb-box {
+        display: flex;
+        margin-right: 0;
+        margin-top: -11px;
+        .cb-item {
+          flex: 0 0 33.33%;
+          flex-shrink: 1;
+          margin-right: 0;
+        }
+      }
+    }
+  }
+</style>

@@ -1,0 +1,41 @@
+---
+import { useTranslations } from "@i18n/util";
+import AnnCard from "@components/home/AnnCard/index.astro";
+import { NEW_ANN_CONTENT } from "@/constant";
+
+const t = useTranslations(Astro);
+const data = NEW_ANN_CONTENT.sort(
+  (a, b) => new Date(b.date).valueOf() - new Date(a.date).valueOf()
+);
+---
+
+<div class="home-newann">
+  <div class="article-header">
+    <h2 class="title">
+      {t("home.new.ann")}
+    </h2>
+  </div>
+
+  <div class="mb-[24px]">
+    {data.map((item) => <AnnCard itemData={item} />)}
+  </div>
+  <div class="w-[100%] h-[9.5rem]">
+    <img src="https://img.alicdn.com/imgextra/i1/O1CN01hDFiy01OQBswIDVtC_!!6000000001699-2-tps-990-304.png" class="w-[100%] h-[100%]" />
+  </div>
+</div>
+<style is:global>
+  .home-newann {
+    .article-header {
+      height: 5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .title {
+        font-family: Source Han Sans;
+        font-weight: normal;
+        padding-left: 24px;
+        padding-right: 8px;
+      }
+    }
+  }
+</style>

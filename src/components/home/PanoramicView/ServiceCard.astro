@@ -1,0 +1,47 @@
+---
+import { twMerge } from "tailwind-merge";
+
+const { item } = Astro.props;
+---
+
+<div
+  class="flex flex-col items-center pt-[0.7rem] pb-[0.7rem] rounded-xl service-item"
+>
+  <div class="w-[2.75rem] h-[2.75rem]">
+    <img
+      src={item.icon}
+      class={twMerge(
+        item.product === "Dubbo"
+          ? "w-[58%] h-[80%]"
+          : item.product === "Seata"
+            ? "w-[96%] h-[30%] mt-[1rem]"
+            : item.product === "Nacos"
+              ? "w-[86%] h-[48%] mt-[0.5rem]"
+              : item.product === "Sentinel"
+                ? "w-[83%] h-[85%]"
+                : "w-[65%] h-[70%]"
+      )}
+    />
+  </div>
+  <div class="flex-1 text-center text-[0.625rem]">
+    {item.product}
+  </div>
+</div>
+<style is:global>
+  .service-item {
+    height: 5.125rem;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    flex: 0 0 calc(50% - 1rem);
+    background: #1e1f24;
+    border: 1px solid transparent;
+    background-image: linear-gradient(to right, rgba(224, 233, 251, 0.1)),
+      linear-gradient(180deg, rgba(198, 214, 247, 0.1), rgba(255, 255, 255, 0));
+    background-clip: padding-box, border-box;
+    background-origin: border-box;
+  }
+
+  .service-item:nth-child(2n) {
+    margin-right: 0;
+  }
+</style>

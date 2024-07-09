@@ -1,0 +1,182 @@
+---
+import type { GetStaticPathsOptions } from "astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { Button } from "@serverless-cd/goat-ui";
+import { getCollection } from "astro:content";
+import Pagination from "@components/common/Paginate/Pagination.astro";
+import {  } from "@/constant";
+import { useTranslations } from "@i18n/util";
+import type { Post } from "@/types";
+import BlogButton from "@components/home/ArticleByTag/BlogButton.astro";
+import ArticleContainer from "@components/home/ArticleByTag/ArticleContainer.astro";
+const t = useTranslations(Astro);
+
+
+const data1 = await getCollection("blog");
+
+const sortedPosts1 = data1.sort(
+  (a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf()
+);
+
+const data2 = await getCollection(
+  "blog",
+  (item) => item.data.tags.includes("practice")
+);
+const sortedPosts2 = data2.sort(
+  (a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf()
+);
+
+const data3 = await getCollection(
+  "blog",
+  (item) => item.data.tags.includes("explore")
+);
+const sortedPosts3 = data3.sort(
+  (a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf()
+);
+
+const data4 = await getCollection(
+  "blog",
+  (item) => item.data.tags.includes("dynamic")
+);
+const sortedPosts4 = data4.sort(
+  (a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf()
+);
+
+
+const data5 = await getCollection(
+  "blog",
+  (item) => item.data.tags.includes("ai")
+);
+const sortedPosts5 = data5.sort(
+  (a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf()
+);
+---
+
+<div>
+  <div class="article-header">
+    <h2 class="title text-title">
+      {t("home.new.article")}
+    </h2>
+    <ul class="home-ul">
+      <li data-article-id="article1" class="home-li" id="first-article">
+        <BlogButton text={t("home.articles.all")} />
+      </li>
+      <li data-article-id="article5" class="home-li">
+        <BlogButton text={'AI 原生应用'} />
+      </li>
+      <li data-article-id="article2" class="home-li">
+        <BlogButton text={t("home.article.practice")} />
+      </li>
+      <li data-article-id="article3" class="home-li">
+        <BlogButton text={t("home.article.explore")} />
+      </li>
+      <li data-article-id="article4" class="home-li">
+        <BlogButton text={t("home.article.dynamic")} />
+      </li>
+    </ul>
+  </div>
+
+  <div id="articleContainer">
+    <!-- 文章内容将在这里显示 -->
+    <div id="article1" class="article" style="display: block;">
+      <ArticleContainer pageList={sortedPosts1 as Post[]} />
+    </div>
+
+    <div id="article2" class="article" style="display: none;">
+      <ArticleContainer pageList={sortedPosts2 as Post[]} tag="practice" source="home"/>
+    </div>
+
+    <div id="article3" class="article" style="display: none;">
+      <ArticleContainer pageList={sortedPosts3 as Post[]} tag="explore" source="home"/>
+    </div>
+
+    <div id="article4" class="article" style="display: none;">
+      <ArticleContainer pageList={sortedPosts4 as Post[]} tag="dynamic" source="home"/>
+    </div>
+
+    <div id="article5" class="article" style="display: none;">
+      <ArticleContainer pageList={sortedPosts5 as Post[]} tag="ai" source="home"/>
+    </div>
+
+    <Button
+      size="large"
+      href={"/learning/"}
+      variant="card"
+      class="rounded-2xl text-base w-full font-normal border-none bg-card hover:bg-secondary"
+    >
+      {t("home.see.all.articles")}
+    </Button>
+  </div>
+</div>
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const firstBtn = document.getElementById("first-article");
+    if (firstBtn) {
+      const firstLink = firstBtn.querySelector("a");
+      firstLink.classList.add("home-active");
+
+      function showArticle(articleId) {
+        const articleContainer = document.getElementById("articleContainer");
+
+        // 隐藏当前显示的文章内容
+        const articles = articleContainer.getElementsByClassName("article");
+        for (let i = 0; i < articles.length; i++) {
+          articles[i].style.display = "none";
+        }
+
+        // 显示选中的文章内容
+        const selectedArticle = document.getElementById(articleId);
+        console.log("selectedArticle", selectedArticle);
+        selectedArticle.style.display = "block";
+      }
+
+      const tags = document.querySelectorAll(".home-ul li");
+      tags.forEach(function (tag) {
+        tag.addEventListener("click", function (event) {
+          event.preventDefault();
+          const links = tag.parentNode.querySelectorAll("a"); // 获取父元素下所有的 <a> 标签
+          links.forEach(function (link) {
+            link.classList.remove("home-active"); // 移除其他 <a> 标签的 'home-active' 类名
+          });
+
+          const childLink = tag.querySelector("a"); // 选择父元素下的第一个 <a> 标签
+          childLink.classList.add("home-active"); // 添加新类名
+          const articleId = tag.getAttribute("data-article-id");
+          showArticle(articleId);
+        });
+      });
+    }
+  });
+</script>
+<style is:global>
+  .home-article-box {
+    .article-header {
+      height: 5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .title {
+        font-family: Source Han Sans;
+        font-weight: normal;
+        padding-left: 24px;
+        padding-right: 8px;
+      }
+      .home-ul {
+        display: flex;
+        list-style-type: none;
+        align-items: center;
+
+        .home-active {
+          background-color: #ff6a00;
+          color: #fafafc;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 50rem) {
+    .home-article-box .article-header .home-ul {
+      flex-wrap: wrap;
+    }
+  }
+</style>

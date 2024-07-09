@@ -1,0 +1,115 @@
+---
+import type { GetStaticPathsOptions } from "astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+import Pagination from "@components/common/Paginate/Pagination.astro";
+import { ARTICLE_TAG } from "@/constant";
+import BlogTop from "@components/markdownSet/BlogTop.astro";
+import LearningData from "@components/learning/LearningData.astro";
+import Recommendation from "@components/learning/Recommendation.astro";
+import SimpleContainer from "@components/markdownSet/SimpleContainer.astro";
+import ArticleContainer from "@components/home/ArticleByTag/ArticleContainer.astro";
+import { useTranslations } from "@i18n/util";
+import HotTag from "@components/learning/HotTag.astro";
+import type { Post } from "@/types";
+
+const t = useTranslations(Astro);
+
+// 分页数据在page参数中传递
+const { page } = Astro.props;
+
+const allPages = [...Array(page.lastPage).keys()].map((num) => {
+  return `/learning${num === 0 ? "/" : `/${String(num + 1)}/`}`;
+});
+
+export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
+  const blogCategories = new Set(ARTICLE_TAG.map((item) => item.type));
+  const posts = await getCollection("blog");
+
+  const sortedPosts = posts.sort(
+    (a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf()
+  );
+
+  return paginate(sortedPosts, { pageSize: 10 });
+}
+---
+
+<BaseLayout title={t("home.title")}>
+  <div class="m-[2.5rem] flex justify-center">
+    <div class="learn-box flex">
+      <div class="left-box">
+        <BlogTop
+          title={t("blog.all.articles")}
+          type="learning-sub"
+          source="learning"
+          category={ARTICLE_TAG}
+          activeCategory="all"
+        />
+        <!-- <SimpleContainer pageList={page.data as Post[]} /> -->
+        <div>
+          <ArticleContainer
+            pageList={page.data as Post[]}
+            source="learning"
+            className="learning-box"
+          />
+          <Pagination
+            restRoute
+            allPages={allPages}
+            page={page}
+            class="mx-auto"
+          />
+        </div>
+      </div>
+      <div class="right-box">
+        <LearningData />
+        <Recommendation />
+        <HotTag activeTag={"all"} />
+      </div>
+    </div>
+  </div>
+</BaseLayout>
+
+<style is:global>
+  .learn-box {
+    width: 85.125rem;
+
+    .left-box {
+      width: 60%;
+      margin-right: 24px;
+    }
+
+    .right-box {
+      flex: 1;
+    }
+  }
+
+  @media (max-width: 50rem) {
+    .learn-box {
+      width: 100%;
+      flex-wrap: wrap;
+      .left-box {
+        width: 100%;
+        margin-right: 0;
+      }
+
+      .right-box {
+        width: 100%;
+      }
+    }
+  }
+
+  @media (min-width: 50rem) and (max-width: 86rem) {
+    .learn-box {
+      width: 100%;
+      flex-wrap: wrap;
+      .left-box {
+        width: 100%;
+        margin-right: 0;
+      }
+
+      .right-box {
+        width: 100%;
+      }
+    }
+  }
+</style>

@@ -1,0 +1,51 @@
+---
+import { isChinese } from "@i18n/util";
+import { useTranslations } from "@i18n/util";
+import { Arrow } from "../icon";
+import { ALL_ARTICLE_TAG } from "@/constant";
+import BlogButton from "@components/home/ArticleByTag/BlogButton.astro";
+import { getCollection } from "astro:content";
+
+const t = useTranslations(Astro);
+const ifzh = isChinese(Astro);
+const { activeTag } = Astro.props;
+---
+
+<div class="hot-tags-box">
+  <div class="hot-tags-header">
+    <h2 class="title">
+      {t("learning.tags")}
+    </h2>
+  </div>
+  <div>
+    {
+      ALL_ARTICLE_TAG.map((item) => (
+        <BlogButton
+          href={item.href}
+          text={item.title}
+          variant={item.type == activeTag ? "primary" : "secondary"}
+        />
+      ))
+    }
+  </div>
+</div>
+<style>
+  .hot-tags-header {
+    /* height: 5rem; */
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+
+    .title {
+      font-family: Source Han Sans;
+      font-weight: normal;
+    }
+  }
+  .hot-tags-box {
+    margin-top: 20px;
+    border-radius: 16px;
+    opacity: 1;
+    background: rgba(234, 234, 234, 0.39);
+    padding: 24px;
+  }
+</style>

@@ -1,0 +1,157 @@
+---
+import { useTranslations } from "@i18n/util";
+import { Headline } from "@serverless-cd/goat-ui";
+import { WHY_LEARN_LIST } from "@/constant";
+import { Native, Throughput, Flow, Finance, Simple, Friendly } from "../icon";
+
+const t = useTranslations(Astro);
+---
+
+<span class="choose-reason-wrapper">
+  <choose-reason
+    class="choose-reason bg-base-footer pt-[5rem] pb-[7.5rem] flex flex-col justify-center items-center"
+  >
+    <Headline
+      tagline={t("home.why.tag")}
+      title={t("home.why.title")}
+      titleTheme="neutral"
+      taglineTheme="info"
+    />
+
+    <div class="bottom-card flex flex-wrap mt-[2.25rem]">
+      {
+        WHY_LEARN_LIST.map((reason) => {
+          const { title, svgKey, description } = reason;
+          return (
+            <div class="item px-5 border-success border-l">
+              <div class="transfrom-header block">
+                <div class="w-12 h-12 bg-muted rounded-md flex justify-center items-center mb-[3.5rem]">
+                  {(() => {
+                    switch (svgKey) {
+                      case "native":
+                        return <Native />;
+                      case "throughput":
+                        return <Throughput />;
+                      case "flow":
+                        return <Flow />;
+                      case "finance":
+                        return <Finance />;
+                      case "simple":
+                        return <Simple />;
+                      case "friendly":
+                        return <Friendly />;
+                      default:
+                        return null;
+                    }
+                  })()}
+                </div>
+                <div class="title">{t(title)}</div>
+              </div>
+
+              <div
+                class="text-info text-sm leading-5"
+                set:html={t(description)}
+              />
+            </div>
+          );
+        })
+      }
+    </div>
+  </choose-reason>
+</span>
+
+<style is:global>
+  .choose-reason-wrapper {
+    .primary-fill {
+      fill: theme("colors.primary");
+    }
+    ,
+    .top-title,
+    .bottom-card {
+      width: 85.125rem;
+    }
+    .bottom-card .item {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex: 0 0 16.666%;
+      .title {
+        font-size: 1.125rem;
+        font-weight: 500;
+        line-height: 1.25rem;
+        color: #121316;
+        padding: 1rem 0;
+      }
+    }
+
+    /* 小于50rem  小于 800px */
+    @media (max-width: 50rem) {
+      .choose-reason {
+        padding: 1.5rem;
+      }
+      .top-title,
+      .bottom-card {
+        width: 100%;
+      }
+      .top-title {
+        margin-top: 2.5rem;
+        margin-bottom: 2.5rem;
+      }
+      .top-title .title {
+        font-size: 1.125rem; /* 18px */
+        line-height: 1.75rem; /* 28px */
+      }
+      .bottom-card .item {
+        flex: 0 0 100%;
+        border-left: none;
+        padding: 1.25rem 0;
+        border-bottom: 1px solid theme("colors.success");
+      }
+      .bottom-card .item .transfrom-header {
+        display: flex;
+      }
+      .transfrom-header div:last-child {
+        margin-left: 1rem;
+      }
+    }
+
+    /* 大于50rem 小于 72rem  800px < width < 1152 */
+    @media (min-width: 50rem) and (max-width: 86rem) {
+      .choose-reason {
+        padding: 2.5rem;
+      }
+      .top-title,
+      .bottom-card {
+        width: 100%;
+      }
+      .bottom-card .item {
+        flex: 0 0 50%;
+        border-left: none;
+        padding-bottom: 1.25rem;
+      }
+      .bottom-card .item:first-child {
+        border-right: 1px solid theme("colors.success");
+        border-bottom: 1px solid theme("colors.success");
+      }
+      .bottom-card .item:nth-child(2) {
+        border-bottom: 1px solid theme("colors.success");
+      }
+      .bottom-card .item:nth-child(3) {
+        border-right: 1px solid theme("colors.success");
+        border-bottom: 1px solid theme("colors.success");
+        padding-top: 1.25rem;
+      }
+      .bottom-card .item:nth-child(4) {
+        border-bottom: 1px solid theme("colors.success");
+        padding-top: 1.25rem;
+      }
+      .bottom-card .item:nth-child(5) {
+        border-right: 1px solid theme("colors.success");
+        padding-top: 1.25rem;
+      }
+      .bottom-card .item:last-child {
+        padding-top: 1.25rem;
+      }
+    }
+  }
+</style>

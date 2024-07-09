@@ -1,0 +1,67 @@
+---
+import BaseContainer from "@components/common/BaseContainer.astro";
+import ArticleCard from "@/components/home/ArticleByTag/ArticleCard.astro";
+import type { Post } from "@/types";
+import { useTranslations } from "@i18n/util";
+const t = useTranslations(Astro);
+interface Props {
+  pageList: Post[];
+  source?: string;
+  className?: string;
+  tag?: string;
+}
+
+const {
+  pageList,
+  source = "home",
+  className = "",
+  tag = "",
+} = Astro.props as Props;
+
+// Get word for mdx
+const getExcerpt = (content, length = 200, defaultExcerpt = "") => {
+  try {
+    const strippedContent = content.replace(/(<([^>]+)>)/gi, "");
+    const plainText = strippedContent.replace(
+      /[#>*-]|\[.*?\]\(.*?\)|\!\[.*?\]\(.*?\)/g,
+      ""
+    );
+    return plainText;
+  } catch (error) {
+    return defaultExcerpt;
+  }
+};
+let items = [];
+if (pageList && pageList.length) {
+  if (source == "home") {
+    if (tag) {
+      items = pageList.filter((it) => it?.data?.tags.includes("home"));
+    } else {
+      items = pageList.slice(0, 3);
+    }
+
+    items.forEach((item) => {
+      item.excerpt = getExcerpt(item.body, 200, item.data?.description);
+    });
+  } else {
+    items = pageList;
+    items.forEach((item) => {
+      item.excerpt = getExcerpt(item.body, 200, item.data?.description);
+    });
+  }
+}
+---
+
+<div>
+  {
+    items.map((post) => (
+      <ArticleCard
+        post={post as Post}
+        source={source}
+        useAnchor={true}
+        class={className}
+        tag={tag}
+      />
+    ))
+  }
+</div>

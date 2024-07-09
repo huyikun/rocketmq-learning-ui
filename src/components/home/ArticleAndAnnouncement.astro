@@ -1,0 +1,58 @@
+---
+import NewArticle from "@/components/home/NewArticle.astro";
+import ExcitingActive from "@/components/home/ExcitingActive.astro";
+import NewAnn from "@/components/home/NewAnn.astro";
+import HotCourse from "@/components/home/HotCourse.astro";
+---
+
+<div class="m-[2.5rem] mb-[5rem] flex justify-center">
+  <div class="flex arbox text-left">
+    <div class="home-article-box mr-[24px]">
+      <NewArticle />
+      <ExcitingActive />
+    </div>
+    <div class="home-ann-box">
+      <NewAnn />
+      <HotCourse />
+    </div>
+  </div>
+</div>
+<style is:global>
+  .arbox {
+    width: 85.125rem;
+  }
+  .home-article-box {
+    width: 60%;
+  }
+  .home-ann-box {
+    flex: 1;
+  }
+
+  @media (max-width: 50rem) {
+    .arbox {
+      width: 100%;
+      flex-wrap: wrap;
+    }
+    .home-article-box {
+      width: 100%;
+      margin-right: 0;
+    }
+    .home-ann-box {
+      width: 100%;
+    }
+  }
+
+  @media (min-width: 50rem) and (max-width: 86rem) {
+    .arbox {
+      width: 100%;
+      flex-wrap: wrap;
+    }
+    .home-article-box {
+      width: 100%;
+      margin-right: 0;
+    }
+    .home-ann-box {
+      width: 100%;
+    }
+  }
+</style>

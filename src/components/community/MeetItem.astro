@@ -1,0 +1,24 @@
+---
+const { data } = Astro.props;
+const { title } = data;
+---
+
+<div class="flex pl-[1.5rem] fixed">
+  <div class="detail-title-left"></div>
+  <h4 class="detail-title-right">
+    {title}
+  </h4>
+</div>
+<style>
+  .detail-title-left {
+    width: 1rem;
+    border-left: 3px solid #ccc;
+    max-height: 50vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  .detail-title-right {
+    width: calc(100% - 3rem);
+  }
+</style>

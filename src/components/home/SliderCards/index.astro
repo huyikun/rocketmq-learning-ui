@@ -1,0 +1,217 @@
+---
+const {
+  className,
+  prevId,
+  nextId,
+  title,
+} = Astro.props;
+---
+
+<div class={className}>
+  <div class="flex justify-between items-center hotTutorial-header">
+    <h2 class="title text-title">
+      {title}
+    </h2>
+    <div>
+      <div class="w-[112px] flex justify-between">
+        <div id={prevId} class="cursor-pointer group">
+          <svg
+            class="group-hover:hidden"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            fill="none"
+            version="1.1"
+            width="48"
+            height="30"
+            viewBox="0 0 48 30"
+            ><g transform="matrix(-1,0,0,1,96,0)"
+              ><g
+                ><rect
+                  x="48"
+                  y="0"
+                  width="48"
+                  height="30"
+                  rx="15"
+                  fill="#FFFBF7"
+                  fill-opacity="1"></rect></g
+              ><g
+                ><g
+                  ><rect
+                    x="63"
+                    y="3"
+                    width="24"
+                    height="24"
+                    rx="0"
+                    fill-opacity="0"
+                    stroke-opacity="1"
+                    stroke="#060E07"
+                    fill="none"
+                    stroke-width="0"></rect></g
+                ><g
+                  ><path
+                    d="M84,15.75L60,15.75L60,14.25L84,14.25L84,15.75Z"
+                    fill-rule="evenodd"
+                    fill="#A3A6B3"
+                    fill-opacity="1"></path></g
+                ><g
+                  ><path
+                    d="M85.06066,15L78.53033,8.46967L77.46967,9.53033L82.93934,15L77.46967,20.4697L78.53033,21.5303L85.06066,15Z"
+                    fill-rule="evenodd"
+                    fill="#A3A6B3"
+                    fill-opacity="1"></path></g
+                ></g
+              ></g
+            ></svg
+          >
+          <svg
+            class="hidden group-hover:block"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            fill="none"
+            version="1.1"
+            width="48"
+            height="30"
+            viewBox="0 0 48 30"
+            ><g transform="matrix(-1,0,0,1,96,0)"
+              ><g
+                ><rect
+                  x="48"
+                  y="0"
+                  width="48"
+                  height="30"
+                  rx="15"
+                  fill="#FFFBF7"
+                  fill-opacity="1"></rect></g
+              ><g
+                ><g
+                  ><rect
+                    x="63"
+                    y="3"
+                    width="24"
+                    height="24"
+                    rx="0"
+                    fill-opacity="0"
+                    stroke-opacity="1"
+                    stroke="#060E07"
+                    fill="none"
+                    stroke-width="0"></rect></g
+                ><g
+                  ><path
+                    d="M84,15.75L60,15.75L60,14.25L84,14.25L84,15.75Z"
+                    fill-rule="evenodd"
+                    fill="#2B3B3A"
+                    fill-opacity="1"></path></g
+                ><g
+                  ><path
+                    d="M85.06066,15L78.53033,8.46967L77.46967,9.53033L82.93934,15L77.46967,20.4697L78.53033,21.5303L85.06066,15Z"
+                    fill-rule="evenodd"
+                    fill="#2B3B3A"
+                    fill-opacity="1"></path></g
+                ></g
+              ></g
+            ></svg
+          >
+        </div>
+        <div id={nextId} class="cursor-pointer ml-[16px] group">
+          <svg
+            class="rotate-180 group-hover:hidden"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            fill="none"
+            version="1.1"
+            width="48"
+            height="30"
+            viewBox="0 0 48 30"
+            ><g transform="matrix(-1,0,0,1,96,0)"
+              ><g
+                ><rect
+                  x="48"
+                  y="0"
+                  width="48"
+                  height="30"
+                  rx="15"
+                  fill="#FFFBF7"
+                  fill-opacity="1"></rect></g
+              ><g
+                ><g
+                  ><rect
+                    x="63"
+                    y="3"
+                    width="24"
+                    height="24"
+                    rx="0"
+                    fill-opacity="0"
+                    stroke-opacity="1"
+                    stroke="#060E07"
+                    fill="none"
+                    stroke-width="0"></rect></g
+                ><g
+                  ><path
+                    d="M84,15.75L60,15.75L60,14.25L84,14.25L84,15.75Z"
+                    fill-rule="evenodd"
+                    fill="#A3A6B3"
+                    fill-opacity="1"></path></g
+                ><g
+                  ><path
+                    d="M85.06066,15L78.53033,8.46967L77.46967,9.53033L82.93934,15L77.46967,20.4697L78.53033,21.5303L85.06066,15Z"
+                    fill-rule="evenodd"
+                    fill="#A3A6B3"
+                    fill-opacity="1"></path></g
+                ></g
+              ></g
+            ></svg
+          >
+          <svg
+            class="rotate-180 hidden group-hover:block"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            fill="none"
+            version="1.1"
+            width="48"
+            height="30"
+            viewBox="0 0 48 30"
+            ><g transform="matrix(-1,0,0,1,96,0)"
+              ><g
+                ><rect
+                  x="48"
+                  y="0"
+                  width="48"
+                  height="30"
+                  rx="15"
+                  fill="#FFFBF7"
+                  fill-opacity="1"></rect></g
+              ><g
+                ><g
+                  ><rect
+                    x="63"
+                    y="3"
+                    width="24"
+                    height="24"
+                    rx="0"
+                    fill-opacity="0"
+                    stroke-opacity="1"
+                    stroke="#060E07"
+                    fill="none"
+                    stroke-width="0"></rect></g
+                ><g
+                  ><path
+                    d="M84,15.75L60,15.75L60,14.25L84,14.25L84,15.75Z"
+                    fill-rule="evenodd"
+                    fill="#2B3B3A"
+                    fill-opacity="1"></path></g
+                ><g
+                  ><path
+                    d="M85.06066,15L78.53033,8.46967L77.46967,9.53033L82.93934,15L77.46967,20.4697L78.53033,21.5303L85.06066,15Z"
+                    fill-rule="evenodd"
+                    fill="#2B3B3A"
+                    fill-opacity="1"></path></g
+                ></g
+              ></g
+            ></svg
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+  <slot />
+</div>

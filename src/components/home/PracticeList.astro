@@ -1,0 +1,142 @@
+---
+import { isChinese } from "@i18n/util";
+import { useTranslations } from "@i18n/util";
+import { Arrow } from "../icon";
+import { PRACTICE_DATA } from "@/constant";
+import SliderCards from "./SliderCards/index.astro";
+
+const t = useTranslations(Astro);
+const ifzh = isChinese(Astro);
+const itemsPerPage = 2; // 每屏显示的元素个数
+let currentScreen = 0;
+---
+
+<SliderCards
+  className={"practice-box"}
+  prevId={"prevpractice"}
+  nextId={"nextpractice"}
+  title={t("home.best.practice.title")}
+>
+  <div class="practice-content" id="practice-content">
+    {
+      PRACTICE_DATA.slice(
+        currentScreen * itemsPerPage,
+        (currentScreen + 1) * itemsPerPage
+      ).map((item) => (
+        <a class="item-content" href={item.href}>
+          <div class="item-content-top">
+            <img src={item.img} />
+          </div>
+          <div class="item-content-bottom">
+            <div class="content-bottom-title">{item.title}</div>
+          </div>
+        </a>
+      ))
+    }
+  </div>
+</SliderCards>
+
+<script>
+  import { PRACTICE_DATA } from "@/constant";
+  document.addEventListener("astro:page-load", () => {
+    let currentScreen = 0;
+    const itemsPerPage = 2; // 每屏显示的元素个数
+    const prevBtn = document.getElementById("prevpractice");
+    const nextBtn = document.getElementById("nextpractice");
+    const content = document.getElementById("practice-content");
+    if (prevBtn) {
+      function showItem(currentScreen) {
+        const newData = PRACTICE_DATA.slice(
+          currentScreen * itemsPerPage,
+          (currentScreen + 1) * itemsPerPage
+        );
+        content.innerHTML = "";
+        newData.forEach((item, idx) => {
+          const html = `<a class="item-content" href=${item.href}>
+        <div class="item-content-top">
+          <img src=${item.img} />
+        </div>
+        <div class="item-content-bottom">
+          <div class="content-bottom-title">${item.title}</div>
+        </div>
+      </a>`;
+          content.innerHTML += html;
+        });
+      }
+
+      prevBtn.addEventListener("click", () => {
+        if (currentScreen > 0) {
+          currentScreen--;
+        } else {
+          currentScreen = Math.ceil(PRACTICE_DATA.length / itemsPerPage) - 1;
+        }
+        showItem(currentScreen);
+      });
+
+      nextBtn.addEventListener("click", () => {
+        if (currentScreen < Math.ceil(PRACTICE_DATA.length / itemsPerPage) - 1) {
+          currentScreen++;
+        } else {
+          currentScreen = 0;
+        }
+        showItem(currentScreen);
+      });
+    }
+  });
+</script>
+<style is:global>
+  .practice-box {
+    flex: 1;
+    height: 16.375rem;
+    border-radius: 16px;
+    opacity: 1;
+    background: rgba(234, 234, 234, 0.39);
+    padding: 0 24px 32px 24px;
+
+    .hotTutorial-header {
+      height: 5rem;
+      display: flex;
+      align-items: center;
+      .title {
+        font-family: Source Han Sans;
+        font-weight: normal;
+      }
+    }
+    .practice-content {
+      display: flex;
+      height: calc(100% - 5rem);
+      margin-right: -1.5rem; /* 补偿右外边距的合并 */
+      .item-content {
+        width: calc(50% - 1.5rem);
+        margin-right: 1.5rem;
+
+        .item-content-top {
+          height: 70%;
+          img {
+            border-radius: 8px;
+            width: 100%;
+            height: 100%;
+          }
+        }
+
+        .item-content-bottom {
+          padding-top: 12px;
+          .content-bottom-title {
+            font-size: 0.75rem;
+            line-height: 1.125rem;
+          }
+        }
+      }
+      .item-content:nth-child(2n) {
+        margin-right: 0;
+      }
+    }
+  }
+
+  @media (max-width: 50rem) {
+    .practice-box {
+      margin-top: 1.5rem;
+      width: 100%;
+    }
+  }
+</style>

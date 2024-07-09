@@ -1,0 +1,174 @@
+---
+import { isChinese } from "@i18n/util";
+import { useTranslations } from "@i18n/util";
+import { ACTIVE_DATA } from "@/constant";
+import SliderCards from "@components/home/SliderCards/index.astro";
+import ActiveCard from "@components/home/ActiveCard/index.astro";
+const t = useTranslations(Astro);
+const ifzh = isChinese(Astro);
+const itemsPerPage = 3; // 每屏显示的元素个数
+let currentScreen = 0;
+
+function formatDate(dateString) {
+  const options: Intl.DateTimeFormatOptions = {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  };
+  const date = new Date(dateString);
+  return new Intl.DateTimeFormat("zh-CN", options).format(date);
+}
+---
+
+<SliderCards
+  className={"active-box"}
+  prevId={"prevactive"}
+  nextId={"nextactive"}
+  title={t("home.exciting.active")}
+>
+  <div class="active-content" id="active-content">
+    {
+      ACTIVE_DATA.slice(
+        currentScreen * itemsPerPage,
+        (currentScreen + 1) * itemsPerPage
+      ).map((item) => <ActiveCard active={item} source="home" />)
+    }
+  </div>
+</SliderCards>
+
+<script>
+  import { ACTIVE_DATA } from "@/constant";
+  document.addEventListener("astro:page-load", () => {
+    let currentScreen = 0;
+    const itemsPerPage = 3; // 每屏显示的元素个数
+    const prevBtn = document.getElementById("prevactive");
+    const nextBtn = document.getElementById("nextactive");
+    const content = document.getElementById("active-content");
+    if (prevBtn) {
+      function showItem(currentScreen) {
+        const newData = ACTIVE_DATA.slice(
+          currentScreen * itemsPerPage,
+          (currentScreen + 1) * itemsPerPage
+        );
+        content.innerHTML = "";
+        newData.forEach((item, idx) => {
+          const html = `<div class="item-content">
+            <div class="item-content-top">
+              <img src=${item.img} />
+            </div>
+            <div class="active-des">
+                <p class="text-xs font-normal">${item.time}</p>
+                <div class="text-title text-[1.375rem] leading-8">${item.title}</div>
+            </div>
+            <a
+              href=${item.href}
+              class="btn no-underline rounded-3xl text-xs w-[51.5%] font-normal border-none bg-card-btn hover:bg-secondary"
+            >
+              点击查看
+            </a>
+          </div>`;
+          content.innerHTML += html;
+        });
+      }
+
+      prevBtn.addEventListener("click", (e) => {
+        if (currentScreen > 0) {
+          currentScreen--;
+        } else {
+          currentScreen = Math.ceil(ACTIVE_DATA.length / itemsPerPage) - 1;
+        }
+        showItem(currentScreen);
+      });
+
+      nextBtn.addEventListener("click", () => {
+        if (currentScreen < Math.ceil(ACTIVE_DATA.length / itemsPerPage) - 1) {
+          currentScreen++;
+        } else {
+          currentScreen = 0;
+        }
+        showItem(currentScreen);
+      });
+    }
+  });
+</script>
+<style is:global>
+  .active-box {
+    margin-top: 2.5rem;
+    border-radius: 16px;
+    opacity: 1;
+    background: rgba(234, 234, 234, 0.39);
+    padding: 0 24px 24px 24px;
+
+    .hotTutorial-header {
+      height: 5rem;
+      display: flex;
+      align-items: center;
+      .title {
+        font-family: Source Han Sans;
+        font-weight: normal;
+      }
+    }
+
+    .active-content {
+      display: flex;
+      margin-right: -1.125rem; /* 补偿右外边距的合并 */
+      .item-content {
+        display: flex;
+        flex-direction: column;
+        margin-right: 1.125rem;
+        flex: 0 0 calc(33.33% - 1.125rem); /* 每个元素占25%的宽度并减去1rem的右外边距 */
+        padding: 12px;
+        background-color: #fff;
+        border-radius: 16px;
+        .item-content-top {
+          height: 8.375rem;
+          img {
+            border-radius: 8px;
+            width: 100%;
+            height: 100%;
+          }
+        }
+
+        .active-des {
+          height: 9.25rem;
+        }
+
+        p {
+          color: #9295a5;
+          margin-top: 14px;
+          margin-bottom: 12px;
+        }
+
+        .item-content-bottom {
+          padding-top: 12px;
+          .content-bottom-title {
+            font-size: 0.75rem;
+            line-height: 1.125rem;
+          }
+        }
+      }
+      .item-content:nth-child(3n) {
+        margin-right: 0;
+      }
+    }
+  }
+
+  @media (max-width: 50rem) {
+    .active-box {
+      width: 100%;
+      margin-right: 0;
+      .active-content {
+        flex-wrap: wrap;
+        .item-content {
+          flex: 0 0 calc(100% - 1.125rem); /* 每个元素占25%的宽度并减去1rem的右外边距 */
+        }
+
+        .item-content:nth-child(3n + 1),
+        .item-content:nth-child(3n + 2) {
+          margin-right: 0;
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+</style>

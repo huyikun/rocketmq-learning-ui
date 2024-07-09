@@ -1,0 +1,31 @@
+---
+const { data } = Astro.props;
+const { introduction = [], title } = data;
+---
+
+<div>
+  {
+    introduction.map((item) => (
+      <div class="mt-[1rem]">
+        {/* <h2 style={{ fontWeight: 600, fontSize: "18px", color: "#343434" }}>
+          {title}
+        </h2> */}
+        <h2>嘉宾简介：</h2>
+        <div class="flex mt-[1rem] guest-box bg-card p-[2rem]">
+          <img
+            class="w-[4rem] h-[4rem]"
+            src="https://img.alicdn.com/imgextra/i2/O1CN01yIuh9A21uexhfSldM_!!6000000007045-2-tps-600-600.png"
+          />
+          <p class="flex flex-col justify-center ml-[1rem]">
+            <strong class="text-primary">{item.author}</strong>
+            <span class="text-xs text-title">{item.position}</span>
+          </p>
+        </div>
+      </div>
+    ))
+  }
+</div>
+<style>
+  .guest-box {
+  }
+</style>

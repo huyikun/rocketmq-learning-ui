@@ -1,0 +1,121 @@
+---
+import ProductCard from "./ProductCard.astro";
+import { EVENTS_PRODUCTS } from "@/constant";
+---
+
+<div class="event-box">
+  <div class="platform h-[3.5rem] leading-[3.5rem] rounded-lg text-lg">
+    事件驱动架构平台
+  </div>
+  <div class="event-products">
+    {
+      EVENTS_PRODUCTS.map((it) => (
+        <ProductCard className="event-product" item={it} />
+      ))
+    }
+  </div>
+  <div class="rmq-c h-[3.25rem] leading-[3rem] text-sm">
+    Apache RocketMQ as core
+  </div>
+</div>
+
+<style is:global>
+  .event-box {
+    padding: 1.5rem;
+    text-align: center;
+    opacity: 1;
+    border: 2px solid transparent;
+    border-radius: 12px;
+    background-image: linear-gradient(to right, #000, #000),
+      linear-gradient(44deg, #eedafc, #ff6a00);
+    background-clip: padding-box, border-box;
+    background-origin: border-box;
+
+    .platform {
+      background: #1e1d1d;
+    }
+    .event-products {
+      margin: 1rem 0 0 0;
+      display: flex;
+      flex-wrap: wrap;
+      margin-right: -1rem; /* 补偿右外边距的合并 */
+
+      .event-product {
+        flex: 0 0 calc(33.33% - 1rem); /* 每个元素占25%的宽度并减去1rem的右外边距 */
+        margin-right: 1rem;
+        background: #1e1d1d;
+        margin-bottom: 1rem;
+      }
+
+      .event-product:nth-child(3n) {
+        margin-right: 0;
+      }
+    }
+
+    .rmq-c {
+      opacity: 1;
+      /* background-color: #1e1d1d; */
+      border: 1.5px solid transparent;
+      border-radius: 8px;
+      background-image: linear-gradient(to right, #161312, #161312),
+        linear-gradient(
+          85deg,
+          rgba(238, 218, 252, 0.5),
+          rgba(255, 106, 0, 0.5),
+          rgba(83, 68, 56, 0.5)
+        );
+      background-clip: padding-box, border-box;
+      background-origin: border-box;
+    }
+  }
+
+  @media (min-width: 50rem) and (max-width: 86rem) {
+    .event-box {
+      .event-products {
+        margin: 1rem 0 0 0;
+        display: flex;
+        flex-wrap: wrap;
+        margin-right: -1rem; /* 补偿右外边距的合并 */
+
+        .event-product {
+          flex: 0 0 calc(50% - 1rem); /* 每个元素占25%的宽度并减去1rem的右外边距 */
+          margin-right: 1rem;
+          background: #1e1d1d;
+          margin-bottom: 1rem;
+        }
+
+        .event-product:nth-child(2n) {
+          margin-right: 0;
+        }
+        .event-product:nth-child(3n) {
+          margin-right: 1rem;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 50rem) {
+    .event-box {
+      .event-products {
+        margin: 1rem 0 0 0;
+        display: flex;
+        flex-wrap: wrap;
+        margin-right: -1rem; /* 补偿右外边距的合并 */
+
+        .event-product {
+          flex: 0 0 calc(50% - 1rem); /* 每个元素占25%的宽度并减去1rem的右外边距 */
+          margin-right: 1rem;
+          background: #1e1d1d;
+          margin-bottom: 1rem;
+        }
+
+        .event-product:nth-child(2n) {
+          margin-right: 0;
+        }
+        .event-product:nth-child(3n) {
+          margin-right: 1rem;
+        }
+      }
+    }
+  }
+</style>

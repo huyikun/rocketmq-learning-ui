@@ -1,0 +1,28 @@
+---
+import TutorialList from "./TutorialList.astro";
+import PracticeList from "./PracticeList.astro";
+---
+
+<div class="m-[2.5rem] flex justify-center">
+  <div class="flex flex-wrap tpbox text-left">
+    <TutorialList />
+    <PracticeList />
+  </div>
+</div>
+<style is:global>
+  .tpbox {
+    width: 85.125rem;
+  }
+
+  @media (max-width: 50rem) {
+    .tpbox {
+      width: 100%;
+    }
+  }
+
+  @media (min-width: 50rem) and (max-width: 86rem) {
+    .tpbox {
+      width: 100%;
+    }
+  }
+</style>

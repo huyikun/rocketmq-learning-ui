@@ -1,0 +1,42 @@
+---
+import ProductCard from "@components/home/PanoramicView/ProductCard.astro";
+import ServiceCard from "@components/home/PanoramicView/ServiceCard.astro";
+
+const { data, title, type = "one" } = Astro.props;
+---
+
+<div class="ana-box">
+  <div class="h-[3.5rem] leading-[3.5rem] text-left text-lg">{title}</div>
+  {
+    type === "two" ? (
+      <div class="service-box">
+        {data.map((it) => (
+          <ServiceCard item={it} />
+        ))}
+      </div>
+    ) : (
+      <div>
+        {data.map((it) => (
+          <ProductCard item={it} />
+        ))}
+      </div>
+    )
+  }
+</div>
+
+<style is:global>
+  .ana-box {
+    padding: 0 1rem;
+    text-align: center;
+    opacity: 1;
+    border: 2px solid #4c505d;
+    border-radius: 12px;
+    background: #161312;
+  }
+
+  .service-box {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -1rem;
+  }
+</style>

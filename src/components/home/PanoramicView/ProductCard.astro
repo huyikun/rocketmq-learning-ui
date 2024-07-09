@@ -1,0 +1,43 @@
+---
+import { twMerge } from "tailwind-merge";
+
+const { className = "", item } = Astro.props;
+---
+
+<div
+  class={twMerge(
+    "h-[3.75rem] flex items-center p-[0.5rem] rounded-lg ana-product",
+    className
+  )}
+>
+  <div class="w-[2.75rem] h-[2.75rem] icon-box">
+    <img
+      src={item.icon}
+      class={twMerge(
+        item.product === "Kafka" || item.product === "MQTT"
+          ? "w-[62%] h-[47%]"
+          : item.product === "RocketMQ" || item.product === "MNS"
+            ? "w-[50%] h-[50%]"
+            : "w-[60%] h-[60%]"
+      )}
+    />
+  </div>
+  <div class="flex-1 text-center text-sm">
+    {item.product}
+  </div>
+</div>
+<style is:global>
+  .ana-product {
+    width: 100%;
+    margin-right: 1rem;
+    background: #1e1d1d;
+    margin-bottom: 1rem;
+  }
+  .icon-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #121316;
+    border-radius: 4px;
+  }
+</style>

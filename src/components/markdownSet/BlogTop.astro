@@ -1,0 +1,140 @@
+---
+import { i18nMap } from "@/constant";
+import { Icon } from "@astrojs/starlight/components";
+import BaseContainer from "@components/common/BaseContainer.astro";
+import BlogButton from "@components/home/ArticleByTag/BlogButton.astro";
+import { Button } from "@serverless-cd/goat-ui";
+import { useTranslations } from "@i18n/util";
+const t = useTranslations(Astro);
+
+const {
+  source,
+  title = "",
+  type = "home",
+  category,
+  activeCategory = "",
+} = Astro.props;
+
+// FIXME: fix
+const backIconMap = {
+  "blog-sub": "/blog",
+  "wuyi-sub": "/wuyi",
+  "news-sub": "/news",
+  "activity-sub": "/activity/",
+  "learning-sub": "/learning/",
+  "community-sub": "/community",
+};
+
+const typeArr = [
+  "home",
+  "blog-sub",
+  "learning-sub",
+  "wuyi-sub",
+  "community-sub",
+];
+---
+
+<div class="blog-top-wrapper w-full text-neutral blog_header">
+  <BaseContainer class="blog_header_content">
+    <!-- <div class="blog_header_title">{title}</div> -->
+    <div class="blog_category_menu">
+      {
+        typeArr.includes(type) &&
+          category &&
+          category.map((category) => {
+            return (
+              <>
+                <BlogButton
+                  href={category.href}
+                  text={category.title}
+                  variant={
+                    category.type == activeCategory ? "primary" : "secondary"
+                  }
+                />
+              </>
+            );
+          })
+      }
+      {
+        !typeArr.includes(type) && (
+          <Button
+            variant="secondary"
+            href={backIconMap[type]}
+            class="rounded-3xl"
+            visibility={false}
+          >
+            <Icon name="left-arrow" class="text-lg align-middle" />
+            <span class="ml-1">BACK</span>
+          </Button>
+        )
+      }
+    </div>
+  </BaseContainer>
+</div>
+
+<style is:global>
+  .blog-top-wrapper {
+    margin-left: 1rem;
+    a {
+      text-decoration: none;
+      /* color: inherit; */
+    }
+    .blog_header_title {
+      font-size: 4.5rem;
+      line-height: 6rem;
+    }
+    .blog_category_menu {
+      margin-top: 0.25rem;
+      margin-bottom: 1.75rem;
+    }
+    /* TODO: 看下是否要收到goat-ui中 */
+    .blog_menu_item {
+      padding: 8px 16px;
+      border-radius: 24px;
+      margin-right: 1rem;
+      font-size: 0.875rem;
+      background-color: theme("colors.title");
+      color: theme("colors.success");
+    }
+    .blog_menu_item:hover {
+      background-color: theme("colors.accent");
+      color: theme("colors.muted");
+    }
+    .blog_menu_item:active {
+      background-color: theme("colors.primary");
+      color: theme("colors.secondary");
+    }
+    @media (max-width: 50rem) {
+      .blog_header {
+        padding: 1.5rem;
+      }
+      .blog_header_content {
+        width: 100%;
+        margin-top: 0;
+      }
+      .blog_header_title {
+        font-size: 1.875rem;
+        line-height: 2.25rem;
+      }
+      .blog_menu_item {
+        padding: 4px 8px;
+        font-size: 12px;
+        margin-right: 8px;
+      }
+    }
+
+    @media (min-width: 50rem) and (max-width: 86rem) {
+      .blog_header {
+        padding: 2.5rem;
+        width: 100%;
+      }
+      .blog_header_content {
+        width: 100%;
+        margin-top: 0;
+      }
+      .blog_category_menu {
+        /* margin-bottom: 0; */
+      }
+    }
+  }
+</style>

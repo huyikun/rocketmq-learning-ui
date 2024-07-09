@@ -1,0 +1,22 @@
+---
+import { twMerge } from "tailwind-merge";
+import { Button } from "@serverless-cd/goat-ui";
+
+const {
+  variant = "secondary",
+  text = Astro.slots.render("default"),
+  class: className = "",
+  ...rest
+} = Astro.props;
+---
+
+<Button
+  variant={variant}
+  class={twMerge(
+    "rounded-3xl mr-4 text-info/[0.8] min-h-2 h-8 hover:bg-primary hover:text-secondary text-xs",
+    variant == 'primary' ? "text-active" : "text-no-active",
+    className
+  )}
+  text={text}
+  {...rest}
+/>
