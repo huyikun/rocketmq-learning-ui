@@ -24,7 +24,7 @@ import { FOLLOW_US_CONTENT } from "@/constant";
             >
               <img src={it.icon} class="w-[100%] h-[100%] follow-img" />
               {it.QRCode && (
-                <div class="hidden w-[2.25rem] h-[2.25rem]" data-code={it.id}>
+                <div class="hidden w-[7rem] h-[7rem]" data-code={it.id}>
                   <img src={it.QRCode} class="w-[100%] h-[100%]" />
                 </div>
               )}
@@ -37,39 +37,59 @@ import { FOLLOW_US_CONTENT } from "@/constant";
 </div>
 <script>
   import { FOLLOW_US_CONTENT } from "@/constant";
+  function hoverQr() {
+    const qrBoxs = document.querySelectorAll(".qr-box");
+    const iconBoxs = document.querySelectorAll(".follow-box .icon-box");
+    if (iconBoxs) {
+      FOLLOW_US_CONTENT.forEach((it) => {
+        iconBoxs.forEach((item) => {
+          if (it.id === item.id) {
+            const imgElement = item.querySelector("img");
 
-  const qrBoxs = document.querySelectorAll(".qr-box");
-  const iconBoxs = document.querySelectorAll(".follow-box .icon-box");
-
-  FOLLOW_US_CONTENT.forEach((it) => {
-    iconBoxs.forEach((item) => {
-      if (it.id === item.id) {
-        const imgElement = item.querySelector("img");
-
-        item.addEventListener("mouseover", function () {
-          imgElement.src = it.hoverIcon;
+            item.addEventListener("mouseenter", function () {
+              imgElement.src = it.hoverIcon;
+            });
+            item.addEventListener("touchstart", function () {
+              imgElement.src = it.hoverIcon;
+            });
+            item.addEventListener("mouseleave", function () {
+              imgElement.src = it.icon;
+            });
+            item.addEventListener("touchmove", function () {
+              imgElement.src = it.icon;
+            });
+          }
         });
-        item.addEventListener("mouseout", function () {
-          imgElement.src = it.icon;
-        });
-      }
-    });
-  });
+      });
 
-  qrBoxs.forEach((it) => {
-    const qrCode = document.querySelector(
-      `[data-code='${it.id}']`
-    ) as HTMLElement;
-    it.addEventListener("mouseover", function () {
-      qrCode.style.display = "block"; // 鼠标悬停在图片上时显示二维码
-      qrCode.style.position = "absolute"; // 鼠标悬停在图片上时显示二维码
-      qrCode.style.bottom = "2rem"; // 鼠标悬停在图片上时显示二维码
-      qrCode.style.left = "1rem"; // 鼠标悬停在图片上时显示二维码
-    });
-    it.addEventListener("mouseout", function () {
-      qrCode.style.display = "none"; // 鼠标移出图片时隐藏二维码
-    });
-  });
+      qrBoxs.forEach((it) => {
+        const qrCode = document.querySelector(
+          `[data-code='${it.id}']`
+        ) as HTMLElement;
+        it.addEventListener("mouseenter", function () {
+          qrCode.style.display = "block"; // 鼠标悬停在图片上时显示二维码
+          qrCode.style.position = "absolute"; // 鼠标悬停在图片上时显示二维码
+          qrCode.style.bottom = "2.5rem"; // 鼠标悬停在图片上时显示二维码
+          qrCode.style.left = "1rem"; // 鼠标悬停在图片上时显示二维码
+        });
+        it.addEventListener("touchstart", function () {
+          qrCode.style.display = "block"; // 鼠标悬停在图片上时显示二维码
+          qrCode.style.position = "absolute"; // 鼠标悬停在图片上时显示二维码
+          qrCode.style.bottom = "2.5rem"; // 鼠标悬停在图片上时显示二维码
+          qrCode.style.left = "1rem"; // 鼠标悬停在图片上时显示二维码
+        });
+        it.addEventListener("mouseleave", function () {
+          qrCode.style.display = "none"; // 鼠标移出图片时隐藏二维码
+        });
+        it.addEventListener("touchmove", function () {
+          qrCode.style.display = "none"; // 鼠标移出图片时隐藏二维码
+        });
+      });
+    }
+  }
+
+  document.addEventListener("astro:page-load", hoverQr);
+  document.addEventListener("DOMContentLoaded", hoverQr);
 </script>
 <style is:global>
   .follow-box {

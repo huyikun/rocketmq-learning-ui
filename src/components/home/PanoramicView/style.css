@@ -1,0 +1,16 @@
+.service-item {
+  height: 5.125rem;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  flex: 0 0 calc(50% - 1rem);
+  background: #1e1f24;
+  border: 1px solid transparent;
+  background-image: linear-gradient(to right, rgba(224, 233, 251, 0.1)),
+    linear-gradient(180deg, rgba(198, 214, 247, 0.1), rgba(255, 255, 255, 0));
+  background-clip: padding-box, border-box;
+  background-origin: border-box;
+}
+
+.service-item:nth-child(2n) {
+  margin-right: 0;
+}

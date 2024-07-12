@@ -647,24 +647,24 @@ export const PRACTICE_DATA = [
 // 最新公告
 export const NEW_ANN_CONTENT = [
   {
-    date: '7月26-28日',
+    date: '7月26日',
     title: 'CommunityOverCode Asia 2024',
-    content: '邀您届时参与 RocketMQ 相关议题讨论和展位互动交流！',
-    href: 'https://asia.communityovercode.org/zh/',
+    content: 'Apache RocketMQ 邀您届时参与相关议题讨论和展位互动交流！',
+    href: 'https://mp.weixin.qq.com/s/9JkzX1uXWdyJvGMhp06qRw',
     target: '_blank'
   },
   {
-    date: '8月',
-    title: '杭州AI开源沙龙',
-    content: '',
-    href: '',
+    date: '7月-11月',
+    title: '开源之夏 2024',
+    content: 'Apache RocketMQ 项目开发火热进行中',
+    href: 'https://summer-ospp.ac.cn/org/orgdetail/ee35ab56-cc17-47bb-aa3f-25f786d23286?lang=zh',
     target: '_blank'
   },
   {
-    date: '8月',
-    title: '通义灵码开源挑战赛',
-    content: '',
-    href: '',
+    date: '6月-8月',
+    title: '2024 天池云原生编程挑战赛',
+    content: '用通义灵码参与 Apache RocketMQ 开源贡献',
+    href: 'https://tianchi.aliyun.com/competition/entrance/532215/information',
     target: '_blank'
   },
 ];
@@ -674,13 +674,13 @@ export const FOLLOW_US_CONTENT = [
   {
     id: "qr1",
     icon: 'https://img.alicdn.com/imgextra/i1/O1CN01QxwNkn26nP3RQcFaA_!!6000000007706-2-tps-72-72.png',
-    QRCode: '',
+    QRCode: 'https://img.alicdn.com/imgextra/i3/O1CN01yFNon31Jc235oP6nZ_!!6000000001048-0-tps-258-258.jpg',
     hoverIcon: 'https://img.alicdn.com/imgextra/i2/O1CN01wMQoGx1oERjxo5OaF_!!6000000005193-2-tps-72-72.png',
   },
   {
     id: "qr2",
     icon: 'https://img.alicdn.com/imgextra/i3/O1CN01LeIXk51Wgh5H4EcaY_!!6000000002818-2-tps-72-72.png',
-    QRCode: '',
+    QRCode: 'https://img.alicdn.com/imgextra/i3/O1CN01D39bKU1tFQfcgmr97_!!6000000005872-2-tps-230-230.png',
     hoverIcon: 'https://img.alicdn.com/imgextra/i2/O1CN01zVpgzy1a5pfeLlTbU_!!6000000003279-2-tps-72-72.png',
   },
   {
@@ -770,19 +770,19 @@ export const WHY_LEARN_LIST: ChooseReason[] = [
 
 export const ACTIVE_DATA = [
   {
-    img: "https://img.alicdn.com/imgextra/i2/O1CN01psWBwW1tzgeAxapCz_!!6000000005973-0-tps-2448-3672.jpg",
+    img: "https://img.alicdn.com/imgextra/i2/O1CN01VKuwfk1VdCRmeL0Do_!!6000000002675-0-tps-940-400.jpg",
     title: "「大师课」深度剖析 RocketMQ5.0",
     href: "https://edu.aliyun.com/course/317148",
     target: "_blank"
   },
   {
-    img: "https://img.alicdn.com/imgextra/i2/O1CN01psWBwW1tzgeAxapCz_!!6000000005973-0-tps-2448-3672.jpg",
+    img: "https://img.alicdn.com/imgextra/i3/O1CN017Ek4cV1kG2eq1HRgK_!!6000000004655-0-tps-1080-384.jpg",
     title: "RocketMQ Summit 2022",
     href: "/community/summit/",
     target: "_self"
   },
   {
-    img: "https://img.alicdn.com/imgextra/i2/O1CN01psWBwW1tzgeAxapCz_!!6000000005973-0-tps-2448-3672.jpg",
+    img: "https://img.alicdn.com/imgextra/i3/O1CN01ngMIsg1vDiPz74Ulz_!!6000000006139-0-tps-720-427.jpg",
     title: "RocketMQ x EventMesh Open Day 2021",
     href: "/community/meetup/",
     target: "_self"
@@ -826,11 +826,11 @@ export const ARTICLE_TAG = [
     title: '全部文章',
     href: '/learning/'
   },
-  {
-    type: 'ai',
-    title: 'AI 原生应用',
-    href: '/learning/ai/'
-  },
+  // {
+  //   type: 'ai',
+  //   title: 'AI 原生应用',
+  //   href: '/learning/ai/'
+  // },
   {
     type: 'practice',
     title: '行业实践',
@@ -866,11 +866,11 @@ export const ALL_ARTICLE_TAG = [
     title: '社区动态',
     href: '/learning/dynamic/'
   },
-  {
-    type: 'ai',
-    title: "AI",
-    href: '/learning/ai/'
-  },
+  // {
+  //   type: 'ai',
+  //   title: "AI 原生应用",
+  //   href: '/learning/ai/'
+  // },
   {
     type: 'bestPractice',
     title: "最佳实践",
@@ -1462,6 +1462,14 @@ export const SERVICE_PRODUCTS = [
   {
     icon: 'https://img.alicdn.com/imgextra/i2/O1CN01UZ7x2A1HVxZ2McbVI_!!6000000000764-2-tps-64-58.png',
     product: "Higress",
+    hoverContent: {
+      hoverIcon: "https://img.alicdn.com/imgextra/i3/O1CN01RSdSCS20F9kCEoMMm_!!6000000006819-2-tps-173-52.png",
+      des: "⼀个遵循开源Ingress/Gateway API标准，提供流量调度、服务治理、安全防护三合⼀的高集成、易使用、易扩展、热更新的下⼀代云原生网关。",
+      github: "https://github.com/alibaba/higress",
+      api: "https://api.github.com/repos/alibaba/higress",
+      openSource: "https://higress.io/",
+      clound:""
+    }
   },
   {
     icon: 'https://img.alicdn.com/imgextra/i4/O1CN01PSx6bI1ILiJnQ9CWl_!!6000000000877-2-tps-55-64.png',
