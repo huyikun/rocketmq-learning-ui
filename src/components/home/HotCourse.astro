@@ -1,7 +1,7 @@
 ---
 import { isChinese } from "@i18n/util";
 import { useTranslations } from "@i18n/util";
-import { HOTTUTORIALDATA } from "@/constant";
+import { HOT_TUTORIALDATA } from "@/constant";
 import SliderCards from "./SliderCards/index.astro";
 const t = useTranslations(Astro);
 const ifzh = isChinese(Astro);
@@ -17,17 +17,17 @@ let currentScreen = 0;
 >
   <div class="hotCourse-content" id="hotCourse-content">
     {
-      HOTTUTORIALDATA.slice(
+      HOT_TUTORIALDATA.slice(
         currentScreen * itemsPerPage,
         (currentScreen + 1) * itemsPerPage
       ).map((item) => (
         <div class="item-content">
           <div class="item-content-left">
-            <img src="/img/home/tutorial.svg" />
+            <img src={item.img} />
           </div>
           <div class="item-content-right">
             <div class="right-title">{item.title}</div>
-            <a class="arrow" />
+            <a class="arrow" target={item.target} href={item.href}/>
           </div>
         </div>
       ))
@@ -36,7 +36,7 @@ let currentScreen = 0;
 </SliderCards>
 
 <script>
-  import { HOTTUTORIALDATA } from "@/constant";
+  import { HOT_TUTORIALDATA } from "@/constant";
   document.addEventListener("astro:page-load", () => {
     let currentScreen = 0;
     const itemsPerPage = 2; // 每屏显示的元素个数
@@ -45,7 +45,7 @@ let currentScreen = 0;
     const content = document.getElementById("hotCourse-content");
     if (prevBtn) {
       function showItem(currentScreen) {
-        const newData = HOTTUTORIALDATA.slice(
+        const newData = HOT_TUTORIALDATA.slice(
           currentScreen * itemsPerPage,
           (currentScreen + 1) * itemsPerPage
         );
@@ -53,11 +53,11 @@ let currentScreen = 0;
         newData.forEach((item, idx) => {
           const html = `<div class="item-content">
         <div class="item-content-left">
-          <img src='/img/home/tutorial.svg'/>
+          <img src=${item.img} />
         </div>
         <div class="item-content-right">
           <div class="right-title">${item.title}</div>
-          <a class="arrow"></a>
+          <a class="arrow" target=${item.target} href=${item.href}></a>
         </div>
       </div>`;
           content.innerHTML += html;
@@ -68,14 +68,14 @@ let currentScreen = 0;
         if (currentScreen > 0) {
           currentScreen--;
         } else {
-          currentScreen = Math.ceil(HOTTUTORIALDATA.length / itemsPerPage) - 1;
+          currentScreen = Math.ceil(HOT_TUTORIALDATA.length / itemsPerPage) - 1;
         }
         showItem(currentScreen);
       });
       nextBtn.addEventListener("click", () => {
         if (
           currentScreen <
-          Math.ceil(HOTTUTORIALDATA.length / itemsPerPage) - 1
+          Math.ceil(HOT_TUTORIALDATA.length / itemsPerPage) - 1
         ) {
           currentScreen++;
         } else {
@@ -117,6 +117,7 @@ let currentScreen = 0;
           width: 45%;
           height: 9.375rem;
           img {
+            border-radius: 8px;
             width: 100%;
             height: 100%;
           }

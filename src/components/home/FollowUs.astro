@@ -1,0 +1,126 @@
+---
+import { FOLLOW_US_CONTENT } from "@/constant";
+---
+
+<div class="follow-box bg-card">
+  <h2 class="follow-header text-title">关注我们</h2>
+  <div class="follow-content">
+    {
+      FOLLOW_US_CONTENT.map((it, index) => (
+        <div class="item-content">
+          {it.link ? (
+            <a
+              class="w-[2.25rem] h-[2.25rem] icon-box"
+              href={it.link}
+              target={"_blank"}
+              id={it.id}
+            >
+              <img src={it.icon} class="w-[100%] h-[100%] follow-img" />
+            </a>
+          ) : (
+            <div
+              class="w-[2.25rem] h-[2.25rem] cursor-pointer qr-box relative icon-box"
+              id={it.id}
+            >
+              <img src={it.icon} class="w-[100%] h-[100%] follow-img" />
+              {it.QRCode && (
+                <div class="hidden w-[2.25rem] h-[2.25rem]" data-code={it.id}>
+                  <img src={it.QRCode} class="w-[100%] h-[100%]" />
+                </div>
+              )}
+            </div>
+          )}
+        </div>
+      ))
+    }
+  </div>
+</div>
+<script>
+  import { FOLLOW_US_CONTENT } from "@/constant";
+
+  const qrBoxs = document.querySelectorAll(".qr-box");
+  const iconBoxs = document.querySelectorAll(".follow-box .icon-box");
+
+  FOLLOW_US_CONTENT.forEach((it) => {
+    iconBoxs.forEach((item) => {
+      if (it.id === item.id) {
+        const imgElement = item.querySelector("img");
+
+        item.addEventListener("mouseover", function () {
+          imgElement.src = it.hoverIcon;
+        });
+        item.addEventListener("mouseout", function () {
+          imgElement.src = it.icon;
+        });
+      }
+    });
+  });
+
+  qrBoxs.forEach((it) => {
+    const qrCode = document.querySelector(
+      `[data-code='${it.id}']`
+    ) as HTMLElement;
+    it.addEventListener("mouseover", function () {
+      qrCode.style.display = "block"; // 鼠标悬停在图片上时显示二维码
+      qrCode.style.position = "absolute"; // 鼠标悬停在图片上时显示二维码
+      qrCode.style.bottom = "2rem"; // 鼠标悬停在图片上时显示二维码
+      qrCode.style.left = "1rem"; // 鼠标悬停在图片上时显示二维码
+    });
+    it.addEventListener("mouseout", function () {
+      qrCode.style.display = "none"; // 鼠标移出图片时隐藏二维码
+    });
+  });
+</script>
+<style is:global>
+  .follow-box {
+    border-radius: 16px;
+    padding: 0 1.5rem;
+    margin-top: 1.5rem;
+
+    .follow-header {
+      height: 5rem;
+      display: flex;
+      align-items: center;
+      font-family: Source Han Sans;
+      font-weight: normal;
+    }
+    .follow-content {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 0 1.3rem;
+      /* height: calc(100% - 5rem); */
+      margin-right: -3.5rem; /* 补偿右外边距的合并 */
+
+      .item-content {
+        display: flex;
+        flex: 0 0 calc(20% - 3.5rem); /* 每个元素占25%的宽度并减去1rem的右外边距 */
+        margin-right: 3.5rem;
+        margin-bottom: 1.9rem;
+      }
+      /* 最后一个元素去除右外边距 */
+      .item-content:nth-child(5n) {
+        margin-right: 0;
+      }
+    }
+  }
+
+  @media (max-width: 50rem) {
+    .follow-box {
+      width: 100%;
+      .follow-content {
+        flex-wrap: wrap;
+        .item-content {
+          flex: 0 0 calc(33.33% - 3.5rem); /* 每个元素占100%的宽度并减去1rem的右外边距 */
+        }
+        /* 最后一个元素去除右外边距 */
+        .item-content:nth-child(5n) {
+          margin-right: 3.5rem;
+        }
+
+        .item-content:nth-child(3n) {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+</style>

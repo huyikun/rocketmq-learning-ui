@@ -603,38 +603,30 @@ export const SOLUTIONS_CARD_LIST = [
 ];
 
 // 热门教程
-export const HOTTUTORIALDATA = [
+export const HOT_TUTORIALDATA = [
   {
-    cover: "https://img.alicdn.com/imgextra/i2/O1CN01psWBwW1tzgeAxapCz_!!6000000005973-0-tps-2448-3672.jpg",
-    coverPosition: "bottom",
-    title: "Apache RocketMQ从入门到实践1",
-    enTitle: "Apache RocketMQ从入门到实践",
-    body: "home.introduction.card.Nacos.des",
-    href: "docs/2023/user-guide/nacos/quick-start/",
+    img: "https://img.alicdn.com/imgextra/i2/O1CN01psWBwW1tzgeAxapCz_!!6000000005973-0-tps-2448-3672.jpg",
+    title: "Apache RocketMQ 云原生统一消息引擎",
+    href: "https://developer.aliyun.com/ebook/8122?spm=5176.28426678.J_HeJR_wZokYt378dwP-lLl.38.6f2051814wrfox&scm=20140722.S_community@@%E7%94%B5%E5%AD%90%E4%B9%A6@@8122._.ID_8122-RL_ApacheRocketMQ-LOC_search~UND~community~UND~item-OR_ser-V_3-P0_0",
+    target: "_blank"
   },
   {
-    cover: "https://img.alicdn.com/imgextra/i2/O1CN01psWBwW1tzgeAxapCz_!!6000000005973-0-tps-2448-3672.jpg",
-    coverPosition: "bottom",
-    title: "Apache RocketMQ从入门到实践2",
-    enTitle: "Apache RocketMQ从入门到实践",
-    body: "home.introduction.card.Nacos.des",
-    href: "docs/2023/user-guide/nacos/quick-start/",
+    img: "https://img.alicdn.com/imgextra/i2/O1CN01psWBwW1tzgeAxapCz_!!6000000005973-0-tps-2448-3672.jpg",
+    title: "Apache RocketMQ 从入门到实战",
+    href: "https://developer.aliyun.com/ebook/361?spm=5176.28426678.J_HeJR_wZokYt378dwP-lLl.46.6f2051814wrfox&scm=20140722.S_community@@%E7%94%B5%E5%AD%90%E4%B9%A6@@361._.ID_361-RL_ApacheRocketMQ-LOC_search~UND~community~UND~item-OR_ser-V_3-P0_2",
+    target: "_blank"
   },
   {
-    cover: "https://img.alicdn.com/imgextra/i2/O1CN01psWBwW1tzgeAxapCz_!!6000000005973-0-tps-2448-3672.jpg",
-    coverPosition: "bottom",
-    title: "Apache RocketMQ从入门到实践3",
-    enTitle: "Apache RocketMQ从入门到实践",
-    body: "home.introduction.card.Nacos.des",
-    href: "docs/2023/user-guide/nacos/quick-start/",
+    img: "https://img.alicdn.com/imgextra/i2/O1CN01psWBwW1tzgeAxapCz_!!6000000005973-0-tps-2448-3672.jpg",
+    title: "Apache RocketMQ 源码解析",
+    href: "https://developer.aliyun.com/ebook/363?spm=5176.28426678.J_HeJR_wZokYt378dwP-lLl.42.6f2051814wrfox&scm=20140722.S_community@@%E7%94%B5%E5%AD%90%E4%B9%A6@@363._.ID_363-RL_ApacheRocketMQ-LOC_search~UND~community~UND~item-OR_ser-V_3-P0_1",
+    target: "_blank"
   },
   {
-    cover: "https://img.alicdn.com/imgextra/i2/O1CN01psWBwW1tzgeAxapCz_!!6000000005973-0-tps-2448-3672.jpg",
-    coverPosition: "bottom",
-    title: "Apache RocketMQ从入门到实践4",
-    enTitle: "Apache RocketMQ从入门到实践",
-    body: "home.introduction.card.Nacos.des",
-    href: "docs/2023/user-guide/nacos/quick-start/",
+    img: "https://img.alicdn.com/imgextra/i2/O1CN01psWBwW1tzgeAxapCz_!!6000000005973-0-tps-2448-3672.jpg",
+    title: "云原生消息队列Apache RocketMQ",
+    href: "https://developer.aliyun.com/ebook/6677?spm=5176.28426678.J_HeJR_wZokYt378dwP-lLl.50.6f2051814wrfox&scm=20140722.S_community@@%E7%94%B5%E5%AD%90%E4%B9%A6@@6677._.ID_6677-RL_ApacheRocketMQ-LOC_search~UND~community~UND~item-OR_ser-V_3-P0_3",
+    target: "_blank"
   },
 ];
 
@@ -652,27 +644,95 @@ export const PRACTICE_DATA = [
   },
 ];
 
-//最新公告
+// 最新公告
 export const NEW_ANN_CONTENT = [
   {
-    date: '2023-12-22',
-    title: 'RocketMQ 多语言 SDK 开源贡献召集令',
-    content: '社区纪念品和成为 committer 的机会等着你！',
-    href: ''
+    date: '7月26-28日',
+    title: 'CommunityOverCode Asia 2024',
+    content: '邀您届时参与 RocketMQ 相关议题讨论和展位互动交流！',
+    href: 'https://asia.communityovercode.org/zh/',
+    target: '_blank'
   },
   {
-    date: '2024-02-22',
-    title: 'RocketMQ 多语言 SDK 开源贡献召集令',
-    content: '社区纪念品和成为 committer 的机会等着你！',
-    href: ''
+    date: '8月',
+    title: '杭州AI开源沙龙',
+    content: '',
+    href: '',
+    target: '_blank'
   },
   {
-    date: '2024-06-22',
-    title: 'RocketMQ 多语言 SDK 开源贡献召集令',
-    content: '社区纪念品和成为 committer 的机会等着你！',
-    href: ''
+    date: '8月',
+    title: '通义灵码开源挑战赛',
+    content: '',
+    href: '',
+    target: '_blank'
   },
 ];
+
+// 关注我们
+export const FOLLOW_US_CONTENT = [
+  {
+    id: "qr1",
+    icon: 'https://img.alicdn.com/imgextra/i1/O1CN01QxwNkn26nP3RQcFaA_!!6000000007706-2-tps-72-72.png',
+    QRCode: '',
+    hoverIcon: 'https://img.alicdn.com/imgextra/i2/O1CN01wMQoGx1oERjxo5OaF_!!6000000005193-2-tps-72-72.png',
+  },
+  {
+    id: "qr2",
+    icon: 'https://img.alicdn.com/imgextra/i3/O1CN01LeIXk51Wgh5H4EcaY_!!6000000002818-2-tps-72-72.png',
+    QRCode: '',
+    hoverIcon: 'https://img.alicdn.com/imgextra/i2/O1CN01zVpgzy1a5pfeLlTbU_!!6000000003279-2-tps-72-72.png',
+  },
+  {
+    id: "icon1",
+    icon: 'https://img.alicdn.com/imgextra/i2/O1CN01wwWVab1qK3pKbYHYj_!!6000000005476-2-tps-72-72.png',
+    link: 'https://www.zhihu.com/people/apache-rocketmq',
+    hoverIcon: 'https://img.alicdn.com/imgextra/i3/O1CN015Yswqx1vYmdXWF4fK_!!6000000006185-2-tps-72-72.png',
+  },
+  {
+    id: "icon2",
+    icon: 'https://img.alicdn.com/imgextra/i3/O1CN01YnWdvC1de8AyQYFM5_!!6000000003760-2-tps-72-72.png',
+    link: 'https://space.bilibili.com/571603427',
+    hoverIcon: 'https://img.alicdn.com/imgextra/i2/O1CN01UJcjBI1IeUYh6OxkY_!!6000000000918-2-tps-72-72.png',
+  },
+  {
+    id: "icon3",
+    icon: 'https://img.alicdn.com/imgextra/i3/O1CN01QM8DZr1bCX51iuNSt_!!6000000003429-2-tps-72-72.png',
+    link: 'https://segmentfault.com/u/shangqingdedigua',
+    hoverIcon: 'https://img.alicdn.com/imgextra/i1/O1CN013Wjqpe1idjv36jsVE_!!6000000004436-2-tps-72-72.png',
+  },
+  {
+    id: "icon4",
+    icon: 'https://img.alicdn.com/imgextra/i1/O1CN018OsVSH27k1kYEolOg_!!6000000007834-2-tps-72-72.png',
+    link: 'https://developer.aliyun.com/group/rocketmq/',
+    hoverIcon: 'https://img.alicdn.com/imgextra/i4/O1CN018gkJfd1bsfWG0E5I0_!!6000000003521-2-tps-72-72.png',
+  },
+  {
+    id: "icon5",
+    icon: 'https://img.alicdn.com/imgextra/i1/O1CN01ikDsZ129OA4WozOeT_!!6000000008057-2-tps-72-72.png',
+    link: 'https://blog.csdn.net/ApacheRocketMQ',
+    hoverIcon: 'https://img.alicdn.com/imgextra/i3/O1CN01nqTfGt1VpZ8lvyxUa_!!6000000002702-2-tps-72-72.png',
+  },
+  {
+    id: "icon6",
+    icon: 'https://img.alicdn.com/imgextra/i1/O1CN01sIWrTg1WTrzfGuCfQ_!!6000000002790-2-tps-72-72.png',
+    link: 'https://juejin.cn/user/2722831860500456',
+    hoverIcon: 'https://img.alicdn.com/imgextra/i2/O1CN01bJOUEj1I73e9cRx1p_!!6000000000845-2-tps-72-72.png',
+  },
+  {
+    id: "icon7",
+    icon: 'https://img.alicdn.com/imgextra/i1/O1CN01KOjZm820nxqQSLkLa_!!6000000006895-2-tps-72-72.png',
+    link: 'https://www.infoq.cn/profile/EF01E8DEC6AAEE/publish',
+    hoverIcon: 'https://img.alicdn.com/imgextra/i3/O1CN01jzTplj1vejmliuzKb_!!6000000006198-2-tps-72-72.png',
+  },
+  {
+    id: "icon8",
+    icon: 'https://img.alicdn.com/imgextra/i3/O1CN01dBlQj328LaEBJkFWg_!!6000000007916-2-tps-72-72.png',
+    link: ' https://blog.51cto.com/u_15870054',
+    hoverIcon: 'https://img.alicdn.com/imgextra/i1/O1CN01ktCXVm1beTEyskh4x_!!6000000003490-2-tps-72-72.png',
+  },
+];
+
 
 // why learn
 export const WHY_LEARN_LIST: ChooseReason[] = [
@@ -710,40 +770,24 @@ export const WHY_LEARN_LIST: ChooseReason[] = [
 
 export const ACTIVE_DATA = [
   {
-    time: "2023.7.28  12:00-16:30",
     img: "https://img.alicdn.com/imgextra/i2/O1CN01psWBwW1tzgeAxapCz_!!6000000005973-0-tps-2448-3672.jpg",
-    title: "RocketMQ Summit - 行业探索实践",
-    enTitle: "RocketMQ Summit - 行业探索实践",
-    href: "docs/2023/user-guide/nacos/quick-start/",
+    title: "「大师课」深度剖析 RocketMQ5.0",
+    href: "https://edu.aliyun.com/course/317148",
+    target: "_blank"
   },
   {
-    time: "2023.7.29  12:00-16:30",
     img: "https://img.alicdn.com/imgextra/i2/O1CN01psWBwW1tzgeAxapCz_!!6000000005973-0-tps-2448-3672.jpg",
-    title: "RocketMQ Summit - 行业探索实践",
-    enTitle: "RocketMQ Summit - 行业探索实践",
-    href: "docs/2023/user-guide/nacos/quick-start/",
+    title: "RocketMQ Summit 2022",
+    href: "/community/summit/",
+    target: "_self"
   },
   {
-    time: "2023.7.30  12:00-16:30",
     img: "https://img.alicdn.com/imgextra/i2/O1CN01psWBwW1tzgeAxapCz_!!6000000005973-0-tps-2448-3672.jpg",
-    title: "RocketMQ Summit - 行业探索实践",
-    enTitle: "RocketMQ Summit - 行业探索实践",
-    href: "docs/2023/user-guide/nacos/quick-start/",
+    title: "RocketMQ x EventMesh Open Day 2021",
+    href: "/community/meetup/",
+    target: "_self"
   },
-  {
-    time: "2023.7.31  12:00-16:30",
-    img: "https://img.alicdn.com/imgextra/i2/O1CN01psWBwW1tzgeAxapCz_!!6000000005973-0-tps-2448-3672.jpg",
-    title: "RocketMQ Summit - 行业探索实践",
-    enTitle: "RocketMQ Summit - 行业探索实践",
-    href: "docs/2023/user-guide/nacos/quick-start/",
-  },
-  {
-    time: "2023.8.28  12:00-16:30",
-    img: "https://img.alicdn.com/imgextra/i2/O1CN01psWBwW1tzgeAxapCz_!!6000000005973-0-tps-2448-3672.jpg",
-    title: "RocketMQ Summit - 行业探索实践",
-    enTitle: "RocketMQ Summit - 行业探索实践",
-    href: "docs/2023/user-guide/nacos/quick-start/",
-  },];
+];
 
 export const LEARNING_DATA = [
   {
@@ -781,6 +825,11 @@ export const ARTICLE_TAG = [
     type: 'all',
     title: '全部文章',
     href: '/learning/'
+  },
+  {
+    type: 'ai',
+    title: 'AI 原生应用',
+    href: '/learning/ai/'
   },
   {
     type: 'practice',
@@ -848,16 +897,22 @@ export const COMMUNITY_TAG = [
   },
 ];
 
-export const COMMUNITY_BANNER_DATA = {
+export const COMMUNITY_BANNER_DATA =   {
   tag: 'meetup',
   id: 'm1',
-  time: "2023-12-22",
+  time: "2021年8月",
   title: "云原生消息、事件、流超融合平台—— RocketMQ 5.0 初探",
-  guest: "金融通",
+  introduction: [
+    {
+      author: "金融通",
+      position:
+        "Apache RocketMQ PMC Member & Committer，阿里云智能高级开发工程师",
+    },
+  ],
   des: "RocketMQ x EventMesh Open Day 线上直播（一）",
   href: "/community/detail/m1/",
-  source: "",
-  img: "https://img.alicdn.com/imgextra/i3/O1CN01SDldKK20lfrQqpGuQ_!!6000000006890-2-tps-596-360.png"
+  source: "https://cloud.video.taobao.com/play/u/null/p/1/e/6/t/1/d/ud/355043993582.mp4",
+  img: "https://img.alicdn.com/imgextra/i2/O1CN01JJOlDv1wWJu9rzqkZ_!!6000000006315-2-tps-1291-563.png"
 };
 
 // 社区页数据
@@ -865,170 +920,422 @@ export const COMMUNITY_DATA = [
   {
     tag: 'meetup',
     id: 'm1',
-    time: "2023-12-22",
+    time: "2021年8月",
     title: "云原生消息、事件、流超融合平台—— RocketMQ 5.0 初探",
+    introduction: [
+      {
+        author: "金融通",
+        position:
+          "Apache RocketMQ PMC Member & Committer，阿里云智能高级开发工程师",
+      },
+    ],
+    des: "RocketMQ x EventMesh Open Day 线上直播（一）",
+    href: "/community/detail/m1/",
+    source: "https://cloud.video.taobao.com/play/u/null/p/1/e/6/t/1/d/ud/355043993582.mp4",
+    img: "https://img.alicdn.com/imgextra/i2/O1CN01JJOlDv1wWJu9rzqkZ_!!6000000006315-2-tps-1291-563.png"
+  },
+  {
+    tag: 'meetup',
+    id: 'm2',
+    time: "2021年8月",
+    title: "基于 OpenSchema 的 SchemaRegistry 实现",
+    introduction: [
+      {
+        author: "梁炜强",
+        position: "微众银行中间件研发工程师",
+      },
+    ],
+    des: "RocketMQ x EventMesh Open Day 线上直播（三）",
+    href: "/community/detail/m2/",
+    source: "https://cloud.video.taobao.com/play/u/null/p/1/e/6/t/1/d/ud/354501760073.mp4",
+    img: "https://img.alicdn.com/imgextra/i2/O1CN01wxOXFd1sHQZ2obeyy_!!6000000005741-2-tps-1291-563.png"
+  },
+  {
+    tag: 'meetup',
+    id: 'm3',
+    time: "2021年8月",
+    title: "基于 RocketMQ 构建阿里云事件驱动引擎——EventBridge",
     introduction: [
       {
         author: "韩陆",
         position: "阿里云事件总线产品研发",
       },
     ],
-    des: "RocketMQ x EventMesh Open Day 线上直播（一）",
-    href: "/community/detail/m1/",
-    source: "https://cloud.video.taobao.com/play/u/null/p/1/e/6/t/1/d/ud/354501688435.mp4",
-    img: "https://img.alicdn.com/imgextra/i3/O1CN01SDldKK20lfrQqpGuQ_!!6000000006890-2-tps-596-360.png"
-  },
-  {
-    tag: 'meetup',
-    id: 'm2',
-    time: "2023-12-22",
-    title: "云原生消息、事件、流超融合平台—— RocketMQ 5.0 初探",
-    guest: "金融通",
-    des: "RocketMQ x EventMesh Open Day 线上直播（一）",
-    href: "/community/detail/m2/",
-    source: "",
-    img: "https://img.alicdn.com/imgextra/i3/O1CN01SDldKK20lfrQqpGuQ_!!6000000006890-2-tps-596-360.png"
-  },
-  {
-    tag: 'meetup',
-    id: 'm3',
-    time: "2023-12-22",
-    title: "云原生消息、事件、流超融合平台—— RocketMQ 5.0 初探",
-    guest: "金融通",
-    des: "RocketMQ x EventMesh Open Day 线上直播（一）",
+    des: "RocketMQ x EventMesh Open Day 线上直播（四）",
     href: "/community/detail/m3/",
-    source: "",
-    img: "https://img.alicdn.com/imgextra/i3/O1CN01SDldKK20lfrQqpGuQ_!!6000000006890-2-tps-596-360.png"
+    source: "https://cloud.video.taobao.com/play/u/null/p/1/e/6/t/1/d/ud/354501688435.mp4",
+    img: "https://img.alicdn.com/imgextra/i4/O1CN01G2GPlC1jnBTy9nhho_!!6000000004592-2-tps-1291-563.png"
   },
   {
     tag: 'meetup',
     id: 'm4',
-    time: "2023-12-22",
-    title: "云原生消息、事件、流超融合平台—— RocketMQ 5.0 初探",
-    guest: "金融通",
-    des: "RocketMQ x EventMesh Open Day 线上直播（一）",
+    time: "2021年8月",
+    title: "基于 RocketMQ 的基金数字化陪伴体系的架构实践",
+    introduction: [
+      {
+        author: "伍振河",
+        position: "博时基金互联网开放平台负责人",
+      },
+      {
+        author: "陈培新",
+        position:
+          "就职于国信证券信息技术总部，目前负责国信技术中台的建设工作，目前专注于微服务架构、Serverless 技术",
+      },
+    ],    
+    des: "RocketMQ x EventMesh Open Day 线上直播（五）",
     href: "/community/detail/m4/",
-    source: "",
-    img: "https://img.alicdn.com/imgextra/i3/O1CN01SDldKK20lfrQqpGuQ_!!6000000006890-2-tps-596-360.png"
+    source: "https://cloud.video.taobao.com/play/u/null/p/1/e/6/t/1/d/ud/355042453895.mp4",
+    img: "https://img.alicdn.com/imgextra/i2/O1CN018a86IZ1WVExZcwugo_!!6000000002793-2-tps-1291-563.png"
   },
   {
     tag: 'meetup',
     id: 'm5',
-    time: "2023-12-22",
-    title: "云原生消息、事件、流超融合平台—— RocketMQ 5.0 初探",
-    guest: "金融通",
-    des: "RocketMQ x EventMesh Open Day 线上直播（一）",
+    time: "2021年11月16日",
+    title: "RocketMQ with Hudi & Kyuubi线上沙龙",
+    introduction: [
+      {
+        author: "李致波",
+        position: "Apache RocketMQ  Committer",
+      },
+      {
+        author: "姚琴（Kent Yao）",
+        position:
+          "Apache Submarine  Committer、Apache Spark  Committer、Apache Kyuubi （Incubating）发起人及PPMC、网易数帆-有数",
+      },
+      {
+        author: "王平",
+        position: "阿里云智能技术专家",
+      },
+      {
+        author: "李远照",
+        position: "平安证券大数据平台开发工程师",
+      },
+      {
+        author: "曹融",
+        position: "就职于喜马拉雅，目前负责公司服务治理和消息治理相关工作",
+      },
+    ],
+    des: "RocketMQ with Hudi & Kyuubi线上沙龙",
     href: "/community/detail/m5/",
-    source: "",
-    img: "https://img.alicdn.com/imgextra/i3/O1CN01SDldKK20lfrQqpGuQ_!!6000000006890-2-tps-596-360.png"
+    source: "https://vod-yq-aliyun.taobao.com/vod-7651a3/62f50eeed66a46a0aa23383bb44f1000/b18cbaeabde5fe2744f3935518221c3c-hd.mp4",
+    img: "https://img.alicdn.com/imgextra/i3/O1CN01NhGsJG1UjJzQjYPth_!!6000000002553-0-tps-1291-563.jpg"
   },
   {
-    tag: 'summit',
-    id: 'm6',
-    time: "2023-12-22",
-    title: "云原生消息、事件、流超融合平台—— RocketMQ 5.0 初探",
-    guest: "金融通",
-    des: "RocketMQ x EventMesh Open Day 线上直播（一）",
+    tag: 'meetup',
+    id: "m6",
+    title: "RocketMQ X OceanBase 线上技术沙龙",
+    time: "2023年2月16日",
+    des: "RocketMQ X OceanBase 线上技术沙龙",
     href: "/community/detail/m6/",
-    source: "",
-    img: "https://img.alicdn.com/imgextra/i3/O1CN01SDldKK20lfrQqpGuQ_!!6000000006890-2-tps-596-360.png"
+    img: "https://img.alicdn.com/imgextra/i1/O1CN01EhGwkT1J0126wPGkn_!!6000000000965-0-tps-1291-563.jpg",
+    source: "https://cloud.video.taobao.com/play/u/null/p/1/e/6/t/1/406062368920.mp4?SBizCode=xiaoer",
+    introduction: [
+      {
+        author: "沙仟罚",
+        position: "某游戏公司大数据负责人",
+      },
+      {
+        author: "周波",
+        position: "Apache RocketMQ  Committer",
+      },
+      {
+        author: "蔡飞志",
+        position: "OceanBase技术专家",
+      },
+    ],
   },
   {
     tag: 'summit',
-    id: 'm7',
-    time: "2023-12-22",
-    title: "云原生消息、事件、流超融合平台—— RocketMQ 5.0 初探",
-    guest: "金融通",
-    des: "RocketMQ x EventMesh Open Day 线上直播（一）",
-    href: "/community/detail/m7/",
-    source: "",
-    img: "https://img.alicdn.com/imgextra/i3/O1CN01SDldKK20lfrQqpGuQ_!!6000000006890-2-tps-596-360.png"
+    id: 's1',
+    time: "2022年7月21日",
+    title: "RocketMQ Summit 2022 - 主论坛",
+    introduction: [
+      {
+        author: "丁宇",
+        position: "阿里巴巴研究员，阿里云智能云原生应用平台负责人",
+      },
+      {
+        author: "王小瑞",
+        position:
+          "Apache RocketMQ作者、创始人、PMC Chair，阿里云智能资深技术专家，电商业务云原生架构升级负责人",
+      },
+      {
+        author: "林清山",
+        position: "阿里云智能资深技术专家，阿里云消息平台负责人",
+      },
+      {
+        author: "邓志文",
+        position: "小米研发工程师",
+      },
+      {
+        author: "黄理",
+        position: "快手在线消息系统负责人",
+      },
+    ],
+    des: "RocketMQ Summit 2022 - 主论坛",
+    href: "/community/detail/s1/",
+    source: "https://vod-yq-aliyun.taobao.com/vod-7651a3/4001d9dc9f754232a13d8d30d326272a/15fb013425d14cf0aeb0a4767333b138-hd.mp4",
+    img: "https://img.alicdn.com/imgextra/i4/O1CN01UP6cbA1aAPUhVkKFh_!!6000000003289-0-tps-1920-1080.jpg"
   },
   {
     tag: 'summit',
-    id: 'm8',
-    time: "2023-12-22",
-    title: "云原生消息、事件、流超融合平台—— RocketMQ 5.0 初探",
-    guest: "金融通",
-    des: "RocketMQ x EventMesh Open Day 线上直播（一）",
-    href: "/community/detail/m8/",
-    source: "",
-    img: "https://img.alicdn.com/imgextra/i3/O1CN01SDldKK20lfrQqpGuQ_!!6000000006890-2-tps-596-360.png"
+    id: 's2',
+    time: "2022年7月21日",
+    title: "RocketMQ Summit 2022 - 开源生态发展 DAY1",
+    introduction: [
+      {
+        author: "杜恒",
+        position:
+          "Apache Member，Apache RocketMQ PMC member, 阿里云 RocketMQ 混合云及开源研发负责人",
+      },
+      {
+        author: "李建",
+        position: "达摩院技术专家",
+      },
+      {
+        author: "郭雨杰",
+        position: "阿里云智能技术专家",
+      },
+      {
+        author: "王院生",
+        position: "Apache APISIX PMC",
+      },
+      {
+        author: "史明伟",
+        position: "阿里云智能高级技术专家",
+      },
+      {
+        author: "薛炜明",
+        position: "微众银行中间件研发工程师",
+      },
+      {
+        author: "张杰",
+        position: "OpenYurt 社区核心维护者，阿里云智能技术专家",
+      },
+    ],
+    des: "RocketMQ Summit 2022 - 开源生态发展 DAY1",
+    href: "/community/detail/s2/",
+    source: "https://vod-yq-aliyun.taobao.com/vod-7651a3/20d86e5aee2f4f7d8e6087609fe2cd3d/30516fba5270cb84cf401d01c74cc1d0-hd.mp4",
+    img: "https://img.alicdn.com/imgextra/i1/O1CN01x19XWS1VhmGgUwy2S_!!6000000002685-0-tps-1920-1080.jpg"
   },
   {
     tag: 'summit',
-    id: 'm9',
-    time: "2023-12-22",
-    title: "云原生消息、事件、流超融合平台—— RocketMQ 5.0 初探",
-    guest: "金融通",
-    des: "RocketMQ x EventMesh Open Day 线上直播（一）",
-    href: "/community/detail/m9/",
-    source: "",
-    img: "https://img.alicdn.com/imgextra/i3/O1CN01SDldKK20lfrQqpGuQ_!!6000000006890-2-tps-596-360.png"
+    id: 's3',
+    time: "2022年7月21日",
+    title: "RocketMQ Summit 2022 - 行业探索实践 DAY1",
+    introduction: [
+      {
+        author: "周新宇",
+        position:
+          "Apache Member，Apache RocketMQ PMC Member，阿里云消息队列RocketMQ研发负责人",
+      },
+      {
+        author: "高向阳",
+        position: "转转资深研发工程师",
+      },
+      {
+        author: "房成进",
+        position: "小米高级研发工程师",
+      },
+      {
+        author: "区二立",
+        position: "vivo 技术架构总监",
+      },
+      {
+        author: "尹启绣",
+        position: "阿里云智能钉钉技术专家",
+      },
+      {
+        author: "李伟",
+        position:
+          "Apache RocketMQ Committer，RocketMQ Python客户端项目Owner ，Apache Doris Contributor，腾讯云数据库开发工程师",
+      },
+      {
+        author: "魏欢",
+        position: "谐云资深技术总监，中国信通院可信云标准专家",
+      },
+    ],
+    des: "RocketMQ Summit 2022 - 行业探索实践 DAY1",
+    href: "/community/detail/s3/",
+    source: "https://vod-yq-aliyun.taobao.com/vod-7651a3/458f7393618c484a972494507912c326/e3f0e46c41447bf478f395d6b43ac6f5-hd.mp4",
+    img: "https://img.alicdn.com/imgextra/i2/O1CN01DwuV3x1aJ716oeDS7_!!6000000003308-0-tps-1920-1080.jpg"
   },
   {
     tag: 'summit',
-    id: 'm10',
-    time: "2023-12-22",
-    title: "云原生消息、事件、流超融合平台—— RocketMQ 5.0 初探",
-    guest: "金融通",
-    des: "RocketMQ x EventMesh Open Day 线上直播（一）",
-    href: "/community/detail/m10/",
+    id: 's4',
+    time: "2022年7月21日",
+    title: "RocketMQ Summit 2022 - 核心技术解析",
+    introduction: [
+      {
+        author: "刘振东",
+        position: "Apache RocketMQ PMC Member，阿里云智能消息队列Kafka负责人",
+      },
+      {
+        author: "袁小栋",
+        position:
+          "Apache RocketMQ Committer，RocketMQ-streams Co-Founder，阿里云智能高级技术专家，安全智能计算引擎负责人",
+      },
+      {
+        author: "沈林",
+        position: "阿里云智能技术专家",
+      },
+      {
+        author: "金吉祥",
+        position: "Apache RocketMQ PMC Member，阿里云智能高级技术专家",
+      },
+      {
+        author: "金融通",
+        position:
+          "Apache RocketMQ PMC Member & Committer，阿里云智能高级开发工程师",
+      },
+      {
+        author: "艾阳坤",
+        position:
+          "Apache RocketMQ 5.0 Java SDK 作者，CNCF Envoy Contributor，CNCF OpenTelemetry Contributor，阿里云智能高级开发工程师",
+      },
+      {
+        author: "王平",
+        position: "阿里云智能技术专家",
+      },
+    ],
+    des: "RocketMQ Summit 2022 - 核心技术解析",
+    href: "/community/detail/s4/",
+    source: "https://vod-yq-aliyun.taobao.com/vod-7651a3/ace87dcddc044576acbe6bcb4ce82fd4/729d03df09379102dcf44e2ac7642ec0-hd.mp4",
+    img: "https://img.alicdn.com/imgextra/i3/O1CN01mFg49v1MkgEgY8G4j_!!6000000001473-0-tps-1920-1080.jpg"
+  },
+  {
+    tag: 'summit',
+    id: 's5',
+    time: "2022年7月22日",
+    title: "RocketMQ Summit 2022 - 开源生态发展 DAY2",
+    introduction: [
+      {
+        author: "梁炜强",
+        position: "微众银行中间件研发工程师",
+      },
+      {
+        author: "李致波",
+        position: "阿里云智能技术专家，RocketMQ Committer",
+      },
+      {
+        author: "胡泰室",
+        position: "快手Java开发工程师",
+      },
+      {
+        author: "饶子昊",
+        position: "Spring Cloud Alibaba Committer，阿里云智能开发工程师",
+      },
+      {
+        author: "郝洪范",
+        position: "Dubbogo Committer，京东资深研发工程师",
+      },
+      {
+        author: "肖京",
+        position: "阿里云智能技术专家",
+      },
+    ],
+    des: "RocketMQ Summit 2022 - 开源生态发展 DAY2",
+    href: "/community/detail/s5/",
+    source: "https://vod-yq-aliyun.taobao.com/vod-7651a3/cdcd9c9ce45b44c4998b6c356b4c63e5/a7670d86c206609a62aa262bcde4746b-hd.mp4",
+    img: "https://img.alicdn.com/imgextra/i1/O1CN01x19XWS1VhmGgUwy2S_!!6000000002685-0-tps-1920-1080.jpg"
+  },
+    {
+    tag: 'summit',
+    id: 's6',
+    time: "2022年7月22日",
+    title: "RocketMQ Summit 2022 - 行业探索实践 DAY2",
+    introduction: [
+      {
+        author: "金凤华",
+        position: "光大银行信息科技部中间件领域技术专家",
+      },
+      {
+        author: "胡宗棠",
+        position:
+          "中国移动云能力中心云原生消息&RPC领域技术专家，Apache RocketMQ & SOFAJRaft & Nacos Committer",
+      },
+      {
+        author: "刘树东",
+        position: "同程艺龙技术专家",
+      },
+      {
+        author: "丁威",
+        position:
+          "中通快递资深架构师，《RocketMQ技术内幕》作者，Apache RocketMQ社区首席布道师，公众号「中间件兴趣圈」维护者",
+      },
+      {
+        author: "申栋",
+        position: "中国移动云能力中心软件开发工程师",
+      },
+    ],
+    des: "RocketMQ Summit 2022 - 行业探索实践 DAY2",
+    href: "/community/detail/s6/",
+    source: "https://vod-yq-aliyun.taobao.com/vod-7651a3/944e9f9319d9496ea41090ae3fc8c3f7/9c1c8f4a45f27e67aceef52081e98ddd-hd.mp4",
+    img: "https://img.alicdn.com/imgextra/i2/O1CN01DwuV3x1aJ716oeDS7_!!6000000003308-0-tps-1920-1080.jpg"
+  },
+  {
+    tag: 'live',
+    id: 'l1',
+    time: "",
+    title: "「大师课」深度剖析 RocketMQ5.0",
+    des: "「大师课」深度剖析 RocketMQ5.0",
+    href: "https://edu.aliyun.com/course/317148",
+    target: "_blank",
     source: "",
     img: "https://img.alicdn.com/imgextra/i3/O1CN01SDldKK20lfrQqpGuQ_!!6000000006890-2-tps-596-360.png"
   },
   {
     tag: 'live',
-    id: 'm11',
-    time: "2023-12-22",
-    title: "云原生消息、事件、流超融合平台—— RocketMQ 5.0 初探",
-    guest: "金融通",
-    des: "RocketMQ x EventMesh Open Day 线上直播（一）",
-    href: "/community/detail/m11/",
+    id: 'l2',
+    time: "",
+    title: "消息队列RocketMQ 5.0 云原生架构升级课程",
+    des: "消息队列RocketMQ 5.0 云原生架构升级课程",
+    href: "https://edu.aliyun.com/course/317045",
+    target: "_blank",
     source: "",
     img: "https://img.alicdn.com/imgextra/i3/O1CN01SDldKK20lfrQqpGuQ_!!6000000006890-2-tps-596-360.png"
   },
   {
     tag: 'live',
-    id: 'm12',
-    time: "2023-12-22",
-    title: "云原生消息、事件、流超融合平台—— RocketMQ 5.0 初探",
-    guest: "金融通",
-    des: "RocketMQ x EventMesh Open Day 线上直播（一）",
-    href: "/community/detail/m12/",
+    id: 'l3',
+    time: "",
+    title: "消息队列 RocketMQ 消息集成",
+    des: "消息队列 RocketMQ 消息集成",
+    href: "https://edu.aliyun.com/course/316794",
+    target: "_blank",
     source: "",
     img: "https://img.alicdn.com/imgextra/i3/O1CN01SDldKK20lfrQqpGuQ_!!6000000006890-2-tps-596-360.png"
   },
   {
     tag: 'live',
-    id: 'm13',
-    time: "2023-12-22",
-    title: "云原生消息、事件、流超融合平台—— RocketMQ 5.0 初探",
-    guest: "金融通",
-    des: "RocketMQ x EventMesh Open Day 线上直播（一）",
-    href: "/community/detail/m13/",
+    id: 'l4',
+    time: "",
+    title: "RocketMQ知识精讲与项目实战（第一阶段）",
+    des: "RocketMQ知识精讲与项目实战（第一阶段）",
+    href: "https://edu.aliyun.com/course/314845",
+    target: "_blank",
     source: "",
     img: "https://img.alicdn.com/imgextra/i3/O1CN01SDldKK20lfrQqpGuQ_!!6000000006890-2-tps-596-360.png"
   },
   {
     tag: 'live',
-    id: 'm14',
-    time: "2023-12-22",
-    title: "云原生消息、事件、流超融合平台—— RocketMQ 5.0 初探",
-    guest: "金融通",
-    des: "RocketMQ x EventMesh Open Day 线上直播（一）",
-    href: "/community/detail/m14/",
+    id: 'l5',
+    time: "",
+    title: "RocketMQ知识精讲与项目实战（第二阶段）",
+    des: "RocketMQ知识精讲与项目实战（第二阶段）",
+    href: "https://edu.aliyun.com/course/314846",
+    target: "_blank",
     source: "",
     img: "https://img.alicdn.com/imgextra/i3/O1CN01SDldKK20lfrQqpGuQ_!!6000000006890-2-tps-596-360.png"
   },
   {
     tag: 'live',
-    id: 'm15',
-    time: "2023-12-22",
-    title: "云原生消息、事件、流超融合平台—— RocketMQ 5.0 初探",
-    guest: "金融通",
-    des: "RocketMQ x EventMesh Open Day 线上直播（一）",
-    href: "/community/detail/m15/",
+    id: 'l6',
+    time: "",
+    title: "RocketMQ知识精讲与项目实战（第三阶段）",
+    des: "RocketMQ知识精讲与项目实战（第三阶段）",
+    target: "_blank",
+    href: "https://edu.aliyun.com/course/314849",
     source: "",
     img: "https://img.alicdn.com/imgextra/i3/O1CN01SDldKK20lfrQqpGuQ_!!6000000006890-2-tps-596-360.png"
   },
@@ -1085,36 +1392,68 @@ export const ANALYSIS_PRODUCTS = [
 // 通知
 export const NOTICE_PRODUCTS = [
   {
-    icon: 'https://img.alicdn.com/imgextra/i3/O1CN01yIEIGc1RszdloGvnx_!!6000000002168-2-tps-64-64.png',
+    icon: 'https://img.alicdn.com/imgextra/i4/O1CN012W8eEY1BxXivntVWV_!!6000000000012-2-tps-58-58.png',
     product: "语音",
   },
   {
-    icon: 'https://img.alicdn.com/imgextra/i3/O1CN01yDGka71JitzIEjPSG_!!6000000001063-2-tps-64-64.png',
+    icon: 'https://img.alicdn.com/imgextra/i2/O1CN013OZ12E1F4MSuecWgZ_!!6000000000433-2-tps-52-52.png',
     product: "短信",
   },
   {
-    icon: 'https://img.alicdn.com/imgextra/i1/O1CN01ZwXAxy1XvdcbUt1QQ_!!6000000002986-2-tps-51-51.png',
+    icon: 'https://img.alicdn.com/imgextra/i2/O1CN01tU1tZE23jKgaZdhtX_!!6000000007291-2-tps-58-47.png',
     product: "邮箱",
   },
   {
-    icon: 'https://img.alicdn.com/imgextra/i1/O1CN01ZwXAxy1XvdcbUt1QQ_!!6000000002986-2-tps-51-51.png',
+    icon: 'https://img.alicdn.com/imgextra/i4/O1CN01KMCbjx1opXp1gK6U4_!!6000000005274-2-tps-58-52.png',
     product: "移动推送",
   },
 ];
 
-// 通知
+// 计算
 export const COMPUTE_PRODUCTS = [
   {
-    icon: 'https://img.alicdn.com/imgextra/i3/O1CN01yIEIGc1RszdloGvnx_!!6000000002168-2-tps-64-64.png',
+    icon: 'https://img.alicdn.com/imgextra/i3/O1CN01gqnzVX1ibRw74X52F_!!6000000004431-2-tps-51-56.png',
     product: "模型服务",
   },
   {
-    icon: 'https://img.alicdn.com/imgextra/i3/O1CN01yDGka71JitzIEjPSG_!!6000000001063-2-tps-64-64.png',
+    icon: 'https://img.alicdn.com/imgextra/i2/O1CN01q9F2NX1IFIm8obpfc_!!6000000000863-2-tps-55-55.png',
     product: "函数计算",
   },
   {
-    icon: 'https://img.alicdn.com/imgextra/i1/O1CN01ZwXAxy1XvdcbUt1QQ_!!6000000002986-2-tps-51-51.png',
+    icon: 'https://img.alicdn.com/imgextra/i2/O1CN01yASGLy1rt9nCAUiWX_!!6000000005688-2-tps-48-55.png',
     product: "容器",
+  },
+];
+
+// 存储
+export const SAVE_PRODUCTS = [
+  {
+    icon: 'https://img.alicdn.com/imgextra/i1/O1CN01HK7hqz1OZoCjM3xJd_!!6000000001720-2-tps-55-42.png',
+    product: "对象存储",
+  },
+  {
+    icon: 'https://img.alicdn.com/imgextra/i1/O1CN01L7WLsY1EMORcFCc1p_!!6000000000337-2-tps-51-48.png',
+    product: "数据库",
+  },
+  {
+    icon: 'https://img.alicdn.com/imgextra/i1/O1CN012AuE7F1G0zAEHVdZd_!!6000000000561-2-tps-64-51.png',
+    product: "NoSQL",
+  },
+];
+
+// 分析1
+export const ANALYSIS_PRODUCTS1 = [
+  {
+    icon: 'https://img.alicdn.com/imgextra/i3/O1CN01SrkPML1EWT9tB1UWA_!!6000000000359-2-tps-64-64.png',
+    product: "对象存储",
+  },
+  {
+    icon: 'https://img.alicdn.com/imgextra/i4/O1CN01uQIjKn1YWjhkUTFuT_!!6000000003067-2-tps-50-54.png',
+    product: "数据库",
+  },
+  {
+    icon: 'https://img.alicdn.com/imgextra/i1/O1CN01Pz8LDI1S7Bv4JMyaO_!!6000000002199-2-tps-49-54.png',
+    product: "NoSQL",
   },
 ];
 
@@ -1135,14 +1474,42 @@ export const SERVICE_PRODUCTS = [
   {
     icon: 'https://img.alicdn.com/imgextra/i4/O1CN01z8gLt01zgo2OZHOkP_!!6000000006744-2-tps-105-28.png',
     product: "Seata",
-  },  {
+  }, {
     icon: 'https://img.alicdn.com/imgextra/i3/O1CN01gQxTvL1Jqgiaqt6In_!!6000000001080-2-tps-64-64.png',
     product: "Spring Cloud",
-  },  {
+  }, {
     icon: 'https://img.alicdn.com/imgextra/i4/O1CN01Aq4aCt1cvhl6kOT5W_!!6000000003663-2-tps-86-40.png',
     product: "Nacos",
   },
 ];
+
+// 物联网
+export const INTERNET_PRODUCTS = [
+  {
+    icon: 'https://img.alicdn.com/imgextra/i4/O1CN01yQex1U1ZHuV57Olbd_!!6000000003170-2-tps-46-57.png',
+    product: "家电",
+  },
+  {
+    icon: 'https://img.alicdn.com/imgextra/i1/O1CN013zRrBI1nNmC3WkOvZ_!!6000000005078-2-tps-58-52.png',
+    product: "汽车",
+  },
+  {
+    icon: 'https://img.alicdn.com/imgextra/i3/O1CN01b1bax71Sv75hKHETd_!!6000000002308-2-tps-52-52.png',
+    product: "穿戴设备",
+  },
+  {
+    icon: 'https://img.alicdn.com/imgextra/i1/O1CN01ZAZeGI21zhbuB6BQA_!!6000000007056-2-tps-52-58.png',
+    product: "充电桩",
+  }, {
+    icon: 'https://img.alicdn.com/imgextra/i3/O1CN01pkNcMF1TB8x8xYHjr_!!6000000002343-2-tps-52-52.png',
+    product: "工业设备",
+  }, {
+    icon: 'https://img.alicdn.com/imgextra/i3/O1CN01ihNXYL1siS9Y17HN7_!!6000000005800-2-tps-39-58.png',
+    product: "手机",
+  },
+];
+
+
 
 
 

@@ -11,19 +11,27 @@ function formatDate(dateString) {
   const options: Intl.DateTimeFormatOptions = {
     year: "numeric",
     month: "long",
-    day: "numeric",
   };
   const date = new Date(dateString);
-  return new Intl.DateTimeFormat("en-US", options).format(date);
+  return new Intl.DateTimeFormat("zh-CN", options).format(date);
 }
 ---
 
 <div class="item-content">
   <div class="item-content-top">
-    <img src={active.img} />
+    <img
+      src={active.img}
+      class={source === "home" ? "rounded-lg" : "rounded-xl"}
+    />
   </div>
   <div class="active-des">
-    <p class="text-xs font-normal">{formatDate(active.time)}</p>
+    {
+      active.time ? (
+        <p class="text-xs font-normal">{active.time}</p>
+      ) : (
+        <p class="h-1" />
+      )
+    }
     <div class="text-title text-[1.375rem] leading-8">{active.title}</div>
   </div>
   {
@@ -31,6 +39,7 @@ function formatDate(dateString) {
       <Button
         size="small"
         type="card"
+        target={active.target}
         href={active.href}
         variant=""
         class="rounded-3xl text-xs w-[51.5%] font-normal border-none bg-card-btn hover:bg-secondary"
@@ -45,6 +54,7 @@ function formatDate(dateString) {
         size="small"
         type="card"
         href={active.href}
+        target={active.target || "_self"}
         variant=""
         class="rounded-3xl text-xs w-[45%] font-normal border-none bg-[#EBECEF] hover:bg-secondary"
       >

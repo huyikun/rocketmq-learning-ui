@@ -18,21 +18,22 @@ export type Props = {
     title: string;
     content: string;
     href: string;
+    target: string;
   };
 };
 
 const { itemData } = Astro.props;
-const { date, title, content, href } = itemData;
+const { date, title, content, href, target } = itemData;
 ---
 
 <div
   class={"card h-[8.75rem] pt-[16px] pb-[16px] pl-[24px] pr-[24px] shadow-none w-full"}
 >
-  <a href={href} class="flex flex-col w-[100%]">
+  <a href={href} target={target} class="flex flex-col w-[100%]">
     <div class="flex justify-between">
       <div class="flex items-center">
         <span class="text-lg font-medium text-primary">
-          {formatDate(date)}
+          {date}
         </span>
         <div class="text-xs font-medium text-title ml-[8px]">
           {t("home.new.ann.activity")}

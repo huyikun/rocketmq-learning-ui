@@ -18,7 +18,7 @@ function formatDate(dateString) {
 
 <div class={twMerge("card p-[12px] w-full flex")}>
   <div class="w-[36%] h-[13.06rem]">
-    <img src={data.img} />
+    <img src={data.img} class="rounded-lg"/>
   </div>
   <a href={data.href} class="w-[64%] pl-[24px]">
     <div class="text-xs mt-[24px] mb-[24px] flex p">
@@ -33,7 +33,7 @@ function formatDate(dateString) {
       </div>
     </h3>
     <div class="p text-xs">
-      嘉宾：{data?.introduction?.map((it) => it.author)}
+      嘉宾：{data?.introduction?.map((it) => it.author + ' ')}
     </div>
   </a>
 </div>
