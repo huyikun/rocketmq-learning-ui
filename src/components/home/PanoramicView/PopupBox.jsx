@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useContext } from "preact/hooks";
 import { twMerge } from "tailwind-merge";
 
-export const PopupBox = ({ hoverContent, direction = 'top', data }) => {
+export const PopupBox = ({ hoverContent, product, direction = 'top', data }) => {
   const { hoverIcon = '', des = '', github = '', api = '', openSource = '', clound = '' } = hoverContent || {};
   const [arrow, setArrow] = useState('');
   const { stargazers_count: startCount = 0, forks_count: forkCount = 0 } =
@@ -10,17 +10,25 @@ export const PopupBox = ({ hoverContent, direction = 'top', data }) => {
 
   if (direction === 'bottom') {
     // hover弹框在下面,箭头在上面
-    setArrow("after:absolute after:bottom-full after:left-2/4 after:ml-[-5px] after:border-[5px] after:border-b-base-100 after:border-x-transparent after:border-t-transparent  after:content-['']")
+    setArrow("after:absolute after:bottom-full after:left-[40px] after:ml-[-5px] after:border-[5px] after:border-b-base-100 after:border-x-transparent after:border-t-transparent  after:content-['']")
   } else {
     // hover弹框在上面，箭头在下面
     setArrow("after:absolute after:top-full after:left-2/4 after:ml-[-5px] after:border-[5px] after:border-t-base-100 after:border-x-transparent after:border-b-transparent  after:content-['']")
   }
   return (
     <div
-      className={`relative bg-[#2E3038] text-[#A3A6B3] py-[1.5rem] px-[2rem] rounded-xl backdrop-opacity-96 w-[32.5rem]`}
+      className={`relative bg-[#2E3038] text-[#A3A6B3] pb-[1.5rem] px-[2rem] rounded-xl backdrop-opacity-96 w-[32.5rem] text-left`}
     >
-      <div className="flex items-center justify-between border-b border-success mb-4 pb-4">
-        <img src={hoverIcon} alt="logo" className="max-h-16 max-w-[130px] " />
+      <div className="flex items-center border-b border-[#4C505D] mb-4 h-[4.25rem]">
+        <img src={hoverIcon} alt="logo"
+          className={
+            twMerge(
+              "max-w-[204px]",
+              product === "Higress" || product === "Sentinel" ?
+                "h-7"
+                :
+                "h-5"
+            )} />
       </div>
       <div className="text-sm mb-[1.5rem] mt-[1.25rem]">{des}</div>
       {
@@ -31,11 +39,11 @@ export const PopupBox = ({ hoverContent, direction = 'top', data }) => {
           >
             Github：
           </div>
-          <div>
+          <div className="truncate">
             <a
               href={github}
               target="_blank"
-              className="no-underline"
+              className="no-underline text-[#3D57DA]"
             >
               {github}
             </a>
@@ -98,14 +106,34 @@ export const PopupBox = ({ hoverContent, direction = 'top', data }) => {
             <a
               href={openSource}
               target="_blank"
-              className="no-underline"
+              className="no-underline text-[#3D57DA]"
             >
               {openSource}
             </a>
           </div>
         </div>
       }
-
+      {
+        clound &&
+        <div className="mb-2 flex text-left mt-[1.125rem]">
+          <div
+            className="text-base mb-1 w-[8.75rem] text-[#C7C9D1]"
+          >
+            <span>云服务</span>
+            <span className="text-xs">（开箱即用）</span>
+            <span>：</span>
+          </div>
+          <div>
+            <a
+              href={clound}
+              target="_blank"
+              className="no-underline text-[#3D57DA]"
+            >
+              {clound}
+            </a>
+          </div>
+        </div>
+      }
     </div>
   );
 };

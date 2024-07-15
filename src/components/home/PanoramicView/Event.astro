@@ -1,5 +1,5 @@
 ---
-import ProductCard from "./ProductCard.astro";
+import { ProductCard } from "@/components/home/PanoramicView/ProductCard";
 import { EVENTS_PRODUCTS } from "@/constant";
 ---
 
@@ -10,7 +10,13 @@ import { EVENTS_PRODUCTS } from "@/constant";
   <div class="event-products">
     {
       EVENTS_PRODUCTS.map((it) => (
-        <ProductCard className="event-product" item={it} />
+        <ProductCard
+          className="event-product"
+          item={it}
+          client:load
+          direction="bottom"
+          hoverable={true}
+        />
       ))
     }
   </div>

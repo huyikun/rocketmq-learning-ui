@@ -679,7 +679,7 @@ export const FOLLOW_US_CONTENT = [
   },
   {
     id: "qr2",
-    icon: 'https://img.alicdn.com/imgextra/i3/O1CN01LeIXk51Wgh5H4EcaY_!!6000000002818-2-tps-72-72.png',
+    icon: 'https://img.alicdn.com/imgextra/i2/O1CN01AIzwB41XdJmXKAJI0_!!6000000002946-2-tps-72-72.png',
     QRCode: 'https://img.alicdn.com/imgextra/i3/O1CN01D39bKU1tFQfcgmr97_!!6000000005872-2-tps-230-230.png',
     hoverIcon: 'https://img.alicdn.com/imgextra/i2/O1CN01zVpgzy1a5pfeLlTbU_!!6000000003279-2-tps-72-72.png',
   },
@@ -704,13 +704,13 @@ export const FOLLOW_US_CONTENT = [
   {
     id: "icon4",
     icon: 'https://img.alicdn.com/imgextra/i1/O1CN018OsVSH27k1kYEolOg_!!6000000007834-2-tps-72-72.png',
-    link: 'https://developer.aliyun.com/group/rocketmq/',
+    link: 'https://blog.csdn.net/ApacheRocketMQ',
     hoverIcon: 'https://img.alicdn.com/imgextra/i4/O1CN018gkJfd1bsfWG0E5I0_!!6000000003521-2-tps-72-72.png',
   },
   {
     id: "icon5",
     icon: 'https://img.alicdn.com/imgextra/i1/O1CN01ikDsZ129OA4WozOeT_!!6000000008057-2-tps-72-72.png',
-    link: 'https://blog.csdn.net/ApacheRocketMQ',
+    link: 'https://my.oschina.net/u/6179068',
     hoverIcon: 'https://img.alicdn.com/imgextra/i3/O1CN01nqTfGt1VpZ8lvyxUa_!!6000000002702-2-tps-72-72.png',
   },
   {
@@ -1346,6 +1346,14 @@ export const EVENTS_PRODUCTS = [
   {
     icon: 'https://img.alicdn.com/imgextra/i1/O1CN01FeFvWd25Jnq6P0C1W_!!6000000007506-2-tps-50-52.png',
     product: "AMQP",
+    hoverContent: {
+      hoverIcon: "",
+      des: "⼀个更易于构建云原生应用的动态服务发现、配置管理和服务管理平台。",
+      github: "",
+      api: "",
+      openSource: "",
+      clound:"https://www.aliyun.com/product/amqp"
+    }
   },
   {
     icon: 'https://img.alicdn.com/imgextra/i1/O1CN01N0N9xh1OJJwadnOvE_!!6000000001684-2-tps-61-45.png',
@@ -1369,7 +1377,7 @@ export const EVENTS_PRODUCTS = [
   },
 ];
 
-// 分析
+// 事件
 export const ANALYSIS_PRODUCTS = [
   {
     icon: 'https://img.alicdn.com/imgextra/i3/O1CN01yIEIGc1RszdloGvnx_!!6000000002168-2-tps-64-64.png',
@@ -1441,7 +1449,7 @@ export const SAVE_PRODUCTS = [
   },
 ];
 
-// 分析1
+// 分析
 export const ANALYSIS_PRODUCTS1 = [
   {
     icon: 'https://img.alicdn.com/imgextra/i3/O1CN01SrkPML1EWT9tB1UWA_!!6000000000359-2-tps-64-64.png',
@@ -1474,20 +1482,62 @@ export const SERVICE_PRODUCTS = [
   {
     icon: 'https://img.alicdn.com/imgextra/i4/O1CN01PSx6bI1ILiJnQ9CWl_!!6000000000877-2-tps-55-64.png',
     product: "Dubbo",
+    hoverContent: {
+      hoverIcon: "https://img.alicdn.com/imgextra/i2/O1CN016OJGLy215pI2RIAyX_!!6000000006934-2-tps-188-40.png",
+      des: "Apache Dubbo是⼀款微服务框架，为⼤规模微服务 实践提供⾼性能RPC通信、流量治理、可观测性等解决⽅案，涵盖Java、Golang等多种语⾔SDK实现。",
+      github: "https://github.com/apache/dubbo",
+      api: "https://api.github.com/repos/apache/dubbo",
+      openSource: "https://dubbo.apache.org/",
+      clound:""
+    }
   },
   {
     icon: 'https://img.alicdn.com/imgextra/i4/O1CN015rDZHa1ORZ4c5oNeB_!!6000000001702-2-tps-76-76.png',
     product: "Sentinel",
+    hoverContent: {
+      hoverIcon: "https://img.alicdn.com/imgextra/i2/O1CN01cTYJ8e1tzgfovP4b4_!!6000000005973-2-tps-200-56.png",
+      des: "Sentinel是⼀款面向分布式、多语言异构化服务架构的流量治理组件。",
+      github: "https://github.com/alibaba/Sentinel",
+      api: "https://api.github.com/repos/alibaba/Sentinel",
+      openSource: "https://sentinelguard.io/",
+      clound:"https://start.aliyun.com/"
+    }
   },
   {
     icon: 'https://img.alicdn.com/imgextra/i4/O1CN01z8gLt01zgo2OZHOkP_!!6000000006744-2-tps-105-28.png',
     product: "Seata",
-  }, {
+    hoverContent: {
+      hoverIcon: "https://img.alicdn.com/imgextra/i3/O1CN01QlPrCC28iwQc6nHHs_!!6000000007967-2-tps-150-40.png",
+      des: "Seata是⼀款开源的分布式事务解决方案，致力于在微服务架构下提供高性能和简单易用的分布式事务服务。",
+      github: "https://github.com/seata/seata",
+      api: "https://api.github.com/repos/seata/seata",
+      openSource: "https://seata.io/",
+      clound:"https://start.aliyun.com/"
+    }
+  }, 
+  {
     icon: 'https://img.alicdn.com/imgextra/i3/O1CN01gQxTvL1Jqgiaqt6In_!!6000000001080-2-tps-64-64.png',
     product: "Spring Cloud",
-  }, {
+    hoverContent: {
+      hoverIcon: "https://img.alicdn.com/imgextra/i4/O1CN01E0cgAx1OkLJbrN85u_!!6000000001743-2-tps-407-40.png",
+      des: "一站式的分布式应用开发框架。",
+      github: "https://github.com/alibaba/spring-cloud-alibaba",
+      api: "https://api.github.com/repos/alibaba/spring-cloud-alibaba",
+      openSource: "https://sca.aliyun.com/",
+      clound:"https://start.aliyun.com/"
+    }
+  }, 
+  {
     icon: 'https://img.alicdn.com/imgextra/i4/O1CN01Aq4aCt1cvhl6kOT5W_!!6000000003663-2-tps-86-40.png',
     product: "Nacos",
+    hoverContent: {
+      hoverIcon: "https://img.alicdn.com/imgextra/i2/O1CN010dznG520EEx5lPMy5_!!6000000006817-2-tps-205-40.png",
+      des: "⼀个更易于构建云原生应用的动态服务发现、配置管理和服务管理平台。",
+      github: "https://github.com/alibaba/nacos",
+      api: "https://api.github.com/repos/alibaba/nacos",
+      openSource: "https://nacos.io/",
+      clound:"https://start.aliyun.com/"
+    }
   },
 ];
 
