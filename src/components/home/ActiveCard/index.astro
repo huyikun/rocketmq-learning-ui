@@ -17,7 +17,7 @@ function formatDate(dateString) {
 }
 ---
 
-<div class="item-content">
+<div class="item-content bg-card">
   <div class="item-content-top">
     <img
       src={active.img}
@@ -42,7 +42,7 @@ function formatDate(dateString) {
         target={active.target}
         href={active.href}
         variant=""
-        class="rounded-3xl text-xs w-[51.5%] font-normal border-none bg-card-btn hover:bg-secondary"
+        class="rounded-3xl text-xs text-title w-[51.5%] font-normal border-none bg-card-btn hover:bg-success"
       >
         {t("home.exciting.active.see")}
       </Button>
@@ -56,7 +56,7 @@ function formatDate(dateString) {
         href={active.href}
         target={active.target || "_self"}
         variant=""
-        class="rounded-3xl text-xs w-[45%] font-normal border-none bg-[#EBECEF] hover:bg-secondary"
+        class="rounded-3xl text-xs w-[45%] font-normal border-none bg-card-btn hover:bg-success"
       >
         {t("home.exciting.active.see")}
       </Button>

@@ -12,11 +12,11 @@ const ifzh = isChinese(Astro);
   <Carousel useduration="apply" duration={5000}>
     <home-introduce
       slot="prev"
-      class="introduce flex flex-col justify-center items-center min-h-[366px]"
+      class="introduce flex flex-col justify-center items-center"
     >
       <div class="top-section flex flex-col relative mb-[95px]">
         <div
-          class=`title  leading-[4rem] font-medium text-neutral mb-[61px] mt-[64px] ${ifzh ? 'text-[3rem]' : 'text-[4rem]'}`
+          class=`title leading-[4rem] font-medium text-model mb-[61px] mt-[64px] ${ifzh ? 'text-[3rem]' : 'text-[4rem]'}`
         >
           <div>
             {t("home.introduce.title1")}
@@ -30,21 +30,8 @@ const ifzh = isChinese(Astro);
     </home-introduce>
     <home-introduce
       slot="next"
-      class="introduce flex flex-col justify-center items-center min-h-[366px]"
+      class="introduce flex flex-col justify-center items-center"
     >
-      <div class="top-section flex flex-col relative mb-[95px]">
-        <div
-          class=`title  leading-[4rem] font-medium text-neutral mb-[61px] mt-[64px] ${ifzh ? 'text-[3rem]' : 'text-[4rem]'}`
-        >
-          <div>
-            {t("home.introduce.title1")}
-          </div>
-          <div>
-            {t("home.introduce.title2")}
-          </div>
-        </div>
-        <StarAndForkV2 SITE={SITE} client:load />
-      </div>
     </home-introduce>
   </Carousel>
 </div>

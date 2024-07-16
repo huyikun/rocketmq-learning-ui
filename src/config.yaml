@@ -54,15 +54,15 @@ ui:
     # 中性色。作为大标题的字体颜色
     neutral: "#121314"
     # 基础色，用做首页的背景色1
-    base-100: "#FFF"
+    base-100: "#161312"
     # header背景色
-    base-header: "#F7F7F7"
+    base-header: "#121316"
     # footer背景色
-    base-footer: "#EAEAEA"
+    base-footer: "#161312"
     # Headline的上方小字选中
-    info: "#0c0d10"
+    info: "#DDDEE4"
     # 成功。 Header的分割符、主要特性中的分割符、companiesfeedback中的isGray的背景颜色
-    success: "#DDDEE4" #moss-08
+    success: "#2E3038" #moss-08
     # 警告。header中的toggle-trigger-atc颜色
     warning: "#597371" #moss-10
     # 错误。搜索等组件的bgcolor
@@ -72,16 +72,30 @@ ui:
     # 搜索/语言切换组件的文字颜色
     link: "#DDE4E4" #moss-03
     # 文章卡片的背景色
-    card: "#F5F5F5"
-    # 卡片标题的颜色&header字的颜色
-    title: "#121316"
+    card: "#262424"
+    # 卡片标题的颜色
+    title: "#DDDEE4"
     # footer卡片的背景颜色
-    footer: "#F7F0E8"
+    footer: "#1E1F24"
     # 卡片按钮的背景颜色
-    card-btn: "#F4F4F6"
+    card-btn: "#2E2A2A"
     # 标签选中颜色
     active:  "#FAFAFC"
     # 标签未选中颜色
     no-active:  "#5C6170"
+    # 模块大标题颜色
+    model: "#F4F4F6"
+    # header字的颜色
+    header: "#A3A6B3"
+    # 文章内容小字颜色
+    content: "#C7C9D1"
+    #精彩活动背景色
+    active-card: "#1D1B1B"
+    #why learn小字颜色
+    why: "#818598"
+    #fork字体颜色
+    fork: "#F6F8F8"
+
+
 
 

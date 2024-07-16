@@ -20,7 +20,7 @@ export const PopupBox = ({ hoverContent, product, direction = 'top', data }) => 
       className={`relative bg-[#2E3038] text-[#A3A6B3] pb-[1.5rem] px-[2rem] rounded-xl backdrop-opacity-96 w-[32.5rem] text-left`}
     >
       <div className="flex items-center border-b border-[#4C505D] mb-4 h-[4.25rem]">
-        <img src={hoverIcon} alt="logo"
+        {hoverIcon ? <img src={hoverIcon} alt="logo"
           className={
             twMerge(
               "max-w-[204px]",
@@ -28,14 +28,20 @@ export const PopupBox = ({ hoverContent, product, direction = 'top', data }) => 
                 "h-7"
                 :
                 "h-5"
-            )} />
+            )}
+
+        /> :
+          <div className="text-title text-xl">
+            {product}
+          </div>
+        }
       </div>
       <div className="text-sm mb-[1.5rem] mt-[1.25rem]">{des}</div>
       {
         github &&
         <div className="mb-2 flex text-left">
           <div
-            className="text-base mb-1 w-[8.75rem] text-[#C7C9D1]"
+            className="text-base mb-1 w-[9rem] text-[#C7C9D1]"
           >
             Github：
           </div>
@@ -98,11 +104,11 @@ export const PopupBox = ({ hoverContent, product, direction = 'top', data }) => 
         openSource &&
         <div className="mb-2 flex text-left mt-[1.125rem]">
           <div
-            className="text-base mb-1 w-[8.75rem] text-[#C7C9D1]"
+            className="text-base mb-1 w-[9rem] text-[#C7C9D1]"
           >
             开源官网：
           </div>
-          <div>
+          <div className="truncate">
             <a
               href={openSource}
               target="_blank"
@@ -117,13 +123,13 @@ export const PopupBox = ({ hoverContent, product, direction = 'top', data }) => 
         clound &&
         <div className="mb-2 flex text-left mt-[1.125rem]">
           <div
-            className="text-base mb-1 w-[8.75rem] text-[#C7C9D1]"
+            className="text-base mb-1 w-[9rem] text-[#C7C9D1]"
           >
             <span>云服务</span>
             <span className="text-xs">（开箱即用）</span>
             <span>：</span>
           </div>
-          <div>
+          <div className="truncate">
             <a
               href={clound}
               target="_blank"

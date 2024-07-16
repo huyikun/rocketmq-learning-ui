@@ -14,12 +14,12 @@ import { SITE } from "@utils/config";
   >
     <div class="footer-left flex flex-col gap-0 text-left my-9 ml-10 max-w-2xl">
       <p
-        class="footer-left-title text-neutral text-[1.75rem] leading-9 lg:w-[25.9375rem] lg:h-10"
+        class="footer-left-title text-title text-[1.75rem] leading-9 lg:w-[25.9375rem] lg:h-10"
       >
         {t("commmon.footer.title")}
       </p>
       <p
-        class="footer_left_des flex-1 text-neutral text-[0.875rem] w-[42rem] h-[4.5rem] mt-4 mb-[3rem]"
+        class="footer_left_des flex-1 text-why text-[0.875rem] w-[42rem] h-[4.5rem] mt-4 mb-[3rem]"
       >
         RocketMQ 自 2012
         年诞生于阿里巴巴，服务于淘宝等核心交易系统，历经多次双十一万亿级数据洪峰稳定性验证，至今已有十余年发展历程。RocketMQ
@@ -29,10 +29,13 @@ import { SITE } from "@utils/config";
       <div class="flex">
         <LinkButton
           href={SITE.githubUrl}
-          text="GitHub"
+          text="GITHUB"
           theme="gray-02"
           textTheme="title"
-          classes={{ title: "font-medium" }}
+          classes={{
+            container: "rounded-3xl bg-base-header",
+            title: "text-header font-normal",
+          }}
         />
       </div>
     </div>
@@ -41,16 +44,16 @@ import { SITE } from "@utils/config";
     >
       <div>
         <p
-          class="text-neutral text-[0.75rem] leading-4 tracking-[.15em] lg:mb-[3.0625rem]"
+          class="text-title text-[0.75rem] leading-4 tracking-[.15em] lg:mb-[3.0625rem]"
         >
           资源
         </p>
-        <ul class="list-none w-full h-4 ps-0 text-title">
+        <ul class="list-none w-full h-4 ps-0">
           <li>
             <a
               href="https://developer.aliyun.com/ebook/8122"
               target="_blank"
-              class="text-[.875rem] font-medium leading-5 tracking-normal mb-4 no-underline"
+              class="text-[.875rem] font-medium leading-5 tracking-normal mb-4 no-underline text-warning"
             >
               电子书
             </a>
@@ -59,7 +62,7 @@ import { SITE } from "@utils/config";
             <a
               href="https://www.aliyun.com/product/rocketmq"
               target="_blank"
-              class="text-[.875rem] font-medium leading-5 tracking-normal mb-4 no-underline"
+              class="text-[.875rem] font-medium leading-5 tracking-normal mb-4 no-underline text-warning"
             >
               云服务
             </a>

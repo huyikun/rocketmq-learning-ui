@@ -44,7 +44,7 @@ let height,
       <div
         class="left-content h-full flex flex-1 items-center after:content-[''] after:grow after:invisible"
       >
-        <a class="no-underline decoration-current text-[#3D3D3D]" href="/">
+        <a class="no-underline decoration-current text-model" href="/">
           <img class="logo" src={SITE.logoUrl} alt=`${SITE.name}-logo` />
           {t("home.header.title")}
         </a>
@@ -66,8 +66,8 @@ let height,
         theme="gray-02"
         textTheme="title"
         classes={{ 
-          container: "rounded-3xl bg-error xl:h-[2.5rem] xl:min-h-[2.5rem]",
-          title: "text-[#121717] font-normal" 
+          container: "rounded-3xl bg-footer xl:h-[2.5rem] xl:min-h-[2.5rem]",
+          title: "text-header font-normal" 
         }}
       />
       </div>
@@ -101,11 +101,11 @@ let height,
       if (window.innerWidth <= 800) return;
       if (window.scrollY >= 100 && !this.ifscroll) {
         this.ifscroll = true;
-        this.classList.add("bg-secondary/[0.84]");
+        this.classList.add("bg-base-100");
       }
       if (window.scrollY <= 100 && this.ifscroll) {
         this.ifscroll = false;
-        this.classList.remove("bg-secondary/[0.84]");
+        this.classList.remove("bg-base-100");
       }
     };
   }

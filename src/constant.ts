@@ -605,25 +605,25 @@ export const SOLUTIONS_CARD_LIST = [
 // 热门教程
 export const HOT_TUTORIALDATA = [
   {
-    img: "https://img.alicdn.com/imgextra/i2/O1CN01psWBwW1tzgeAxapCz_!!6000000005973-0-tps-2448-3672.jpg",
+    img: "https://img.alicdn.com/imgextra/i1/O1CN01Vlprkg1r3rR2EBRc0_!!6000000005576-2-tps-196-280.png",
     title: "Apache RocketMQ 云原生统一消息引擎",
     href: "https://developer.aliyun.com/ebook/8122?spm=5176.28426678.J_HeJR_wZokYt378dwP-lLl.38.6f2051814wrfox&scm=20140722.S_community@@%E7%94%B5%E5%AD%90%E4%B9%A6@@8122._.ID_8122-RL_ApacheRocketMQ-LOC_search~UND~community~UND~item-OR_ser-V_3-P0_0",
     target: "_blank"
   },
   {
-    img: "https://img.alicdn.com/imgextra/i2/O1CN01psWBwW1tzgeAxapCz_!!6000000005973-0-tps-2448-3672.jpg",
+    img: "https://img.alicdn.com/imgextra/i2/O1CN01tTadKz29AsaUxDMKK_!!6000000008028-2-tps-196-280.png",
     title: "Apache RocketMQ 从入门到实战",
     href: "https://developer.aliyun.com/ebook/361?spm=5176.28426678.J_HeJR_wZokYt378dwP-lLl.46.6f2051814wrfox&scm=20140722.S_community@@%E7%94%B5%E5%AD%90%E4%B9%A6@@361._.ID_361-RL_ApacheRocketMQ-LOC_search~UND~community~UND~item-OR_ser-V_3-P0_2",
     target: "_blank"
   },
   {
-    img: "https://img.alicdn.com/imgextra/i2/O1CN01psWBwW1tzgeAxapCz_!!6000000005973-0-tps-2448-3672.jpg",
+    img: "https://img.alicdn.com/imgextra/i1/O1CN01vh3kef1ToX111kQat_!!6000000002429-2-tps-196-280.png",
     title: "Apache RocketMQ 源码解析",
     href: "https://developer.aliyun.com/ebook/363?spm=5176.28426678.J_HeJR_wZokYt378dwP-lLl.42.6f2051814wrfox&scm=20140722.S_community@@%E7%94%B5%E5%AD%90%E4%B9%A6@@363._.ID_363-RL_ApacheRocketMQ-LOC_search~UND~community~UND~item-OR_ser-V_3-P0_1",
     target: "_blank"
   },
   {
-    img: "https://img.alicdn.com/imgextra/i2/O1CN01psWBwW1tzgeAxapCz_!!6000000005973-0-tps-2448-3672.jpg",
+    img: "https://img.alicdn.com/imgextra/i1/O1CN01pifkKU1okVSyuzLzl_!!6000000005263-2-tps-196-280.png",
     title: "云原生消息队列Apache RocketMQ",
     href: "https://developer.aliyun.com/ebook/6677?spm=5176.28426678.J_HeJR_wZokYt378dwP-lLl.50.6f2051814wrfox&scm=20140722.S_community@@%E7%94%B5%E5%AD%90%E4%B9%A6@@6677._.ID_6677-RL_ApacheRocketMQ-LOC_search~UND~community~UND~item-OR_ser-V_3-P0_3",
     target: "_blank"
@@ -675,61 +675,61 @@ export const FOLLOW_US_CONTENT = [
     id: "qr1",
     icon: 'https://img.alicdn.com/imgextra/i1/O1CN01QxwNkn26nP3RQcFaA_!!6000000007706-2-tps-72-72.png',
     QRCode: 'https://img.alicdn.com/imgextra/i3/O1CN01yFNon31Jc235oP6nZ_!!6000000001048-0-tps-258-258.jpg',
-    hoverIcon: 'https://img.alicdn.com/imgextra/i2/O1CN01wMQoGx1oERjxo5OaF_!!6000000005193-2-tps-72-72.png',
+    hoverIcon: 'https://img.alicdn.com/imgextra/i2/O1CN014LvJCV1kc1fbshQXu_!!6000000004703-2-tps-72-72.png',
   },
   {
     id: "qr2",
     icon: 'https://img.alicdn.com/imgextra/i2/O1CN01AIzwB41XdJmXKAJI0_!!6000000002946-2-tps-72-72.png',
     QRCode: 'https://img.alicdn.com/imgextra/i3/O1CN01D39bKU1tFQfcgmr97_!!6000000005872-2-tps-230-230.png',
-    hoverIcon: 'https://img.alicdn.com/imgextra/i2/O1CN01zVpgzy1a5pfeLlTbU_!!6000000003279-2-tps-72-72.png',
+    hoverIcon: 'https://img.alicdn.com/imgextra/i2/O1CN01zYNO3n1CFrZGXGbon_!!6000000000052-2-tps-72-72.png',
   },
   {
     id: "icon1",
     icon: 'https://img.alicdn.com/imgextra/i2/O1CN01wwWVab1qK3pKbYHYj_!!6000000005476-2-tps-72-72.png',
     link: 'https://www.zhihu.com/people/apache-rocketmq',
-    hoverIcon: 'https://img.alicdn.com/imgextra/i3/O1CN015Yswqx1vYmdXWF4fK_!!6000000006185-2-tps-72-72.png',
+    hoverIcon: 'https://img.alicdn.com/imgextra/i1/O1CN01YLQXkG1gwOpDl38Mg_!!6000000004206-2-tps-72-72.png',
   },
   {
     id: "icon2",
     icon: 'https://img.alicdn.com/imgextra/i3/O1CN01YnWdvC1de8AyQYFM5_!!6000000003760-2-tps-72-72.png',
     link: 'https://space.bilibili.com/571603427',
-    hoverIcon: 'https://img.alicdn.com/imgextra/i2/O1CN01UJcjBI1IeUYh6OxkY_!!6000000000918-2-tps-72-72.png',
+    hoverIcon: 'https://img.alicdn.com/imgextra/i1/O1CN01DShl881C3xGmgeXUO_!!6000000000026-2-tps-72-72.png',
   },
   {
     id: "icon3",
     icon: 'https://img.alicdn.com/imgextra/i3/O1CN01QM8DZr1bCX51iuNSt_!!6000000003429-2-tps-72-72.png',
     link: 'https://segmentfault.com/u/shangqingdedigua',
-    hoverIcon: 'https://img.alicdn.com/imgextra/i1/O1CN013Wjqpe1idjv36jsVE_!!6000000004436-2-tps-72-72.png',
+    hoverIcon: 'https://img.alicdn.com/imgextra/i2/O1CN01SoZsj01ZG4uval8iQ_!!6000000003166-2-tps-72-72.png',
   },
   {
     id: "icon4",
     icon: 'https://img.alicdn.com/imgextra/i1/O1CN018OsVSH27k1kYEolOg_!!6000000007834-2-tps-72-72.png',
     link: 'https://blog.csdn.net/ApacheRocketMQ',
-    hoverIcon: 'https://img.alicdn.com/imgextra/i4/O1CN018gkJfd1bsfWG0E5I0_!!6000000003521-2-tps-72-72.png',
+    hoverIcon: 'https://img.alicdn.com/imgextra/i4/O1CN015EQmOx1mUofQ6SkZo_!!6000000004958-2-tps-72-72.png',
   },
   {
     id: "icon5",
     icon: 'https://img.alicdn.com/imgextra/i1/O1CN01ikDsZ129OA4WozOeT_!!6000000008057-2-tps-72-72.png',
     link: 'https://my.oschina.net/u/6179068',
-    hoverIcon: 'https://img.alicdn.com/imgextra/i3/O1CN01nqTfGt1VpZ8lvyxUa_!!6000000002702-2-tps-72-72.png',
+    hoverIcon: 'https://img.alicdn.com/imgextra/i3/O1CN01GObEbt23XsmoukVzO_!!6000000007266-2-tps-72-72.png',
   },
   {
     id: "icon6",
-    icon: 'https://img.alicdn.com/imgextra/i1/O1CN01sIWrTg1WTrzfGuCfQ_!!6000000002790-2-tps-72-72.png',
-    link: 'https://juejin.cn/user/2722831860500456',
-    hoverIcon: 'https://img.alicdn.com/imgextra/i2/O1CN01bJOUEj1I73e9cRx1p_!!6000000000845-2-tps-72-72.png',
+    icon: 'https://img.alicdn.com/imgextra/i2/O1CN01939XVc1TgkHbCUmes_!!6000000002412-2-tps-72-72.png',
+    link: 'https://developer.aliyun.com/group/rocketmq/',
+    hoverIcon: 'https://img.alicdn.com/imgextra/i1/O1CN01yyJclV1uXZyviMuGS_!!6000000006047-2-tps-72-72.png',
   },
   {
     id: "icon7",
     icon: 'https://img.alicdn.com/imgextra/i1/O1CN01KOjZm820nxqQSLkLa_!!6000000006895-2-tps-72-72.png',
     link: 'https://www.infoq.cn/profile/EF01E8DEC6AAEE/publish',
-    hoverIcon: 'https://img.alicdn.com/imgextra/i3/O1CN01jzTplj1vejmliuzKb_!!6000000006198-2-tps-72-72.png',
+    hoverIcon: 'https://img.alicdn.com/imgextra/i1/O1CN01LIS5BI25JnqJh6gwS_!!6000000007506-2-tps-72-72.png',
   },
   {
     id: "icon8",
     icon: 'https://img.alicdn.com/imgextra/i3/O1CN01dBlQj328LaEBJkFWg_!!6000000007916-2-tps-72-72.png',
     link: ' https://blog.51cto.com/u_15870054',
-    hoverIcon: 'https://img.alicdn.com/imgextra/i1/O1CN01ktCXVm1beTEyskh4x_!!6000000003490-2-tps-72-72.png',
+    hoverIcon: 'https://img.alicdn.com/imgextra/i1/O1CN01C1HTQC27BDeO4lb0Z_!!6000000007758-2-tps-72-72.png',
   },
 ];
 
@@ -1345,35 +1345,60 @@ export const COMMUNITY_DATA = [
 export const EVENTS_PRODUCTS = [
   {
     icon: 'https://img.alicdn.com/imgextra/i1/O1CN01FeFvWd25Jnq6P0C1W_!!6000000007506-2-tps-50-52.png',
-    product: "AMQP",
+    product: "RabbitMQ",
     hoverContent: {
-      hoverIcon: "",
       des: "⼀个更易于构建云原生应用的动态服务发现、配置管理和服务管理平台。",
-      github: "",
-      api: "",
-      openSource: "",
       clound:"https://www.aliyun.com/product/amqp"
     }
   },
   {
     icon: 'https://img.alicdn.com/imgextra/i1/O1CN01N0N9xh1OJJwadnOvE_!!6000000001684-2-tps-61-45.png',
     product: "Kafka",
+    hoverContent: {
+      des: "广泛用于日志收集、监控数据聚合、流式数据处理、在线和离线分析等场景的分布式消息队列。",
+      clound:"https://www.aliyun.com/product/kafka"
+    }
   },
   {
     icon: 'https://img.alicdn.com/imgextra/i1/O1CN01ZwXAxy1XvdcbUt1QQ_!!6000000002986-2-tps-51-51.png',
     product: "EventBridge",
+    hoverContent: {
+      des: "EventBridge 致力于帮助用户构建高可靠、低耦合、高性能的事件驱动架构。",
+      github: "https://github.com/apache/rocketmq-eventbridge",
+      api: "https://api.github.com/repos/apache/rocketmq-eventbridge",
+      openSource: "https://rocketmq.apache.org/",
+      clound:"https://www.aliyun.com/product/aliware/eventbridge"
+    }
   },
   {
     icon: 'https://img.alicdn.com/imgextra/i2/O1CN013Zi9bB26Qxdza1JMR_!!6000000007657-2-tps-59-43.png',
     product: "MQTT",
+    hoverContent: {
+      des: "针对 IoT 类终端设备消息，通过 MQTT、WebSocket 等协议连接端云之间的双向通信。",
+      github: "https://github.com/apache/rocketmq-mqtt",
+      api: "https://api.github.com/repos/apache/rocketmq-mqtt",
+      openSource: "https://rocketmq.apache.org/",
+      clound:"https://www.aliyun.com/product/mq4iot"
+    }
   },
   {
     icon: 'https://img.alicdn.com/imgextra/i2/O1CN01M01cAo1V9QhS624fZ_!!6000000002610-2-tps-48-54.png',
     product: "RocketMQ",
+    hoverContent: {
+      des: "云原生“消息、事件、流”实时数据处理平台，覆盖云边端⼀体化数据处理场景。",
+      github: "https://github.com/apache/rocketmq",
+      api: "https://api.github.com/repos/apache/rocketmq",
+      openSource: "https://rocketmq.apache.org/",
+      clound:"https://www.aliyun.com/product/rocketmq"
+    }
   },
   {
     icon: 'https://img.alicdn.com/imgextra/i2/O1CN01W0CvDw1YDV4HNKCQi_!!6000000003025-2-tps-43-43.png',
     product: "MNS",
+    hoverContent: {
+      des: "MNS 是一款易集成、高并发、可弹性扩展的轻量消息队列服务。",
+      clound:"https://www.aliyun.com/product/mns"
+    }
   },
 ];
 
@@ -1388,11 +1413,11 @@ export const ANALYSIS_PRODUCTS = [
     product: "OSS",
   },
   {
-    icon: 'https://img.alicdn.com/imgextra/i1/O1CN01ZwXAxy1XvdcbUt1QQ_!!6000000002986-2-tps-51-51.png',
+    icon: 'https://img.alicdn.com/imgextra/i1/O1CN0162u3gj1QCZL8SGJGq_!!6000000001940-2-tps-59-29.png',
     product: "监控",
   },
   {
-    icon: 'https://img.alicdn.com/imgextra/i1/O1CN01ZwXAxy1XvdcbUt1QQ_!!6000000002986-2-tps-51-51.png',
+    icon: 'https://img.alicdn.com/imgextra/i2/O1CN01MMRakS1FERBLz3lSD_!!6000000000455-2-tps-64-64.png',
     product: "SaaS事件",
   },
 ];
@@ -1422,14 +1447,26 @@ export const COMPUTE_PRODUCTS = [
   {
     icon: 'https://img.alicdn.com/imgextra/i3/O1CN01gqnzVX1ibRw74X52F_!!6000000004431-2-tps-51-56.png',
     product: "模型服务",
+    hoverContent: {
+      des: "通过灵活、易用的模型API服务，让AI开发者使用各种模态模型的能力。",
+      clound:"https://www.aliyun.com/product/bailian"
+    }
   },
   {
     icon: 'https://img.alicdn.com/imgextra/i2/O1CN01q9F2NX1IFIm8obpfc_!!6000000000863-2-tps-55-55.png',
     product: "函数计算",
+    hoverContent: {
+      des: "事件驱动的全托管 Serverless 计算服务，只需编写上传代码，即可以弹性、可靠的方式运行代码。",
+      clound:"https://www.aliyun.com/product/fc"
+    }
   },
   {
     icon: 'https://img.alicdn.com/imgextra/i2/O1CN01yASGLy1rt9nCAUiWX_!!6000000005688-2-tps-48-55.png',
     product: "容器",
+    hoverContent: {
+      des: "基于容器编排引擎 Kubernetes 对容器化应用进行自动化部署、扩缩和全生命周期管理。",
+      clound:"https://www.aliyun.com/product/kubernetes"
+    }
   },
 ];
 
@@ -1438,14 +1475,26 @@ export const SAVE_PRODUCTS = [
   {
     icon: 'https://img.alicdn.com/imgextra/i1/O1CN01HK7hqz1OZoCjM3xJd_!!6000000001720-2-tps-55-42.png',
     product: "对象存储",
+    hoverContent: {
+      des: "以非结构化格式存储和管理数据，如照片、视频、电子邮件、网页、传感器数据和音频文件等。",
+      clound:"https://www.aliyun.com/product/oss"
+    }
   },
   {
     icon: 'https://img.alicdn.com/imgextra/i1/O1CN01L7WLsY1EMORcFCc1p_!!6000000000337-2-tps-51-48.png',
     product: "数据库",
+    hoverContent: {
+      des: "采用关系模型来组织数据，以行列形式存储数据，支持对结构化数据的复杂查询，同时保持数据的完整性和一致性。",
+      clound:"https://www.aliyun.com/product/polardb/mysql"
+    }
   },
   {
     icon: 'https://img.alicdn.com/imgextra/i1/O1CN012AuE7F1G0zAEHVdZd_!!6000000000561-2-tps-64-51.png',
     product: "NoSQL",
+    hoverContent: {
+      des: "非关系型数据库，采用不同于关系表的格式存储数据，广泛应用于实时 Web 应用和大数据等。",
+      clound:"https://www.aliyun.com/product/redis"
+    }
   },
 ];
 
@@ -1453,15 +1502,27 @@ export const SAVE_PRODUCTS = [
 export const ANALYSIS_PRODUCTS1 = [
   {
     icon: 'https://img.alicdn.com/imgextra/i3/O1CN01SrkPML1EWT9tB1UWA_!!6000000000359-2-tps-64-64.png',
-    product: "对象存储",
+    product: "Flink",
+    hoverContent: {
+      des: "实时分布式的大数据处理引擎，支持数据流和批量数据的统一处理。",
+      clound:"https://www.aliyun.com/product/bigdata/sc"
+    }
   },
   {
     icon: 'https://img.alicdn.com/imgextra/i4/O1CN01uQIjKn1YWjhkUTFuT_!!6000000003067-2-tps-50-54.png',
-    product: "数据库",
+    product: "Spark",
+    hoverContent: {
+      des: "大规模数据并行处理引擎，对数据进行协处理、流式处理、交互式分析等。",
+      clound:"https://www.aliyun.com/product/emapreduce"
+    }
   },
   {
     icon: 'https://img.alicdn.com/imgextra/i1/O1CN01Pz8LDI1S7Bv4JMyaO_!!6000000002199-2-tps-49-54.png',
-    product: "NoSQL",
+    product: "Elastic Search",
+    hoverContent: {
+      des: "实时分布式的搜索与分析引擎，支持各种类型、规模的数据。",
+      clound:"https://www.aliyun.com/product/bigdata/elasticsearch"
+    }
   },
 ];
 

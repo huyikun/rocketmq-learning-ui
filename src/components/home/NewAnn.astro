@@ -11,7 +11,7 @@ const data = NEW_ANN_CONTENT.sort(
 
 <div class="home-newann">
   <div class="article-header">
-    <h2 class="title">
+    <h2 class="title text-model">
       {t("home.new.ann")}
     </h2>
   </div>
@@ -19,9 +19,9 @@ const data = NEW_ANN_CONTENT.sort(
   <div class="mb-[24px]">
     {data.map((item) => <AnnCard itemData={item} />)}
   </div>
-  <div class="w-[100%] h-[9.5rem]">
-    <img src="https://img.alicdn.com/imgextra/i1/O1CN01hDFiy01OQBswIDVtC_!!6000000001699-2-tps-990-304.png" class="w-[100%] h-[100%]" />
-  </div>
+  <a class="block w-[100%] h-[9.5rem]" target="_blank" href="https://common-buy.aliyun.com/?spm=5176.234368.J_5253785160.2.2e294ef6c5uey1&commodityCode=ons_rocketmqV5_spn_public_cn">
+    <img src="https://img.alicdn.com/imgextra/i2/O1CN01tjfyS41GfI1GcJ5nJ_!!6000000000649-2-tps-990-304.png" class="w-[100%] h-[100%]" />
+  </a>
 </div>
 <style is:global>
   .home-newann {

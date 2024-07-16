@@ -52,11 +52,15 @@ export const ProductCard = ({ item, direction = 'top', hoverable = false, classN
         <img
           src={item.icon}
           class={twMerge(
-            item.product === "Kafka" || item.product === "MQTT"
+            item.product === "Kafka" || item.product === "MQTT" || item.product === "NoSQL" || item.product === "对象存储"
               ? "w-[62%] h-[47%]"
               : item.product === "RocketMQ" || item.product === "MNS"
                 ? "w-[50%] h-[50%]"
-                : "w-[60%] h-[60%]"
+                : item.product === "容器"
+                  ? "w-[50%] h-[57%]"
+                  : item.product === "监控"
+                    ? "w-[70%] h-[30%]"
+                    : "w-[60%] h-[60%]"
           )}
         />
       </div>
