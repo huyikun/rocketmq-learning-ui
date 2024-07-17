@@ -10,15 +10,15 @@ const ifzh = isChinese(Astro);
 
 <div>
   <div class="learning-data-header">
-    <h2 class="title">
+    <h2 class="title text-model">
       {t("learning.recommend")}
     </h2>
   </div>
-  <div class="learning-data-box">
+  <div class="learning-data-box bg-card">
     {
       RECOMMEND_DATA.map((item) => (
         <a href={item.href}>
-          <span>{item.title} </span>
+          <span class="text-title">{item.title} </span>
           <div class="w-[10px] h-[10px]">
             <img src="/img/learning/arrow.png" />
           </div>
@@ -27,48 +27,3 @@ const ifzh = isChinese(Astro);
     }
   </div>
 </div>
-
-<style>
-  .learning-data-header {
-    /* height: 5rem; */
-    display: flex;
-    align-items: center;
-    margin-top: 0.25rem;
-    margin-bottom: 1rem;
-
-    .title {
-      font-family: Source Han Sans;
-      font-weight: normal;
-      padding-left: 24px;
-    }
-  }
-  .learning-data-box {
-    border-radius: 16px;
-    opacity: 1;
-    background: rgba(234, 234, 234, 0.39);
-    padding: 0 24px 2px 24px;
-
-    a {
-      text-decoration: none;
-      list-style: none;
-      height: 4.75rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      color: #121316;
-      font-size: 0.75rem;
-      img {
-        width: 100%;
-        height: 100%;
-      }
-    }
-
-    a:nth-child(1) {
-      border-bottom: 1.5px solid #eaeaea;
-    }
-
-    a:nth-child(2) {
-      border-bottom: 1.5px solid #eaeaea;
-    }
-  }
-</style>

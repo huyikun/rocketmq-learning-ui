@@ -73,7 +73,7 @@ export const ProductCard = ({ item, direction = 'top', hoverable = false, classN
           style={{
             visibility: isHovering ? "visible" : "hidden",
             bottom: direction === 'top' ? '62px' : '',
-            top: direction === 'top' ? '' : '142px',
+            top: direction === 'top' ? '' : '141px',
             left: '-70%',
           }}
           onMouseLeave={() => setHovering(false)}

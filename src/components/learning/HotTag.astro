@@ -11,20 +11,22 @@ const ifzh = isChinese(Astro);
 const { activeTag } = Astro.props;
 ---
 
-<div class="hot-tags-box">
+<div class="hot-tags-box bg-card">
   <div class="hot-tags-header">
-    <h2 class="title">
+    <h2 class="title text-title">
       {t("learning.tags")}
     </h2>
   </div>
   <div>
     {
       ALL_ARTICLE_TAG.map((item) => (
-        <BlogButton
-          href={item.href}
-          text={item.title}
-          variant={item.type == activeTag ? "primary" : "secondary"}
-        />
+        <span class="inline-block mb-2">
+          <BlogButton
+            href={item.href}
+            text={item.title}
+            variant={item.type == activeTag ? "primary" : "secondary"}
+          />
+        </span>
       ))
     }
   </div>
@@ -42,10 +44,10 @@ const { activeTag } = Astro.props;
     }
   }
   .hot-tags-box {
-    margin-top: 20px;
-    border-radius: 16px;
+    margin-top: 1.25rem;
+    border-radius: 1rem;
     opacity: 1;
-    background: rgba(234, 234, 234, 0.39);
-    padding: 24px;
+    padding: 1.5rem;
+    padding-right: 0.5rem;
   }
 </style>

@@ -107,9 +107,9 @@ const flattenSidebar = (sidebar) => {
 	}
 
 	.large {
-		font-size: var(--sl-text-lg);
+    display: inline-block;
 		font-weight: 600;
-		color: var(--sl-color-white);
+		color: theme("colors.model");
 	}
 
 	.top-level > li + li {
@@ -145,14 +145,14 @@ const flattenSidebar = (sidebar) => {
 		display: block;
 		border-radius: 0.25rem;
 		text-decoration: none;
-		color: var(--sl-color-gray-2);
+		color: theme("colors.content");
 		padding: 0.3em var(--sl-sidebar-item-padding-inline);
 		line-height: 1.4;
 	}
 
 	a:hover,
 	a:focus {
-		color: var(--sl-color-white);
+		color: theme("colors.model");
 	}
 
 	[aria-current="page"],
@@ -162,7 +162,7 @@ const flattenSidebar = (sidebar) => {
 		background-color: theme("colors.error");
 		border-left-style: solid;
 		border-left-width: 4px;
-		border-left-color: theme("colors.neutral");
+		border-left-color: theme("colors.primary");
 		padding-left: 0.625rem !important;
 	}
 

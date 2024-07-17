@@ -45,7 +45,7 @@ export const PopupBox = ({ hoverContent, product, direction = 'top', data }) => 
           >
             Github：
           </div>
-          <div className="truncate">
+          <div className="truncate flex-1">
             <a
               href={github}
               target="_blank"
@@ -108,7 +108,7 @@ export const PopupBox = ({ hoverContent, product, direction = 'top', data }) => 
           >
             开源官网：
           </div>
-          <div className="truncate">
+          <div className="truncate flex-1">
             <a
               href={openSource}
               target="_blank"
@@ -129,7 +129,7 @@ export const PopupBox = ({ hoverContent, product, direction = 'top', data }) => 
             <span className="text-xs">（开箱即用）</span>
             <span>：</span>
           </div>
-          <div className="truncate">
+          <div className="truncate flex-1">
             <a
               href={clound}
               target="_blank"

@@ -80,7 +80,7 @@ export const ServiceCard = ({ item, direction = 'top', hoverable = false }) => {
           style={{
             visibility: isHovering ? "visible" : "hidden",
             bottom: direction === 'top' ? '95px' : '',
-            top: direction === 'top' ? '' : '161px',
+            top: direction === 'top' ? '' : '163px',
             left: '-10px'
           }}
           onMouseLeave={() => setHovering(false)}

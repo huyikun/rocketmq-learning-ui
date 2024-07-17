@@ -2,6 +2,7 @@
 import { isChinese } from "@i18n/util";
 import { useTranslations } from "@i18n/util";
 import { Button } from "@serverless-cd/goat-ui";
+import { twMerge } from "tailwind-merge";
 
 const t = useTranslations(Astro);
 const ifzh = isChinese(Astro);
@@ -17,7 +18,12 @@ function formatDate(dateString) {
 }
 ---
 
-<div class="item-content bg-card">
+<div
+  class={twMerge(
+    "item-content ",
+    source === "community" ? "bg-active-card" : "bg-card"
+  )}
+>
   <div class="item-content-top">
     <img
       src={active.img}
