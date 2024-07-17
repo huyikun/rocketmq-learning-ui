@@ -792,30 +792,30 @@ export const ACTIVE_DATA = [
 export const LEARNING_DATA = [
   {
     title: "基于 EventBridge API Destination 构建 SaaS 集成实践方案 ",
-    href: "docs/2023/user-guide/nacos/quick-start/",
+    href: "",
   },
   {
     title: "基于 EventBridge API Destination 构建 SaaS 集成实践方案 ",
-    href: "docs/2023/user-guide/nacos/quick-start/",
+    href: "",
   },
   {
     title: "基于 EventBridge API Destination 构建 SaaS 集成实践方案 ",
-    href: "docs/2023/user-guide/nacos/quick-start/",
+    href: "",
   },
 ]
 
 export const RECOMMEND_DATA = [
   {
     title: "基于 EventBridge API Destination 构建 SaaS 集成实践方案 ",
-    href: "docs/2023/user-guide/nacos/quick-start/",
+    href: "",
   },
   {
     title: "基于 EventBridge API Destination 构建 SaaS 集成实践方案 ",
-    href: "docs/2023/user-guide/nacos/quick-start/",
+    href: "",
   },
   {
     title: "基于 EventBridge API Destination 构建 SaaS 集成实践方案 ",
-    href: "docs/2023/user-guide/nacos/quick-start/",
+    href: "",
   },
 ]
 
