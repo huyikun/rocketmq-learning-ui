@@ -4,13 +4,13 @@ const { introduction = [], title } = data;
 ---
 
 <div>
+  <h2 class="text-model">嘉宾简介：</h2>
   {
     introduction.map((item) => (
       <div class="mt-[1rem]">
         {/* <h2 style={{ fontWeight: 600, fontSize: "18px", color: "#343434" }}>
           {title}
         </h2> */}
-        <h2>嘉宾简介：</h2>
         <div class="flex mt-[1rem] guest-box bg-card p-[2rem]">
           <img
             class="w-[4rem] h-[4rem]"

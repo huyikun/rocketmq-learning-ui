@@ -16,9 +16,9 @@ function formatDate(dateString) {
 }
 ---
 
-<div class={twMerge("card p-[12px] w-full flex")}>
+<div class={twMerge("card bg-card p-[12px] w-full flex")}>
   <div class="w-[36%] h-[13.06rem]">
-    <img src={data.img} />
+    <img src={data.img} class="rounded-lg"/>
   </div>
   <a href={data.href} class="w-[64%] pl-[24px]">
     <div class="text-xs mt-[24px] mb-[24px] flex p">
@@ -26,14 +26,14 @@ function formatDate(dateString) {
       <div class="ml-[2.5rem]">{data.des}</div>
     </div>
     <h3
-      class="card-title leading-[2.625rem] h-[7rem] mt-[24px] overflow-hidden"
+      class="text-model leading-[2.625rem] h-[7rem] overflow-hidden"
     >
       <div class="community-title">
         {data.title}
       </div>
     </h3>
     <div class="p text-xs">
-      嘉宾：{data?.introduction?.map((it) => it.author)}
+      嘉宾：{data?.introduction?.map((it) => it.author + ' ')}
     </div>
   </a>
 </div>
@@ -41,7 +41,6 @@ function formatDate(dateString) {
 <style>
   .card {
     margin-bottom: 1.5625rem;
-    background: #f5f5f5;
     flex-direction: row;
     transition:
       transform 0.2s,
@@ -53,7 +52,6 @@ function formatDate(dateString) {
     h3 {
       font-size: 1.75rem;
       font-weight: 500;
-      color: #121316;
     }
     .p {
       color: #9295a5;

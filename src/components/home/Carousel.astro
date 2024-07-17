@@ -9,17 +9,20 @@ const { duration = 5000, useduration = "disabled" } = Astro.props as Props;
 
 <div
   id="carousel-wrapper"
-  class="relative flex flex-col justify-center items-center bg-intro"
+  class="relative flex flex-col justify-center items-center"
   data-duration={duration}
   data-useduration={useduration}
 >
-  <div class="md:w-[85.125rem]">
-    <div class="carousel-item block">
-      <slot name="prev" />
+  <div class="w-full overflow-hidden">
+    <div class="carousel-item block bg-[#040303]">
+      <div class="intro-pic bg-[url('https://img.alicdn.com/imgextra/i3/O1CN01mriyna1Hxtj7kffLh_!!6000000000825-2-tps-2880-792.png')]">
+        <slot name="prev" />
+      </div>
     </div>
-
-    <div class="carousel-item hidden">
-      <slot name="next" />
+    <div class="carousel-item hidden bg-[#1B1B1B]">
+      <div class="intro-pic bg-[url('https://img.alicdn.com/imgextra/i4/O1CN01WwanIZ28DnUnPBcrp_!!6000000007899-0-tps-2880-792.jpg')]">
+        <slot name="next" />
+      </div>
     </div>
   </div>
 
@@ -44,7 +47,7 @@ const { duration = 5000, useduration = "disabled" } = Astro.props as Props;
                 width="48"
                 height="30"
                 rx="15"
-                fill="#FFFBF7"
+                fill="#2E3038"
                 fill-opacity="1"></rect></g
             ><g
               ><g
@@ -92,7 +95,7 @@ const { duration = 5000, useduration = "disabled" } = Astro.props as Props;
                 width="48"
                 height="30"
                 rx="15"
-                fill="#FFFBF7"
+                fill="#2E3038"
                 fill-opacity="1"></rect></g
             ><g
               ><g
@@ -111,13 +114,13 @@ const { duration = 5000, useduration = "disabled" } = Astro.props as Props;
                 ><path
                   d="M84,15.75L60,15.75L60,14.25L84,14.25L84,15.75Z"
                   fill-rule="evenodd"
-                  fill="#2B3B3A"
+                  fill="#A3A6B3"
                   fill-opacity="1"></path></g
               ><g
                 ><path
                   d="M85.06066,15L78.53033,8.46967L77.46967,9.53033L82.93934,15L77.46967,20.4697L78.53033,21.5303L85.06066,15Z"
                   fill-rule="evenodd"
-                  fill="#2B3B3A"
+                  fill="#A3A6B3"
                   fill-opacity="1"></path></g
               ></g
             ></g
@@ -142,7 +145,7 @@ const { duration = 5000, useduration = "disabled" } = Astro.props as Props;
                 width="48"
                 height="30"
                 rx="15"
-                fill="#FFFBF7"
+                fill="#2E3038"
                 fill-opacity="1"></rect></g
             ><g
               ><g
@@ -190,7 +193,7 @@ const { duration = 5000, useduration = "disabled" } = Astro.props as Props;
                 width="48"
                 height="30"
                 rx="15"
-                fill="#FFFBF7"
+                fill="#2E3038"
                 fill-opacity="1"></rect></g
             ><g
               ><g
@@ -209,13 +212,13 @@ const { duration = 5000, useduration = "disabled" } = Astro.props as Props;
                 ><path
                   d="M84,15.75L60,15.75L60,14.25L84,14.25L84,15.75Z"
                   fill-rule="evenodd"
-                  fill="#2B3B3A"
+                  fill="#A3A6B3"
                   fill-opacity="1"></path></g
               ><g
                 ><path
                   d="M85.06066,15L78.53033,8.46967L77.46967,9.53033L82.93934,15L77.46967,20.4697L78.53033,21.5303L85.06066,15Z"
                   fill-rule="evenodd"
-                  fill="#2B3B3A"
+                  fill="#A3A6B3"
                   fill-opacity="1"></path></g
               ></g
             ></g
@@ -294,11 +297,11 @@ const { duration = 5000, useduration = "disabled" } = Astro.props as Props;
   });
 </script>
 <style is:global>
-  .bg-intro {
-    background: linear-gradient(
-      252deg,
-      rgba(243, 153, 135, 0.39) 1%,
-      rgba(255, 217, 190, 0.63) 100%
-    );
+  .intro-pic {
+    width: 90rem;
+    height: 396px;
+    margin: 0 auto;
+    background-size: cover; /* 图像填充整个容器 */
+    background-position: center; /* 图像在容器内居中 */
   }
 </style>

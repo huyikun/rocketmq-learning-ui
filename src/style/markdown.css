@@ -43,7 +43,7 @@
 }
 
 .sl-markdown-content :is(h1, h2, h3, h4, h5, h6) {
-	color: var(--sl-color-white);
+	color: theme('colors.model');
 	line-height: var(--sl-line-height-headings);
 	font-weight: 600;
 }
@@ -77,7 +77,7 @@
 	color: var(--sl-color-text-accent);
 }
 .sl-markdown-content a:hover {
-	color: var(--sl-color-white);
+	color: theme('colors.model');
 }
 
 .sl-markdown-content code {
@@ -123,8 +123,9 @@
 }
 
 .sl-markdown-content hr {
+  margin-top: 3px;
 	border: 0;
-	border-bottom: 1px solid var(--sl-color-hairline);
+	border-bottom: 1px solid var(--sl-color-gray-4);
 }
 .sl-markdown-content h2 {
 	line-height: 3.5rem;

@@ -78,16 +78,16 @@ const baseLayout_title = post?.data?.title || `${SITE.name} Blog`;
 
 <span class="blog-slug-wrapper">
   <BaseLayout align="docs" title={baseLayout_title}>
-    <div>
+    <div  class="bg-card text-content">
       <div
         class="w-[20%] sidebar-content fixed overflow-auto h-full hidden 2xl:inline-block xl:inline-block lg:inline-block md:inline-block"
       >
         <Sidebar sidebar={articlePosts} />
       </div>
       <div
-        class="w-full 2xl:ml-[20%] xl:ml-[20%] lg:ml-[20%] md:ml-[20%] 2xl:w-[50%] xl:w-[50%] lg:w-[50%] md:w-[50%] inline-block"
+        class="w-full 2xl:ml-[20%] xl:ml-[20%] lg:ml-[20%] md:ml-[20%] 2xl:w-[60%] xl:w-[60%] lg:w-[80%] md:w-[80%] inline-block"
       >
-        <div id="back-btn-learning" class="pt-4 pl-6">
+        <div id="back-btn-tag" class="pt-4 pl-6">
           <Button variant="secondary" target="_self" class="rounded-3xl">
             <Icon name="left-arrow" class="text-lg align-middle" />
             <span class="ml-0.5">BACK</span>
@@ -114,7 +114,7 @@ const baseLayout_title = post?.data?.title || `${SITE.name} Blog`;
         </div>
       </div>
       <div
-        class="right-sidebar-panel w-[25%] fixed h-full overflow-y-auto hidden 2xl:inline-block xl:inline-block lg:inline-block md:inline-block"
+        class="right-sidebar-panel w-[18%] fixed h-full hidden 2xl:inline-block xl:inline-block"
       >
         <TocComponent headings={headings} />
       </div>
@@ -129,7 +129,7 @@ const baseLayout_title = post?.data?.title || `${SITE.name} Blog`;
       source = source.replace(/_/g, "/");
     }
     const backBtn: HTMLAnchorElement = document.querySelector(
-      "#back-btn-learning a"
+      "#back-btn-tag a"
     );
     if (backBtn) {
       backBtn.onclick = (e) => {
@@ -172,8 +172,8 @@ const baseLayout_title = post?.data?.title || `${SITE.name} Blog`;
       padding: 1rem var(--sl-sidebar-pad-x);
     }
     .right-sidebar-panel h2 {
-      color: var(--sl-color-white);
-      font-size: var(--sl-text-h5);
+      color: theme("colors.model");
+      font-size: var(--sl-text-base);
       font-weight: 600;
       line-height: var(--sl-line-height-headings);
       margin-bottom: 0.5rem;
@@ -182,11 +182,24 @@ const baseLayout_title = post?.data?.title || `${SITE.name} Blog`;
       display: block;
       font-size: var(--sl-text-xs);
       text-decoration: none;
-      color: var(--sl-color-gray-3);
+      color: theme("colors.content");
       overflow-wrap: anywhere;
     }
     .right-sidebar-panel a:hover {
-      color: var(--sl-color-white);
+      color: theme("colors.model");
+    }
+
+    .pagination-links a {
+      border: 1px solid var(--sl-color-gray-4);
+      color: theme("colors.content");
+    }
+
+    .pagination-links a:hover {
+      border-color: theme("colors.model");
+    }
+
+    .pagination-links .link-title {
+      color: theme("colors.content");
     }
   }
 </style>

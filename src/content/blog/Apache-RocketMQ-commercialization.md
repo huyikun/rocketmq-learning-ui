@@ -3,7 +3,7 @@ title: "Apache RocketMQ  在阿里云大规模商业化实践之路"
 date: "2022/09/23"
 author: "周新宇"
 img: "https://img.alicdn.com/imgextra/i4/O1CN01ZYQ1XY1KBknq9j7MM_!!6000000001126-0-tps-685-383.jpg"
-tags: ["practice", "bestPractice"]
+tags: ["practice", "bestPractice", "home"]
 description: "RocketMQ 5.0 发布后，阿里云商业会持续采取 OpenCore 的发展模式，秉承上游优先的社区发展原则，与社区一起将 RocketMQ 打造为一个超融合的数据处理平台。"
 ---
 

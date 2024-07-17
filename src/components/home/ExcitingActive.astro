@@ -21,7 +21,7 @@ function formatDate(dateString) {
 ---
 
 <SliderCards
-  className={"active-box"}
+  className={"active-box bg-active-card"}
   prevId={"prevactive"}
   nextId={"nextactive"}
   title={t("home.exciting.active")}
@@ -52,17 +52,18 @@ function formatDate(dateString) {
         );
         content.innerHTML = "";
         newData.forEach((item, idx) => {
-          const html = `<div class="item-content">
+          const html = `<div class="item-content bg-card">
             <div class="item-content-top">
               <img src=${item.img} />
             </div>
             <div class="active-des">
-                <p class="text-xs font-normal">${item.time}</p>
+                <p class="text-xs font-normal"></p>
                 <div class="text-title text-[1.375rem] leading-8">${item.title}</div>
             </div>
             <a
               href=${item.href}
-              class="btn no-underline rounded-3xl text-xs w-[51.5%] font-normal border-none bg-card-btn hover:bg-secondary"
+              target=${item.target}
+              class="btn no-underline rounded-3xl text-xs w-[51.5%] font-normal border-none bg-card-btn hover:bg-success"
             >
               点击查看
             </a>
@@ -96,7 +97,6 @@ function formatDate(dateString) {
     margin-top: 2.5rem;
     border-radius: 16px;
     opacity: 1;
-    background: rgba(234, 234, 234, 0.39);
     padding: 0 24px 24px 24px;
 
     .hotTutorial-header {
@@ -118,7 +118,6 @@ function formatDate(dateString) {
         margin-right: 1.125rem;
         flex: 0 0 calc(33.33% - 1.125rem); /* 每个元素占25%的宽度并减去1rem的右外边距 */
         padding: 12px;
-        background-color: #fff;
         border-radius: 16px;
         .item-content-top {
           height: 8.375rem;

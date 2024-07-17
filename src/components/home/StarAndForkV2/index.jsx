@@ -28,11 +28,11 @@ const StarAndForkV2 = (props) => {
         class="rounded-3xl text-neutral border-none"
         href={SITE.githubUrl}
         target="_blank"
-        theme="secondary"
-        iconClass="text-neutral"
+        theme="card"
+        iconClass="text-header"
       >
-        <Star class="text-neutral" />
-        <span class="text-[0.875rem] leading-4 ml-2 text-neutral">{startCount}</span>
+        <Star class="text-header" />
+        <span class="text-[0.875rem] leading-4 ml-2 text-header">{startCount}</span>
       </Button>
 
       <Button
@@ -41,10 +41,10 @@ const StarAndForkV2 = (props) => {
         href={`${SITE.githubUrl}/fork`}
         target="_blank"
         theme="primary"
-        iconClass="text-base-100"
+        iconClass="text-fork"
       >
-        <Fork theme="light" class="text-base-100" />
-        <span class="ml-2 text-base-100">{forkCount}</span>
+        <Fork theme="light" class="text-fork" />
+        <span class="ml-2 text-fork">{forkCount}</span>
       </Button>
     </star-and-fork>
   );

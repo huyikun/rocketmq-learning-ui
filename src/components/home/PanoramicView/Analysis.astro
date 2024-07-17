@@ -1,8 +1,9 @@
 ---
-import ProductCard from "@components/home/PanoramicView/ProductCard.astro";
-import ServiceCard from "@components/home/PanoramicView/ServiceCard.astro";
+// import ProductCard from "@components/home/PanoramicView/ProductCard.astro";
+import { ServiceCard } from "@/components/home/PanoramicView/ServiceCard";
+import { ProductCard } from "@/components/home/PanoramicView/ProductCard";
 
-const { data, title, type = "one" } = Astro.props;
+const { data, title, type = "one", hoverable = false } = Astro.props;
 ---
 
 <div class="ana-box">
@@ -11,13 +12,23 @@ const { data, title, type = "one" } = Astro.props;
     type === "two" ? (
       <div class="service-box">
         {data.map((it) => (
-          <ServiceCard item={it} />
+          <ServiceCard
+            client:load
+            item={it}
+            direction="bottom"
+            hoverable={hoverable}
+          />
         ))}
       </div>
     ) : (
       <div>
         {data.map((it) => (
-          <ProductCard item={it} />
+          <ProductCard
+            client:load
+            item={it}
+            direction="top"
+            hoverable={hoverable}
+          />
         ))}
       </div>
     )

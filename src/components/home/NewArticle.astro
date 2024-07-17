@@ -43,27 +43,27 @@ const sortedPosts4 = data4.sort(
 );
 
 
-const data5 = await getCollection(
-  "blog",
-  (item) => item.data.tags.includes("ai")
-);
-const sortedPosts5 = data5.sort(
-  (a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf()
-);
+// const data5 = await getCollection(
+//   "blog",
+//   (item) => item.data.tags.includes("ai")
+// );
+// const sortedPosts5 = data5.sort(
+//   (a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf()
+// );
 ---
 
 <div>
   <div class="article-header">
-    <h2 class="title text-title">
+    <h2 class="title text-model">
       {t("home.new.article")}
     </h2>
     <ul class="home-ul">
       <li data-article-id="article1" class="home-li" id="first-article">
         <BlogButton text={t("home.articles.all")} />
       </li>
-      <li data-article-id="article5" class="home-li">
+      <!-- <li data-article-id="article5" class="home-li">
         <BlogButton text={'AI 原生应用'} />
-      </li>
+      </li> -->
       <li data-article-id="article2" class="home-li">
         <BlogButton text={t("home.article.practice")} />
       </li>
@@ -94,15 +94,15 @@ const sortedPosts5 = data5.sort(
       <ArticleContainer pageList={sortedPosts4 as Post[]} tag="dynamic" source="home"/>
     </div>
 
-    <div id="article5" class="article" style="display: none;">
+    <!-- <div id="article5" class="article" style="display: none;">
       <ArticleContainer pageList={sortedPosts5 as Post[]} tag="ai" source="home"/>
-    </div>
+    </div> -->
 
     <Button
       size="large"
       href={"/learning/"}
       variant="card"
-      class="rounded-2xl text-base w-full font-normal border-none bg-card hover:bg-secondary"
+      class="rounded-2xl text-header w-full font-normal border-none bg-footer hover:bg-card"
     >
       {t("home.see.all.articles")}
     </Button>

@@ -97,7 +97,7 @@ export default {
 									backgroundColor: theme('colors.secondary')
 								},
 								'&:nth-child(even)': {
-									backgroundColor: '#fff',
+									backgroundColor: '#161312',
 								},
 							}
 						}

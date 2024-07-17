@@ -18,39 +18,37 @@ export type Props = {
     title: string;
     content: string;
     href: string;
+    target: string;
   };
 };
 
 const { itemData } = Astro.props;
-const { date, title, content, href } = itemData;
+const { date, title, content, href, target } = itemData;
 ---
 
 <div
-  class={"card h-[8.75rem] pt-[16px] pb-[16px] pl-[24px] pr-[24px] shadow-none w-full"}
+  class={"card bg-card h-[8.75rem] pt-[16px] pb-[16px] pl-[24px] pr-[24px] shadow-none w-full"}
 >
-  <a href={href} class="flex flex-col w-[100%]">
+  <a href={href} target={target} class="flex flex-col w-[100%]">
     <div class="flex justify-between">
       <div class="flex items-center">
         <span class="text-lg font-medium text-primary">
-          {formatDate(date)}
+          {date}
         </span>
-        <div class="text-xs font-medium text-title ml-[8px]">
-          {t("home.new.ann.activity")}
-        </div>
-        <div class="w-[1.3rem] h-[1.2rem]">
-          <img class="w-[100%] h-[100%]" src="/img/home/hot.png" />
-        </div>
+        <div class="text-xs font-medium text-title ml-[8px]">【活动】🔥</div>
       </div>
       <div class="w-[0.5rem] h-[0.5rem]">
-        <img src="/img/home/arrow.svg" />
+        <img src="/img/home/arrow.png" />
       </div>
     </div>
-    <h3 class="card-title leading-[1.5rem] line-clamp-2 mt-[16px] truncate">
+    <h3
+      class="card-title text-model leading-[1.5rem] line-clamp-2 mt-[16px] truncate"
+    >
       {title}
     </h3>
 
     <div class="text-xs leading-[1.125rem] mt-[8px] simple-card-desc flex-1">
-      <div class="multiline-text">
+      <div class="multiline-text text-title">
         {content}
       </div>
     </div>
@@ -61,7 +59,6 @@ const { date, title, content, href } = itemData;
   .card {
     margin-bottom: 16px;
     flex-direction: row;
-    background: #f5f5f5;
     transition:
       transform 0.2s,
       box-shadow 0.2s;
@@ -72,7 +69,6 @@ const { date, title, content, href } = itemData;
     h3 {
       font-size: 1.125rem;
       font-weight: 500;
-      color: #121316;
     }
     p {
       color: #9295a5;
@@ -97,7 +93,6 @@ const { date, title, content, href } = itemData;
     overflow: hidden;
 
     .multiline-text {
-      color: #121316;
       display: -webkit-box;
       -webkit-box-orient: vertical;
       -webkit-line-clamp: 2; /* 控制显示的行数 */

@@ -28,7 +28,7 @@ let currentScreen = 0;
             <img src={item.img} />
           </div>
           <div class="item-content-bottom">
-            <div class="content-bottom-title">{item.title}</div>
+            <div class="content-bottom-title text-title">{item.title}</div>
           </div>
         </a>
       ))
@@ -57,7 +57,7 @@ let currentScreen = 0;
           <img src=${item.img} />
         </div>
         <div class="item-content-bottom">
-          <div class="content-bottom-title">${item.title}</div>
+          <div class="content-bottom-title text-title">${item.title}</div>
         </div>
       </a>`;
           content.innerHTML += html;
@@ -90,7 +90,6 @@ let currentScreen = 0;
     height: 16.375rem;
     border-radius: 16px;
     opacity: 1;
-    background: rgba(234, 234, 234, 0.39);
     padding: 0 24px 32px 24px;
 
     .hotTutorial-header {

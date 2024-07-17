@@ -35,7 +35,7 @@ let items = [];
 if (pageList && pageList.length) {
   if (source == "home") {
     if (tag) {
-      items = pageList.filter((it) => it?.data?.tags.includes("home"));
+      items = pageList.filter((it) => it?.data?.tags.includes("home")).slice(0, 3);
     } else {
       items = pageList.slice(0, 3);
     }

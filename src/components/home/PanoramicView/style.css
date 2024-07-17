@@ -1,0 +1,32 @@
+.service-item {
+  height: 5.125rem;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  flex: 0 0 calc(50% - 1rem);
+  background: #1e1f24;
+  border: 1px solid rgba(224, 233, 251, 0.1);
+}
+
+.service-item:nth-child(2n) {
+  margin-right: 0;
+}
+
+.service-hover {
+  background: linear-gradient(225deg, #FF6A00 0%, #2F5AFF 100%), linear-gradient(225deg, #232CD0 0%, #3E60E2 100%);
+  border: none;
+}
+
+.ana-product {
+  width: 100%;
+  margin-right: 1rem;
+  background: #1e1d1d;
+  margin-bottom: 1rem;
+}
+
+.ana-product .icon-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #121316;
+  border-radius: 4px;
+}
