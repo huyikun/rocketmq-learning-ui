@@ -5,35 +5,31 @@ import { HOT_TUTORIALDATA } from "@/constant";
 import SliderCards from "./SliderCards/index.astro";
 const t = useTranslations(Astro);
 const ifzh = isChinese(Astro);
-const itemsPerPage = 2; // 每屏显示的元素个数
+const itemsPerPage = 4; // 每屏显示的元素个数
 let currentScreen = 0;
 ---
 
-<SliderCards
-  className={"hotCourse-box"}
-  prevId={"prevcourse"}
-  nextId={"nextcourse"}
-  title={t("home.hot.tutorial.title")}
->
+<div class="hotCourse-box bg-card">
+  <h2 class="follow-header text-title">热门教程</h2>
   <div class="hotCourse-content" id="hotCourse-content">
     {
       HOT_TUTORIALDATA.slice(
         currentScreen * itemsPerPage,
         (currentScreen + 1) * itemsPerPage
       ).map((item) => (
-        <div class="item-content">
-          <div class="item-content-left">
-            <img src={item.img} />
-          </div>
-          <div class="item-content-right">
+        <a class="item-content" target={item.target} href={item.href}>
+          {/* <div class="item-content-left"> */}
+          <img src={item.img} />
+          {/* </div> */}
+          {/* <div class="item-content-right">
             <div class="right-title text-model text-xs">{item.title}</div>
-            <a class="arrow" target={item.target} href={item.href}/>
-          </div>
-        </div>
+            <a class="arrow" target={item.target} href={item.href} />
+          </div> */}
+        </a>
       ))
     }
   </div>
-</SliderCards>
+</div>
 
 <script>
   import { HOT_TUTORIALDATA } from "@/constant";
@@ -105,21 +101,22 @@ let currentScreen = 0;
     .hotCourse-content {
       display: flex;
       height: calc(100% - 5rem);
-      margin-right: -1.5rem; /* 补偿右外边距的合并 */
+      margin-right: -1rem; /* 补偿右外边距的合并 */
 
       .item-content {
         display: flex;
-        flex: 0 0 calc(50% - 1.5rem); /* 每个元素占25%的宽度并减去1rem的右外边距 */
-        margin-right: 1.5rem;
+        flex: 0 0 calc(25% - 1rem); /* 每个元素占25%的宽度并减去1rem的右外边距 */
+        margin-right: 1rem;
+        height: 8.75rem;
+        img {
+          border-radius: 8px;
+          width: 100%;
+          height: 100%;
+        }
 
         .item-content-left {
           width: 45%;
           height: 8.75rem;
-          img {
-            border-radius: 8px;
-            width: 100%;
-            height: 100%;
-          }
         }
 
         .item-content-right {
@@ -162,7 +159,7 @@ let currentScreen = 0;
           border-top: 1px solid #a3a6b3;
           border-right: 1px solid #a3a6b3;
         }
-/* 
+        /* 
         .arrow:hover::before {
           background-color: #2b3b3a;
         }
@@ -171,12 +168,23 @@ let currentScreen = 0;
         } */
       }
       /* 最后一个元素去除右外边距 */
-      .item-content:nth-child(2n) {
+      .item-content:nth-child(4n) {
         margin-right: 0;
       }
     }
   }
 
+  @media (min-width: 50rem) and (max-width: 86rem) {
+    .hotCourse-box {
+      width: 100%;
+      margin-right: 0;
+      .hotCourse-content {
+        .item-content {
+          height: 17rem;
+        }
+      }
+    }
+  }
   @media (max-width: 50rem) {
     .hotCourse-box {
       width: 100%;
@@ -184,10 +192,11 @@ let currentScreen = 0;
       .hotCourse-content {
         flex-wrap: wrap;
         .item-content {
-          flex: 0 0 calc(100% - 1.5rem); /* 每个元素占100%的宽度并减去1rem的右外边距 */
+          flex: 0 0 calc(50% - 1rem); /* 每个元素占100%的宽度并减去1rem的右外边距 */
+          height: 12rem;
         }
 
-        .item-content:nth-child(2n + 1) {
+        .item-content:nth-child(2n) {
           margin-right: 0;
           margin-bottom: 10px;
         }

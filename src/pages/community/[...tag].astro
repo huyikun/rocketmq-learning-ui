@@ -77,7 +77,7 @@ const cardData = COMMUNITY_DATA.filter((it) => it.tag === tag);
         }
 
         .active-des {
-          height: 9.625rem;
+          height: 8.75rem;
         }
 
         p {
@@ -96,7 +96,7 @@ const cardData = COMMUNITY_DATA.filter((it) => it.tag === tag);
       }
 
       /* 最后一个元素去除右外边距 */
-      .item-content:nth-child(4n) {
+      .item-content:nth-of-type(4n)  {
         margin-right: 0;
       }
     }
@@ -126,7 +126,7 @@ const cardData = COMMUNITY_DATA.filter((it) => it.tag === tag);
           flex: 0 0 calc(50% - 1rem); /* 每个元素占50%的宽度并减去1rem的右外边距 */
 
           /* 最后一个元素去除右外边距 */
-          .item-content:nth-child(2n) {
+          .item-content:nth-of-type(4n) {
             margin-right: 0;
           }
         }

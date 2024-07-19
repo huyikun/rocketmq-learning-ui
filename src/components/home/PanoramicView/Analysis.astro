@@ -15,7 +15,7 @@ const { data, title, type = "one", hoverable = false } = Astro.props;
           <ServiceCard
             client:load
             item={it}
-            direction="bottom"
+            direction="rb"
             hoverable={hoverable}
           />
         ))}
@@ -26,7 +26,7 @@ const { data, title, type = "one", hoverable = false } = Astro.props;
           <ProductCard
             client:load
             item={it}
-            direction="top"
+            direction={type === "events" ? "lb" : "top"}
             hoverable={hoverable}
           />
         ))}

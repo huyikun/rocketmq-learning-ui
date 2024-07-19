@@ -3,29 +3,36 @@ import Event from "@components/home/PanoramicView/Event.astro";
 import Analysis from "@components/home/PanoramicView/Analysis.astro";
 
 import {
-  ANALYSIS_PRODUCTS,
+  EVENT_PRODUCTS,
   NOTICE_PRODUCTS,
   COMPUTE_PRODUCTS,
   SERVICE_PRODUCTS,
   INTERNET_PRODUCTS,
   SAVE_PRODUCTS,
-  ANALYSIS_PRODUCTS1
+  ANALYSIS_PRODUCTS,
 } from "@/constant";
 ---
 
 <div class="flex items-center flex-col pt-[2.25rem] bg-base-100">
   <div class="text-center text-no-active text-xs">ABOUT US</div>
-  <div class="text-center text-[2.75rem] font-medium mt-[1.5rem] mb-[5rem] text-title">
+  <div
+    class="text-center text-[2.75rem] font-medium mt-[1.5rem] mb-[5rem] text-title"
+  >
     Apache RocketMQ事件驱动架构全景图
   </div>
-  <div class="max-w-[100%] overflow-x-auto overflow-y-hidden">
+  <div class="max-w-[100%] overflow-x-auto overflow-y-hidden all-pic">
     <div class="view-box flex justify-center text-[#DDDEE4]">
       <div class="w-[16%] mr-[-2px]">
         <div class="mb-[2.75rem]">
-          <Analysis data={SERVICE_PRODUCTS} title="微服务" type="two" hoverable={true} />
+          <Analysis
+            data={SERVICE_PRODUCTS}
+            title="微服务"
+            type="two"
+            hoverable={true}
+          />
         </div>
         <div>
-          <Analysis data={INTERNET_PRODUCTS} title="物联网" type="two"/>
+          <Analysis data={INTERNET_PRODUCTS} title="物联网" type="two" />
         </div>
       </div>
       <div class="left-lines">
@@ -51,13 +58,13 @@ import {
         </div>
         <div class="cb-box">
           <div class="cb-item">
-            <Analysis data={COMPUTE_PRODUCTS} title="计算" hoverable={true}/>
+            <Analysis data={COMPUTE_PRODUCTS} title="计算" hoverable={true} />
           </div>
           <div class="cb-item">
-            <Analysis data={SAVE_PRODUCTS} title="存储" hoverable={true}/>
+            <Analysis data={SAVE_PRODUCTS} title="存储" hoverable={true} />
           </div>
           <div class="cb-item">
-            <Analysis data={ANALYSIS_PRODUCTS1} title="分析" hoverable={true}/>
+            <Analysis data={ANALYSIS_PRODUCTS} title="分析" hoverable={true} />
           </div>
         </div>
       </div>
@@ -71,13 +78,23 @@ import {
       </div>
       <div class="w-[16%] ml-[-2px]">
         <div class="mb-[1.5rem]">
-          <Analysis data={ANALYSIS_PRODUCTS} title="事件" />
+          <Analysis
+            data={EVENT_PRODUCTS}
+            hoverable={true}
+            title="事件"
+            type="events"
+          />
         </div>
         <div>
           <Analysis data={NOTICE_PRODUCTS} title="通知" />
         </div>
       </div>
     </div>
+  </div>
+  <div class="preview-pic hidden">
+    <img
+      src="https://img.alicdn.com/imgextra/i1/O1CN016pWFdt1kDIHbG7Srl_!!6000000004649-0-tps-2106-1252.jpg"
+    />
   </div>
 </div>
 
@@ -104,7 +121,7 @@ import {
     }
   }
 
-  @media (max-width: 86rem) {
+  @media (min-width: 50rem) and (max-width: 86rem) {
     .view-box {
       width: 70rem;
       .view-center {
@@ -135,6 +152,20 @@ import {
           flex-shrink: 1;
           margin-right: 0;
         }
+      }
+    }
+  }
+
+  @media (max-width: 50rem) {
+    .all-pic {
+      display: none;
+    }
+
+    .preview-pic {
+      display: block;
+      width: 100%;
+      img {
+        width: 100%;
       }
     }
   }

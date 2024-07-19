@@ -58,23 +58,24 @@ export const ProductCard = ({ item, direction = 'top', hoverable = false, classN
                 ? "w-[50%] h-[50%]"
                 : item.product === "容器"
                   ? "w-[50%] h-[57%]"
-                  : item.product === "监控"
+                  : item.product === "云监控"
                     ? "w-[70%] h-[30%]"
-                    : "w-[60%] h-[60%]"
+                    : "w-[62%] h-[62%]"
           )}
         />
       </div>
       <div class="flex-1 text-center text-sm">
         {item.product}
       </div>
-      {hoverable && (
+      {hoverable && item.product !== "SaaS事件" && (
         <div
           className="absolute z-10 shadow-md -mt-20 ml-2"
           style={{
             visibility: isHovering ? "visible" : "hidden",
             bottom: direction === 'top' ? '62px' : '',
             top: direction === 'top' ? '' : '141px',
-            left: '-70%',
+            left: direction === 'top' || direction === 'bottom' ? '-70%' : '',
+            right: direction === 'lb' ? "0px" : ""
           }}
           onMouseLeave={() => setHovering(false)}
           ref={popupRef}

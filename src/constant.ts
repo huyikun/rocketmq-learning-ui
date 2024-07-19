@@ -1403,18 +1403,30 @@ export const EVENTS_PRODUCTS = [
 ];
 
 // 事件
-export const ANALYSIS_PRODUCTS = [
+export const EVENT_PRODUCTS = [
   {
     icon: 'https://img.alicdn.com/imgextra/i3/O1CN01yIEIGc1RszdloGvnx_!!6000000002168-2-tps-64-64.png',
-    product: "ECS",
+    product: "云服务器",
+    hoverContent: {
+      des: "IaaS 级别云计算服务，实现计算资源的即开即用和弹性伸缩。",
+      clound:"https://www.aliyun.com/product/ecs"
+    }
   },
   {
-    icon: 'https://img.alicdn.com/imgextra/i3/O1CN01yDGka71JitzIEjPSG_!!6000000001063-2-tps-64-64.png',
-    product: "OSS",
+    icon: 'https://img.alicdn.com/imgextra/i1/O1CN01HK7hqz1OZoCjM3xJd_!!6000000001720-2-tps-55-42.png',
+    product: "对象存储",
+    hoverContent: {
+      des: "以非结构化格式存储和管理数据，如照片、视频、电子邮件、网页、传感器数据和音频文件等。",
+      clound:"https://www.aliyun.com/product/oss"
+    }
   },
   {
     icon: 'https://img.alicdn.com/imgextra/i1/O1CN0162u3gj1QCZL8SGJGq_!!6000000001940-2-tps-59-29.png',
-    product: "监控",
+    product: "云监控",
+    hoverContent: {
+      des: "针对云资源和互联网应用进行监控的服务。",
+      clound:"https://www.aliyun.com/product/jiankong"
+    }
   },
   {
     icon: 'https://img.alicdn.com/imgextra/i2/O1CN01MMRakS1FERBLz3lSD_!!6000000000455-2-tps-64-64.png',
@@ -1499,7 +1511,7 @@ export const SAVE_PRODUCTS = [
 ];
 
 // 分析
-export const ANALYSIS_PRODUCTS1 = [
+export const ANALYSIS_PRODUCTS = [
   {
     icon: 'https://img.alicdn.com/imgextra/i3/O1CN01SrkPML1EWT9tB1UWA_!!6000000000359-2-tps-64-64.png',
     product: "Flink",

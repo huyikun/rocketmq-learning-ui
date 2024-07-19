@@ -20,12 +20,8 @@ function formatDate(dateString) {
 }
 ---
 
-<SliderCards
-  className={"active-box bg-active-card"}
-  prevId={"prevactive"}
-  nextId={"nextactive"}
-  title={t("home.exciting.active")}
->
+<div class="active-box bg-active-card">
+  <h2 class="follow-header text-title">精彩活动</h2>
   <div class="active-content" id="active-content">
     {
       ACTIVE_DATA.slice(
@@ -34,7 +30,7 @@ function formatDate(dateString) {
       ).map((item) => <ActiveCard active={item} source="home" />)
     }
   </div>
-</SliderCards>
+</div>
 
 <script>
   import { ACTIVE_DATA } from "@/constant";
@@ -129,7 +125,7 @@ function formatDate(dateString) {
         }
 
         .active-des {
-          height: 9.25rem;
+          height: 8.4rem;
         }
 
         p {
@@ -146,7 +142,7 @@ function formatDate(dateString) {
           }
         }
       }
-      .item-content:nth-child(3n) {
+      .item-content:nth-of-type(3n) {
         margin-right: 0;
       }
     }

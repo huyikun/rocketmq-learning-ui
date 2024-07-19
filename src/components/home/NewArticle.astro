@@ -4,13 +4,12 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 import { Button } from "@serverless-cd/goat-ui";
 import { getCollection } from "astro:content";
 import Pagination from "@components/common/Paginate/Pagination.astro";
-import {  } from "@/constant";
+import {} from "@/constant";
 import { useTranslations } from "@i18n/util";
 import type { Post } from "@/types";
 import BlogButton from "@components/home/ArticleByTag/BlogButton.astro";
 import ArticleContainer from "@components/home/ArticleByTag/ArticleContainer.astro";
 const t = useTranslations(Astro);
-
 
 const data1 = await getCollection("blog");
 
@@ -18,30 +17,26 @@ const sortedPosts1 = data1.sort(
   (a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf()
 );
 
-const data2 = await getCollection(
-  "blog",
-  (item) => item.data.tags.includes("practice")
+const data2 = await getCollection("blog", (item) =>
+  item.data.tags.includes("practice")
 );
 const sortedPosts2 = data2.sort(
   (a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf()
 );
 
-const data3 = await getCollection(
-  "blog",
-  (item) => item.data.tags.includes("explore")
+const data3 = await getCollection("blog", (item) =>
+  item.data.tags.includes("explore")
 );
 const sortedPosts3 = data3.sort(
   (a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf()
 );
 
-const data4 = await getCollection(
-  "blog",
-  (item) => item.data.tags.includes("dynamic")
+const data4 = await getCollection("blog", (item) =>
+  item.data.tags.includes("dynamic")
 );
 const sortedPosts4 = data4.sort(
   (a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf()
 );
-
 
 // const data5 = await getCollection(
 //   "blog",
@@ -83,15 +78,27 @@ const sortedPosts4 = data4.sort(
     </div>
 
     <div id="article2" class="article" style="display: none;">
-      <ArticleContainer pageList={sortedPosts2 as Post[]} tag="practice" source="home"/>
+      <ArticleContainer
+        pageList={sortedPosts2 as Post[]}
+        tag="practice"
+        source="home"
+      />
     </div>
 
     <div id="article3" class="article" style="display: none;">
-      <ArticleContainer pageList={sortedPosts3 as Post[]} tag="explore" source="home"/>
+      <ArticleContainer
+        pageList={sortedPosts3 as Post[]}
+        tag="explore"
+        source="home"
+      />
     </div>
 
     <div id="article4" class="article" style="display: none;">
-      <ArticleContainer pageList={sortedPosts4 as Post[]} tag="dynamic" source="home"/>
+      <ArticleContainer
+        pageList={sortedPosts4 as Post[]}
+        tag="dynamic"
+        source="home"
+      />
     </div>
 
     <!-- <div id="article5" class="article" style="display: none;">
@@ -126,7 +133,6 @@ const sortedPosts4 = data4.sort(
 
         // 显示选中的文章内容
         const selectedArticle = document.getElementById(articleId);
-        console.log("selectedArticle", selectedArticle);
         selectedArticle.style.display = "block";
       }
 
@@ -151,6 +157,7 @@ const sortedPosts4 = data4.sort(
 <style is:global>
   .home-article-box {
     .article-header {
+      white-space: nowrap;
       height: 5rem;
       display: flex;
       justify-content: space-between;
@@ -175,8 +182,21 @@ const sortedPosts4 = data4.sort(
   }
 
   @media (max-width: 50rem) {
-    .home-article-box .article-header .home-ul {
+    /* .home-article-box .article-header .home-ul {
       flex-wrap: wrap;
+    } */
+
+    /* 隐藏滚动条，但仍然允许滚动 */
+    .home-article-box .article-header .home-ul {
+      overflow-x: auto;
+      -ms-overflow-style: none; /* for IE and Edge */
+      scrollbar-width: none; /* for Firefox */
+      overflow: -moz-scrollbars-none; /* for Firefox */
+    }
+
+    /* 针对WebKit浏览器（如Chrome和Safari），需要使用伪元素来隐藏滚动条 */
+    .home-article-box .article-header .home-ul::-webkit-scrollbar {
+      display: none;
     }
   }
 </style>

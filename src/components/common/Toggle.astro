@@ -147,9 +147,9 @@ customElements.define("toggle-component", Toggle);
     --toggle-trigger-hp: 1rem;
     --toggle-trigger-vp: 0.5rem;
     /* 默认颜色 */
-    --toggle-trigger-tc: theme("colors.title");
+    --toggle-trigger-tc: theme("colors.content");
     /* 默认激活颜色 */
-    --toggle-trigger-atc: theme("colors.info");
+    --toggle-trigger-atc: theme("colors.model");
   }
 
     .toggle-component {
@@ -169,7 +169,7 @@ customElements.define("toggle-component", Toggle);
 
     .toggle-text-active {
       font-weight: 500;
-      color: var(--toggle-trigger-atc) !important;
+      color: theme("colors.primary") !important;
     }
 
     .toggle-component:hover .toggle-text {
