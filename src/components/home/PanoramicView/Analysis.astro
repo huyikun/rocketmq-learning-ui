@@ -7,7 +7,7 @@ const { data, title, type = "one", hoverable = false } = Astro.props;
 ---
 
 <div class="ana-box">
-  <div class="h-[3.5rem] leading-[3.5rem] text-left text-lg">{title}</div>
+  <div class="h-[2.625rem] leading-[2.625rem] text-left text-sm">{title}</div>
   {
     type === "two" ? (
       <div class="service-box">
@@ -37,17 +37,17 @@ const { data, title, type = "one", hoverable = false } = Astro.props;
 
 <style is:global>
   .ana-box {
-    padding: 0 1rem;
+    padding: 0 0.75rem;
     text-align: center;
     opacity: 1;
-    border: 2px solid #4c505d;
-    border-radius: 12px;
+    border: 0.8px solid #4c505d;
+    border-radius: 9px;
     background: #161312;
   }
 
   .service-box {
     display: flex;
     flex-wrap: wrap;
-    margin-right: -1rem;
+    margin-right: -0.75rem;
   }
 </style>

@@ -36,23 +36,30 @@ export type Props = {
   tag?: string;
 };
 
-const { post, source, class: className = "", useAnchor = false, tag = "" } = Astro.props;
-
+const {
+  post,
+  source,
+  class: className = "",
+  useAnchor = false,
+  tag = "",
+} = Astro.props;
 ---
 
-<div class={twMerge("card bg-card p-[24px] shadow-none w-full flex ", className)}>
-  {
+<a
+  href={tag
+    ? `/learning/${tag}/${post.slug}/?source=${source}`
+    : `/learning/${post.slug}/?source=${source}`}
+  class={twMerge("card bg-card p-[24px] shadow-none w-full flex ", className)}
+>
+  <!-- {
     useAnchor ? (
       <a id={post.slug} class={"absolute z-[-100] top-[-4rem]"} />
     ) : null
-  }
+  } -->
   <div class="w-[31.27%] h-[8.625rem] rounded-lg overflow-hidden left-content">
     <img src={post.data?.img} />
   </div>
-  <a
-    href={tag ? `/learning/${tag}/${post.slug}/?source=${source}` : `/learning/${post.slug}/?source=${source}`}
-    class="w-[68.73%] pl-[24px] right-content"
-  >
+  <div class="w-[68.73%] pl-[24px] right-content">
     <p class="text-xs font-normal">
       {formatDate(post.data.date)}
     </p>
@@ -85,8 +92,8 @@ const { post, source, class: className = "", useAnchor = false, tag = "" } = Ast
         </div>
       )
     }
-  </a>
-</div>
+  </div>
+</a>
 
 <style is:global>
   .learning-box {

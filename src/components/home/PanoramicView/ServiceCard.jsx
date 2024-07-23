@@ -51,16 +51,16 @@ export const ServiceCard = ({ item, direction = 'top', hoverable = false }) => {
       onTouchStart={onMouseEnter}
       onTouchEnd={onMouseLeave}
     >
-      <div className="w-[2.75rem] h-[2.5rem]">
+      <div className="w-[1.75rem] h-[1.5rem]">
         <img
           src={item.icon}
           className={twMerge(
             item.product === "Dubbo"
               ? "w-[58%] h-[80%]"
               : item.product === "Seata"
-                ? "w-[96%] h-[30%] mt-[1rem]"
+                ? "w-[96%] h-[30%] mt-[-1.5rem]"
                 : item.product === "Nacos"
-                  ? "w-[86%] h-[48%] mt-[0.5rem]"
+                  ? "w-[86%] h-[48%] mt-[0.2rem]"
                   : item.product === "Sentinel"
                     ? "w-[83%] h-[85%]"
                     : item.product === "家电"
@@ -71,7 +71,7 @@ export const ServiceCard = ({ item, direction = 'top', hoverable = false }) => {
           )}
         />
       </div>
-      <div className="h-4 text-center text-[0.625rem]">
+      <div className="h-4 text-center text-[7.5px]">
         {item.product}
       </div>
       {hoverable && (
@@ -80,7 +80,7 @@ export const ServiceCard = ({ item, direction = 'top', hoverable = false }) => {
           style={{
             visibility: isHovering ? "visible" : "hidden",
             bottom: direction === 'top' ? '95px' : '',
-            top: direction === 'top' ? '' : '163px',
+            top: direction === 'top' ? '' : '142px',
             left: '-10px'
           }}
           onMouseLeave={() => setHovering(false)}

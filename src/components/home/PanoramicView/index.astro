@@ -16,14 +16,14 @@ import {
 <div class="flex items-center flex-col pt-[2.25rem] bg-base-100">
   <div class="text-center text-no-active text-xs">ABOUT US</div>
   <div
-    class="text-center text-[2.75rem] font-medium mt-[1.5rem] mb-[5rem] text-title"
+    class="text-center text-[2.75rem] font-medium mt-[1.5rem] mb-[4.5rem] text-title"
   >
     Apache RocketMQ事件驱动架构全景图
   </div>
   <div class="max-w-[100%] overflow-x-auto overflow-y-hidden all-pic">
     <div class="view-box flex justify-center text-[#DDDEE4]">
-      <div class="w-[16%] mr-[-2px]">
-        <div class="mb-[2.75rem]">
+      <div class="w-[11.7%]">
+        <div class="mb-[2.06rem]">
           <Analysis
             data={SERVICE_PRODUCTS}
             title="微服务"
@@ -43,9 +43,9 @@ import {
           <img src="/img/home/blline.svg" class="w-line" />
         </div>
       </div>
-      <div class="w-[50%] view-center">
+      <div class="w-[40%] view-center">
         <Event />
-        <div class="flex justify-center translate-y-[-1px]">
+        <div class="flex justify-center">
           <div>
             <img src="/img/home/clline.svg" class="center-l-line" />
           </div>
@@ -68,7 +68,7 @@ import {
           </div>
         </div>
       </div>
-      <div class="right-lines">
+      <div class="right-lines mr-[2px]">
         <div class="mb-[0.6rem]">
           <img src="/img/home/trline.svg" class="w-line" />
         </div>
@@ -76,7 +76,7 @@ import {
           <img src="/img/home/brline.svg" class="w-line" />
         </div>
       </div>
-      <div class="w-[16%] ml-[-2px]">
+      <div class="w-[11.7%] ml-[-2px]">
         <div class="mb-[1.5rem]">
           <Analysis
             data={EVENT_PRODUCTS}
@@ -102,10 +102,10 @@ import {
   .view-box {
     width: 85.125rem;
     .left-lines {
-      transform: translate(1px, 23%);
+      transform: translate(0px, 23%);
     }
     .right-lines {
-      transform: translate(-1px, 23%);
+      transform: translate(0px, 23%);
     }
     .cb-box {
       display: flex;
@@ -121,7 +121,7 @@ import {
     }
   }
 
-  @media (min-width: 50rem) and (max-width: 86rem) {
+  /* @media (min-width: 50rem) and (max-width: 86rem) {
     .view-box {
       width: 70rem;
       .view-center {
@@ -154,7 +154,7 @@ import {
         }
       }
     }
-  }
+  } */
 
   @media (max-width: 50rem) {
     .all-pic {

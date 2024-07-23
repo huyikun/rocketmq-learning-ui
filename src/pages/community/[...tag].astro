@@ -7,7 +7,7 @@ import {
 } from "@/constant";
 import BlogTop from "@components/markdownSet/BlogTop.astro";
 import LearningData from "@components/learning/LearningData.astro";
-import CommunityBanner from "@components/community/CommunityBanner.astro";
+// import CommunityBanner from "@components/community/CommunityBanner.astro";
 import SimpleContainer from "@components/markdownSet/SimpleContainer.astro";
 import ArticleContainer from "@components/home/ArticleByTag/ArticleContainer.astro";
 import ActiveCard from "@components/home/ActiveCard/index.astro";
@@ -34,7 +34,7 @@ const cardData = COMMUNITY_DATA.filter((it) => it.tag === tag);
 <BaseLayout title={t("home.title")}>
   <div class="p-[2.5rem] flex justify-center bg-base-100">
     <div class="community-box">
-      <CommunityBanner data={COMMUNITY_BANNER_DATA} />
+      <!-- <CommunityBanner data={COMMUNITY_BANNER_DATA} /> -->
       <BlogTop
         type="community-sub"
         source="community"

@@ -602,6 +602,29 @@ export const SOLUTIONS_CARD_LIST = [
   },
 ];
 
+// 基础学习资料
+export const BASE_LEARNDATA = [
+  {
+    img: "https://img.alicdn.com/imgextra/i1/O1CN01Vlprkg1r3rR2EBRc0_!!6000000005576-2-tps-196-280.png",
+    title: "RocketMQ应用场景",
+    href: "",
+    target: "_self"
+  },
+  {
+    img: "https://img.alicdn.com/imgextra/i2/O1CN01tTadKz29AsaUxDMKK_!!6000000008028-2-tps-196-280.png",
+    title: "RocketMQ 原理和架构",
+    href: "",
+    target: "_self"
+  },
+  {
+    img: "https://img.alicdn.com/imgextra/i1/O1CN01vh3kef1ToX111kQat_!!6000000002429-2-tps-196-280.png",
+    title: "RocketMQ快速上手体验",
+    href: "",
+    target: "_self"
+  },
+];
+
+
 // 热门教程
 export const HOT_TUTORIALDATA = [
   {
@@ -1639,6 +1662,15 @@ export const INTERNET_PRODUCTS = [
     product: "手机",
   },
 ];
+
+// 吊顶提示文案
+export const TOPBAR = {
+  "text": "8月2日（周五）开源沙龙首个 AI 原生应用架构专场 | 上海站 ，欢迎报名！",
+  "mobileText": "欢迎报名8月2日上海首个AI原生应用架构开源沙龙！",
+  "link": "https://summit.aliyun.com/cloudnative2024_developer_shanghai?spm=5176.20960838.0.0.7802305eyqMQf8",
+  "target": "_blank",
+  "display": true
+}
 
 
 
