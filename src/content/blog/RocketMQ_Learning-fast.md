@@ -2,9 +2,9 @@
 title: "RocketMQ 快速上手体验"
 description: "介绍 Apache RocketMQ 的快速上手体验教程"
 date: "2024-07-24"
-category: "article"
-keywords: ["RocketMQ_Learning"]
-authors: "heimanba"
+img: "https://img.alicdn.com/imgextra/i2/O1CN01b7uXIi1bmFycwldBc_!!6000000003507-2-tps-498-220.png"
+tags: ["baseLearn"]
+author: "隆基"
 ---
 
 <a name="YKFTd"></a>
