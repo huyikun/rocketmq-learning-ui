@@ -2,9 +2,9 @@
 title: "RocketMQ 应用场景"
 description: "介绍 Apache RocketMQ 的应用场景"
 date: "2024-07-24"
-category: "article"
-keywords: ["RocketMQ_Learning"]
-authors: "heimanba"
+img: "https://img.alicdn.com/imgextra/i2/O1CN01b7uXIi1bmFycwldBc_!!6000000003507-2-tps-498-220.png"
+tags: ["baseLearn"]
+author: "隆基"
 ---
 
 Apache RocketMQ 作为一款分布式消息中间件，具备异步通信的优势，系统拓扑简单、上下游耦合较弱，主要应用于异步解耦，流量削峰填谷等场景。广泛应用于各种大规模分布式系统和微服务架构中，以实现高性能、低延迟的消息传递。<br />对于同步链路，需要实时返回调用结果的场景，建议使用 RPC 调用方案。<br />![](https://intranetproxy.alipay.com/skylark/lark/0/2024/jpeg/311705/1720755408991-2ae23bfe-c995-4b70-9bd1-ece15e26a8e6.jpeg)<br />如上图所示，RocketMQ 中消息的生命周期主要分为“消息生产、消息存储、消息消费”这三部分。<br />生产者生产消息并发送至 RocketMQ 服务端，消息被存储在服务端的主题的队列中，消费者通过订阅主题消费消息。<br />**消息生产**<br />生产者（Producer）：RocketMQ 中用于产生消息的运行实体，一般集成于业务调用链路的上游。生产者是轻量级匿名无身份的。<br />**消息存储**
