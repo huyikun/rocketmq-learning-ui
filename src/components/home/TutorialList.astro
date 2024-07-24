@@ -9,31 +9,27 @@ const itemsPerPage = 3; // 每屏显示的元素个数
 let currentScreen = 0;
 ---
 
-<SliderCards
-  className={"hotTutorial-box"}
-  prevId={"prevtutorial"}
-  nextId={"nexttutorial"}
-  title={t("learning.base.data")}
->
+<div class="hotTutorial-box bg-card">
+  <h2 class="follow-header text-title">基础学习资料</h2>
   <div class="hotTutorial-content" id="hotTutorial-content">
     {
       BASE_LEARNDATA.slice(
         currentScreen * itemsPerPage,
         (currentScreen + 1) * itemsPerPage
       ).map((item) => (
-        <div class="item-content">
-          <div class="item-content-left">
-            <img src="/img/home/tutorial.svg" />
+        <a class="item-content" href={item.href}>
+          <div class="item-content-top">
+            <img src={item.img} />
           </div>
-          <div class="item-content-right">
-            <div class="right-title text-model">{item.title}</div>
+          <div class="item-content-bottom">
+            <div class="content-bottom-title text-title">{item.title}</div>
             {/* <a class="arrow" /> */}
           </div>
-        </div>
+        </a>
       ))
     }
   </div>
-</SliderCards>
+</div>
 
 <script>
   import { BASE_LEARNDATA } from "@/constant";
@@ -51,15 +47,14 @@ let currentScreen = 0;
         );
         content.innerHTML = "";
         newData.forEach((item, idx) => {
-          const html = `<div class="item-content">
-        <div class="item-content-left">
+          const html = `<a class="item-content">
+        <div class="item-content-top">
           <img src='/img/home/tutorial.svg'/>
         </div>
-        <div class="item-content-right">
-          <div class="right-title text-model">${item.title}</div>
-          <a class="arrow"></a>
+        <div class="item-content-bottom">
+          <div class="content-bottom-title text-title">${item.title}</div>
         </div>
-      </div>`;
+      </a>`;
           content.innerHTML += html;
         });
       }
@@ -93,7 +88,7 @@ let currentScreen = 0;
     border-radius: 16px;
     opacity: 1;
     margin-right: 24px;
-    padding: 0 24px 32px 24px;
+    padding: 0 1.5rem 1.5rem 1.5rem;
 
     .hotTutorial-header {
       height: 5rem;
@@ -110,27 +105,24 @@ let currentScreen = 0;
       margin-right: -1.5rem; /* 补偿右外边距的合并 */
 
       .item-content {
-        display: flex;
         flex: 0 0 calc(33.33% - 1.5rem); /* 每个元素占25%的宽度并减去1rem的右外边距 */
         margin-right: 1.5rem;
 
-        .item-content-left {
-          width: 45%;
-          height: 9.375rem;
+        .item-content-top {
+          height: 72%;
           img {
+            border-radius: 8px;
             width: 100%;
             height: 100%;
           }
         }
 
-        .item-content-right {
-          width: 55%;
-          display: flex;
-          flex-direction: column;
-          justify-content: space-between;
-          padding: 8px 0 8px 12px;
-          .right-title {
-            line-height: 1.5rem;
+        .item-content-bottom {
+          text-align: center;
+          padding-top: 12px;
+          .content-bottom-title {
+            font-size: 0.75rem;
+            line-height: 1.125rem;
           }
         }
         .arrow {

@@ -605,21 +605,21 @@ export const SOLUTIONS_CARD_LIST = [
 // 基础学习资料
 export const BASE_LEARNDATA = [
   {
-    img: "https://img.alicdn.com/imgextra/i1/O1CN01Vlprkg1r3rR2EBRc0_!!6000000005576-2-tps-196-280.png",
+    img: "https://img.alicdn.com/imgextra/i3/O1CN01QVMIVL1c2kEeAnvsG_!!6000000003543-2-tps-496-220.png",
     title: "RocketMQ应用场景",
-    href: "",
+    href: "/learning/baseLearn/rocketmq_learning-scene/?source=home",
     target: "_self"
   },
   {
-    img: "https://img.alicdn.com/imgextra/i2/O1CN01tTadKz29AsaUxDMKK_!!6000000008028-2-tps-196-280.png",
+    img: "https://img.alicdn.com/imgextra/i3/O1CN01QVMIVL1c2kEeAnvsG_!!6000000003543-2-tps-496-220.png",
     title: "RocketMQ 原理和架构",
-    href: "",
+    href: "/learning/baseLearn/rocketmq_learning-framework/?source=home",
     target: "_self"
   },
   {
-    img: "https://img.alicdn.com/imgextra/i1/O1CN01vh3kef1ToX111kQat_!!6000000002429-2-tps-196-280.png",
+    img: "https://img.alicdn.com/imgextra/i3/O1CN01QVMIVL1c2kEeAnvsG_!!6000000003543-2-tps-496-220.png",
     title: "RocketMQ快速上手体验",
-    href: "",
+    href: "/learning/baseLearn/rocketmq_learning-fast/?source=home",
     target: "_self"
   },
 ];
@@ -814,16 +814,22 @@ export const ACTIVE_DATA = [
 
 export const LEARNING_DATA = [
   {
-    title: "基于 EventBridge API Destination 构建 SaaS 集成实践方案 ",
-    href: "",
+    img: "https://img.alicdn.com/imgextra/i3/O1CN01QVMIVL1c2kEeAnvsG_!!6000000003543-2-tps-496-220.png",
+    title: "RocketMQ应用场景",
+    href: "/learning/baseLearn/rocketmq_learning-scene/?source=learning",
+    target: "_self"
   },
   {
-    title: "基于 EventBridge API Destination 构建 SaaS 集成实践方案 ",
-    href: "",
+    img: "https://img.alicdn.com/imgextra/i3/O1CN01QVMIVL1c2kEeAnvsG_!!6000000003543-2-tps-496-220.png",
+    title: "RocketMQ 原理和架构",
+    href: "/learning/baseLearn/rocketmq_learning-framework/?source=learning",
+    target: "_self"
   },
   {
-    title: "基于 EventBridge API Destination 构建 SaaS 集成实践方案 ",
-    href: "",
+    img: "https://img.alicdn.com/imgextra/i3/O1CN01QVMIVL1c2kEeAnvsG_!!6000000003543-2-tps-496-220.png",
+    title: "RocketMQ快速上手体验",
+    href: "/learning/baseLearn/rocketmq_learning-fast/?source=learning",
+    target: "_self"
   },
 ]
 
@@ -899,6 +905,12 @@ export const ALL_ARTICLE_TAG = [
     title: "最佳实践",
     href: '/learning/bestPractice/'
   },
+  {
+    type: 'baseLearn',
+    title: "基础学习资料",
+    href: '/learning/baseLearn/'
+  },
+
 ];
 
 // 社区页tag
@@ -920,7 +932,7 @@ export const COMMUNITY_TAG = [
   },
 ];
 
-export const COMMUNITY_BANNER_DATA =   {
+export const COMMUNITY_BANNER_DATA = {
   tag: 'meetup',
   id: 'm1',
   time: "2021年8月",
@@ -1004,7 +1016,7 @@ export const COMMUNITY_DATA = [
         position:
           "就职于国信证券信息技术总部，目前负责国信技术中台的建设工作，目前专注于微服务架构、Serverless 技术",
       },
-    ],    
+    ],
     des: "RocketMQ x EventMesh Open Day 线上直播（五）",
     href: "/community/detail/m4/",
     source: "https://cloud.video.taobao.com/play/u/null/p/1/e/6/t/1/d/ud/355042453895.mp4",
@@ -1262,7 +1274,7 @@ export const COMMUNITY_DATA = [
     source: "https://vod-yq-aliyun.taobao.com/vod-7651a3/cdcd9c9ce45b44c4998b6c356b4c63e5/a7670d86c206609a62aa262bcde4746b-hd.mp4",
     img: "https://img.alicdn.com/imgextra/i1/O1CN01x19XWS1VhmGgUwy2S_!!6000000002685-0-tps-1920-1080.jpg"
   },
-    {
+  {
     tag: 'summit',
     id: 's6',
     time: "2022年7月22日",
@@ -1371,7 +1383,7 @@ export const EVENTS_PRODUCTS = [
     product: "RabbitMQ",
     hoverContent: {
       des: "⼀个更易于构建云原生应用的动态服务发现、配置管理和服务管理平台。",
-      clound:"https://www.aliyun.com/product/amqp"
+      clound: "https://www.aliyun.com/product/amqp"
     }
   },
   {
@@ -1379,7 +1391,7 @@ export const EVENTS_PRODUCTS = [
     product: "Kafka",
     hoverContent: {
       des: "广泛用于日志收集、监控数据聚合、流式数据处理、在线和离线分析等场景的分布式消息队列。",
-      clound:"https://www.aliyun.com/product/kafka"
+      clound: "https://www.aliyun.com/product/kafka"
     }
   },
   {
@@ -1390,7 +1402,7 @@ export const EVENTS_PRODUCTS = [
       github: "https://github.com/apache/rocketmq-eventbridge",
       api: "https://api.github.com/repos/apache/rocketmq-eventbridge",
       openSource: "https://rocketmq.apache.org/",
-      clound:"https://www.aliyun.com/product/aliware/eventbridge"
+      clound: "https://www.aliyun.com/product/aliware/eventbridge"
     }
   },
   {
@@ -1401,7 +1413,7 @@ export const EVENTS_PRODUCTS = [
       github: "https://github.com/apache/rocketmq-mqtt",
       api: "https://api.github.com/repos/apache/rocketmq-mqtt",
       openSource: "https://rocketmq.apache.org/",
-      clound:"https://www.aliyun.com/product/mq4iot"
+      clound: "https://www.aliyun.com/product/mq4iot"
     }
   },
   {
@@ -1412,7 +1424,7 @@ export const EVENTS_PRODUCTS = [
       github: "https://github.com/apache/rocketmq",
       api: "https://api.github.com/repos/apache/rocketmq",
       openSource: "https://rocketmq.apache.org/",
-      clound:"https://www.aliyun.com/product/rocketmq"
+      clound: "https://www.aliyun.com/product/rocketmq"
     }
   },
   {
@@ -1420,7 +1432,7 @@ export const EVENTS_PRODUCTS = [
     product: "MNS",
     hoverContent: {
       des: "MNS 是一款易集成、高并发、可弹性扩展的轻量消息队列服务。",
-      clound:"https://www.aliyun.com/product/mns"
+      clound: "https://www.aliyun.com/product/mns"
     }
   },
 ];
@@ -1432,7 +1444,7 @@ export const EVENT_PRODUCTS = [
     product: "云服务器",
     hoverContent: {
       des: "IaaS 级别云计算服务，实现计算资源的即开即用和弹性伸缩。",
-      clound:"https://www.aliyun.com/product/ecs"
+      clound: "https://www.aliyun.com/product/ecs"
     }
   },
   {
@@ -1440,7 +1452,7 @@ export const EVENT_PRODUCTS = [
     product: "对象存储",
     hoverContent: {
       des: "以非结构化格式存储和管理数据，如照片、视频、电子邮件、网页、传感器数据和音频文件等。",
-      clound:"https://www.aliyun.com/product/oss"
+      clound: "https://www.aliyun.com/product/oss"
     }
   },
   {
@@ -1448,7 +1460,7 @@ export const EVENT_PRODUCTS = [
     product: "云监控",
     hoverContent: {
       des: "针对云资源和互联网应用进行监控的服务。",
-      clound:"https://www.aliyun.com/product/jiankong"
+      clound: "https://www.aliyun.com/product/jiankong"
     }
   },
   {
@@ -1484,7 +1496,7 @@ export const COMPUTE_PRODUCTS = [
     product: "模型服务",
     hoverContent: {
       des: "通过灵活、易用的模型API服务，让AI开发者使用各种模态模型的能力。",
-      clound:"https://www.aliyun.com/product/bailian"
+      clound: "https://www.aliyun.com/product/bailian"
     }
   },
   {
@@ -1492,7 +1504,7 @@ export const COMPUTE_PRODUCTS = [
     product: "函数计算",
     hoverContent: {
       des: "事件驱动的全托管 Serverless 计算服务，只需编写上传代码，即可以弹性、可靠的方式运行代码。",
-      clound:"https://www.aliyun.com/product/fc"
+      clound: "https://www.aliyun.com/product/fc"
     }
   },
   {
@@ -1500,7 +1512,7 @@ export const COMPUTE_PRODUCTS = [
     product: "容器",
     hoverContent: {
       des: "基于容器编排引擎 Kubernetes 对容器化应用进行自动化部署、扩缩和全生命周期管理。",
-      clound:"https://www.aliyun.com/product/kubernetes"
+      clound: "https://www.aliyun.com/product/kubernetes"
     }
   },
 ];
@@ -1512,7 +1524,7 @@ export const SAVE_PRODUCTS = [
     product: "对象存储",
     hoverContent: {
       des: "以非结构化格式存储和管理数据，如照片、视频、电子邮件、网页、传感器数据和音频文件等。",
-      clound:"https://www.aliyun.com/product/oss"
+      clound: "https://www.aliyun.com/product/oss"
     }
   },
   {
@@ -1520,7 +1532,7 @@ export const SAVE_PRODUCTS = [
     product: "数据库",
     hoverContent: {
       des: "采用关系模型来组织数据，以行列形式存储数据，支持对结构化数据的复杂查询，同时保持数据的完整性和一致性。",
-      clound:"https://www.aliyun.com/product/polardb/mysql"
+      clound: "https://www.aliyun.com/product/polardb/mysql"
     }
   },
   {
@@ -1528,7 +1540,7 @@ export const SAVE_PRODUCTS = [
     product: "NoSQL",
     hoverContent: {
       des: "非关系型数据库，采用不同于关系表的格式存储数据，广泛应用于实时 Web 应用和大数据等。",
-      clound:"https://www.aliyun.com/product/redis"
+      clound: "https://www.aliyun.com/product/redis"
     }
   },
 ];
@@ -1540,7 +1552,7 @@ export const ANALYSIS_PRODUCTS = [
     product: "Flink",
     hoverContent: {
       des: "实时分布式的大数据处理引擎，支持数据流和批量数据的统一处理。",
-      clound:"https://www.aliyun.com/product/bigdata/sc"
+      clound: "https://www.aliyun.com/product/bigdata/sc"
     }
   },
   {
@@ -1548,7 +1560,7 @@ export const ANALYSIS_PRODUCTS = [
     product: "Spark",
     hoverContent: {
       des: "大规模数据并行处理引擎，对数据进行协处理、流式处理、交互式分析等。",
-      clound:"https://www.aliyun.com/product/emapreduce"
+      clound: "https://www.aliyun.com/product/emapreduce"
     }
   },
   {
@@ -1556,7 +1568,7 @@ export const ANALYSIS_PRODUCTS = [
     product: "Elastic Search",
     hoverContent: {
       des: "实时分布式的搜索与分析引擎，支持各种类型、规模的数据。",
-      clound:"https://www.aliyun.com/product/bigdata/elasticsearch"
+      clound: "https://www.aliyun.com/product/bigdata/elasticsearch"
     }
   },
 ];
@@ -1572,7 +1584,7 @@ export const SERVICE_PRODUCTS = [
       github: "https://github.com/alibaba/higress",
       api: "https://api.github.com/repos/alibaba/higress",
       openSource: "https://higress.io/",
-      clound:""
+      clound: ""
     }
   },
   {
@@ -1584,7 +1596,7 @@ export const SERVICE_PRODUCTS = [
       github: "https://github.com/apache/dubbo",
       api: "https://api.github.com/repos/apache/dubbo",
       openSource: "https://dubbo.apache.org/",
-      clound:""
+      clound: ""
     }
   },
   {
@@ -1596,7 +1608,7 @@ export const SERVICE_PRODUCTS = [
       github: "https://github.com/alibaba/Sentinel",
       api: "https://api.github.com/repos/alibaba/Sentinel",
       openSource: "https://sentinelguard.io/",
-      clound:"https://start.aliyun.com/"
+      clound: "https://start.aliyun.com/"
     }
   },
   {
@@ -1608,9 +1620,9 @@ export const SERVICE_PRODUCTS = [
       github: "https://github.com/seata/seata",
       api: "https://api.github.com/repos/seata/seata",
       openSource: "https://seata.io/",
-      clound:"https://start.aliyun.com/"
+      clound: "https://start.aliyun.com/"
     }
-  }, 
+  },
   {
     icon: 'https://img.alicdn.com/imgextra/i3/O1CN01gQxTvL1Jqgiaqt6In_!!6000000001080-2-tps-64-64.png',
     product: "Spring Cloud",
@@ -1620,9 +1632,9 @@ export const SERVICE_PRODUCTS = [
       github: "https://github.com/alibaba/spring-cloud-alibaba",
       api: "https://api.github.com/repos/alibaba/spring-cloud-alibaba",
       openSource: "https://sca.aliyun.com/",
-      clound:"https://start.aliyun.com/"
+      clound: "https://start.aliyun.com/"
     }
-  }, 
+  },
   {
     icon: 'https://img.alicdn.com/imgextra/i4/O1CN01Aq4aCt1cvhl6kOT5W_!!6000000003663-2-tps-86-40.png',
     product: "Nacos",
@@ -1632,7 +1644,7 @@ export const SERVICE_PRODUCTS = [
       github: "https://github.com/alibaba/nacos",
       api: "https://api.github.com/repos/alibaba/nacos",
       openSource: "https://nacos.io/",
-      clound:"https://start.aliyun.com/"
+      clound: "https://start.aliyun.com/"
     }
   },
 ];
