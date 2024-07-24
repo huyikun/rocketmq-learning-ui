@@ -9,294 +9,122 @@ const { duration = 5000, useduration = "disabled" } = Astro.props as Props;
 
 <div
   id="carousel-wrapper"
-  class="relative flex flex-col justify-center items-center"
+  class="relative overflow-hidden flex flex-col justify-center items-center"
   data-duration={duration}
   data-useduration={useduration}
 >
-  <div class="w-full overflow-hidden">
-    <div class="carousel-item block bg-[#040303]">
-      <div class="intro-pic bg-[url('https://img.alicdn.com/imgextra/i3/O1CN01mriyna1Hxtj7kffLh_!!6000000000825-2-tps-2880-792.png')]">
+  <div class="w-full flex carousel-container">
+    <div class="carousel-item bg-[#040303]">
+      <div
+        class="intro-pic bg-[url('https://img.alicdn.com/imgextra/i3/O1CN01mriyna1Hxtj7kffLh_!!6000000000825-2-tps-2880-792.png')]"
+      >
         <slot name="prev" />
       </div>
     </div>
-    <div class="carousel-item hidden bg-[#1B1B1B]">
-      <div class="intro-pic bg-[url('https://img.alicdn.com/imgextra/i4/O1CN01WwanIZ28DnUnPBcrp_!!6000000007899-0-tps-2880-792.jpg')]">
+    <div class="carousel-item bg-[#1B1B1B]">
+      <div
+        class="intro-pic bg-[url('https://img.alicdn.com/imgextra/i4/O1CN01WwanIZ28DnUnPBcrp_!!6000000007899-0-tps-2880-792.jpg')]"
+      >
         <slot name="next" />
       </div>
     </div>
   </div>
-
-  <!-- 轮播控制按钮 -->
-  <div class="md:w-[85.125rem] absolute bottom-[20px] md:left-auto left-[20px]">
-    <div class="w-[112px] flex justify-between">
-      <div id="prev" class="cursor-pointer group">
-        <svg
-          class="group-hover:hidden"
-          xmlns="http://www.w3.org/2000/svg"
-          xmlns:xlink="http://www.w3.org/1999/xlink"
-          fill="none"
-          version="1.1"
-          width="48"
-          height="30"
-          viewBox="0 0 48 30"
-          ><g transform="matrix(-1,0,0,1,96,0)"
-            ><g
-              ><rect
-                x="48"
-                y="0"
-                width="48"
-                height="30"
-                rx="15"
-                fill="#2E3038"
-                fill-opacity="1"></rect></g
-            ><g
-              ><g
-                ><rect
-                  x="63"
-                  y="3"
-                  width="24"
-                  height="24"
-                  rx="0"
-                  fill-opacity="0"
-                  stroke-opacity="1"
-                  stroke="#060E07"
-                  fill="none"
-                  stroke-width="0"></rect></g
-              ><g
-                ><path
-                  d="M84,15.75L60,15.75L60,14.25L84,14.25L84,15.75Z"
-                  fill-rule="evenodd"
-                  fill="#A3A6B3"
-                  fill-opacity="1"></path></g
-              ><g
-                ><path
-                  d="M85.06066,15L78.53033,8.46967L77.46967,9.53033L82.93934,15L77.46967,20.4697L78.53033,21.5303L85.06066,15Z"
-                  fill-rule="evenodd"
-                  fill="#A3A6B3"
-                  fill-opacity="1"></path></g
-              ></g
-            ></g
-          ></svg
-        >
-        <svg
-          class="hidden group-hover:block"
-          xmlns="http://www.w3.org/2000/svg"
-          xmlns:xlink="http://www.w3.org/1999/xlink"
-          fill="none"
-          version="1.1"
-          width="48"
-          height="30"
-          viewBox="0 0 48 30"
-          ><g transform="matrix(-1,0,0,1,96,0)"
-            ><g
-              ><rect
-                x="48"
-                y="0"
-                width="48"
-                height="30"
-                rx="15"
-                fill="#2E3038"
-                fill-opacity="1"></rect></g
-            ><g
-              ><g
-                ><rect
-                  x="63"
-                  y="3"
-                  width="24"
-                  height="24"
-                  rx="0"
-                  fill-opacity="0"
-                  stroke-opacity="1"
-                  stroke="#060E07"
-                  fill="none"
-                  stroke-width="0"></rect></g
-              ><g
-                ><path
-                  d="M84,15.75L60,15.75L60,14.25L84,14.25L84,15.75Z"
-                  fill-rule="evenodd"
-                  fill="#A3A6B3"
-                  fill-opacity="1"></path></g
-              ><g
-                ><path
-                  d="M85.06066,15L78.53033,8.46967L77.46967,9.53033L82.93934,15L77.46967,20.4697L78.53033,21.5303L85.06066,15Z"
-                  fill-rule="evenodd"
-                  fill="#A3A6B3"
-                  fill-opacity="1"></path></g
-              ></g
-            ></g
-          ></svg
-        >
-      </div>
-      <div id="next" class="cursor-pointer ml-[16px] group">
-        <svg
-          class="rotate-180 group-hover:hidden"
-          xmlns="http://www.w3.org/2000/svg"
-          xmlns:xlink="http://www.w3.org/1999/xlink"
-          fill="none"
-          version="1.1"
-          width="48"
-          height="30"
-          viewBox="0 0 48 30"
-          ><g transform="matrix(-1,0,0,1,96,0)"
-            ><g
-              ><rect
-                x="48"
-                y="0"
-                width="48"
-                height="30"
-                rx="15"
-                fill="#2E3038"
-                fill-opacity="1"></rect></g
-            ><g
-              ><g
-                ><rect
-                  x="63"
-                  y="3"
-                  width="24"
-                  height="24"
-                  rx="0"
-                  fill-opacity="0"
-                  stroke-opacity="1"
-                  stroke="#060E07"
-                  fill="none"
-                  stroke-width="0"></rect></g
-              ><g
-                ><path
-                  d="M84,15.75L60,15.75L60,14.25L84,14.25L84,15.75Z"
-                  fill-rule="evenodd"
-                  fill="#A3A6B3"
-                  fill-opacity="1"></path></g
-              ><g
-                ><path
-                  d="M85.06066,15L78.53033,8.46967L77.46967,9.53033L82.93934,15L77.46967,20.4697L78.53033,21.5303L85.06066,15Z"
-                  fill-rule="evenodd"
-                  fill="#A3A6B3"
-                  fill-opacity="1"></path></g
-              ></g
-            ></g
-          ></svg
-        >
-        <svg
-          class="rotate-180 hidden group-hover:block"
-          xmlns="http://www.w3.org/2000/svg"
-          xmlns:xlink="http://www.w3.org/1999/xlink"
-          fill="none"
-          version="1.1"
-          width="48"
-          height="30"
-          viewBox="0 0 48 30"
-          ><g transform="matrix(-1,0,0,1,96,0)"
-            ><g
-              ><rect
-                x="48"
-                y="0"
-                width="48"
-                height="30"
-                rx="15"
-                fill="#2E3038"
-                fill-opacity="1"></rect></g
-            ><g
-              ><g
-                ><rect
-                  x="63"
-                  y="3"
-                  width="24"
-                  height="24"
-                  rx="0"
-                  fill-opacity="0"
-                  stroke-opacity="1"
-                  stroke="#060E07"
-                  fill="none"
-                  stroke-width="0"></rect></g
-              ><g
-                ><path
-                  d="M84,15.75L60,15.75L60,14.25L84,14.25L84,15.75Z"
-                  fill-rule="evenodd"
-                  fill="#A3A6B3"
-                  fill-opacity="1"></path></g
-              ><g
-                ><path
-                  d="M85.06066,15L78.53033,8.46967L77.46967,9.53033L82.93934,15L77.46967,20.4697L78.53033,21.5303L85.06066,15Z"
-                  fill-rule="evenodd"
-                  fill="#A3A6B3"
-                  fill-opacity="1"></path></g
-              ></g
-            ></g
-          ></svg
-        >
-      </div>
-    </div>
+  <div class="dot-container">
+    <span class="dot dot-active"></span>
+    <span class="dot"></span>
   </div>
 </div>
 
 <script>
   document.addEventListener("astro:page-load", () => {
-    // 包裹元素
-    const carouselWrapper = document.getElementById("carousel-wrapper");
-    // 利用 html dataset 获取 props 变量参数
-    const duration = carouselWrapper?.dataset?.duration;
-    const useduration = carouselWrapper?.dataset?.useduration;
-    // 所有可执行的轮播项
-    const items = document.querySelectorAll(".carousel-item");
-    const nextBtn = document.getElementById("next");
-    const prevBtn = document.getElementById("prev");
-    if (nextBtn) {
-      // 轮播切换部分
-      let currentItem = 0;
-      function showItem(index) {
-        items.forEach((item, idx) => {
-          item.style.display = "none";
-          if (idx === index) {
-            item.style.display = "block";
-          }
-        });
-      }
-      // 下一项
-      nextBtn.addEventListener("click", () => {
-        currentItem = (currentItem + 1) % items.length;
-        showItem(currentItem);
-      });
-      // 上一项
-      prevBtn.addEventListener("click", () => {
-        currentItem = (currentItem - 1 + items.length) % items.length;
-        showItem(currentItem);
-      });
+    let slideIndex = 0;
+    let intervalId = null;
+    let slideWidth = 0;
+    const slides = document.querySelector(".carousel-container");
+    const dots = document.querySelectorAll(".dot");
 
-      // 计时器部分
-      let timer = null;
-      // 切换轮播、利用按钮点击事件
-      function switchPicture() {
-        if (timer) {
-          prevBtn.click();
-          timer = null;
-          timerStart();
-        }
-      }
-      function timerStart() {
-        timer = setTimeout(switchPicture, duration);
-      }
-      // 依据 proos.useduration 判断是否默认开启 循环切换图片
-      if (useduration == "apply") {
-        // 鼠标划入 停止轮播
-        carouselWrapper.addEventListener("mouseenter", () => {
-          if (timer) {
-            clearTimeout(timer);
-            timer = null;
-          }
-        });
-        // 鼠标划出 继续轮播
-        carouselWrapper.addEventListener("mouseleave", () => {
-          if (!timer) {
-            timerStart();
-          }
-        });
-        // 默认开启
-        timerStart();
-      }
+    dots.forEach((dot, i) => {
+      dot.addEventListener("click", () => {
+        currentSlide(i);
+      });
+    });
+
+    function init() {
+      slideWidth = slides.firstElementChild.clientWidth;
+      resetInterval();
+      window.addEventListener("resize", handleResize);
     }
+
+    function currentSlide(n) {
+      slideIndex = n;
+      updateSlides();
+      updateDots(); // 更新点控制器状态
+      resetInterval(); // 用户点击 dot 后重新计时
+    }
+
+    function updateDots() {
+      dots.forEach((dot, index) => {
+        if (index === slideIndex) {
+          dot.classList.add("dot-active");
+        } else {
+          dot.classList.remove("dot-active");
+        }
+      });
+    }
+
+    function updateSlides() {
+      const offset = -slideIndex * slideWidth;
+      slides.style.transform = `translateX(${offset}px)`;
+    }
+
+    // 自动播放
+    function toggleSlide() {
+      slideIndex = (slideIndex + 1) % dots.length;
+      updateSlides();
+      updateDots();
+    }
+
+    function resetInterval() {
+      clearInterval(intervalId); // 清除现有的定时器
+      intervalId = setInterval(toggleSlide, 5000); // 重新设定定时器
+    }
+
+    function handleResize() {
+      slideWidth = slides.firstElementChild.clientWidth; // 更新幻灯片宽度
+      updateSlides(); // 重新定位幻灯片位置
+    }
+
+    init(); // 初始化轮播图
   });
 </script>
 <style is:global>
+  .carousel-container {
+    transition: transform 0.5s ease;
+  }
+  .carousel-item {
+    flex: 0 0 100%;
+  }
+  .dot-container {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+  }
+
+  .dot {
+    height: 10px;
+    width: 10px;
+    margin: 0 5px;
+    background-color: #717171;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .dot-active {
+    background-color: #f4f4f6;
+  }
   .intro-pic {
     width: 90rem;
     height: 396px;

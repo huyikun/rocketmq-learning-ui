@@ -106,7 +106,7 @@
 .sl-markdown-content blockquote {
 	border-inline-start: 1.5px solid var(--sl-color-gray-5);
 	padding-inline-start: 1rem;
-	background-color: theme('colors.muted');
+	background-color: theme('colors.card');
 }
 
 .sl-markdown-content table {

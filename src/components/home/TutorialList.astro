@@ -1,7 +1,7 @@
 ---
 import { isChinese } from "@i18n/util";
 import { useTranslations } from "@i18n/util";
-import { HOT_TUTORIALDATA } from "@/constant";
+import { BASE_LEARNDATA } from "@/constant";
 import SliderCards from "./SliderCards/index.astro";
 const t = useTranslations(Astro);
 const ifzh = isChinese(Astro);
@@ -17,7 +17,7 @@ let currentScreen = 0;
 >
   <div class="hotTutorial-content" id="hotTutorial-content">
     {
-      HOT_TUTORIALDATA.slice(
+      BASE_LEARNDATA.slice(
         currentScreen * itemsPerPage,
         (currentScreen + 1) * itemsPerPage
       ).map((item) => (
@@ -27,7 +27,7 @@ let currentScreen = 0;
           </div>
           <div class="item-content-right">
             <div class="right-title text-model">{item.title}</div>
-            <a class="arrow" />
+            {/* <a class="arrow" /> */}
           </div>
         </div>
       ))
@@ -36,7 +36,7 @@ let currentScreen = 0;
 </SliderCards>
 
 <script>
-  import { HOT_TUTORIALDATA } from "@/constant";
+  import { BASE_LEARNDATA } from "@/constant";
   document.addEventListener("astro:page-load", () => {
     let currentScreen = 0;
     const itemsPerPage = 3; // 每屏显示的元素个数
@@ -45,7 +45,7 @@ let currentScreen = 0;
     const content = document.getElementById("hotTutorial-content");
     if (prevBtn) {
       function showItem(currentScreen) {
-        const newData = HOT_TUTORIALDATA.slice(
+        const newData = BASE_LEARNDATA.slice(
           currentScreen * itemsPerPage,
           (currentScreen + 1) * itemsPerPage
         );
@@ -68,14 +68,14 @@ let currentScreen = 0;
         if (currentScreen > 0) {
           currentScreen--;
         } else {
-          currentScreen = Math.ceil(HOT_TUTORIALDATA.length / itemsPerPage) - 1;
+          currentScreen = Math.ceil(BASE_LEARNDATA.length / itemsPerPage) - 1;
         }
         showItem(currentScreen);
       });
       nextBtn.addEventListener("click", () => {
         if (
           currentScreen <
-          Math.ceil(HOT_TUTORIALDATA.length / itemsPerPage) - 1
+          Math.ceil(BASE_LEARNDATA.length / itemsPerPage) - 1
         ) {
           currentScreen++;
         } else {

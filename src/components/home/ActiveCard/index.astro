@@ -18,56 +18,58 @@ function formatDate(dateString) {
 }
 ---
 
-<div
-  class={twMerge(
-    "item-content ",
-    source === "community" ? "bg-active-card" : "bg-card"
-  )}
->
-  <div class="item-content-top">
-    <img
-      src={active.img}
-      class={source === "home" ? "rounded-lg" : "rounded-xl"}
-    />
-  </div>
-  <div class="active-des">
+<a href={active.href} target={active.target} class="no-underline">
+  <div
+    class={twMerge(
+      "item-content",
+      source === "community" ? "bg-active-card" : "bg-card"
+    )}
+  >
+    <div class="item-content-top">
+      <img
+        src={active.img}
+        class={source === "home" ? "rounded-lg" : "rounded-xl"}
+      />
+    </div>
+    <div class="active-des">
+      {
+        active.time ? (
+          <p class="text-xs font-normal">{active.time}</p>
+        ) : (
+          <p class="h-1" />
+        )
+      }
+      <div class="text-title text-[1.375rem] leading-8">{active.title}</div>
+    </div>
     {
-      active.time ? (
-        <p class="text-xs font-normal">{active.time}</p>
-      ) : (
-        <p class="h-1" />
+      source === "home" && (
+        <Button
+          size="small"
+          type="card"
+          target={active.target}
+          href={active.href}
+          variant=""
+          class="rounded-3xl text-xs text-title w-[51.5%] font-normal border-none bg-card-btn hover:bg-success"
+        >
+          {t("home.exciting.active.see")}
+        </Button>
       )
     }
-    <div class="text-title text-[1.375rem] leading-8">{active.title}</div>
+    {
+      source === "community" && (
+        <Button
+          size="small"
+          type="card"
+          href={active.href}
+          target={active.target || "_self"}
+          variant=""
+          class="rounded-3xl text-xs w-[45%] font-normal border-none bg-card-btn hover:bg-success"
+        >
+          {t("home.exciting.active.see")}
+        </Button>
+      )
+    }
   </div>
-  {
-    source === "home" && (
-      <Button
-        size="small"
-        type="card"
-        target={active.target}
-        href={active.href}
-        variant=""
-        class="rounded-3xl text-xs text-title w-[51.5%] font-normal border-none bg-card-btn hover:bg-success"
-      >
-        {t("home.exciting.active.see")}
-      </Button>
-    )
-  }
-  {
-    source === "community" && (
-      <Button
-        size="small"
-        type="card"
-        href={active.href}
-        target={active.target || "_self"}
-        variant=""
-        class="rounded-3xl text-xs w-[45%] font-normal border-none bg-card-btn hover:bg-success"
-      >
-        {t("home.exciting.active.see")}
-      </Button>
-    )
-  }
-</div>
+</a>
 
 <style is:global></style>

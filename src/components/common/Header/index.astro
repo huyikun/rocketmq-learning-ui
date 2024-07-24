@@ -5,7 +5,7 @@ import { LanguageToggle, Button, LinkButton } from "@serverless-cd/goat-ui";
 import MobileNavbar from "@components/common/MobileNavbar.astro";
 import SearchComp from "./searchComp/index.astro";
 import { SITE } from "@utils/config";
-
+import Alert from "./Alert.astro";
 interface Props {
   align?: "home" | "docs";
   position?: "static" | "sticky";
@@ -35,6 +35,7 @@ let height,
 ---
 
 <span class="header-wrapper">
+  <Alert />
   <my-layout
     style={`position: ${position}; height: ${height}`}
     class="w-full backdrop-blur-md top-0 z-[10] bg-base-header flex justify-center"
@@ -46,7 +47,7 @@ let height,
       >
         <a class="no-underline decoration-current text-model" href="/">
           <img class="logo" src={SITE.logoUrl} alt=`${SITE.name}-logo` />
-          {t("home.header.title")}
+          <span class="header-title">{t("home.header.title")}</span>
         </a>
         <MobileNavbar top={height} class="mobile-navbar h-full ml-[0.5rem]" />
       </div>
@@ -163,6 +164,10 @@ let height,
       .center-content {
         display: none;
       }
+
+      .header-title {
+        display: none;
+      }
       .code-toggle {
         padding: 0 !important;
         background-color: transparent !important;
@@ -179,46 +184,46 @@ let height,
 </style>
 
 <script>
-  function addCopilot() {
-    const copilotJSScript = document.createElement("script");
-    copilotJSScript.type = "text/javascript";
-    copilotJSScript.src =
-      "https://g.alicdn.com/cm-design/copilot-booter/0.0.26/copilot-booter.js";
-    copilotJSScript.addEventListener("load", function () {
-      if (window.CNPilot) {
-        window.CNPilot.mounted({
-          CNPilot_OPEN_SOURCE: ["sca.aliyun.com"],
-          CNPilot_OPEN_SOURCE_API: "https://ai.nacos.io",
-          CNPilot_OPEN_SOURCE_PRODUCT_NAME: "sca",
-          showFloatICON: true,
-          globalStyle: {
-            top: "0",
-            height: "100vh",
-          },
-          entryIconProps: {
-            "position-type": "updown",
-            "icon-hover-text": "专家答疑",
-            "icon-style": {
-              color: "red",
-              background: "white",
-              border: "2px solid red",
-              borderRadius: "20px",
-            },
-          },
-          headerProps: {
-            closeIcon: { show: true },
-            titleText: "AI答疑专家",
-          },
-        });
-      }
-    });
-    document.body.append(copilotJSScript);
-  }
+  // function addCopilot() {
+  //   const copilotJSScript = document.createElement("script");
+  //   copilotJSScript.type = "text/javascript";
+  //   copilotJSScript.src =
+  //     "https://g.alicdn.com/cm-design/copilot-booter/0.0.26/copilot-booter.js";
+  //   copilotJSScript.addEventListener("load", function () {
+  //     if (window.CNPilot) {
+  //       window.CNPilot.mounted({
+  //         CNPilot_OPEN_SOURCE: ["sca.aliyun.com"],
+  //         CNPilot_OPEN_SOURCE_API: "https://ai.nacos.io",
+  //         CNPilot_OPEN_SOURCE_PRODUCT_NAME: "sca",
+  //         showFloatICON: true,
+  //         globalStyle: {
+  //           top: "0",
+  //           height: "100vh",
+  //         },
+  //         entryIconProps: {
+  //           "position-type": "updown",
+  //           "icon-hover-text": "专家答疑",
+  //           "icon-style": {
+  //             color: "red",
+  //             background: "white",
+  //             border: "2px solid red",
+  //             borderRadius: "20px",
+  //           },
+  //         },
+  //         headerProps: {
+  //           closeIcon: { show: true },
+  //           titleText: "AI答疑专家",
+  //         },
+  //       });
+  //     }
+  //   });
+  //   document.body.append(copilotJSScript);
+  // }
 
-  addCopilot();
+  // addCopilot();
 
-  document.addEventListener("astro:page-load", function () {
-    if (window.CNPilot) window.CNPilot.unmounted();
-    addCopilot();
-  });
+  // document.addEventListener("astro:page-load", function () {
+  //   if (window.CNPilot) window.CNPilot.unmounted();
+  //   addCopilot();
+  // });
 </script>

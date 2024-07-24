@@ -40,7 +40,7 @@ export const ProductCard = ({ item, direction = 'top', hoverable = false, classN
 
   return (
     <div
-      className={twMerge("relative h-[3.75rem] flex items-center p-[0.5rem] rounded-lg ana-product cursor-pointer",
+      className={twMerge("relative h-[2.8125rem] flex items-center p-[0.5rem] rounded-md ana-product cursor-pointer",
         className
       )}
       onMouseLeave={onMouseLeave}
@@ -48,7 +48,7 @@ export const ProductCard = ({ item, direction = 'top', hoverable = false, classN
       onTouchStart={onMouseEnter}
       onTouchEnd={onMouseLeave}
     >
-      <div class="w-[2.75rem] h-[2.75rem] icon-box">
+      <div class="w-[2.06rem] h-[2.06rem] icon-box">
         <img
           src={item.icon}
           class={twMerge(
@@ -58,23 +58,24 @@ export const ProductCard = ({ item, direction = 'top', hoverable = false, classN
                 ? "w-[50%] h-[50%]"
                 : item.product === "容器"
                   ? "w-[50%] h-[57%]"
-                  : item.product === "监控"
+                  : item.product === "云监控"
                     ? "w-[70%] h-[30%]"
-                    : "w-[60%] h-[60%]"
+                    : "w-[62%] h-[62%]"
           )}
         />
       </div>
-      <div class="flex-1 text-center text-sm">
+      <div class="flex-1 text-center text-[10.5px]">
         {item.product}
       </div>
-      {hoverable && (
+      {hoverable && item.product !== "SaaS事件" && (
         <div
           className="absolute z-10 shadow-md -mt-20 ml-2"
           style={{
             visibility: isHovering ? "visible" : "hidden",
-            bottom: direction === 'top' ? '62px' : '',
-            top: direction === 'top' ? '' : '141px',
-            left: '-70%',
+            bottom: direction === 'top' ? '46px' : '',
+            top: direction === 'top' ? '' : '126px',
+            left: direction === 'top' || direction === 'bottom' ? '-100%' : '',
+            right: direction === 'lb' ? "0px" : ""
           }}
           onMouseLeave={() => setHovering(false)}
           ref={popupRef}

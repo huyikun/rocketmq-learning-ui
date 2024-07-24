@@ -7,7 +7,7 @@ import {
 } from "@/constant";
 import BlogTop from "@components/markdownSet/BlogTop.astro";
 import LearningData from "@components/learning/LearningData.astro";
-import CommunityBanner from "@components/community/CommunityBanner.astro";
+// import CommunityBanner from "@components/community/CommunityBanner.astro";
 import SimpleContainer from "@components/markdownSet/SimpleContainer.astro";
 import ArticleContainer from "@components/home/ArticleByTag/ArticleContainer.astro";
 import ActiveCard from "@components/home/ActiveCard/index.astro";
@@ -34,7 +34,7 @@ const cardData = COMMUNITY_DATA.filter((it) => it.tag === tag);
 <BaseLayout title={t("home.title")}>
   <div class="p-[2.5rem] flex justify-center bg-base-100">
     <div class="community-box">
-      <CommunityBanner data={COMMUNITY_BANNER_DATA} />
+      <!-- <CommunityBanner data={COMMUNITY_BANNER_DATA} /> -->
       <BlogTop
         type="community-sub"
         source="community"
@@ -77,7 +77,7 @@ const cardData = COMMUNITY_DATA.filter((it) => it.tag === tag);
         }
 
         .active-des {
-          height: 9.625rem;
+          height: 8.75rem;
         }
 
         p {
@@ -96,7 +96,7 @@ const cardData = COMMUNITY_DATA.filter((it) => it.tag === tag);
       }
 
       /* 最后一个元素去除右外边距 */
-      .item-content:nth-child(4n) {
+      .item-content:nth-of-type(4n)  {
         margin-right: 0;
       }
     }
@@ -126,7 +126,7 @@ const cardData = COMMUNITY_DATA.filter((it) => it.tag === tag);
           flex: 0 0 calc(50% - 1rem); /* 每个元素占50%的宽度并减去1rem的右外边距 */
 
           /* 最后一个元素去除右外边距 */
-          .item-content:nth-child(2n) {
+          .item-content:nth-of-type(4n) {
             margin-right: 0;
           }
         }

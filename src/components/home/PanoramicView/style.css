@@ -1,8 +1,8 @@
 .service-item {
-  height: 5.125rem;
-  margin-right: 1rem;
-  margin-bottom: 1rem;
-  flex: 0 0 calc(50% - 1rem);
+  height: 3.84rem;
+  margin-right: 0.75rem;
+  margin-bottom: 0.75rem;
+  flex: 0 0 calc(50% - 0.75rem);
   background: #1e1f24;
   border: 1px solid rgba(224, 233, 251, 0.1);
 }
@@ -18,9 +18,9 @@
 
 .ana-product {
   width: 100%;
-  margin-right: 1rem;
+  margin-right: 0.75rem;
   background: #1e1d1d;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
 }
 
 .ana-product .icon-box {

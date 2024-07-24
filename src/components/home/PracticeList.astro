@@ -7,16 +7,12 @@ import SliderCards from "./SliderCards/index.astro";
 
 const t = useTranslations(Astro);
 const ifzh = isChinese(Astro);
-const itemsPerPage = 2; // 每屏显示的元素个数
+const itemsPerPage = 4; // 每屏显示的元素个数
 let currentScreen = 0;
 ---
 
-<SliderCards
-  className={"practice-box"}
-  prevId={"prevpractice"}
-  nextId={"nextpractice"}
-  title={t("home.best.practice.title")}
->
+<div class="practice-box bg-card">
+  <h2 class="follow-header text-title">最佳实践</h2>
   <div class="practice-content" id="practice-content">
     {
       PRACTICE_DATA.slice(
@@ -34,7 +30,7 @@ let currentScreen = 0;
       ))
     }
   </div>
-</SliderCards>
+</div>
 
 <script>
   import { PRACTICE_DATA } from "@/constant";
@@ -74,7 +70,10 @@ let currentScreen = 0;
       });
 
       nextBtn.addEventListener("click", () => {
-        if (currentScreen < Math.ceil(PRACTICE_DATA.length / itemsPerPage) - 1) {
+        if (
+          currentScreen <
+          Math.ceil(PRACTICE_DATA.length / itemsPerPage) - 1
+        ) {
           currentScreen++;
         } else {
           currentScreen = 0;

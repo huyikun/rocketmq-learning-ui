@@ -112,6 +112,20 @@ const typeArr = [
         width: 100%;
         margin-top: 0;
       }
+
+      .blog_category_menu {
+        white-space: nowrap;
+        overflow-x: auto;
+        -ms-overflow-style: none; /* for IE and Edge */
+        scrollbar-width: none; /* for Firefox */
+        overflow: -moz-scrollbars-none; /* for Firefox */
+      }
+
+      /* 针对WebKit浏览器（如Chrome和Safari），需要使用伪元素来隐藏滚动条 */
+      .blog_category_menu::-webkit-scrollbar {
+        display: none;
+      }
+
       .blog_header_title {
         font-size: 1.875rem;
         line-height: 2.25rem;
