@@ -69,64 +69,63 @@ export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
       </div>
     </div>
   </div>
+</BaseLayout>
+<style is:global>
+  .learn-box {
+    width: 85.125rem;
 
-  <style is:global>
+    .left-box {
+      width: calc(100% - 34rem);
+      margin-right: 1.5rem;
+    }
+
+    .right-box {
+      position: relative;
+      width: 32.5rem;
+      .rb-son {
+        position: fixed;
+        width: 32.5rem;
+      }
+    }
+  }
+
+  @media (max-width: 50rem) {
     .learn-box {
-      width: 85.125rem;
-
+      width: 100%;
+      flex-wrap: wrap;
       .left-box {
-        width: calc(100% - 34rem);
-        margin-right: 1.5rem;
+        width: 100%;
+        margin-right: 0;
       }
 
       .right-box {
-        position: relative;
-        width: 32.5rem;
+        position: static;
+        width: 100%;
         .rb-son {
-          position: fixed;
-          width: 32.5rem;
-        }
-      }
-    }
-
-    @media (max-width: 50rem) {
-      .learn-box {
-        width: 100%;
-        flex-wrap: wrap;
-        .left-box {
-          width: 100%;
-          margin-right: 0;
-        }
-
-        .right-box {
           position: static;
           width: 100%;
-          .rb-son {
-            position: static;
-            width: 100%;
-          }
         }
       }
     }
+  }
 
-    @media (min-width: 50rem) and (max-width: 86rem) {
-      .learn-box {
+  @media (min-width: 50rem) and (max-width: 86rem) {
+    .learn-box {
+      width: 100%;
+      flex-wrap: wrap;
+      .left-box {
         width: 100%;
-        flex-wrap: wrap;
-        .left-box {
-          width: 100%;
-          margin-right: 0;
-        }
+        margin-right: 0;
+      }
 
-        .right-box {
+      .right-box {
+        position: static;
+        width: 100%;
+        .rb-son {
           position: static;
           width: 100%;
-          .rb-son {
-            position: static;
-            width: 100%;
-          }
         }
       }
     }
-  </style>
-</BaseLayout>
+  }
+</style>

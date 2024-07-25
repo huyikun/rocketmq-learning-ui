@@ -35,7 +35,9 @@ let items = [];
 if (pageList && pageList.length) {
   if (source == "home") {
     if (tag) {
-      items = pageList.filter((it) => it?.data?.tags.includes("home")).slice(0, 3);
+      items = pageList
+        .filter((it) => it?.data?.tags.includes("home"))
+        .slice(0, 3);
     } else {
       items = pageList.slice(0, 3);
     }
@@ -52,16 +54,52 @@ if (pageList && pageList.length) {
 }
 ---
 
-<div>
-  {
-    items.map((post) => (
-      <ArticleCard
-        post={post as Post}
-        source={source}
-        useAnchor={true}
-        class={className}
-        tag={tag}
-      />
-    ))
+<!-- <div class="flex justify-between">
+  <div
+    class="max-w-[200px] min-w-[200px] hidden 2xl:block xl:block lg:block relative mr-[1.5rem]"
+  >
+    <div class="sticky top-[100px] text-title">
+      {
+        pageList && pageList.length ? (
+          <div class="text-lg text-gray-08 mb-[32px]">
+            {t("commmon.header.comm.article")}
+          </div>
+        ) : null
+      }
+      <div class="text-[16px] text-gray-14 user-config-h-list">
+        {
+          pageList.map((post) => {
+            return (
+              <a
+                class="no-underline font-normal block mb-[24px] pagelist-a hover:font-bold duration-100 break-all"
+                href={`#${post.slug}`}
+              >
+                {post.data.title}
+              </a>
+            );
+          })
+        }
+      </div>
+    </div>
+  </div> -->
+  <div>
+    {
+      items.map((post) => (
+        <ArticleCard
+          post={post as Post}
+          source={source}
+          useAnchor={true}
+          class={className}
+          tag={tag}
+        />
+      ))
+    }
+  </div>
+<!-- </div> -->
+<!-- <style>
+  .user-config-h-list {
+    max-height: calc(100vh - 180px);
+    overflow: scroll;
+    scrollbar-color: theme("colors.success") theme("colors.error");
   }
-</div>
+</style> -->

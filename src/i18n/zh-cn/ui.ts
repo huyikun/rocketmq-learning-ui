@@ -326,7 +326,7 @@ export default {
 
   //---------new start--------
 	"home.introduce.title1": "RocketMQ 一站式学习：",
-  "home.introduce.title2": "最新最全资讯，尽在中文社区",
+  "home.introduce.title2": "最全最新资讯，尽在中文社区",
   "home.hot.tutorial.title": "热门教程",
   "home.best.practice.title": "最佳实践",
   "home.new.article": "最新文章",

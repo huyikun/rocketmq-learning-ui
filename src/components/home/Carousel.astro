@@ -22,11 +22,13 @@ const { duration = 5000, useduration = "disabled" } = Astro.props as Props;
       </div>
     </div>
     <div class="carousel-item bg-[#1B1B1B]">
-      <div
-        class="intro-pic bg-[url('https://img.alicdn.com/imgextra/i1/O1CN01LgWjcp1LDPzuluiYp_!!6000000001265-0-tps-2880-792.jpg')]"
+      <a
+        target="_blank"
+        href="https://www.aliyun.com/product/rocketmq"
+        class="intro-pic block bg-[url('https://img.alicdn.com/imgextra/i1/O1CN01LgWjcp1LDPzuluiYp_!!6000000001265-0-tps-2880-792.jpg')]"
       >
         <slot name="next" />
-      </div>
+      </a>
     </div>
   </div>
   <div class="dot-container">

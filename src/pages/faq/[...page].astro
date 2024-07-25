@@ -1,0 +1,72 @@
+---
+import type { GetStaticPathsOptions } from "astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+import Pagination from "@components/common/Paginate/Pagination.astro";
+import BlogTop from "@components/markdownSet/BlogTop.astro";
+import { useTranslations } from "@i18n/util";
+import SimpleContainer from "@components/markdownSet/SimpleContainer.astro";
+import ArticleContainer from "@components/home/ArticleByTag/ArticleContainer.astro";
+import { WUYI_CATEGORY } from "@/constant";
+import type { Post } from "@/types";
+const t = useTranslations(Astro);
+
+// 分页数据在page参数中传递
+const { page } = Astro.props;
+
+const allPages = [...Array(page.lastPage).keys()].map((num) => {
+  return `/faq${num === 0 ? "/" : `/${String(num + 1)}/`}`;
+});
+
+export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
+  const blogCategories = new Set(WUYI_CATEGORY.map((item) => item.type));
+  const posts = await getCollection("faq", (item) =>
+    blogCategories.has(item.data.category)
+  );
+
+  const sortedPosts = posts.sort(
+    (a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf()
+  );
+  return paginate(sortedPosts, { pageSize: 20 });
+}
+---
+
+<BaseLayout title={t("home.title")}>
+  <div class="p-[2.5rem] flex justify-center bg-base-100">
+    <div class="learn-box">
+      <!-- <BlogTop
+        title={t("blog.all.articles")}
+        type="faq-sub"
+        source="faq"
+        category={WUYI_CATEGORY}
+        activeCategory="expertConsultation"
+      /> -->
+      <div class="mt-16">
+        <ArticleContainer
+          pageList={page.data as Post[]}
+          source="faq"
+          className="learning-box"
+        />
+
+        <Pagination restRoute allPages={allPages} page={page} class="mx-auto" />
+      </div>
+    </div>
+  </div>
+</BaseLayout>
+<style is:global>
+  .learn-box {
+    width: 75.125rem;
+  }
+
+  @media (max-width: 50rem) {
+    .learn-box {
+      width: 100%;
+    }
+  }
+
+  @media (min-width: 50rem) and (max-width: 86rem) {
+    .learn-box {
+      width: 100%;
+    }
+  }
+</style>
