@@ -3,7 +3,7 @@ title: "云原生事件驱动引擎(RocketMQ-EventBridge)应用场景与技术�
 date: "2022/08/10"
 author: "静罗"
 img: "https://img.alicdn.com/imgextra/i1/O1CN013QCbzD1q0p3UTQJ6W_!!6000000005434-0-tps-685-383.jpg"
-tags: ["explore"]
+tags: ["explore", "recommend"]
 description: " RocketMQ 给人最大的印象一直是一个消息引擎。那什么是事件驱动引擎？为什么我们这次要推出事件驱动引擎这个产品？他有哪些应用场景，以及对应的技术方案是什么？本文我们就一起来看下。"
 ---
 

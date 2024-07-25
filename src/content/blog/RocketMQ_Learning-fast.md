@@ -4,7 +4,7 @@ description: "介绍 Apache RocketMQ 的快速上手体验教程"
 date: "2024-07-24"
 img: "https://img.alicdn.com/imgextra/i3/O1CN01QVMIVL1c2kEeAnvsG_!!6000000003543-2-tps-496-220.png"
 tags: ["baseLearn"]
-author: "隆基"
+author: "燧人"
 ---
 
 <a name="YKFTd"></a>

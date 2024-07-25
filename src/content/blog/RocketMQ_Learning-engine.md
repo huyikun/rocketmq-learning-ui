@@ -2,9 +2,9 @@
 title: "Apache RocketMQ，构建云原生统一消息引擎"
 description: "Apache RocketMQ，构建云原生统一消息引擎"
 date: "2024-07-24"
-category: "article"
-keywords: ["RocketMQ_Learning"]
-authors: "heimanba"
+tags: ["recommend"]
+authors: "隆基"
+img: "https://img.alicdn.com/imgextra/i2/O1CN01b7uXIi1bmFycwldBc_!!6000000003507-2-tps-498-220.png"
 ---
 
 > 演讲嘉宾：林清山（花名：隆基），Apache RocketMQ 联合创始人，阿里云资深技术专家，阿里云消息产品线负责人。国际消息领域专家，致力于消息、实时计算、事件驱动等方向的研究与探索，推进 RocketMQ 云原生架构、超融合架构的演进。
