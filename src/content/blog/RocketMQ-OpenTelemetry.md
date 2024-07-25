@@ -4,7 +4,7 @@ date: "2023/03/28"
 author: "艾阳坤"
 description: "分布式全链路追踪技术帮助我们在复杂的网络通信和数据传输中快速定位到根因，它能够跟踪和记录请求在系统中的传输过程，并提供详细的性能和日志信息，使得开发人员能够快速诊断和定位问题。对于分布式系统的可靠性、性能和可维护性起到了非常重要的作用。"
 img: "https://img.alicdn.com/imgextra/i4/O1CN01LR0Zkj1zyfMLasGa0_!!6000000006783-0-tps-685-383.jpg"
-tags: ["practice", "bestPractice", "home"]
+tags: ["practice", "home"]
 ---
 
 作者简介：艾阳坤，Apache RocketMQ PMC Member/Committer，CNCF OpenTelemetry Member，CNCF Envoy contributor。

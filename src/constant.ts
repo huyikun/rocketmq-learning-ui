@@ -602,14 +602,8 @@ export const SOLUTIONS_CARD_LIST = [
   },
 ];
 
-// 基础学习资料
+// 首页基础学习资料
 export const BASE_LEARNDATA = [
-  {
-    img: "https://img.alicdn.com/imgextra/i3/O1CN01QVMIVL1c2kEeAnvsG_!!6000000003543-2-tps-496-220.png",
-    title: "RocketMQ应用场景",
-    href: "/learning/baseLearn/rocketmq_learning-scene/?source=home",
-    target: "_self"
-  },
   {
     img: "https://img.alicdn.com/imgextra/i3/O1CN01QVMIVL1c2kEeAnvsG_!!6000000003543-2-tps-496-220.png",
     title: "RocketMQ 原理和架构",
@@ -618,7 +612,13 @@ export const BASE_LEARNDATA = [
   },
   {
     img: "https://img.alicdn.com/imgextra/i3/O1CN01QVMIVL1c2kEeAnvsG_!!6000000003543-2-tps-496-220.png",
-    title: "RocketMQ快速上手体验",
+    title: "RocketMQ 应用场景",
+    href: "/learning/baseLearn/rocketmq_learning-scene/?source=home",
+    target: "_self"
+  },
+  {
+    img: "https://img.alicdn.com/imgextra/i3/O1CN01QVMIVL1c2kEeAnvsG_!!6000000003543-2-tps-496-220.png",
+    title: "RocketMQ 快速上手体验",
     href: "/learning/baseLearn/rocketmq_learning-fast/?source=home",
     target: "_self"
   },
@@ -656,14 +656,14 @@ export const HOT_TUTORIALDATA = [
 // 最佳实践
 export const PRACTICE_DATA = [
   {
-    title: "RocketMQ x OpenTelemetry 分布式全链路追踪最佳实践",
-    href: "/learning/bestPractice/rocketmq-opentelemetry/?source=home",
-    img: "https://img.alicdn.com/imgextra/i4/O1CN01LR0Zkj1zyfMLasGa0_!!6000000006783-0-tps-685-383.jpg"
+    title: "Apache RocketMQ ACL 2.0 全新升级",
+    href: "/learning/bestPractice/rocketmq_learning-acl/?source=home",
+    img: "https://img.alicdn.com/imgextra/i2/O1CN01b7uXIi1bmFycwldBc_!!6000000003507-2-tps-498-220.png"
   },
   {
-    title: "Apache RocketMQ  在阿里云大规模商业化实践之路",
-    href: "/learning/bestPractice/apache-rocketmq-commercialization/?source=home",
-    img: "https://img.alicdn.com/imgextra/i4/O1CN01ZYQ1XY1KBknq9j7MM_!!6000000001126-0-tps-685-383.jpg"
+    title: "基于 RocketMQ Connect 构建数据流转处理平台",
+    href: "/learning/bestPractice/rocketmq_learning-connector/?source=home",
+    img: "https://img.alicdn.com/imgextra/i2/O1CN01b7uXIi1bmFycwldBc_!!6000000003507-2-tps-498-220.png"
   },
 ];
 
@@ -812,39 +812,38 @@ export const ACTIVE_DATA = [
   },
 ];
 
+// 学习页基础学习资料
 export const LEARNING_DATA = [
   {
-    img: "https://img.alicdn.com/imgextra/i3/O1CN01QVMIVL1c2kEeAnvsG_!!6000000003543-2-tps-496-220.png",
-    title: "RocketMQ应用场景",
-    href: "/learning/baseLearn/rocketmq_learning-scene/?source=learning",
-    target: "_self"
-  },
-  {
-    img: "https://img.alicdn.com/imgextra/i3/O1CN01QVMIVL1c2kEeAnvsG_!!6000000003543-2-tps-496-220.png",
     title: "RocketMQ 原理和架构",
     href: "/learning/baseLearn/rocketmq_learning-framework/?source=learning",
     target: "_self"
   },
   {
-    img: "https://img.alicdn.com/imgextra/i3/O1CN01QVMIVL1c2kEeAnvsG_!!6000000003543-2-tps-496-220.png",
-    title: "RocketMQ快速上手体验",
+    title: "RocketMQ 应用场景",
+    href: "/learning/baseLearn/rocketmq_learning-scene/?source=learning",
+    target: "_self"
+  },
+  {
+    title: "RocketMQ 快速上手体验",
     href: "/learning/baseLearn/rocketmq_learning-fast/?source=learning",
     target: "_self"
   },
 ]
 
+// 强力推荐
 export const RECOMMEND_DATA = [
   {
-    title: "基于 EventBridge API Destination 构建 SaaS 集成实践方案 ",
-    href: "",
+    title: "Apache RocketMQ，构建云原生统一消息引擎",
+    href: "/learning/recommend/rocketmq_learning-engine/",
   },
   {
-    title: "基于 EventBridge API Destination 构建 SaaS 集成实践方案 ",
-    href: "",
+    title: "云原生事件驱动引擎(RocketMQ-EventBridge)应用场景与技术解析",
+    href: "/learning/recommend/rocketmq-eb-analysis/",
   },
   {
-    title: "基于 EventBridge API Destination 构建 SaaS 集成实践方案 ",
-    href: "",
+    title: "解读 RocketMQ 5.0 全新的高可用设计",
+    href: "/learning/recommend/rocketmq-new/",
   },
 ]
 
@@ -910,7 +909,11 @@ export const ALL_ARTICLE_TAG = [
     title: "基础学习资料",
     href: '/learning/baseLearn/'
   },
-
+  {
+    type: 'recommend',
+    title: "强力推荐",
+    href: '/learning/recommend/'
+  },
 ];
 
 // 社区页tag

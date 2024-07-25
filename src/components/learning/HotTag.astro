@@ -19,7 +19,7 @@ const { activeTag } = Astro.props;
   </div>
   <div>
     {
-      ALL_ARTICLE_TAG.filter((it) => it.type !== "baseLearn").map((item) => (
+      ALL_ARTICLE_TAG.filter((it) => it.type !== "baseLearn" && it.type !== "recommend").map((item) => (
         <span class="inline-block mb-2">
           <BlogButton
             href={item.href}
