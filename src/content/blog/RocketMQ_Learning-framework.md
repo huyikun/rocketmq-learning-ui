@@ -2,7 +2,7 @@
 title: "RocketMQ 原理和架构"
 description: "介绍 Apache RocketMQ 的核心原理和架构"
 date: "2024-07-24"
-img: "https://img.alicdn.com/imgextra/i3/O1CN01QVMIVL1c2kEeAnvsG_!!6000000003543-2-tps-496-220.png"
+img: "https://img.alicdn.com/imgextra/i4/O1CN01JOPX5Z1MEAG6kJOF7_!!6000000001402-2-tps-498-220.png"
 tags: ["baseLearn"]
 author: "斜阳"
 ---
