@@ -75,9 +75,11 @@ export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
         </div>
       </div>
       <div class="right-box">
-        <LearningData />
-        <Recommendation />
-        <HotTag activeTag={tag} />
+        <div class="rb-son">
+          <LearningData />
+          <Recommendation />
+          <HotTag activeTag={tag} />
+        </div>
       </div>
     </div>
   </div>
@@ -88,12 +90,17 @@ export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
     width: 85.125rem;
 
     .left-box {
-      width: 60%;
-      margin-right: 24px;
+      width: calc(100% - 34rem);
+      margin-right: 1.5rem;
     }
 
     .right-box {
-      flex: 1;
+      position: relative;
+      width: 32.5rem;
+      .rb-son {
+        position: fixed;
+        width: 32.5rem;
+      }
     }
   }
 
@@ -107,7 +114,12 @@ export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
       }
 
       .right-box {
+        position: static;
         width: 100%;
+        .rb-son {
+          position: static;
+          width: 100%;
+        }
       }
     }
   }
@@ -122,7 +134,12 @@ export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
       }
 
       .right-box {
+        position: static;
         width: 100%;
+        .rb-son {
+          position: static;
+          width: 100%;
+        }
       }
     }
   }

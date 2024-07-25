@@ -61,55 +61,72 @@ export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
         </div>
       </div>
       <div class="right-box">
-        <LearningData />
-        <Recommendation />
-        <HotTag activeTag={"all"} />
+        <div class="rb-son">
+          <LearningData />
+          <Recommendation />
+          <HotTag activeTag={"all"} />
+        </div>
       </div>
     </div>
   </div>
+
+  <style is:global>
+    .learn-box {
+      width: 85.125rem;
+
+      .left-box {
+        width: calc(100% - 34rem);
+        margin-right: 1.5rem;
+      }
+
+      .right-box {
+        position: relative;
+        width: 32.5rem;
+        .rb-son {
+          position: fixed;
+          width: 32.5rem;
+        }
+      }
+    }
+
+    @media (max-width: 50rem) {
+      .learn-box {
+        width: 100%;
+        flex-wrap: wrap;
+        .left-box {
+          width: 100%;
+          margin-right: 0;
+        }
+
+        .right-box {
+          position: static;
+          width: 100%;
+          .rb-son {
+            position: static;
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    @media (min-width: 50rem) and (max-width: 86rem) {
+      .learn-box {
+        width: 100%;
+        flex-wrap: wrap;
+        .left-box {
+          width: 100%;
+          margin-right: 0;
+        }
+
+        .right-box {
+          position: static;
+          width: 100%;
+          .rb-son {
+            position: static;
+            width: 100%;
+          }
+        }
+      }
+    }
+  </style>
 </BaseLayout>
-
-<style is:global>
-  .learn-box {
-    width: 85.125rem;
-
-    .left-box {
-      width: 60%;
-      margin-right: 24px;
-    }
-
-    .right-box {
-      flex: 1;
-    }
-  }
-
-  @media (max-width: 50rem) {
-    .learn-box {
-      width: 100%;
-      flex-wrap: wrap;
-      .left-box {
-        width: 100%;
-        margin-right: 0;
-      }
-
-      .right-box {
-        width: 100%;
-      }
-    }
-  }
-
-  @media (min-width: 50rem) and (max-width: 86rem) {
-    .learn-box {
-      width: 100%;
-      flex-wrap: wrap;
-      .left-box {
-        width: 100%;
-        margin-right: 0;
-      }
-
-      .right-box {
-        width: 100%;
-      }
-    }
-  }
-</style>

@@ -3,8 +3,8 @@ title: "Apache RocketMQ ACL 2.0 全新升级"
 description: "Apache RocketMQ ACL 2.0 全新升级"
 date: "2024-07-24"
 tags: ["practice", "bestPractice"]
-authors: "隆基"
-img: "https://img.alicdn.com/imgextra/i2/O1CN01b7uXIi1bmFycwldBc_!!6000000003507-2-tps-498-220.png"
+author: "徒钟"
+img: "https://img.alicdn.com/imgextra/i4/O1CN01NkY3Jh27qRIaYQBkf_!!6000000007848-2-tps-496-276.png"
 ---
 
 <a name="dibYq"></a>

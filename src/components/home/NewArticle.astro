@@ -11,7 +11,9 @@ import BlogButton from "@components/home/ArticleByTag/BlogButton.astro";
 import ArticleContainer from "@components/home/ArticleByTag/ArticleContainer.astro";
 const t = useTranslations(Astro);
 
-const data1 = await getCollection("blog");
+const data1 = await getCollection("blog", (item) =>
+  !item.data.tags.includes("baseLearn") && !item.data.tags.includes("bestPractice")
+);
 
 const sortedPosts1 = data1.sort(
   (a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf()

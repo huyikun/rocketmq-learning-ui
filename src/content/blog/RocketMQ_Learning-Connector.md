@@ -3,8 +3,8 @@ title: "基于 RocketMQ Connect 构建数据流转处理平台"
 description: "基于 RocketMQ Connect 构建数据流转处理平台"
 date: "2024-07-24"
 tags: ["practice", "bestPractice"]
-authors: "隆基"
-img: "https://img.alicdn.com/imgextra/i2/O1CN01b7uXIi1bmFycwldBc_!!6000000003507-2-tps-498-220.png"
+author: "周波"
+img: "https://img.alicdn.com/imgextra/i4/O1CN01LyddeK28iwQm11NMB_!!6000000007967-2-tps-496-276.png"
 ---
 
 <a name="iek6y"></a>

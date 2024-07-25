@@ -3,7 +3,7 @@ title: "Apache RocketMQ，构建云原生统一消息引擎"
 description: "Apache RocketMQ，构建云原生统一消息引擎"
 date: "2024-07-24"
 tags: ["recommend"]
-authors: "隆基"
+author: "隆基"
 img: "https://img.alicdn.com/imgextra/i2/O1CN01b7uXIi1bmFycwldBc_!!6000000003507-2-tps-498-220.png"
 ---
 

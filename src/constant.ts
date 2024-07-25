@@ -605,19 +605,19 @@ export const SOLUTIONS_CARD_LIST = [
 // 首页基础学习资料
 export const BASE_LEARNDATA = [
   {
-    img: "https://img.alicdn.com/imgextra/i3/O1CN01QVMIVL1c2kEeAnvsG_!!6000000003543-2-tps-496-220.png",
+    img: "https://img.alicdn.com/imgextra/i4/O1CN01JOPX5Z1MEAG6kJOF7_!!6000000001402-2-tps-498-220.png",
     title: "RocketMQ 原理和架构",
     href: "/learning/baseLearn/rocketmq_learning-framework/?source=home",
     target: "_self"
   },
   {
-    img: "https://img.alicdn.com/imgextra/i3/O1CN01QVMIVL1c2kEeAnvsG_!!6000000003543-2-tps-496-220.png",
+    img: "https://img.alicdn.com/imgextra/i4/O1CN01YzRjCl1W7QafAcFDu_!!6000000002741-2-tps-496-220.png",
     title: "RocketMQ 应用场景",
     href: "/learning/baseLearn/rocketmq_learning-scene/?source=home",
     target: "_self"
   },
   {
-    img: "https://img.alicdn.com/imgextra/i3/O1CN01QVMIVL1c2kEeAnvsG_!!6000000003543-2-tps-496-220.png",
+    img: "https://img.alicdn.com/imgextra/i2/O1CN01QV0A1x1bz54BmqOIk_!!6000000003535-2-tps-496-220.png",
     title: "RocketMQ 快速上手体验",
     href: "/learning/baseLearn/rocketmq_learning-fast/?source=home",
     target: "_self"
@@ -658,12 +658,12 @@ export const PRACTICE_DATA = [
   {
     title: "Apache RocketMQ ACL 2.0 全新升级",
     href: "/learning/bestPractice/rocketmq_learning-acl/?source=home",
-    img: "https://img.alicdn.com/imgextra/i2/O1CN01b7uXIi1bmFycwldBc_!!6000000003507-2-tps-498-220.png"
+    img: "https://img.alicdn.com/imgextra/i4/O1CN01NkY3Jh27qRIaYQBkf_!!6000000007848-2-tps-496-276.png"
   },
   {
     title: "基于 RocketMQ Connect 构建数据流转处理平台",
     href: "/learning/bestPractice/rocketmq_learning-connector/?source=home",
-    img: "https://img.alicdn.com/imgextra/i2/O1CN01b7uXIi1bmFycwldBc_!!6000000003507-2-tps-498-220.png"
+    img: "https://img.alicdn.com/imgextra/i4/O1CN01LyddeK28iwQm11NMB_!!6000000007967-2-tps-496-276.png"
   },
 ];
 
