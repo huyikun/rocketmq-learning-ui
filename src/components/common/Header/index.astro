@@ -6,6 +6,7 @@ import MobileNavbar from "@components/common/MobileNavbar.astro";
 import SearchComp from "./searchComp/index.astro";
 import { SITE } from "@utils/config";
 import Alert from "./Alert.astro";
+import Search from "./Search.astro";
 interface Props {
   align?: "home" | "docs";
   position?: "static" | "sticky";
@@ -71,6 +72,7 @@ let height,
             title: "text-header font-normal",
           }}
         />
+        <Search />
       </div>
     </div>
   </my-layout>
