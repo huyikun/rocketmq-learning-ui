@@ -4,7 +4,7 @@ description: "介绍 Apache RocketMQ 的核心原理和架构"
 date: "2024-07-24"
 img: "https://img.alicdn.com/imgextra/i4/O1CN01JOPX5Z1MEAG6kJOF7_!!6000000001402-2-tps-498-220.png"
 tags: ["baseLearn"]
-author: "斜阳"
+author: ""
 ---
 
 Apache RocketMQ 是用于消息传递场景中高吞吐量、低延迟、高可用的分布式中间件，被广泛应用于搜索、社交网络活动流、数据管道、交易流程、物联网等领域，本文介绍 Apache RocketMQ 的核心原理和架构。
