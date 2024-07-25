@@ -35,7 +35,7 @@ let height,
 ---
 
 <span class="header-wrapper">
-  <Alert />
+  <!-- <Alert /> -->
   <my-layout
     style={`position: ${position}; height: ${height}`}
     class="w-full backdrop-blur-md top-0 z-[10] bg-base-header flex justify-center"
@@ -62,15 +62,15 @@ let height,
         <!-- <LanguageToggle id="pc-toggle" lang={lang.toLowerCase()} theme="error"/> -->
         <!-- <SearchComp /> -->
         <LinkButton
-        href={SITE.githubUrl}
-        text="GITHUB"
-        theme="gray-02"
-        textTheme="title"
-        classes={{ 
-          container: "rounded-3xl bg-footer xl:h-[2.5rem] xl:min-h-[2.5rem]",
-          title: "text-header font-normal" 
-        }}
-      />
+          href={SITE.githubUrl}
+          text="GITHUB"
+          theme="gray-02"
+          textTheme="title"
+          classes={{
+            container: "rounded-3xl bg-footer xl:h-[2.5rem] xl:min-h-[2.5rem]",
+            title: "text-header font-normal",
+          }}
+        />
       </div>
     </div>
   </my-layout>
@@ -184,46 +184,51 @@ let height,
 </style>
 
 <script>
-  // function addCopilot() {
-  //   const copilotJSScript = document.createElement("script");
-  //   copilotJSScript.type = "text/javascript";
-  //   copilotJSScript.src =
-  //     "https://g.alicdn.com/cm-design/copilot-booter/0.0.26/copilot-booter.js";
-  //   copilotJSScript.addEventListener("load", function () {
-  //     if (window.CNPilot) {
-  //       window.CNPilot.mounted({
-  //         CNPilot_OPEN_SOURCE: ["sca.aliyun.com"],
-  //         CNPilot_OPEN_SOURCE_API: "https://ai.nacos.io",
-  //         CNPilot_OPEN_SOURCE_PRODUCT_NAME: "sca",
-  //         showFloatICON: true,
-  //         globalStyle: {
-  //           top: "0",
-  //           height: "100vh",
-  //         },
-  //         entryIconProps: {
-  //           "position-type": "updown",
-  //           "icon-hover-text": "专家答疑",
-  //           "icon-style": {
-  //             color: "red",
-  //             background: "white",
-  //             border: "2px solid red",
-  //             borderRadius: "20px",
-  //           },
-  //         },
-  //         headerProps: {
-  //           closeIcon: { show: true },
-  //           titleText: "AI答疑专家",
-  //         },
-  //       });
-  //     }
-  //   });
-  //   document.body.append(copilotJSScript);
-  // }
+  function addCopilot() {
+    const copilotJSScript = document.createElement("script");
+    copilotJSScript.type = "text/javascript";
+    copilotJSScript.src =
+      "//g.alicdn.com/cm-design/copilot-booter/0.0.26/copilot-booter.js";
+    copilotJSScript.addEventListener("load", function () {
+      if (window.CNPilot) {
+        window.CNPilot.mounted({
+          CNPilot_OPEN_SOURCE: [
+            "rocketmq-learning-ui.oss-cn-hangzhou.aliyuncs.com",
+          ], // 需要展示的开源网站
+          CNPilot_OPEN_SOURCE_API: "https://ai.nacos.io", // 需要使用的后端地址
+          CNPilot_OPEN_SOURCE_PRODUCT_NAME:
+            "rocketmq-learning-ui.oss-cn-hangzhou.aliyuncs.com",
+          showFloatICON: true, // 展示 icon 浮窗
+          globalStyle: {
+            // 弹窗外层样式（react style 写法）
+            top: "0px", // 默认置于浏览器顶部
+            height: "100vh", // 高度设置为浏览器可视最大高度
+          },
+          entryIconProps: {
+            // 入口 ICON 配置
+            "position-type": "updown",
+            "icon-hover-text": "专家答疑",
+            "icon-style": {
+              color: "red", // 配置文字颜色
+              background: "white", // 配置背景色
+              border: "2px solid red", // 配置边框
+              borderRadius: "20px", // 配置圆角
+            },
+          },
+          headerProps: {
+            titleText: "无疑 AI答疑专家", // 自定义 header 文字
+            closeIcon: { show: true }, // 展示 header 部分右边关闭按钮
+          },
+        });
+      }
+    });
+    document.body.append(copilotJSScript);
+  }
 
-  // addCopilot();
+  addCopilot();
 
-  // document.addEventListener("astro:page-load", function () {
-  //   if (window.CNPilot) window.CNPilot.unmounted();
-  //   addCopilot();
-  // });
+  document.addEventListener("astro:page-load", function () {
+    if (window.CNPilot) window.CNPilot.unmounted();
+    addCopilot();
+  });
 </script>
