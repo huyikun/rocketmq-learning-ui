@@ -46,20 +46,35 @@ const {
 ---
 
 <a
-  href={tag
-    ? `/learning/${tag}/${post.slug}/?source=${source}`
-    : `/learning/${post.slug}/?source=${source}`}
-  class={twMerge("card bg-card p-[24px] shadow-none w-full flex ", className)}
+  href={source === "faq"
+    ? `/faq/${post.slug}/?source=${source}`
+    : tag
+      ? `/learning/${tag}/${post.slug}/?source=${source}`
+      : `/learning/${post.slug}/?source=${source}`}
+  class={twMerge(
+    "card bg-card  shadow-none w-full flex ",
+    className,
+    source === "faq" ? "p-[2.5rem]" : "p-[1.5rem]"
+  )}
 >
   <!-- {
     useAnchor ? (
       <a id={post.slug} class={"absolute z-[-100] top-[-4rem]"} />
     ) : null
   } -->
-  <div class="w-[31.27%] h-[8.625rem] rounded-lg overflow-hidden left-content">
-    <img src={post.data?.img} />
-  </div>
-  <div class="w-[68.73%] pl-[24px] right-content">
+  {
+    source !== "faq" && (
+      <div class="w-[31.27%] h-[8.625rem] rounded-lg overflow-hidden left-content">
+        <img src={post.data?.img} />
+      </div>
+    )
+  }
+  <div
+    class={twMerge(
+      "pl-[24px]",
+      source === "faq" ? "w-full" : "w-[68.73%] right-content"
+    )}
+  >
     <p class="text-xs font-normal">
       {formatDate(post.data.date)}
     </p>
@@ -68,7 +83,12 @@ const {
     </div>
 
     <div class="text-xs leading-[1.125rem] mt-[16px] simple-card-desc">
-      <div class="multiline-text text-content">
+      <div
+        class={twMerge(
+          " text-content multiline-text",
+          source === "faq" ? "multiline-text-4" : ""
+        )}
+      >
         {post.excerpt || post.data.description}
       </div>
     </div>
@@ -154,6 +174,10 @@ const {
       -webkit-line-clamp: 3; /* 控制显示的行数 */
       overflow: hidden;
       text-overflow: ellipsis;
+    }
+
+    .multiline-text-4 {
+      -webkit-line-clamp: 4; /* 控制显示的行数 */
     }
   }
 </style>

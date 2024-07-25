@@ -23,6 +23,12 @@ export default [
     target: "_self",
     route: "/learning/",
   },
+  {
+    label: "答疑样例",
+    trigger: "click",
+    target: "_self",
+    route: "/faq/",
+  },
   // {
   //   label: "文档",
   //   translations: {
