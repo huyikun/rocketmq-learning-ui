@@ -44,59 +44,61 @@ const { duration = 5000, useduration = "disabled" } = Astro.props as Props;
     let slideWidth = 0;
     const slides = document.querySelector(".carousel-container");
     const dots = document.querySelectorAll(".dot");
-
-    dots.forEach((dot, i) => {
-      dot.addEventListener("click", () => {
-        currentSlide(i);
+    const carouselWrapper = document.querySelector("#carousel-wrapper");
+    if (carouselWrapper) {
+      dots.forEach((dot, i) => {
+        dot.addEventListener("click", () => {
+          currentSlide(i);
+        });
       });
-    });
 
-    function init() {
-      slideWidth = slides.firstElementChild.clientWidth;
-      resetInterval();
-      window.addEventListener("resize", handleResize);
+      function init() {
+        slideWidth = slides.firstElementChild.clientWidth;
+        resetInterval();
+        window.addEventListener("resize", handleResize);
+      }
+
+      function currentSlide(n) {
+        slideIndex = n;
+        updateSlides();
+        updateDots(); // 更新点控制器状态
+        resetInterval(); // 用户点击 dot 后重新计时
+      }
+
+      function updateDots() {
+        dots.forEach((dot, index) => {
+          if (index === slideIndex) {
+            dot.classList.add("dot-active");
+          } else {
+            dot.classList.remove("dot-active");
+          }
+        });
+      }
+
+      function updateSlides() {
+        const offset = -slideIndex * slideWidth;
+        slides.style.transform = `translateX(${offset}px)`;
+      }
+
+      // 自动播放
+      function toggleSlide() {
+        slideIndex = (slideIndex + 1) % dots.length;
+        updateSlides();
+        updateDots();
+      }
+
+      function resetInterval() {
+        clearInterval(intervalId); // 清除现有的定时器
+        intervalId = setInterval(toggleSlide, 5000); // 重新设定定时器
+      }
+
+      function handleResize() {
+        slideWidth = slides.firstElementChild.clientWidth; // 更新幻灯片宽度
+        updateSlides(); // 重新定位幻灯片位置
+      }
+
+      init(); // 初始化轮播图
     }
-
-    function currentSlide(n) {
-      slideIndex = n;
-      updateSlides();
-      updateDots(); // 更新点控制器状态
-      resetInterval(); // 用户点击 dot 后重新计时
-    }
-
-    function updateDots() {
-      dots.forEach((dot, index) => {
-        if (index === slideIndex) {
-          dot.classList.add("dot-active");
-        } else {
-          dot.classList.remove("dot-active");
-        }
-      });
-    }
-
-    function updateSlides() {
-      const offset = -slideIndex * slideWidth;
-      slides.style.transform = `translateX(${offset}px)`;
-    }
-
-    // 自动播放
-    function toggleSlide() {
-      slideIndex = (slideIndex + 1) % dots.length;
-      updateSlides();
-      updateDots();
-    }
-
-    function resetInterval() {
-      clearInterval(intervalId); // 清除现有的定时器
-      intervalId = setInterval(toggleSlide, 5000); // 重新设定定时器
-    }
-
-    function handleResize() {
-      slideWidth = slides.firstElementChild.clientWidth; // 更新幻灯片宽度
-      updateSlides(); // 重新定位幻灯片位置
-    }
-
-    init(); // 初始化轮播图
   });
 </script>
 <style is:global>

@@ -29,11 +29,10 @@ RocketMQ 是一个典型的发布订阅系统，通过 Broker 节点中转和持
 
 1. 服务端 Broker Master1 和 Slave1 构成其中的一个副本组。
 2. 服务端 Broker 1 和 Broker 2 两个副本组以负载均衡的形式共同为客户端提供读写。
-
-![image.png](https://img.alicdn.com/imgextra/i2/O1CN01LAUXpi1bUOWytI7NC_!!6000000003468-0-tps-1568-756.jpg)<br />注：Producer 和 Consumer 会和 NameServer，Broker 都维持长连接。Producer 只会向 Master 副本发送消息，Consumer 可以从 Master 或者 Slave 消费消息。
+![image.png](https://img.alicdn.com/imgextra/i2/O1CN01Dm0GbI26IiWQCNdfg_!!6000000007639-0-tps-2084-1000.jpg)<br />注：Producer 和 Consumer 会和 NameServer，Broker 都维持长连接。Producer 只会向 Master 副本发送消息，Consumer 可以从 Master 或者 Slave 消费消息。
 <a name="xdWNn"></a>
 ### 存储计算分离部署
-存储和计算分离是一种良好的模块化设计。无状态的 Proxy 集群是数据流量的入口，提供签名校验与权限控制、计量与可观测、客户端连接管理、消息编解码处理、流量控制、多协议接入等能力。原 Broker 节点演化为以存储为核心的有状态集群，支持读写多类型消息，它们的底层是多模态存储和多元化的高效索引。存储计算分离的形态利于不同业务场景下单独调整存储或计算节点的数量，来实现扩容和缩容。网关模式接入还能带来升级简单，组网便利等好处。Proxy 和 Broker 都属于服务端组件，内网通信的延迟不会显著增加客户端收发消息的延迟。![image.png](https://img.alicdn.com/imgextra/i3/O1CN01eHKHRB1s6RHemclnp_!!6000000005717-0-tps-1564-578.jpg)<br />注：Proxy 自身会向 NameServer 和 Broker 都建立长连接，Producer 和 Consumer 仅连接到 Proxy。
+存储和计算分离是一种良好的模块化设计。无状态的 Proxy 集群是数据流量的入口，提供签名校验与权限控制、计量与可观测、客户端连接管理、消息编解码处理、流量控制、多协议接入等能力。原 Broker 节点演化为以存储为核心的有状态集群，支持读写多类型消息，它们的底层是多模态存储和多元化的高效索引。存储计算分离的形态利于不同业务场景下单独调整存储或计算节点的数量，来实现扩容和缩容。网关模式接入还能带来升级简单，组网便利等好处。Proxy 和 Broker 都属于服务端组件，内网通信的延迟不会显著增加客户端收发消息的延迟。![image.png](https://img.alicdn.com/imgextra/i2/O1CN01aD4VOe1TB8xPi5xcg_!!6000000002343-0-tps-2084-766.jpg)<br />注：Proxy 自身会向 NameServer 和 Broker 都建立长连接，Producer 和 Consumer 仅连接到 Proxy。
 <a name="aPwMj"></a>
 ## 通信机制
 Apache RocketMQ 客户端使用 TCP 访问服务端，根据传输的数据格式分为 Remoting 协议和 gRPC 协议。
@@ -47,18 +46,18 @@ RocketMQ 的接入点是什么？为了简化客户端配置的复杂度，以�
 ## 存储机制
 <a name="bzUeC"></a>
 ### 元数据管理
-为了提升整体的吞吐量与提供跨副本组的高可用能力，RocketMQ 服务端一般会为单个 Topic 创建多个逻辑分区，即在多个副本组上各自维护部分分区 (Partition)，我们把它称为队列 (MessageQueue)。同一个副本组上同一个 Topic 的队列数相同并从 0 开始连续编号，不同副本组上的 MessageQueue 数量可以不同。<br />![image.png](https://intranetproxy.alipay.com/skylark/lark/0/2024/png/213145/1721629257518-f3778041-c94a-4b79-91fe-c0cd2088b7de.png#clientId=u84497c1f-c419-4&from=paste&height=320&id=u18094212&originHeight=640&originWidth=1348&originalType=binary&ratio=2&rotation=0&showTitle=false&size=522102&status=done&style=none&taskId=udc5ec960-d65a-4064-9983-03777139db3&title=&width=674)<br />例如 topic-a 可以在 broker-1 主副本上有 4 个队列，编号 (queueId) 是 0-3，在 broker-1 备副本上完全相同，但是 broker-2 上可能就只有 2 个队列，编号 0-1。在 Broker 上元数据的组织管理方式是与上述模型匹配的，每一个 Topic 的 TopicConfig，包含了几个核心的属性，名称，读写队列数，权限与许多元数据标识，这个模型类似于 K8s 的 StatefulSet，队列从 0 开始编号，扩缩队列都在尾部操作（例如 24 个队列缩分区到 16，是留下了编号为 0-15 的分区）。Broker 还管理着当前节点上 Group 的相关信息和消费进度（位点），当消费进度更新时 并不会像 Topic Group 那样立刻持久化，而是使用一个定时任务做 CheckPoint。这个周期默认是 5 秒，所以当客户端有上下线，服务端主备切换或者正常发布时，可能会有秒级的消息重复，并观察到堆积量的短暂上升。
+为了提升整体的吞吐量与提供跨副本组的高可用能力，RocketMQ 服务端一般会为单个 Topic 创建多个逻辑分区，即在多个副本组上各自维护部分分区 (Partition)，我们把它称为队列 (MessageQueue)。同一个副本组上同一个 Topic 的队列数相同并从 0 开始连续编号，不同副本组上的 MessageQueue 数量可以不同。<br />![image.png](https://img.alicdn.com/imgextra/i2/O1CN013PG6Lr1DwkGl34SeR_!!6000000000281-0-tps-2078-984.jpg)<br />例如 topic-a 可以在 broker-1 主副本上有 4 个队列，编号 (queueId) 是 0-3，在 broker-1 备副本上完全相同，但是 broker-2 上可能就只有 2 个队列，编号 0-1。在 Broker 上元数据的组织管理方式是与上述模型匹配的，每一个 Topic 的 TopicConfig，包含了几个核心的属性，名称，读写队列数，权限与许多元数据标识，这个模型类似于 K8s 的 StatefulSet，队列从 0 开始编号，扩缩队列都在尾部操作（例如 24 个队列缩分区到 16，是留下了编号为 0-15 的分区）。Broker 还管理着当前节点上 Group 的相关信息和消费进度（位点），当消费进度更新时 并不会像 Topic Group 那样立刻持久化，而是使用一个定时任务做 CheckPoint。这个周期默认是 5 秒，所以当客户端有上下线，服务端主备切换或者正常发布时，可能会有秒级的消息重复，并观察到堆积量的短暂上升。
 <a name="N2peE"></a>
 ### 高效的存储层实现
 RocketMQ 存储的核心是极致优化的顺序写盘，数据以 append only 的形式不断的将新的消息追加到文件末尾。RocketMQ 使用了一种称为 MappedByteBuffer 的内存映射文件的办法，将一个文件映射到进程的地址空间，实现文件的磁盘地址和进程的一段虚拟地址关联，实际上是利用了NIO 中的 FileChannel 模型。在进行这种绑定后，用户进程就可以用指针（偏移量）的形式写入磁盘而不用进行 read / write 的系统调用，减少了数据在缓冲区之间来回拷贝的开销。当然这种内核实现的机制有一些限制，单个 mmap 的文件不能太大 (RocketMQ 选择了 1G)，此时再把多个 mmap 的文件用一个链表串起来构成一个逻辑队列 (称为 MappedFileQueue)，就可以在逻辑上实现一个无需考虑长度的存储空间来保存全部的消息。
 
-![](https://intranetproxy.alipay.com/skylark/lark/0/2024/webp/213145/1721184070944-36721724-720e-4fbc-8b86-26226bbcb3fb.webp#clientId=u68b4bc55-b6a6-4&from=paste&id=u94190ef1&originHeight=388&originWidth=1600&originalType=url&ratio=2&rotation=0&showTitle=false&status=done&style=none&taskId=uc976b6c8-eed8-4736-8fb4-0a519c6e1af&title=)
+![](https://img.alicdn.com/imgextra/i1/O1CN01kJcO8N1KaUKirgRLX_!!6000000001180-0-tps-2084-502.jpg)
 <a name="4ever-bi-139"></a>
 ### 单条消息的存储格式
-RocketMQ 有一套相对复杂的消息存储编码用来将消息对象序列化，随后再将非定长的数据落到上述的真实的写入到文件中，存储格式中包括了索引队列的编号和位置。单条消息的存储格式如下：<br />![image.png](https://intranetproxy.alipay.com/skylark/lark/0/2024/png/213145/1721373261326-06836245-30da-4fd3-8f01-f468521f7f27.png#clientId=u033b11ca-bdcc-4&from=paste&height=291&id=ucf0b3609&originHeight=582&originWidth=2204&originalType=binary&ratio=2&rotation=0&showTitle=false&size=544924&status=done&style=none&taskId=u5233aef5-a42b-4be7-93a4-98a710c65fe&title=&width=1102)<br />可以发现，单条消息本身元数据占用的存储空间为固定的描述信息和变长的 body 和 properties 部分，而消息的 payload 通常大于 2K，也就是说元数据带来的额外存储开销只增加了 5%-10% 左右。很明显，单条消息越大，存储本身额外的开销（比例）就相对的越少。
+RocketMQ 有一套相对复杂的消息存储编码用来将消息对象序列化，随后再将非定长的数据落到上述的真实的写入到文件中，存储格式中包括了索引队列的编号和位置。单条消息的存储格式如下：<br />![image.png](https://img.alicdn.com/imgextra/i4/O1CN015t0YHA24xophZ8n4q_!!6000000007458-0-tps-2078-546.jpg)<br />可以发现，单条消息本身元数据占用的存储空间为固定的描述信息和变长的 body 和 properties 部分，而消息的 payload 通常大于 2K，也就是说元数据带来的额外存储开销只增加了 5%-10% 左右。很明显，单条消息越大，存储本身额外的开销（比例）就相对的越少。
 <a name="4ever-bi-158"></a>
 ### 构建消息的索引
-在数据写入 CommitLog 后，有一个后端的 ReputMessageService 服务 (也被称为 dispatch 线程) 会异步的构建多种索引（例如 ConsumeQueue 和 Index），满足不同形式的读取和查询诉求。在 RocketMQ 的模型下，消息本身存在的逻辑队列称为 MessageQueue，而对应的物理索引文件称为 ConsumeQueue。其中 dispatch 线程会源源不断的将消息从 CommitLog 取出，再拿出消息在 CommitLog 中的物理偏移量，消息长度以及 Tag Hash 等信息作为单条消息的索引，分发到对应的消费队列，构成了对 CommitLog 的引用 (Reference)。ConsumeQueue 中单条消息占用的索引空间只有 20B。当客户端尝试从服务端拉取消息时，会先读取索引并进行过滤，随后根据索引从 CommitLog 中获得真实的消息并返回。<br />![](https://intranetproxy.alipay.com/skylark/lark/0/2024/webp/213145/1721184071581-7c02ef2d-0aaa-41f0-96a1-c5e977b50642.webp#clientId=u68b4bc55-b6a6-4&from=paste&height=896&id=u8c114b07&originHeight=896&originWidth=1142&originalType=url&ratio=2&rotation=0&showTitle=false&status=done&style=none&taskId=u78d8a251-5f36-4d12-b249-c03f1ea2c88&title=&width=1142)
+在数据写入 CommitLog 后，有一个后端的 ReputMessageService 服务 (也被称为 dispatch 线程) 会异步的构建多种索引（例如 ConsumeQueue 和 Index），满足不同形式的读取和查询诉求。在 RocketMQ 的模型下，消息本身存在的逻辑队列称为 MessageQueue，而对应的物理索引文件称为 ConsumeQueue。其中 dispatch 线程会源源不断的将消息从 CommitLog 取出，再拿出消息在 CommitLog 中的物理偏移量，消息长度以及 Tag Hash 等信息作为单条消息的索引，分发到对应的消费队列，构成了对 CommitLog 的引用 (Reference)。ConsumeQueue 中单条消息占用的索引空间只有 20B。当客户端尝试从服务端拉取消息时，会先读取索引并进行过滤，随后根据索引从 CommitLog 中获得真实的消息并返回。<br />![](https://img.alicdn.com/imgextra/i1/O1CN01N19vER1jydbuADUig_!!6000000004617-0-tps-2082-1630.jpg)
 <a name="yplKH"></a>
 ## 高可用机制
 <a name="SOIMw"></a>
@@ -81,7 +80,7 @@ RocketMQ 有一套相对复杂的消息存储编码用来将消息对象序列�
 - 主 CommitLog Min = 300，Max = 2500，EpochMap = {<6, 200>, <7, 1200>, <8,2500>}
 - 备 CommitLog Min = 300，Max = 2500，EpochMap = {<6, 200>, <7, 1200>, <8,2250>}
 
-![image.png](https://intranetproxy.alipay.com/skylark/lark/0/2024/png/213145/1721375364707-2a95206b-ee55-4520-8eab-9313c788ce7e.png#clientId=u8e0dbd4e-8e0f-4&from=paste&height=525&id=u32e55a00&originHeight=1050&originWidth=2200&originalType=binary&ratio=2&rotation=0&showTitle=false&size=508565&status=done&style=none&taskId=u0895623e-c9cf-45bc-8187-535663699c9&title=&width=1100)
+![image.png](https://img.alicdn.com/imgextra/i2/O1CN01wqoH2A1GQdLey60XZ_!!6000000000617-0-tps-2070-996.jpg)
 
 1. 备节点连接到主节点进行 HA 协商，获取主节点的 Epoch-StartOffset 信息并比较
 2. 备从后向前找到任期-起始点相同的那个点作为分叉任期，在上述案例里是 <8, 2250>
@@ -118,7 +117,7 @@ Push / Pull 消费模式的负载均衡是在客户端完成的，性能较高�
 3. 当某些消费者僵死（hang 住）时，会造成其消费的队列的消息堆积。
 <a name="wbzkW"></a>
 ### Pop 消费
-在 RocketMQ 5.0 中，Pop 消费模式借助 gRPC 封装的接口，促进了轻量化多语言客户端的实现，无需在各客户端重复实现重平衡逻辑，显著提升了系统的灵活性和扩展性。该设计核心在于将重平衡、位点管理及消息重试等任务转移至服务端处理，有效避免单点故障引起的消息积压，优化了整体消息处理效率和系统的水平扩展能力。<br />![image.png](https://intranetproxy.alipay.com/skylark/lark/0/2024/png/213145/1721378379272-87a4eb8c-393b-4c84-ab15-b91a7a96cc85.png#clientId=u430ffe7f-4b30-4&from=paste&height=532&id=ToUbG&originHeight=1064&originWidth=2838&originalType=binary&ratio=2&rotation=0&showTitle=false&size=648812&status=done&style=none&taskId=uf8b08cce-e6eb-4812-95ac-51cc545196c&title=&width=1419)<br />Push / Pull 模式下队列中有慢任务会阻塞整个队列。例如有位点为 34567 的 5 条消息，消费 offset = 5 时业务逻辑耗时非常久，并发消费模式下 67 两条消息消费较快，而观察到的堆积一直为 3 造成误判。消费者或者服务端宕机，业务对产生几秒的消费重复依然敏感，影响用户体验，例如短信推送场景。甚至，我们还有更有代表性的场景来命中这些 “缺陷”，例如渲染业务，队列中每一条消息代表一个渲染任务。
+在 RocketMQ 5.0 中，Pop 消费模式借助 gRPC 封装的接口，促进了轻量化多语言客户端的实现，无需在各客户端重复实现重平衡逻辑，显著提升了系统的灵活性和扩展性。该设计核心在于将重平衡、位点管理及消息重试等任务转移至服务端处理，有效避免单点故障引起的消息积压，优化了整体消息处理效率和系统的水平扩展能力。<br />![image.png](https://img.alicdn.com/imgextra/i3/O1CN014STf1O1dGJaRUJgQq_!!6000000003708-0-tps-2082-776.jpg)<br />Push / Pull 模式下队列中有慢任务会阻塞整个队列。例如有位点为 34567 的 5 条消息，消费 offset = 5 时业务逻辑耗时非常久，并发消费模式下 67 两条消息消费较快，而观察到的堆积一直为 3 造成误判。消费者或者服务端宕机，业务对产生几秒的消费重复依然敏感，影响用户体验，例如短信推送场景。甚至，我们还有更有代表性的场景来命中这些 “缺陷”，例如渲染业务，队列中每一条消息代表一个渲染任务。
 
 1. 消费者数量较多，同一个订阅组可能有成百上千台机器同时消费。
 2. 该场景下单条数据的处理耗时较长，需要几秒至几个小时不等。
@@ -130,7 +129,7 @@ Push / Pull 消费模式的负载均衡是在客户端完成的，性能较高�
 2. 服务端返回一批消息，并在后台开始倒计时 5 分钟，消息上会附加一个字段用来标识，也称为 handle。
 3. 如果客户端 5 分钟内没有提交消费成功（ack by handle），5 分钟后客户端再次可以获取到这批消息。
 
-![](https://intranetproxy.alipay.com/skylark/lark/0/2024/webp/213145/1721617811766-2d41d32f-8b87-4a5d-a067-bb8a503f2336.webp#clientId=u63929812-ba1e-4&from=paste&id=u4a50b48b&originHeight=982&originWidth=1600&originalType=url&ratio=2&rotation=0&showTitle=false&status=done&style=none&taskId=u83f3e008-8b3f-49eb-9ccd-e5730aebc8e&title=)<br />很快我们就会发现这个模型还是有缺陷的，假如消费者拉取消息 1 分钟后立刻宕机了，业务不得不忍受 4 分钟的延迟才能再次处理，哪怕此时其他消费者还是空闲状态。这个时候就可以选择将消息的不可见时间设置为 1 分钟，在客户端处理业务的同时不停的 refresh 不可见时间，例如每隔 30 秒就调用 change invisible time，使剩余的不可见时间更新为 1 分钟，此时无论客户端何时宕机，消息的延迟时间会控制在 1 分钟之内。在 RocketMQ 中，这种基于区间和单条消息进行消费的方式被称为 “pop 消费”，对应的客户端实现是 SimpleConsumer，它的简单性在于客户端不再需要关心复杂的负载均衡和位点管理，也更容易适配多语言。
+![](https://img.alicdn.com/imgextra/i3/O1CN01JLZHt91sVd4BQD7IN_!!6000000005772-0-tps-2076-1276.jpg)<br />很快我们就会发现这个模型还是有缺陷的，假如消费者拉取消息 1 分钟后立刻宕机了，业务不得不忍受 4 分钟的延迟才能再次处理，哪怕此时其他消费者还是空闲状态。这个时候就可以选择将消息的不可见时间设置为 1 分钟，在客户端处理业务的同时不停的 refresh 不可见时间，例如每隔 30 秒就调用 change invisible time，使剩余的不可见时间更新为 1 分钟，此时无论客户端何时宕机，消息的延迟时间会控制在 1 分钟之内。在 RocketMQ 中，这种基于区间和单条消息进行消费的方式被称为 “pop 消费”，对应的客户端实现是 SimpleConsumer，它的简单性在于客户端不再需要关心复杂的负载均衡和位点管理，也更容易适配多语言。
 <a name="QX5n3"></a>
 ## 高级特性
 <a name="TZstV"></a>
@@ -155,7 +154,7 @@ RocketMQ 提供了事务消息的功能，采用 2PC (两段式协议) + 补偿�
 - 半事务消息：暂不能投递的消息，发送方已经成功地将消息发送到了消息队列 RocketMQ 版服务端，但是服务端未收到生产者对该消息的二次确认，此时该消息被标记成“暂不能投递”状态，处于该种状态下的消息即半事务消息。
 - 消息回查： 由于网络闪断、生产者应用重启等原因，导致某条事务消息的二次确认丢失，消息队列 RocketMQ 版服务端通过扫描发现某条消息长期处于“半事务消息”时，需要主动向消息生产者组（ProducerGroup）的任意一个客户端询问该消息的最终状态（Commit 或是 Rollback），即消息回查。
 
-![image.png](https://intranetproxy.alipay.com/skylark/lark/0/2024/png/213145/1721630512582-bc0b9b98-92d3-458b-8d4d-7a9125c0668a.png#clientId=u84497c1f-c419-4&from=paste&height=317&id=u6ac86d71&originHeight=634&originWidth=2000&originalType=binary&ratio=2&rotation=0&showTitle=false&size=79028&status=done&style=none&taskId=u4b15121d-4a4a-4f60-85a5-c1e08f8db77&title=&width=1000)<br />事务消息发送步骤如下：
+![image.png](https://img.alicdn.com/imgextra/i2/O1CN01dIsDbL20dt8Swbz7H_!!6000000006873-0-tps-2076-658.jpg)<br />事务消息发送步骤如下：
 
 1. 发送方将半事务消息发送至消息队列 RocketMQ 版服务端。
 2. 消息队列 RocketMQ 版服务端将消息持久化成功之后，向发送方返回 Ack 确认消息已经发送成功，此时消息为半事务消息。
@@ -166,5 +165,5 @@ RocketMQ 提供了事务消息的功能，采用 2PC (两段式协议) + 补偿�
 7. 发送方根据检查得到的本地事务的最终状态再次提交二次确认，服务端仍按照步骤 4 对半事务消息进行操作。
 <a name="EPjVo"></a>
 ### 消息查询
-RocketMQ 作为业务消息的首选，除了上文中 ReputMessageService 线程除了构建消费队列的索引外，还同时为每条消息根据 id, key 构建了索引到 IndexFile。这是方便快速快速定位目标消息而产生的，当然这个构建随机索引的能力是可以降级的，IndexFile文件结构如下：<br />![image.png](https://intranetproxy.alipay.com/skylark/lark/0/2024/png/213145/1721378192280-4f512f14-f103-4405-97a7-1d2190bf5b0c.png#clientId=u430ffe7f-4b30-4&from=paste&height=445&id=uc9aaf85c&originHeight=890&originWidth=3368&originalType=binary&ratio=2&rotation=0&showTitle=false&size=471315&status=done&style=none&taskId=u96456528-50a0-4ea8-af5f-5687ab592b7&title=&width=1684)<br />IndexFile 也是定长的，从单个文件的数据结构来说，这是实现了一种简单原生的哈希拉链机制。当一条新的消息索引进来时，首先使用 hash 算法命中黄色部分 500w 个 slot 中的一个，如果存在冲突就使用拉链解决，将最新索引数据的 next 指向上一条索引位置。同时将消息的索引数据 append 至文件尾部（绿色部分），这样便形成了一条当前 slot 按照时间存入的倒序的链表。这里其实也是一种 LSM compaction 在消息模型下的改进，降低了写放大。当用户按照 UniqueKey（MsgId）或者业务 Key 来进行查询时，会先从索引查询消息报存在 CommitLog 中的位置并取回数据返回客户端。
+RocketMQ 作为业务消息的首选，除了上文中 ReputMessageService 线程除了构建消费队列的索引外，还同时为每条消息根据 id, key 构建了索引到 IndexFile。这是方便快速快速定位目标消息而产生的，当然这个构建随机索引的能力是可以降级的，IndexFile文件结构如下：<br />![image.png](https://img.alicdn.com/imgextra/i4/O1CN01VXU6N91bycfe68YR8_!!6000000003534-0-tps-2078-546.jpg)<br />IndexFile 也是定长的，从单个文件的数据结构来说，这是实现了一种简单原生的哈希拉链机制。当一条新的消息索引进来时，首先使用 hash 算法命中黄色部分 500w 个 slot 中的一个，如果存在冲突就使用拉链解决，将最新索引数据的 next 指向上一条索引位置。同时将消息的索引数据 append 至文件尾部（绿色部分），这样便形成了一条当前 slot 按照时间存入的倒序的链表。这里其实也是一种 LSM compaction 在消息模型下的改进，降低了写放大。当用户按照 UniqueKey（MsgId）或者业务 Key 来进行查询时，会先从索引查询消息报存在 CommitLog 中的位置并取回数据返回客户端。
 

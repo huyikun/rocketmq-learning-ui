@@ -11,7 +11,7 @@ tags: ["explore", "home"]
 ## 一、消息队列演进史
 操作系统、数据库、中间件是基础软件的三驾马车，而消息队列属于最经典的中间件之一，已经有30多年的历史。消息队列的发展主要经历了以下几个阶段：
 
-![image.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/30656771/1684734677124-00d72298-09f5-4130-83c3-68c65f978d39.png#clientId=u8516c144-a6f3-4&from=paste&height=620&id=u7f825ff0&originHeight=1239&originWidth=2424&originalType=binary&ratio=2&rotation=0&showTitle=false&size=2277707&status=done&style=none&taskId=u57f7e396-9fc4-4c19-9dab-dc3dc27f1ec&title=&width=1212)
+![image.png](https://img.alicdn.com/imgextra/i4/O1CN01p61MqC1szrCubCnDS_!!6000000005838-0-tps-2424-1239.jpg)
 
 第一阶段（1980-2000年）：80年代诞生了第一款消息队列The Information Bus，第一次提出发布订阅模式来解决软件之间的通信问题；90年代是国际商业软件巨头的时代，IBM、Oracle、Microsoft纷纷推出自己的MQ，其中最具代表性的为IBM MQ，价格昂贵，面向高端企业，主要是大型金融、电信等企业。该类商业MQ一般采用高端硬件，软硬件一体机交付，MQ本身的软件架构为单机架构。
 
@@ -23,7 +23,7 @@ tags: ["explore", "home"]
 ## 二、互联网时代的RocketMQ
 阿里的电商系统最初是个庞大的单体巨石应用，在研发效率、稳定性方面都无法满足淘宝和天猫飞速的发展。为了解决问题，2008年，淘宝与天猫发起了一次最大规模的架构升级，启动了“五彩石”项目，将单体应用拆分为分布式应用，同时抽象淘宝、天猫的共同底座——业务中台，包括交易中心、商品中心、买家中心等。在业务中台之下，同时诞生了阿里中间件（初期三大件包括消息、RPC、分布式数据层），RocketMQ是其中之一。
 
-![image.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/30656771/1684734712538-50f99b04-4525-4785-a55a-74b655ddd661.png#clientId=u8516c144-a6f3-4&from=paste&height=645&id=uf03f9257&originHeight=1290&originWidth=2476&originalType=binary&ratio=2&rotation=0&showTitle=false&size=2401943&status=done&style=none&taskId=ucc17db38-03a1-45dc-ae6b-12b29361920&title=&width=1238)
+![image.png](https://img.alicdn.com/imgextra/i4/O1CN01FDPWwZ22RBNavYDvb_!!6000000007116-0-tps-2476-1290.jpg)
 
 虽然在当时业界已经存在不少商业或开源的消息队列，比如IBMMQ、ActiveMQ、RabbitMQ，但无一例外，它们都诞生于传统企业级应用的场景，无法承受互联网对于高并发、无限扩展的苛刻要求。以RabbitMQ为例，RabbitMQ的队列流量与存储负载都为单机，无法满足业务横向扩展的需求。当时另一款具备无限横向扩展能力的消息队列是Kafka，但其主要用于日志类场景，未经过大规模核心业务稳定性验证，而且偏向于简单的log型消息队列，无法满足电商对于复杂消息功能特性的诉求，比如消息过滤、延迟消息等。
 
@@ -33,7 +33,7 @@ tags: ["explore", "home"]
 
 为了解决电商业务对于消息队列的高性能、一致性、无限扩展等需求，自研消息队列成为了当时阿里唯一的出路，最终互联网消息队列RocketMQ应运而生。
 
-![image.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/30656771/1684734748518-9fc00551-ce21-41a0-a4bb-8a1a13cb7103.png#clientId=u8516c144-a6f3-4&from=paste&height=606&id=u2807be78&originHeight=1211&originWidth=2463&originalType=binary&ratio=2&rotation=0&showTitle=false&size=2361780&status=done&style=none&taskId=u0a814edc-dd02-4eae-8d85-329fa012aab&title=&width=1231.5)
+![image.png](https://img.alicdn.com/imgextra/i2/O1CN01JnQZcK1D8p66RDwiW_!!6000000000172-0-tps-2463-1211.jpg)
 
 为了支持超大规模的复杂电商业务，RocketMQ面向四个方面进行了重点建设，形成了四大优势能力。
 
@@ -61,7 +61,7 @@ RocketMQ的SQL订阅提供灵活的消息过滤能力，能够满足下游消费
 
 在大规模的云计算业务场景下，RocketMQ面临着全新的挑战与机遇。
 
-![image.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/30656771/1684734842537-ebcac631-f688-4ed7-958b-24d188957d6e.png#clientId=u8516c144-a6f3-4&from=paste&height=602&id=ue6197725&originHeight=1204&originWidth=2501&originalType=binary&ratio=2&rotation=0&showTitle=false&size=2281164&status=done&style=none&taskId=u47745b2a-d9a4-4cc8-b740-30c54042cde&title=&width=1250.5)
+![image.png](https://img.alicdn.com/imgextra/i1/O1CN012YW6UR25ePfUM8CvO_!!6000000007551-0-tps-2501-1204.jpg)
 
 - 多样性：它不再仅服务于某一家公司的内部业务，不再局限于互联网或金融企业，需要实现全行业、全场景的覆盖。
 - 标准化：对于服务企业内部的自研消息队列而言，无需考虑协议或API的标准化。但是对于云消息服务而言，因为服务对象是外部企业客户，据信通院统计，80%以上的企业客户已经采纳开源技术和标准技术。因此，作为一款云消息服务，需要提供对业界的事实标准协议、接口、SDK的兼容，才能保证客户平滑上云，同时打消客户技术绑定的担忧。
@@ -70,7 +70,7 @@ RocketMQ的SQL订阅提供灵活的消息过滤能力，能够满足下游消费
 
 为了充分释放云的技术红利，RocketMQ5.0在技术架构上进行了云原生的演进。从客户端到服务端都进行了全方位的改造，更高弹性、可用性、更低成本。
 
-![image.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/30656771/1684734940328-4946bf56-7b75-4d03-b251-78676fca5a38.png#clientId=u8516c144-a6f3-4&from=paste&height=609&id=ue8ebebc4&originHeight=1217&originWidth=2530&originalType=binary&ratio=2&rotation=0&showTitle=false&size=2571994&status=done&style=none&taskId=udf45b972-6430-4161-8364-5a744c89a18&title=&width=1265)
+![image.png](https://img.alicdn.com/imgextra/i2/O1CN01HW3Vr91uKIV0Qy4hZ_!!6000000006018-0-tps-2530-1217.jpg)
 
 - 客户端采用轻量SDK设计理念，将原来富客户端的逻辑下沉到Broker，满足现代化应用轻量化、Serverless的趋势。
 - Broker彻底进行弹性架构改造，分离RocketMQ Proxy与Store层，其中Proxy是完全无状态的计算节点，专注多协议、多领域场景覆盖，可以面向不同工作负载独立弹性，如物联网、微服务、大数据不同场景有不同的资源诉求。Store层则专注消息的高可用存储，包括副本复制、主备切换与云存储集成。同时对RocketMQ的Topic资源进行三层解耦，面向消息的Topic、面向流的Topic逻辑分片、面向底层存储的Topic物理分片，每一层都可以独立弹性。
@@ -78,7 +78,7 @@ RocketMQ的SQL订阅提供灵活的消息过滤能力，能够满足下游消费
 
 为了满足云时代多样化的用户需求，RocketMQ5.0从原来的互联网业务消息中间件扩展到"消息、事件、流"超融合处理平台，解锁更全面的能力。
 
-![image.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/30656771/1684734984318-ed590ca3-91b2-4e80-b624-b52be082950e.png#clientId=u8516c144-a6f3-4&from=paste&height=616&id=u643e4eb6&originHeight=1232&originWidth=2492&originalType=binary&ratio=2&rotation=0&showTitle=false&size=2445380&status=done&style=none&taskId=u221d2d6c-ce5a-4e57-b8fc-0eefd1da9c3&title=&width=1246)
+![image.png](https://img.alicdn.com/imgextra/i1/O1CN01ZmANB5281tCTRiGm7_!!6000000007873-0-tps-2492-1232.jpg)
 
 在消息领域，全面拥抱云原生技术，更好的弹性架构与高可用能力。
 
@@ -90,7 +90,7 @@ RocketMQ基于端云一体化架构实现了完整的物联网消息队列的能
 
 除了的产品核心能力之外，RocketMQ5.0积极建设开源生态。
 
-![image.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/30656771/1689210872283-3b617351-cbaa-40b1-9e48-8ae827d32b84.png#clientId=u6a07a021-eeeb-4&from=paste&height=860&id=ud8364e25&originHeight=1720&originWidth=3736&originalType=binary&ratio=2&rotation=0&showTitle=false&size=1411559&status=done&style=none&taskId=ucd66e3d0-a737-4290-905e-1e471e39f1a&title=&width=1868)
+![image.png](https://img.alicdn.com/imgextra/i1/O1CN01t1jMjX1PLtnLblwGb_!!6000000001825-2-tps-3736-1720.png)
 
 一方面是应用架构生态的建设，既有经典的开源项目、规范的集成，比如JMS、AMQP等，也有云原生技术生态的集成，比如CloudEvents、Dapr、Envoy。同时RocketMQ也会进一步发力数据架构生态，全链路集成大数据的摄入、数据存储、数据处理、数据分析组件，从离线大数据到实时大数据。
 
@@ -99,7 +99,7 @@ RocketMQ基于端云一体化架构实现了完整的物联网消息队列的能
 
 免费试用+30秒一键体验，低门槛、快速、高效、易操作，带你了解“历经万亿级数据洪峰考验”的云消息队列RocketMQ！
 
-![image.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/30656771/1689211082265-ddbe5caa-071a-4921-bdc1-dc4a8099b824.png#clientId=u6a07a021-eeeb-4&from=paste&height=810&id=ufdab231a&originHeight=1620&originWidth=1080&originalType=binary&ratio=2&rotation=0&showTitle=false&size=580839&status=done&style=none&taskId=u8624f1a3-1162-4a92-b05f-db83d68e752&title=&width=540)
+![image.png](https://img.alicdn.com/imgextra/i4/O1CN01JEwH6J1FT5rJoN1U0_!!6000000000487-0-tps-1080-1620.jpg)
 
 点击阅读原文，立即参与活动！
 
@@ -111,7 +111,9 @@ RocketMQ基于端云一体化架构实现了完整的物联网消息队列的能
 
 阿里云基于 Apache RocketMQ 构建的企业级产品-消息队列RocketMQ 5.0版现开启活动：
 
-1、新用户首次购买包年包月，即可享受全系列 85折优惠！ 了解活动详情：[https://www.aliyun.com/product/rocketmq](https://www.aliyun.com/product/rocketmq)
+1、新用户免费试用（2000TPS，1个月），优惠金额2000元！点击立即领取：[https://free.aliyun.com/?product=9724382](https://free.aliyun.com/?product=9724382)
 
-![e728c42e80cb67bf020e646e58619bcd.jpg](https://intranetproxy.alipay.com/skylark/lark/0/2023/jpeg/59356401/1680576637562-9af35fbf-d64b-4f81-b950-7e72f91b5ca2.jpeg#clientId=u449ffa34-59ce-4&from=paste&height=675&id=u462ad3c6&name=e728c42e80cb67bf020e646e58619bcd.jpg&originHeight=675&originWidth=1920&originalType=binary&ratio=1&rotation=0&showTitle=false&size=258156&status=done&style=none&taskId=u26cea311-dc98-45bd-8c8c-c7884e57c37&title=&width=1920)
+2、新用户首次购买包年包月，即可享受全系列 85折优惠！ 了解活动详情：[https://www.aliyun.com/product/rocketmq](https://www.aliyun.com/product/rocketmq)
+
+![e728c42e80cb67bf020e646e58619bcd.jpg](https://img.alicdn.com/imgextra/i4/O1CN01Xi1rcu1DM6aIC7ypz_!!6000000000201-0-tps-1920-675.jpg)
 
