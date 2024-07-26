@@ -30,10 +30,10 @@ RocketMQ 是一个典型的发布订阅系统，通过 Broker 节点中转和持
 1. 服务端 Broker Master1 和 Slave1 构成其中的一个副本组。
 2. 服务端 Broker 1 和 Broker 2 两个副本组以负载均衡的形式共同为客户端提供读写。
 
-![image.png](https://intranetproxy.alipay.com/skylark/lark/0/2024/png/213145/1721631114262-daa5ff53-c0f9-4dc9-8764-a56abb6f807e.png#clientId=uafe8ad5f-3e17-4&from=paste&height=370&id=udc4ee774&originHeight=740&originWidth=1510&originalType=binary&ratio=2&rotation=0&showTitle=false&size=532783&status=done&style=none&taskId=ufe2c8bbe-64d0-4784-99bf-1f1050fc013&title=&width=755)<br />注：Producer 和 Consumer 会和 NameServer，Broker 都维持长连接。Producer 只会向 Master 副本发送消息，Consumer 可以从 Master 或者 Slave 消费消息。
+![image.png](https://img.alicdn.com/imgextra/i2/O1CN01LAUXpi1bUOWytI7NC_!!6000000003468-0-tps-1568-756.jpg)<br />注：Producer 和 Consumer 会和 NameServer，Broker 都维持长连接。Producer 只会向 Master 副本发送消息，Consumer 可以从 Master 或者 Slave 消费消息。
 <a name="xdWNn"></a>
 ### 存储计算分离部署
-存储和计算分离是一种良好的模块化设计。无状态的 Proxy 集群是数据流量的入口，提供签名校验与权限控制、计量与可观测、客户端连接管理、消息编解码处理、流量控制、多协议接入等能力。原 Broker 节点演化为以存储为核心的有状态集群，支持读写多类型消息，它们的底层是多模态存储和多元化的高效索引。存储计算分离的形态利于不同业务场景下单独调整存储或计算节点的数量，来实现扩容和缩容。网关模式接入还能带来升级简单，组网便利等好处。Proxy 和 Broker 都属于服务端组件，内网通信的延迟不会显著增加客户端收发消息的延迟。![image.png](https://intranetproxy.alipay.com/skylark/lark/0/2024/png/213145/1721631074159-71767188-3103-41a5-80dd-a2a28e5d0adb.png#clientId=uafe8ad5f-3e17-4&from=paste&height=384&id=u9b19a098&originHeight=768&originWidth=2056&originalType=binary&ratio=2&rotation=0&showTitle=false&size=692097&status=done&style=none&taskId=u87be9002-2f21-43ff-9bbe-f581fa98911&title=&width=1028)<br />注：Proxy 自身会向 NameServer 和 Broker 都建立长连接，Producer 和 Consumer 仅连接到 Proxy。
+存储和计算分离是一种良好的模块化设计。无状态的 Proxy 集群是数据流量的入口，提供签名校验与权限控制、计量与可观测、客户端连接管理、消息编解码处理、流量控制、多协议接入等能力。原 Broker 节点演化为以存储为核心的有状态集群，支持读写多类型消息，它们的底层是多模态存储和多元化的高效索引。存储计算分离的形态利于不同业务场景下单独调整存储或计算节点的数量，来实现扩容和缩容。网关模式接入还能带来升级简单，组网便利等好处。Proxy 和 Broker 都属于服务端组件，内网通信的延迟不会显著增加客户端收发消息的延迟。![image.png](https://img.alicdn.com/imgextra/i3/O1CN01eHKHRB1s6RHemclnp_!!6000000005717-0-tps-1564-578.jpg)<br />注：Proxy 自身会向 NameServer 和 Broker 都建立长连接，Producer 和 Consumer 仅连接到 Proxy。
 <a name="aPwMj"></a>
 ## 通信机制
 Apache RocketMQ 客户端使用 TCP 访问服务端，根据传输的数据格式分为 Remoting 协议和 gRPC 协议。
