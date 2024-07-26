@@ -15,9 +15,9 @@ img: "https://img.alicdn.com/imgextra/i4/O1CN01LyddeK28iwQm11NMB_!!6000000007967
 
 举个例子，假设业务场景中使用 OceanBase 作为数据存储，同时希望将这些数据同步到 Elasticsearch 进行全文搜索，有两种可行的数据同步方案。
 
-方案一：<br />从 OceanBase 中获取数据，写入 Elasticsearch 组件并进行数据同步，在数据源较少时此方案没什么问题，一旦数据增多，开发和维护都非常复杂，此时就要用到第二种方案。<br />![](https://intranetproxy.alipay.com/skylark/lark/0/2024/webp/57656509/1721805959801-61137c8d-f6eb-43dd-b12e-a842f19b1bee.webp#clientId=u331a9ddb-5ef4-4&from=paste&id=ue1735d00&originHeight=96&originWidth=712&originalType=url&ratio=2&rotation=0&showTitle=false&status=done&style=none&taskId=ucbb8aeae-903a-4763-bfec-e120e9f78b2&title=)
+方案一：<br />从 OceanBase 中获取数据，写入 Elasticsearch 组件并进行数据同步，在数据源较少时此方案没什么问题，一旦数据增多，开发和维护都非常复杂，此时就要用到第二种方案。<br />![](https://img.alicdn.com/imgextra/i1/O1CN01ciLNPN1FyEn8EPr8B_!!6000000000555-49-tps-712-96.webp)
 
-方案二：<br />引入消息中间件对上下游进行解藕，这能解决第一种方案的问题，但是一些较为复杂的问题还没有完全解决。比如，如何将数据从源数据同步到目标系统并保证高性能，如果保证同步任务的部分节点挂掉，数据同步依然正常进行，节点恢复依然可以断点续传，同时随着数据管道的增多，如何管理数据管道也变得十分困难。<br />![](https://intranetproxy.alipay.com/skylark/lark/0/2024/webp/57656509/1721805957760-654fca1b-3586-4871-9169-00c7b87420e1.webp#clientId=u331a9ddb-5ef4-4&from=paste&id=ucb146434&originHeight=75&originWidth=811&originalType=url&ratio=2&rotation=0&showTitle=false&status=done&style=none&taskId=uc67b0a41-aa34-4cdb-9635-7d5e69696ef&title=)
+方案二：<br />引入消息中间件对上下游进行解藕，这能解决第一种方案的问题，但是一些较为复杂的问题还没有完全解决。比如，如何将数据从源数据同步到目标系统并保证高性能，如果保证同步任务的部分节点挂掉，数据同步依然正常进行，节点恢复依然可以断点续传，同时随着数据管道的增多，如何管理数据管道也变得十分困难。<br />![](https://img.alicdn.com/imgextra/i2/O1CN01vaZerJ1nYJJ6peWVA_!!6000000005101-49-tps-811-75.webp)
 
 总的来说，数据集成过程中的挑战主要有五个。
 
@@ -44,17 +44,17 @@ img: "https://img.alicdn.com/imgextra/i4/O1CN01LyddeK28iwQm11NMB_!!6000000007967
 
 除此之外，RocketMQ 自身也可以作为一个数据源，将一个 RocketMQ 集群的数据同步到另一个集群，可以构建 RocketMQ 多活容灾能力，这是社区正在孵化的 Replicator 可以实现的能力。
 
-![](https://intranetproxy.alipay.com/skylark/lark/0/2024/webp/57656509/1721805959872-ab94c4f0-e9bf-4c0b-a95a-9660ca9dc9dc.webp#clientId=u331a9ddb-5ef4-4&from=paste&id=ud0a2eb21&originHeight=482&originWidth=721&originalType=url&ratio=2&rotation=0&showTitle=false&status=done&style=none&taskId=u73889ade-8113-4cc6-969b-3c1e823ba6a&title=)
+![](https://img.alicdn.com/imgextra/i2/O1CN01EbwT0f1SIdpEosrrx_!!6000000002224-49-tps-721-482.webp)
 
 **场景二，RocketMQ 作为端点。**
 
 RocketMQ 的生态中提供了流计算能力组件——RocketMQ Streams，Connector 将各个存储系统的数据集成到RocketMQ Topic 当中，下游使用 RocketMQ Streams 流计算的能力就可以构建一个实时的流计算平台。当然也可以配合业务系统的 Service 实现业务系统快速从其它存储统一快速获取数据的能力。
 
-![](https://intranetproxy.alipay.com/skylark/lark/0/2024/webp/57656509/1721805959792-c377be7b-12f1-4521-8f46-82c89d975e5e.webp#clientId=u331a9ddb-5ef4-4&from=paste&id=ubfb15ec2&originHeight=371&originWidth=484&originalType=url&ratio=2&rotation=0&showTitle=false&status=done&style=none&taskId=u1be8a54d-f172-4d02-ada5-f7a733b67ca&title=)
+![](https://img.alicdn.com/imgextra/i2/O1CN01w7DfRb1ZgBUkQhfaM_!!6000000003223-49-tps-484-371.webp)
 
 还可以将 RocketMQ 作为端点的上游，将业务消息发到 Topic 中，使用 Connector 对数据做持久化或转存的操作。
 
-![](https://intranetproxy.alipay.com/skylark/lark/0/2024/webp/57656509/1721805957812-011f76ec-5423-4a79-8bfa-5287be110cc1.webp#clientId=u331a9ddb-5ef4-4&from=paste&id=u053f4aef&originHeight=371&originWidth=495&originalType=url&ratio=2&rotation=0&showTitle=false&status=done&style=none&taskId=udf0de24b-1fa8-4ba3-8c87-9b32006ce4a&title=)
+![](https://img.alicdn.com/imgextra/i4/O1CN01HZrvxg245JhYUZISJ_!!6000000007339-49-tps-495-371.webp)
 
 如此一来，RocketMQ 就具备数据集成能力，可以实现任意任意异构数据源之间的数据同步，同时也具备统一的集群管理、监控能力及配置化搭建数据管道搭建能力，开发者或者用户只需要专注于数据拷贝，简单配置就可以得到一个具备配置化、低代码、低延时、高可用，支持故障处理和动态扩缩容数据集成平台。
 <a name="qCGD8"></a>
@@ -65,33 +65,33 @@ RocketMQ 的生态中提供了流计算能力组件——RocketMQ Streams，Conn
 
 它定义数据从哪复制到哪，是从源数据系统读取数据写入 RocketMQ，这种是 SourceConnector，或从 RocketMQ 读数据写入到目标系统，这种是 SinkConnector。Connector 决定需要创建任务的数量，从 Worker 接收配置传递给任务。
 
-![](https://intranetproxy.alipay.com/skylark/lark/0/2024/webp/57656509/1721805958408-472caef4-02e2-482f-9073-3f93a13ebf74.webp#clientId=u331a9ddb-5ef4-4&from=paste&id=u1131589a&originHeight=598&originWidth=966&originalType=url&ratio=2&rotation=0&showTitle=false&status=done&style=none&taskId=u3187cfd5-cacf-4186-9912-18dee549898&title=)
+![](https://img.alicdn.com/imgextra/i4/O1CN010mTctf1szrCt8rg1e_!!6000000005838-49-tps-966-598.webp)
 
 **概念二：什么是 Task ？**
 
 Task 是 Connector 任务分片的最小分配单位，是实际将源数据源数据复制到 RocketMQ（SourceTask），或者将数据从 RocketMQ 读出写入到目标系统（SinkTask）真正的执行者，Task 是无状态的，可以动态的启停任务，多个 Task 可以并行执行，Connector 复制数据的并行度主要体现在 Task 上。一个 Task 任务可以理解为一个线程，多个 Task 则以多线程的方式运行。
 
-![](https://intranetproxy.alipay.com/skylark/lark/0/2024/webp/57656509/1721805958524-54cc9343-ce9d-43c0-9d18-6259714298d3.webp#clientId=u331a9ddb-5ef4-4&from=paste&id=uaea3cdbe&originHeight=558&originWidth=988&originalType=url&ratio=2&rotation=0&showTitle=false&status=done&style=none&taskId=u408fb900-f02a-4bdf-aae9-45d7580c77f&title=)
+![](https://img.alicdn.com/imgextra/i2/O1CN01qJWLIr1GFBRa7h4DX_!!6000000000592-49-tps-988-558.webp)
 
 通过 Connect 的 API 也可以看到 Connector 和 Task 各自的职责，Connector 实现时就已经确定数据复制的流向，Connector 接收数据源相关的配置，taskClass 获取需要创建的任务类型，通过 taskConfigs 的数量确定任务数量，并且为 Task 分配好配置。Task 拿到配置以后数据源建立连接并获取数据写入到目标存储。通过下面的两张图可以清楚的看到，Connector 和 Task 处理基本流程。
 
-![](https://intranetproxy.alipay.com/skylark/lark/0/2024/webp/57656509/1721805958835-806e38a8-a89f-4817-91de-9388ea4cd784.webp#clientId=u331a9ddb-5ef4-4&from=paste&id=u63ebc07f&originHeight=378&originWidth=902&originalType=url&ratio=2&rotation=0&showTitle=false&status=done&style=none&taskId=u22c92033-f058-4e59-967d-39267c60e61&title=)
+![](https://img.alicdn.com/imgextra/i2/O1CN019PW3aA1jpw5LqoqKB_!!6000000004598-49-tps-902-378.webp)
 
 一个 RocketMQ Connect 集群中会有多个 Connector ，每个 Connector 会对应一个或多个 Task，这些任务运行在 Worker（进程）中。Worker 进程是 Connector 和 Task 运行环境，它提供 RESTFull 能力，接收 HTTP 请求，将获取到的配置传递给 Connector 和 Task，它还负责启动 Connector 和 Task，保存 Connector 配置信息，保存 Task 同步数据的位点信息，除此以外，Worker 还提供负载均衡能力，Connect 集群高可用、扩缩容、故障处理主要依赖 Worker 的负责均衡能力实现的。Worker 提供服务的流程如下：
 
-![](https://intranetproxy.alipay.com/skylark/lark/0/2024/webp/57656509/1721805958937-45a7eda4-f94b-49db-9707-fbe2ae7af6a5.webp#clientId=u331a9ddb-5ef4-4&from=paste&id=ub7c5a76b&originHeight=726&originWidth=850&originalType=url&ratio=2&rotation=0&showTitle=false&status=done&style=none&taskId=u267bee22-45a2-488a-9f2a-184fd1b13e8&title=)
+![](https://img.alicdn.com/imgextra/i2/O1CN01NviloV1XegyPqhzeK_!!6000000002949-49-tps-850-726.webp)
 
 Worker 提供的服务发现及负载均衡的实现原理如下：
 
 **服务发现：**
 
-![](https://intranetproxy.alipay.com/skylark/lark/0/2024/webp/57656509/1721805959241-aa51b42b-f468-4cdf-8b70-83486e2dbead.webp#clientId=u331a9ddb-5ef4-4&from=paste&id=u62ef2344&originHeight=169&originWidth=828&originalType=url&ratio=2&rotation=0&showTitle=false&status=done&style=none&taskId=udb23a0cc-0b9e-4234-9006-c9fcf7a0f3b&title=)
+![](https://img.alicdn.com/imgextra/i1/O1CN01gutyqA1X4VgRMD4sQ_!!6000000002870-49-tps-828-169.webp)
 
 用过 RocketMQ 的开发者应该知道，它的使用很简单，就是发送和接收消息。消费模式分为集群模式和广播模式两种，集群消费模式下一个 Topic 可以有多个 Consumer 消费消息，任意一个 Consumer 的上线或下线 RocketMQ 服务端都有感知，并且还可以将客户端上下线信息通知给其它节点，利用 RocketMQ 这个特性就实现了 Worker 的服务发现。
 
 **配置 / Offset 同步：**
 
-![](https://intranetproxy.alipay.com/skylark/lark/0/2024/webp/57656509/1721805959316-aa512856-fd82-4d8c-965d-0c29397caa12.webp#clientId=u331a9ddb-5ef4-4&from=paste&id=ued936421&originHeight=132&originWidth=860&originalType=url&ratio=2&rotation=0&showTitle=false&status=done&style=none&taskId=u31c21ad6-f6f5-430e-8af6-ace3c35eb45&title=)
+![](https://img.alicdn.com/imgextra/i3/O1CN01yUWRX01f6obQqjeyY_!!6000000003958-49-tps-860-132.webp)
 
 Connector 的配置/Offset 信息同步通过每个 Worker 订阅相同的 Topic，不同 Worker 使用不同的 Consumer Group 实现的， Worker 节点可以通过这种方式消费到相同 Topic 的所有数据，即 Connector 配置/ Offset 信息，这类似于广播消费模式，这种数据同步模式可以保证任何一个 Worker 挂掉，该 Worker 上的任务依旧可以在存活的 Worker 正常拉起运行 ，并且可以获取到任务对应的 Offset 信息实现断点续传， 这是故障转移以及高可用能力的基础。
 
@@ -99,7 +99,7 @@ Connector 的配置/Offset 信息同步通过每个 Worker 订阅相同的 Topic
 
 RocketMQ 消费场景中，消费客户端 与 Topic Queue 之间有负载均衡能力，Connector 在这一部分也是类似的，只不过它负载均衡的对象不一样，Connector 是 Worker 节点和 Task 之间的负载均衡，与 RocketMQ 客户端负载均衡一样，可以根据使用场景选择不同负载均衡算法。
 
-![](https://intranetproxy.alipay.com/skylark/lark/0/2024/webp/57656509/1721805959608-b9fed0e0-96a6-4c78-978e-e8d0d65c2c3a.webp#clientId=u331a9ddb-5ef4-4&from=paste&id=u1dbf75fd&originHeight=287&originWidth=588&originalType=url&ratio=2&rotation=0&showTitle=false&status=done&style=none&taskId=u2fa93dea-f9f5-41a1-bd8f-7c6b6abb006&title=)
+![](https://img.alicdn.com/imgextra/i2/O1CN01Hc92n31F5HGOKvHxi_!!6000000000435-49-tps-588-287.webp)
 
 上文提到过 RocketMQ Connect 提供 RESTFull API能力。通过 RESTFull AP可以创建 Connector，管理Connector 以及查看 Connector 状态，简单列举：
 
@@ -114,15 +114,15 @@ RocketMQ 消费场景中，消费客户端 与 Topic Queue 之间有负载均衡
 
 还是结合一个具体的场景看一看，例如业务数据当前是写入 MySQL 数据库中的，希望将 MySQL中数据实时同步到数据湖 Hudi 当中。只要实现 MySQL Source Connector 、Hudi Sink Connector 这两个 Connector 即可。
 
-![](https://intranetproxy.alipay.com/skylark/lark/0/2024/webp/57656509/1721805959739-e8632c0f-3f77-4f7e-9d4e-140617527465.webp#clientId=u331a9ddb-5ef4-4&from=paste&id=u56eecafb&originHeight=467&originWidth=1000&originalType=url&ratio=2&rotation=0&showTitle=false&status=done&style=none&taskId=u33c2c94c-925d-493b-ab48-6ff7a839928&title=)
+![](https://img.alicdn.com/imgextra/i3/O1CN01zAwNqb1q5rYN90xMt_!!6000000005445-49-tps-1000-467.webp)
 
 下面就以 MySQLSource Connector 为例，来看一下具体的如何实现。
 
 实现 Connector 最主要的就是实现两个 API 。第一个是 Connector API ，除了实现它生命周期相关的 API 外，还有任务如何分配，是通过 Topic、Table 还是通过数据库的维度去分。第二个API是需要创建的 Task，Connector 通过任务分配将相关的配置信息传递给 Task， Task 拿到这些信息，例如数据库账号，密码，IP，端口后就会创建数据库连接，再通过 MySQL 提供的 BINLOG 机智获取到表的数据，将这些数据写到一个阻塞队列中。Task 有个 Poll 方法，实现 Connector 时只要调用到 Poll 方法时可以获取到数据即可，这样 Connector 就基本写完了。然后打包以 Jar 包的形式提供出来，将它加载到 Worker 的节点中。
 
-![](https://intranetproxy.alipay.com/skylark/lark/0/2024/webp/57656509/1721805960062-d0ab810c-e342-414d-af95-4239422c72f7.webp#clientId=u331a9ddb-5ef4-4&from=paste&id=u1f523e9d&originHeight=494&originWidth=1000&originalType=url&ratio=2&rotation=0&showTitle=false&status=done&style=none&taskId=u5626aa71-8e57-4cb1-abf4-2023847fd52&title=)<br />创建 Connector 任务后， Worker 中会创建一个或者多个线程，不停的轮询 Poll 方法，从而获取到 MySQL 表中的数据，再通过 RocketMQ Producer 发送到 RocketMQ Broker中，这就是 Connector 从实现到运行的整体过程（见下图）。
+![](https://img.alicdn.com/imgextra/i3/O1CN01a8AfXx1zv0Jt0h3xq_!!6000000006775-49-tps-1000-494.webp)<br />创建 Connector 任务后， Worker 中会创建一个或者多个线程，不停的轮询 Poll 方法，从而获取到 MySQL 表中的数据，再通过 RocketMQ Producer 发送到 RocketMQ Broker中，这就是 Connector 从实现到运行的整体过程（见下图）。
 
-![](https://intranetproxy.alipay.com/skylark/lark/0/2024/webp/57656509/1721805960288-b5cfe203-7374-4218-a76a-4acc3b642692.webp#clientId=u331a9ddb-5ef4-4&from=paste&id=u1e447014&originHeight=724&originWidth=802&originalType=url&ratio=2&rotation=0&showTitle=false&status=done&style=none&taskId=uc20e89ec-4ce2-48e1-8fda-67bba6be03a&title=)
+![](https://img.alicdn.com/imgextra/i3/O1CN01yU3NgU1ofvVXFQvPk_!!6000000005253-49-tps-802-724.webp)
 <a name="ajVEl"></a>
 ## RocketMQ Connect 现状与未来
 RocketMQ Connect 的发展历程分为三个阶段。
