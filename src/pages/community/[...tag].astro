@@ -96,7 +96,7 @@ const cardData = COMMUNITY_DATA.filter((it) => it.tag === tag);
       }
 
       /* 最后一个元素去除右外边距 */
-      .item-content:nth-of-type(4n)  {
+      .item-content:nth-of-type(4n) {
         margin-right: 0;
       }
     }
@@ -109,6 +109,9 @@ const cardData = COMMUNITY_DATA.filter((it) => it.tag === tag);
         display: block;
         .item-content {
           flex: 0 0 calc(100% - 1rem); /* 每个元素占100%的宽度并减去1rem的右外边距 */
+        }
+        .item-content:nth-of-type(4n) {
+          margin-right: 1rem;
         }
       }
     }
@@ -124,11 +127,11 @@ const cardData = COMMUNITY_DATA.filter((it) => it.tag === tag);
         margin-right: -1rem; /* 补偿右外边距的合并 */
         .item-content {
           flex: 0 0 calc(50% - 1rem); /* 每个元素占50%的宽度并减去1rem的右外边距 */
+        }
 
-          /* 最后一个元素去除右外边距 */
-          .item-content:nth-of-type(4n) {
-            margin-right: 0;
-          }
+        /* 最后一个元素去除右外边距 */
+        .item-content:nth-of-type(2n) {
+          margin-right: 0;
         }
       }
     }
