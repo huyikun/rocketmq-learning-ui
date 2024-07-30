@@ -51,7 +51,7 @@ export default {
 	'commmon.base.page.nextLink':'下一篇',
 	
 	'commmon.footer.title': '愿景',
-	'commmon.footer.description':'Spring Cloud Alibaba 为分布式应用开发提供一站式解决方案。它包含开发分布式应用程序所需的所有组件，使您可以轻松地使用 Spring Cloud 微服务框架开发应用程序。',
+	'commmon.footer.description':'Apache RocketMQ是一款云原生的统一消息引擎，能够同时支持“消息、事件、流”一体化场景，也能支持物联网场景，实现端云一体化。',
 	'commmon.footer.subscribe': '提供易于使用的服务基础设施，如动态服务发现、服务配置、服务共享和管理等等。',
 	'commmon.footer.email.placeholder': '请输入电子邮件地址...',
 	'commmon.footer.actions.subscribe': '订阅',
@@ -68,7 +68,8 @@ export default {
 	'commmon.actions.download': '下载',
 
 	// 'home.title': 'Spring Cloud Alibaba官网|Springboot Alibaba 组件|Spring AI |微服务实践教程',
-	'home.description': 'Spring Cloud Alibaba 为分布式应用开发提供一站式解决方案。它包含开发分布式应用程序所需的所有组件，使您可以轻松地使用 Spring Cloud 微服务框架开发应用程序。',
+	"home.title": 'Apache RocketMQ 官方中文社区|快速使用|架构原理|官方答疑',
+	'home.description': 'Apache RocketMQ是一款云原生的统一消息引擎，能够同时支持“消息、事件、流”一体化场景，也能支持物联网场景，实现端云一体化。',
 	
 	'home.introduce.about': `关于 ${SITE.name}`,
 	'home.introduce.nacos.code': '前往 GitHub',
@@ -351,7 +352,6 @@ export default {
   "home.why.item4.des": "金融级的稳定性，广泛用于交易核心链路",
   "home.why.item5.des": "零外部依赖，Shared-nothing 架构",
   "home.why.item6.des": "无缝对接微服务、实时计算、数据湖等周边生态",
-	"home.title": 'Apache RocketMQ 中文社区',
   "home.header.title": "Apache RocketMQ 中文社区",
   "home.exciting.active": "精彩活动",
   "home.exciting.active.see": "点击查看",
