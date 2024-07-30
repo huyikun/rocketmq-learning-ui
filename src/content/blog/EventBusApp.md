@@ -12,7 +12,7 @@ description: "今天的主题围绕事件总线+函数计算，构建云上最�
 
 今天的主题围绕事件总线+函数计算，构建云上最佳事件驱动架构应用。希望通过今天的分享，能够帮助大家深入理解 Serverless 函数计算、EventBridge 事件总线对于构建云上事件驱动架构应用的价值和背后的逻辑、 为什么函数计算是云上事件驱动服务最佳实践？为什么我们如此需要事件总线服务？伴随着这些谜题的解开，最后，让我们一起了解应用于实际生产的一些 Serverless 事件驱动客户案例。
 
-![1.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680501621550-9474db21-c5cf-41ca-8cbf-2af995c5ea0d.png#clientId=uc0d08939-b5ae-4&height=610&id=A2lba&name=1.png&originHeight=610&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u1d64f154-c99d-41a9-87d7-c5f0996e344&title=&width=1080)
+![1.png](https://img.alicdn.com/imgextra/i4/O1CN01hKfEzy1gzbbJ2XBnk_!!6000000004213-0-tps-1080-610.jpg)
 
 ## 事件驱动架构的本质
 
@@ -20,7 +20,7 @@ description: "今天的主题围绕事件总线+函数计算，构建云上最�
 
 大家可能会疑惑，事件驱动家喻户晓，为什么我们又要重新讨论事件驱动呢？我想这也正是我们需要讨论它的原因，回归本质，重新起航；事件驱动可能是一个比较宽泛的概念，而本文聚焦事件驱动架构的讨论，事件驱动架构作为一种软件设计模式，的确不是一个新的概念，伴随着计算机软件架构的演进，它已经存在了一段很久的时间，大家对它的讨论也从未停止过，当我们需要重新讨论一个已经存在的概念的时候，我想我们有必要重新回到它最开始的定义，一起探索那些本质的东西，重新认识它。
 
-![2.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680501621514-a8edf6f2-8785-4fba-90e7-ad111ad704f4.png#clientId=uc0d08939-b5ae-4&height=608&id=wMEoF&name=2.png&originHeight=608&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=udf5aae34-dcec-40ee-b5ca-7d2321ba742&title=&width=1080)
+![2.png](https://img.alicdn.com/imgextra/i4/O1CN01TRECMS1oGHKVdlV6a_!!6000000005197-0-tps-1080-608.jpg)
 
 上面的这些内容是我从相关的一些资料上摘录的关于事件驱动的一些描述，“abstract”，“simple”，“asynchronous”，“message-driven”这些具有代表性的词汇很好的给予事件驱动一个宏观的描述；从事件驱动的抽象概念，到它简洁的架构，以及事件驱动架构要达成的目的，和它在实际的系统架构中所展现的形态。
 
@@ -28,8 +28,8 @@ description: "今天的主题围绕事件总线+函数计算，构建云上最�
 
 在了解了关于事件驱动架构的一些基本描述之后，我们需要进一步明确事件驱动架构所涉及的一些基本概念和架构形态。根据维基百科描述，事件驱动架构涉及的核心概念如下所示：
 
-![3.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680501623542-b4f2917f-deab-4728-81ee-4c6da5a76833.png#clientId=uc0d08939-b5ae-4&height=608&id=OKdFd&name=3.png&originHeight=608&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=uf77dcaa1-93a4-4e1a-b7fa-f1629918ca7&title=&width=1080)
-![4.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680501621395-c5898a2e-a32e-4c1c-946b-9a06e86ad6ef.png#clientId=uc0d08939-b5ae-4&height=608&id=GSxkA&name=4.png&originHeight=608&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u8569b28b-26a7-46f3-8810-f260077ae3d&title=&width=1080)
+![3.png](https://img.alicdn.com/imgextra/i1/O1CN01SPqh8x1QuzlHQ4HPh_!!6000000002037-0-tps-1080-608.jpg)
+![4.png](https://img.alicdn.com/imgextra/i2/O1CN01XXOr4x1tlUOp0TmYl_!!6000000005942-0-tps-1080-608.jpg)
 
 围绕事件的流转，根据事件驱动架构的概念和基本形态，主要涉及以下四个核心部分：
 
@@ -42,7 +42,7 @@ description: "今天的主题围绕事件总线+函数计算，构建云上最�
 
 了解了事件驱动架构的基本形态，架构中事件通道的引入，解耦了事件生产和事件处理这两个最基本的系统角色，那么这样的架构模型所要达成的最终目的到底是什么？
 
-![5.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680501621399-8677afcc-e910-49c4-bb73-1453d60a0425.png#clientId=uc0d08939-b5ae-4&height=608&id=asWQZ&name=5.png&originHeight=608&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ub5cc8dfe-4d20-42f5-8a8d-d0db1f1dbce&title=&width=1080)
+![5.png](https://img.alicdn.com/imgextra/i3/O1CN01qCvx6A1jZuE0092Is_!!6000000004563-0-tps-1080-608.jpg)
 
 #### 系统架构松耦合
 
@@ -66,31 +66,31 @@ description: "今天的主题围绕事件总线+函数计算，构建云上最�
 
 函数计算是一款基于事件驱动的全托管计算服务，相关的产品细节可以见官网介绍。作为一款通用的事件驱动型计算服务，接下来我会从三个方面进行详细的介绍。
 
-![6.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680501624663-47c5b770-e40a-4731-9a54-dbbebef2a821.png#clientId=uc0d08939-b5ae-4&height=608&id=QwuCQ&name=6.png&originHeight=608&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ua0433529-94b5-47c8-8541-f2d91561650&title=&width=1080)
+![6.png](https://img.alicdn.com/imgextra/i1/O1CN01lA1gnT26TFdB8NADk_!!6000000007662-0-tps-1080-608.jpg)
 
 #### 编程范式
 
 使用函数计算，用户无需采购与管理服务器等基础设施，只需编写并上传代码。函数计算为你准备好计算资源，弹性地、可靠地运行任务，并提供日志查询、性能监控和报警等开箱即用功能，编程范式带来开发的敏捷性。按照函数粒度进行独立的功能单元开发，快速调试，快速的部署上线，省去了大量资源购买，环境搭建的运维工作；同时函数计算是一个事件驱动的模型，事件驱动，意味着用户不需要关注服务产品数据传递的问题，省去了在编写代码中涉及的大量服务访问连接的逻辑；“事件驱动” + “函数粒度开发” + “免服务器运维”等几个维度特征帮助函数计算支撑“聚焦业务逻辑敏捷开发”的底层逻辑。
 
-![7.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680501623728-12c4fdee-f267-4e12-b862-0c56f0b319cb.png#clientId=uc0d08939-b5ae-4&height=608&id=KrcZr&name=7.png&originHeight=608&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u4b6c196d-074c-4a36-8eef-5eb6ffdca48&title=&width=1080)
+![7.png](https://img.alicdn.com/imgextra/i4/O1CN01qD6MSM27WHsBOt1qs_!!6000000007804-0-tps-1080-608.jpg)
 
 #### 计算模型
 
 除了开发模式带来的研发效能提升之外，函数计算提供非常细粒度的计算资源和毫秒级计费模型，支撑按需计算，按量收费；能够支持按用户的请求，根据用户流量的模型为计算付费；当然按用户请求付费存在技术上巨大的挑战，要求函数计算实例的启动小于用户的 RT 要求，冷启动性能尤为重要，这时候极致弹性成为了 Serverless 按需付费，业务降本的底层技术支撑。函数计算通过“极致弹性” + “按需付费”的模型帮助 Serverless 函数计算实现真正的按需计算逻辑。
 
-![8.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680501623930-c2942cb4-b69a-4e54-9bcb-fe8de89ccc3c.png#clientId=uc0d08939-b5ae-4&height=608&id=neTDy&name=8.png&originHeight=608&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ufe9a56b0-841c-44b4-a94a-49cb618e667&title=&width=1080)
+![8.png](https://img.alicdn.com/imgextra/i1/O1CN01LKzqxX1F7ZF6oOCYy_!!6000000000440-0-tps-1080-608.jpg)
 
 #### 事件驱动
 
 在基于云的开发环境，云产品承载的服务相对内聚，各自扮演着分布式系统架构中的各个重要角色，云产品之间的事件触发机制能够帮助客户更好的基于多个云产品构建自己的业务系统；否则在云产品之间 Watch 事件是非常复杂，开发代价非常昂贵的一件事；除了产品连接带来的开发效率之外，当用户订阅某个事件，并提供处理逻辑的时候，客户已经潜在的过滤掉了不需要处理的事件请求，事件驱动意味着每一次的事件触发请求都是一次完全有效的计算。
 
-![9.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680501624393-83179a6a-c1fa-4c4e-967b-e3277a5a7795.png#clientId=uc0d08939-b5ae-4&height=608&id=ElHtA&name=9.png&originHeight=608&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=udc439d6a-d41d-4bad-9528-7480478e4ea&title=&width=1080)
+![9.png](https://img.alicdn.com/imgextra/i2/O1CN01iTJFmd1ewHUj6pb8s_!!6000000003935-0-tps-1080-608.jpg)
 
 ### 函数计算对于事件驱动架构的价值
 
 为什么函数计算是云上最佳的事件驱动架构服务？函数计算对于事件驱动架构的核心价值到底是什么？事件驱动架构一直存在，在没有函数计算的时候，同样也有事件驱动架构，在微服务的时候也同样有事件驱动架构。如今，当我们重新再来讨论事件驱动架构的时候，到底是什么发生了变化，有哪些本质的区别？在整个事件驱动架构中，函数计算最大的价值在于帮助构建 “Event Processing Engine” 这个角色，我想主要是以下两个方面发生了本质的变化：
 
-![10.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680501624725-146f5996-b414-4cc3-9163-2c17771c33c6.png#clientId=uc0d08939-b5ae-4&height=608&id=zDjpO&name=10.png&originHeight=608&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u434256f2-484a-45cb-a632-7ec1323fea1&title=&width=1080)
+![10.png](https://img.alicdn.com/imgextra/i4/O1CN01SyfgpV29CiAyVbscQ_!!6000000008032-0-tps-1080-608.jpg)
 
 #### 系统可扩展性价值
 
@@ -108,7 +108,7 @@ description: "今天的主题围绕事件总线+函数计算，构建云上最�
 
 尽管函数计算和云上的众多云产品进行了集成，提供了一些开箱即用的事件触发能力，那么我们为什么还需要事件总线服务来构建事件驱动应用架构呢？围绕函数计算构建事件驱动架构生态的过程中，我们面临主要来自三个方面的挑战。面对这些挑战，基于函数计算和事件总线帮助云上客户构建完备的事件驱动架构生态迫在眉睫。
 
-![11.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680501624779-ca340f75-d1b9-4c50-9bf3-04f695c22b7f.png#clientId=uc0d08939-b5ae-4&height=608&id=KKZa7&name=11.png&originHeight=608&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u54c45f7a-af19-46af-a051-bf98f763d00&title=&width=1080)
+![11.png](https://img.alicdn.com/imgextra/i2/O1CN01kIF3op1ILiKEHJ3Ey_!!6000000000877-0-tps-1080-608.jpg)
 
 #### 事件源多样性挑战
 
@@ -128,7 +128,7 @@ description: "今天的主题围绕事件总线+函数计算，构建云上最�
 
 #### 总线模式（EventBus）
 
-![12.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680501625075-0f4abcac-29da-40dd-97a7-98e14cb3b0d2.png#clientId=uc0d08939-b5ae-4&height=608&id=JUNeJ&name=12.png&originHeight=608&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u82dec543-379f-45d9-b5ac-f99bbf93f23&title=&width=1080)
+![12.png](https://img.alicdn.com/imgextra/i3/O1CN01QjYgCK1xz0YGM6IS3_!!6000000006513-0-tps-1080-608.jpg)
 
 从整个架构来看，EventBridge 通过事件总线，事件规则将事件源和事件目标进行连接。首先，让我们快速普及下 EventBridge 架构中涉及的几个核心概念：
 
@@ -148,24 +148,24 @@ description: "今天的主题围绕事件总线+函数计算，构建云上最�
 
 将消费的逻辑服务化，从业务逻辑中剥离由平台提供，消费逻辑和处理逻辑的分离，将传统架构的消息拉模型转化成 Serverless 化的事件驱动推模型，能够支撑由函数计算承载消息处理的计算逻辑 ，实现消息处理的 Serverless 化。基于这样的架构，能够帮助客户解决消息客户端的集成连接问题，简化消息处理逻辑的实现，同时对于波峰波谷的业务模型，结合函数计算提供细粒度的计算弹性能力，能够实现资源的动态扩容，降低用户成本。
 
-![13.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680501625434-0ef95b4a-e879-4940-9991-ed9cd1eceb6d.png#clientId=uc0d08939-b5ae-4&height=608&id=gBUGc&name=13.png&originHeight=608&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u180e3743-4041-4de1-9b42-78df234163a&title=&width=1080)
+![13.png](https://img.alicdn.com/imgextra/i2/O1CN01lKphMV27aPRBa7ANs_!!6000000007813-0-tps-1080-608.jpg)
 
 ### 事件总线对于事件驱动架构的价值
 
 简化统一事件源接入
 
-![14.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680501625959-baeb18cc-4bf3-45bb-9d0b-28c396ce4435.png#clientId=uc0d08939-b5ae-4&height=608&id=edXjF&name=14.png&originHeight=608&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ud190e919-e08c-4ca6-9242-bab4c6527cb&title=&width=1080)
+![14.png](https://img.alicdn.com/imgextra/i4/O1CN01ljROUX1rDTknuzpWP_!!6000000005597-0-tps-1080-608.jpg)
 
 #### 沉淀通用事件通道能力
 #### 
-![15.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680501625956-9b39c97f-2ef7-412d-971b-cc0d5a05f11b.png#clientId=uc0d08939-b5ae-4&height=608&id=GckoY&name=15.png&originHeight=608&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u53331e94-950b-4a34-a602-d8352a21a9a&title=&width=1080)
-![16.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680501625944-6b57dcfd-8e6e-473e-b6cd-3a98e27a21fc.png#clientId=uc0d08939-b5ae-4&height=608&id=jKt6Q&name=16.png&originHeight=608&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=uce74f10a-42ed-4fb1-8e1e-7e0ab66ec61&title=&width=1080)
+![15.png](https://img.alicdn.com/imgextra/i4/O1CN01rMwYBF1hh7E8LOkbA_!!6000000004308-0-tps-1080-608.jpg)
+![16.png](https://img.alicdn.com/imgextra/i4/O1CN01nWkMxb26ZfB29X8kT_!!6000000007676-2-tps-1080-608.png)
 
 #### 提升优化用户集成体验
 
 利用函数计算提供的 HTTP 函数 URL 能力，结合事件总线端点 API 能力，能够快速的帮助客户进行系统扩展和集成。
 
-![17.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680501625992-84090c2d-17c7-4ebd-bb2f-b60f59d53177.png#clientId=uc0d08939-b5ae-4&height=608&id=wm6Ml&name=17.png&originHeight=608&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ueef7e736-dbb0-4378-8127-53e9b927daa&title=&width=1080)
+![17.png](https://img.alicdn.com/imgextra/i1/O1CN01homkPR2AGfD1M95y1_!!6000000008176-0-tps-1080-608.jpg)
 
 ## 客户场景案例分享
 
@@ -173,15 +173,15 @@ description: "今天的主题围绕事件总线+函数计算，构建云上最�
 
 #### 利用 ActionTrail 事件触发函数进行多账号审计管理
 
-![18.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680501626374-71e1d1db-f2cc-4426-82cb-26e675845504.png#clientId=uc0d08939-b5ae-4&height=608&id=PwPcJ&name=18.png&originHeight=608&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=uc8c0d830-092b-47fc-9e73-18f59a67418&title=&width=1080)
+![18.png](https://img.alicdn.com/imgextra/i1/O1CN01qIkAWj1sVAfifgMeG_!!6000000005771-0-tps-1080-608.jpg)
 
 #### 利用 OSS 文件上传事件触发函数扩容 ACK  集群资源
 
-![19.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680501626968-6567f08e-76bb-41db-b3c5-928af1478f6a.png#clientId=uc0d08939-b5ae-4&height=608&id=ARoEw&name=19.png&originHeight=608&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ue415a46b-fe0f-4083-b530-7071ae3a899&title=&width=1080)
+![19.png](https://img.alicdn.com/imgextra/i4/O1CN014E2TmZ1hvltwEk0yv_!!6000000004340-0-tps-1080-608.jpg)
 
 #### 利用 OSS 文件上传执行 Terraform 文件并访问外部 API 做结果通知
 
-![20.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680501627121-e75f7c3c-53ba-4a01-b6dc-1560d5e49c35.png#clientId=uc0d08939-b5ae-4&height=608&id=jqFMq&name=20.png&originHeight=608&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u941211b9-a59d-4219-a6c3-9e4a6bde290&title=&width=1080)
+![20.png](https://img.alicdn.com/imgextra/i1/O1CN01CDClqB1oxmxI84dZ5_!!6000000005292-0-tps-1080-608.jpg)
 
 ### 事件流模式 + 函数计算用户案例
 
@@ -189,21 +189,21 @@ description: "今天的主题围绕事件总线+函数计算，构建云上最�
 
 #### 事件流触发函数计算处理业务消息
 
-![20.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680501627151-6d210e7d-ad8d-45f9-8b07-b8d792821fb2.png#clientId=uc0d08939-b5ae-4&height=608&id=tflOt&name=20.png&originHeight=608&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u0bf00644-ae53-4043-a5ef-29c78b41476&title=&width=1080)
+![20.png](https://img.alicdn.com/imgextra/i4/O1CN01us1gSx1lE2XuqPWu4_!!6000000004786-0-tps-1080-608.jpg)
 
 #### 事件流触发函数计算进行简单 ETL 数据同步
 
-![22.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680501627217-0d3a1bf4-fa4c-434f-809e-193467f57d19.png#clientId=uc0d08939-b5ae-4&height=608&id=wHN2E&name=22.png&originHeight=608&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u761625e5-1ae4-45e7-8d69-2998b169f9c&title=&width=1080)
+![22.png](https://img.alicdn.com/imgextra/i4/O1CN01RcatnE20NOsTg7hWA_!!6000000006837-0-tps-1080-608.jpg)
 
 #### 事件流触发函数进行简单 ETL 数据清洗入库
 
-![23.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680501627444-25668b02-00a2-4581-b9fa-ed8e5b64a453.png#clientId=uc0d08939-b5ae-4&height=608&id=M4zbA&name=23.png&originHeight=608&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=uc5661a9c-3844-486d-af02-677b04fe687&title=&width=1080)
+![23.png](https://img.alicdn.com/imgextra/i3/O1CN01Mg8SOw27Rhud1X1ca_!!6000000007794-0-tps-1080-608.jpg)
 
 #### 函数异步+事件流触发函数构建电商运营通知系统
 
 在购物车加购，商品变更通知场景，利用函数计算异步系统（内部自带 Queue 能力），触发大量运营通知，利用函数异步的 Destination 能力将运营通知结果写入 MQ，然后利用事件流能力对 MQ 数据进行再次处理，写入HBase数据库中。
 
-![24.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680501628177-08683b02-83ee-465e-abea-65a06015d9c7.png#clientId=uc0d08939-b5ae-4&height=608&id=Xrui1&name=24.png&originHeight=608&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ud2900737-ad4a-4879-b787-46d28f415ea&title=&width=1080)
+![24.png](https://img.alicdn.com/imgextra/i3/O1CN01Ar6YcY27OxXHfGkFD_!!6000000007788-0-tps-1080-608.jpg)
 
 # 活动推荐
 
@@ -211,4 +211,4 @@ description: "今天的主题围绕事件总线+函数计算，构建云上最�
 
 1、新用户首次购买包年包月，即可享受全系列 85折优惠！ 了解活动详情：[https://www.aliyun.com/product/rocketmq](https://www.aliyun.com/product/rocketmq)
 
-![e728c42e80cb67bf020e646e58619bcd.jpg](https://intranetproxy.alipay.com/skylark/lark/0/2023/jpeg/59356401/1680576637562-9af35fbf-d64b-4f81-b950-7e72f91b5ca2.jpeg#clientId=u449ffa34-59ce-4&from=paste&height=675&id=u462ad3c6&name=e728c42e80cb67bf020e646e58619bcd.jpg&originHeight=675&originWidth=1920&originalType=binary&ratio=1&rotation=0&showTitle=false&size=258156&status=done&style=none&taskId=u26cea311-dc98-45bd-8c8c-c7884e57c37&title=&width=1920)
+![e728c42e80cb67bf020e646e58619bcd.jpg](https://img.alicdn.com/imgextra/i4/O1CN01Xi1rcu1DM6aIC7ypz_!!6000000000201-0-tps-1920-675.jpg)

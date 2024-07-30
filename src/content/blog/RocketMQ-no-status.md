@@ -17,7 +17,7 @@ RocketMQ 5.0版本引入了Proxy模块、无状态pop消费机制和gRPC协议�
 
 AWS的文档里也有描述此等现象，他们的解决方案是通过查询是所有的后端服务，减少false empty response。
 
-![image.png](https://intranetproxy.alipay.com/skylark/lark/0/2022/png/158107/1667376132112-ff090cd5-dcb1-47a4-a0f1-b6d8b1bf1d91.png#clientId=ue28794d8-7638-4&from=paste&height=169&id=ub8057e5c&originHeight=422&originWidth=2456&originalType=binary&ratio=1&rotation=0&showTitle=false&size=143889&status=done&style=none&taskId=u35e57386-2f1a-4041-8714-ec912a8927b&title=&width=982.4)
+![image.png](https://img.alicdn.com/imgextra/i1/O1CN01el1qPn1f4WcjY6LD6_!!6000000003953-2-tps-2456-422.png)
 
 [Amazon SQS short and long polling - Amazon Simple Queue Service](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-short-and-long-polling.html)
 
@@ -55,13 +55,13 @@ MNS采取了以下策略，主要是将长轮询时间切割为多个短轮询�
 
 在任务通知返回时，如果不存在任何消息，长轮询任务将被标记为已完成状态。然而，如果相关的Broker存在消息，该结果将被添加到队列中，并且消费任务将被启动。该队列的目的在于缓存多个返回结果，以备将来的重试之需。对于单机代理而言，只要存在一个通知结果返回消息，Proxy即可进行消息拉取操作。然而，在实际的分布式环境中，可能会存在多个代理，因此即使通知结果返回消息存在，也不能保证客户端能够成功拉取消息。因此，该队列的设计旨在避免发生这种情况。
 
-![pop-real-time.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/158107/1687165664313-28643310-a661-4918-879a-3359c41d1ad1.png#clientId=uae322956-e2ad-4&from=drop&height=297&id=u57645751&originHeight=1124&originWidth=1844&originalType=binary&ratio=3&rotation=0&showTitle=false&size=91655&status=done&style=none&taskId=u8c9197ac-22cc-420c-940b-2e79a609bac&title=&width=487)
+![pop-real-time.png](https://img.alicdn.com/imgextra/i3/O1CN01YMm7V61oe5vMMLE31_!!6000000005249-0-tps-1844-1124.jpg)
 
 消费任务会从上述队列中获取结果，若无结果，则直接返回。这是因为只有在通知任务返回该Broker存在消息时，消费任务才会被触发。因此，若消费任务无法获取结果，可推断其他并发的消费任务已经处理了该消息。
 
 消费任务从队列获取到结果后，会进行加锁，以确保一个长轮询任务只有一个正在进行的消费任务，以避免额外的未被处理的消息。
 
-![pop-real-time-2.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/158107/1687165684920-278b3004-5558-4b15-83b5-da3ba17920e0.png#clientId=uae322956-e2ad-4&from=drop&height=70&id=u20f8a592&originHeight=324&originWidth=3204&originalType=binary&ratio=3&rotation=0&showTitle=false&size=68826&status=done&style=none&taskId=u0b195632-789b-487e-805a-a08601c79fb&title=&width=694)
+![pop-real-time-2.png](https://img.alicdn.com/imgextra/i2/O1CN01sKZbPb1JsWJLTOXwa_!!6000000001084-0-tps-3204-324.jpg)
 
 如果获取到消息或长轮询时间结束，该任务会被标记完成并返回结果。但如果没有获取到消息（可能是其他客户端的并发操作），则会继续发起该路由所对应的异步通知任务，并尝试进行消费。
 #### 自适应切换
@@ -79,11 +79,11 @@ MNS采取了以下策略，主要是将长轮询时间切割为多个短轮询�
 ### 产品侧
 需明确长轮询和短轮询的区分，可以参考AWS的定义，当轮询时间大于0时，长轮询生效。
 
-![image.png](https://intranetproxy.alipay.com/skylark/lark/0/2022/png/158107/1667388103483-9125ef0d-6331-4dc3-a7cd-635a8cefb70c.png#clientId=ue28794d8-7638-4&from=paste&height=139&id=uc0d1065f&originHeight=348&originWidth=2504&originalType=binary&ratio=1&rotation=0&showTitle=false&size=108764&status=done&style=none&taskId=u6948663b-eeef-4952-8e05-c672abe1887&title=&width=1001.6)
+![image.png](https://img.alicdn.com/imgextra/i3/O1CN01sXjvTk1EphnaeVCii_!!6000000000401-2-tps-2504-348.png)
 
 且需明确一个长轮询最小时间，因为长轮询时间过小时无意义，AWS的最小值采取了1s，我们是否需要follow，还是采取一个更大的值。
 
-![image.png](https://intranetproxy.alipay.com/skylark/lark/0/2022/png/158107/1667388145068-54517f68-070c-4452-b461-f5f1e96eddb3.png#clientId=ue28794d8-7638-4&from=paste&height=102&id=u999d1e84&originHeight=256&originWidth=2342&originalType=binary&ratio=1&rotation=0&showTitle=false&size=98912&status=done&style=none&taskId=u931e0efc-847c-41b6-a696-98c6adcd1e9&title=&width=936.8)
+![image.png](https://img.alicdn.com/imgextra/i2/O1CN01DZ1Y3U29dH9FXMNs5_!!6000000008090-2-tps-2342-256.png)
 
 [Working with Amazon SQS messages - Amazon Simple Queue Service](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/working-with-messages.html#setting-up-long-polling)
 
@@ -93,6 +93,6 @@ MNS采取了以下策略，主要是将长轮询时间切割为多个短轮询�
 
 1、新用户首次购买包年包月，即可享受全系列 85折优惠！ 了解活动详情：[https://www.aliyun.com/product/rocketmq](https://www.aliyun.com/product/rocketmq)
 
-![e728c42e80cb67bf020e646e58619bcd.jpg](https://intranetproxy.alipay.com/skylark/lark/0/2023/jpeg/59356401/1680576637562-9af35fbf-d64b-4f81-b950-7e72f91b5ca2.jpeg#clientId=u449ffa34-59ce-4&from=paste&height=675&id=u462ad3c6&name=e728c42e80cb67bf020e646e58619bcd.jpg&originHeight=675&originWidth=1920&originalType=binary&ratio=1&rotation=0&showTitle=false&size=258156&status=done&style=none&taskId=u26cea311-dc98-45bd-8c8c-c7884e57c37&title=&width=1920)
+![e728c42e80cb67bf020e646e58619bcd.jpg](https://img.alicdn.com/imgextra/i4/O1CN01Xi1rcu1DM6aIC7ypz_!!6000000000201-0-tps-1920-675.jpg)
     
 

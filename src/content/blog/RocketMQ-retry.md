@@ -14,7 +14,7 @@ description: "本文主要介绍在使用 RocketMQ 时为什么需要重试与�
 
 RocketMQ 的重试机制包括三部分，分别是生产者重试，服务端内部数据复制遇到非预期问题时重试，消费者消费重试。本文中仅讨论生产者重试和消费者消费重试两种面向用户侧的实现。
 
-![1.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680500877358-24055b6a-cd2f-4df2-952f-0c85b3f2dd62.png#clientId=u1772b344-b29a-4&height=350&id=eEvHi&name=1.png&originHeight=350&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u1a24f60e-af75-4102-9fc3-8a09807f67b&title=&width=1080)
+![1.png](https://img.alicdn.com/imgextra/i1/O1CN01UoIH061cb5wVYe9n9_!!6000000003618-0-tps-1080-350.jpg)
 
 ## 生产者发送重试
 
@@ -161,7 +161,7 @@ RocketMQ 的消息确认机制以及消费重试策略可以帮助分析如下�
 
 上述误用的场景实际上是组合了限流和重试能力来进行削峰，RocketMQ 推荐的削峰最佳手段为组合**限流和堆积**，业务以保护自身为前提，需要对消费流量进行限流，并利用 RocketMQ 提供的堆积能力将超出业务当前处理的消息滞后消费，以达到削峰的目的。下图中超过处理能力的消息都应该被堆积在服务端，而不是通过消费失败进行重试。
 
-![2.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680500877348-fd3689a5-952f-484d-8d35-91427ab20a85.png#clientId=u1772b344-b29a-4&height=325&id=wqqzs&name=2.png&originHeight=325&originWidth=614&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u094cbaaf-7b7a-4afe-9b10-868eca6bb30&title=&width=614)
+![2.png](https://img.alicdn.com/imgextra/i4/O1CN01kKL4ha1F81djzofqk_!!6000000000441-0-tps-614-325.jpg)
 
 如果不想依赖额外的产品/组件来完成该功能，也可以利用一些本地工具类，比如 Guava 的 RateLimiter 来完成单机限流。如下所示，声明一个 50 QPS 的 RateLimiter，在消费前以阻塞的方式 acquire 一个令牌，获取到即处理消息，未获取到阻塞。
 
@@ -186,7 +186,7 @@ RocketMQ 的消息确认机制以及消费重试策略可以帮助分析如下�
 
 PushConsumer 消费消息时，消息的几个主要状态如下：
 
-![3.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680500879045-c08ee7fc-adf9-4bf8-85f0-3afaa4101f09.png#clientId=u1772b344-b29a-4&height=536&id=hm7Yu&name=3.png&originHeight=536&originWidth=720&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u477436fa-935c-4d88-86e3-d936970d21f&title=&width=720)
+![3.png](https://img.alicdn.com/imgextra/i4/O1CN01Xc5Bok1QKoTJNFGI3_!!6000000001958-0-tps-720-536.jpg)
 
 - Ready：已就绪状态。消息在消息队列RocketMQ版服务端已就绪，可以被消费者消费；
 - Inflight：处理中状态。消息被消费者客户端获取，处于消费中还未返回消费结果的状态；
@@ -208,7 +208,7 @@ PushConsumer 的最大重试次数由创建时决定。
 
 
 **说明**：若重试次数超过 16 次，后面每次重试间隔都为 2 小时。
-![3（1）.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680500877319-a142c9a5-72cc-49fd-b977-1cad2b90908e.png#clientId=u1772b344-b29a-4&height=481&id=d36zt&name=3%EF%BC%881%EF%BC%89.png&originHeight=481&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=uf54cab98-ce22-4c80-91fe-9e4215c7d28&title=&width=1080)
+![3（1）.png](https://img.alicdn.com/imgextra/i4/O1CN01b1XyjJ1craCLZyOUo_!!6000000003654-0-tps-1080-481.jpg)
 
 - 顺序消息：重试间隔为固定时间，默认为 3 秒。 
 
@@ -216,7 +216,7 @@ PushConsumer 的最大重试次数由创建时决定。
 
 和 PushConsumer 消费重试策略不同，SimpleConsumer 消费者的重试间隔是预分配的，每次获取消息消费者会在调用 API 时设置一个不可见时间参数 **InvisibleDuration**，即消息的最大处理时长。若消息消费失败触发重试，不需要设置下一次重试的时间间隔，直接复用不可见时间参数的取值。
 
-![4.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680500877365-26b1941d-0de7-47eb-97fd-6e73f7db3ff9.png#clientId=u1772b344-b29a-4&height=288&id=xqYVq&name=4.png&originHeight=288&originWidth=1047&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u09315de7-59e8-4765-aa39-6eeae545248&title=&width=1047)
+![4.png](https://img.alicdn.com/imgextra/i3/O1CN01RbNfhQ25HVreXbCOS_!!6000000007501-2-tps-1047-288.png)
 
 由于不可见时间为预分配的，可能和实际业务中的消息处理时间差别较大，可以通过 API 接口修改不可见时间。
 
@@ -229,7 +229,7 @@ PushConsumer 的最大重试次数由创建时决定。
 
 如下图所示，消息不可见时间修改后立即生效，即从调用 API 时刻开始，重新计算消息不可见时间。
 
-![5.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680500879353-4622e7dc-4eec-4a8c-9386-34d5628075c0.png#clientId=u1772b344-b29a-4&height=312&id=IOMPm&name=5.png&originHeight=312&originWidth=687&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ufde5e72e-688c-49c5-8f7e-92ad51c4e28&title=&width=687)
+![5.png](https://img.alicdn.com/imgextra/i2/O1CN01zMjEsh29ugCKe99ob_!!6000000008128-2-tps-687-312.png)
 
 - **最大重试次数**
 
@@ -322,4 +322,4 @@ SimpleConsumer 的消费重试间隔通过消息的不可见时间控制。
 
 1、新用户首次购买包年包月，即可享受全系列 85折优惠！ 了解活动详情：[https://www.aliyun.com/product/rocketmq](https://www.aliyun.com/product/rocketmq)
 
-![e728c42e80cb67bf020e646e58619bcd.jpg](https://intranetproxy.alipay.com/skylark/lark/0/2023/jpeg/59356401/1680576637562-9af35fbf-d64b-4f81-b950-7e72f91b5ca2.jpeg#clientId=u449ffa34-59ce-4&from=paste&height=675&id=u462ad3c6&name=e728c42e80cb67bf020e646e58619bcd.jpg&originHeight=675&originWidth=1920&originalType=binary&ratio=1&rotation=0&showTitle=false&size=258156&status=done&style=none&taskId=u26cea311-dc98-45bd-8c8c-c7884e57c37&title=&width=1920)
+![e728c42e80cb67bf020e646e58619bcd.jpg](https://img.alicdn.com/imgextra/i4/O1CN01Xi1rcu1DM6aIC7ypz_!!6000000000201-0-tps-1920-675.jpg)

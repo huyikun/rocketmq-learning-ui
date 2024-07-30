@@ -58,7 +58,7 @@ Lakehouse可用于存储、优化、分析和访问许多数据应用所需的�
 
 为什么会产生这么多开源产品呢？首先在大数据时代数据量越来越大，而且每个业务的需求也各不相同，因此就产生出各种类型的产品供架构师选择，用于支持各类场景。然而众多的品类产品也给架构师们带来一些困扰，比如选型困难、试错成本高、学习成本高、架构复杂等等。
 
-![2.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680490123464-4a8b73f3-c6d7-4d88-a19f-60b49ec843cf.png#clientId=u899db9a9-af75-4&height=696&id=bjk6W&name=2.png&originHeight=696&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ub21e3b8f-1266-42c0-a8f8-fd7bee44021&title=&width=1080)
+![2.png](https://img.alicdn.com/imgextra/i2/O1CN01IQ66lG1YtB7GrqdSk_!!6000000003116-49-tps-1080-696.webp)
 
 ### 2、当前主流的多层架构
 
@@ -78,14 +78,14 @@ Lakehouse可用于存储、优化、分析和访问许多数据应用所需的�
 - 多层架构的存储层是否可以合并？Hudi产品是否能够支持多种存储需求？
 - 多层架构的计算层是否可以合并？RocketMQ stream是否能够融合消息层和计算层？
 
-![3.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680490123338-2407c964-dd07-454b-a1ac-c53c269c0887.png#clientId=u899db9a9-af75-4&height=341&id=aGxQ2&name=3.png&originHeight=341&originWidth=676&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u5871faa4-ee52-4241-bc5d-dbc804bfae3&title=&width=676)
+![3.png](https://img.alicdn.com/imgextra/i3/O1CN014X9mZi25wH792SYeT_!!6000000007590-49-tps-676-341.webp)
 当前主流的多层架构
 
 ### 3、Lakehouse架构产生
 
 Lakehouse架构是多层架构的升级版本，将存储层复杂度继续降低到一层。再进一步压缩计算层，将消息层和计算层融合，RocketMQ stream充当计算的角色。我们得到如下图所示的新架构。新架构中，消息出入口通过RocketMQ connector实现，消息计算层由RocketMQ stream实现，在RocketMQ内部完成消息计算中间态的流转；计算结果通过RocketMQ-Hudi-connector收口落库Hudi，Hudi支持多种索引，并提供统一的API输出给不同产品。
 
-![4.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680490125094-2bf9b866-d380-44aa-9853-f4fa696f55f9.png#clientId=u899db9a9-af75-4&height=302&id=P7BPv&name=4.png&originHeight=302&originWidth=618&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u2114bb48-ed16-4021-8c3a-a02dda27345&title=&width=618)
+![4.png](https://img.alicdn.com/imgextra/i2/O1CN010DEhcX1scV0ZWA59e_!!6000000005787-49-tps-618-302.webp)
 Lakehouse架构
 
 下面我们分析下该架构的特点。
@@ -111,7 +111,7 @@ Lakehouse架构
 
 ## RocketMQ Connector & Stream
 
-![5.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680490123256-603eed8c-47d0-4842-a4f3-9c625919d8a0.png#clientId=u899db9a9-af75-4&height=440&id=aJeF7&name=5.png&originHeight=440&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ua250d455-ab42-4e63-bc77-fd09c5a97ae&title=&width=1080)
+![5.png](https://img.alicdn.com/imgextra/i2/O1CN01sAuLsk1pQduKPdRsi_!!6000000005355-49-tps-1080-440.webp)
 RocketMQ 发展历程图
 
 RocketMQ从2017年开始进入Apache孵化，2018年RocketMQ 4.0发布完成云原生化，2021年RocketMQ 5.0发布全面融合消息、事件、流。
@@ -128,7 +128,7 @@ RocketMQ作为一款“让人睡得着觉的消息产品”成为业务消息领
 
 如下图所示， RocketMQ的架构主要包含两部分包括：源数据集群NameServer Cluster和计算存储集群Broker Cluster。
 
-![6.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680490123250-ee6e3aa7-4a1e-4b5a-a274-350acbddba2a.png#clientId=u899db9a9-af75-4&height=560&id=IpXi6&name=6.png&originHeight=560&originWidth=1028&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u39d51f39-19bd-478c-9781-e6fc089d9d3&title=&width=1028)
+![6.png](https://img.alicdn.com/imgextra/i3/O1CN01CZfQGI1ahqY0VltxV_!!6000000003362-49-tps-1028-560.webp)
 RocketMQ 构架图
 
 NameServer节点无状态，可以非常简单的进行横向扩容。Broker节点采用主备方式保证数据高可靠性，支持一主多备的场景，配置灵活。
@@ -162,7 +162,7 @@ RocketMQ支持的消息类型包括：普通消息、事务消息、延迟消息
 
 ### 2、RocketMQ 5.0概况
 
-![7.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680490125542-bc0329a8-c763-491d-a117-b6c56659da8a.png#clientId=u899db9a9-af75-4&height=590&id=DAA5e&name=7.png&originHeight=590&originWidth=836&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u861b29b2-1d0a-47bd-bc0a-4e0dfb6b94f&title=&width=836)
+![7.png](https://img.alicdn.com/imgextra/i4/O1CN013iychE1pDoolyhbzM_!!6000000005327-49-tps-836-590.webp)
 
 RocketMQ 5.0是生于云、长于云的云原生消息、事件、流超融合平台，它具有以下特点：
 
@@ -185,7 +185,7 @@ RocketMQ 5.0是生于云、长于云的云原生消息、事件、流超融合�
 
 如下图所示，计算集群（Broker）主要包括抽象模型和相对应的协议适配，以及消费能力和治理能力。存储集群（Store）主要分为消息存储CommitLog（多类型消息存储、多模态存储）和索引存储Index（多元索引）两部分，如果可以充分发挥云上存储的能力，将CommitLog和Index配置在云端的文件系统就可以天然的实现存储和计算分离。
 
-![8.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680490125552-0225b32d-3280-4427-a36b-4f6263b0f56c.png#clientId=u899db9a9-af75-4&height=697&id=vJZNu&name=8.png&originHeight=697&originWidth=740&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=udea0be31-b4aa-4e13-a5ac-ec240ea1af4&title=&width=740)
+![8.png](https://img.alicdn.com/imgextra/i2/O1CN01VecsmE1ErXNffroRk_!!6000000000405-49-tps-740-697.webp)
 
 （4）**多模存储支持**
 
@@ -197,14 +197,14 @@ RocketMQ 5.0是生于云、长于云的云原生消息、事件、流超融合�
 - 可观测性能力云原生化，OpenTelemetry 标准化；
 - Kubernetes 一键式部署扩容交付。
 
-![9.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680490125572-cca61023-c9b1-423f-a96b-3e6e9b2593ef.png#clientId=u899db9a9-af75-4&height=369&id=jYFMi&name=9.png&originHeight=369&originWidth=910&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ud618c2b8-c8d5-42b0-b888-41c81c057e9&title=&width=910)
+![9.png](https://img.alicdn.com/imgextra/i2/O1CN013ABt0F1jt8rFcOVoq_!!6000000004605-49-tps-910-369.webp)
 RocketMQ 5.02021年度大事件及未来规划
 
 **3、RocketMQConnector**
 
 **a、传统数据流**
 
-![10.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680490125635-a2436bc1-de1d-438c-8355-9646219689d7.png#clientId=u899db9a9-af75-4&height=359&id=zrdqH&name=10.png&originHeight=359&originWidth=975&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u2d583964-b468-4de3-9d3c-7ddf7b4ee9b&title=&width=975)
+![10.png](https://img.alicdn.com/imgextra/i2/O1CN01eM1yRZ1IJQLOu4xId_!!6000000000872-49-tps-975-359.webp)
 
 （1）传统数据流的弊端
 
@@ -221,14 +221,14 @@ RocketMQ 5.02021年度大事件及未来规划
 
 **b、RocketMQ Connector数据同步流程**
 
-![11.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680490125638-798c639e-d173-4e84-a057-c21a26bd965e.png#clientId=u899db9a9-af75-4&height=562&id=DMMXb&name=11.png&originHeight=562&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u0a4fc344-110d-46bd-8657-1c5ecc922d2&title=&width=1080)
+![11.png](https://img.alicdn.com/imgextra/i3/O1CN01OOjzH51P2ClP5m4t8_!!6000000001782-49-tps-1080-562.webp)
 
 相比传统数据流，RocketMQ connector数据流的不同在于将 source 和 sink 进行统一管理，同时它开放源码，社区也很活跃。
 
 ### 4、RocketMQ Connector架构
 
 
-![12.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680490126148-f3a96393-3435-442d-b4bc-07444bd169bf.png#clientId=u899db9a9-af75-4&height=562&id=aCEKB&name=12.png&originHeight=562&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ud169682f-a86a-4729-a257-a3411e34ef7&title=&width=1080)
+![12.png](https://img.alicdn.com/imgextra/i3/O1CN012Y0u1P1GXxgWjpxvk_!!6000000000633-49-tps-1080-562.webp)
 
 如上图所示，RocketMQ Connector架构主要包含Runtime和Worker两部分，另外还有生态Source&Sink。
 
@@ -242,7 +242,7 @@ RocketMQ 5.02021年度大事件及未来规划
 
 RocketMQ Stream是一款将计算层压缩到一层的产品。它支持一些常见的算子如window、join、维表，兼容Flink SQL、UDF/UDAF/UDTF。
 
-![13.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680490126263-66afd457-a5b9-42e1-95b5-246ae78e3e99.png#clientId=u899db9a9-af75-4&height=496&id=mPf31&name=13.png&originHeight=496&originWidth=1063&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ufeb64c1d-2f5c-4c1a-b3cf-005e9721e14&title=&width=1063)
+![13.png](https://img.alicdn.com/imgextra/i1/O1CN010XAzzO1zVM8n25nc5_!!6000000006719-49-tps-1063-496.webp)
 
 ## Apache Hudi
 
@@ -254,7 +254,7 @@ Hudi的特性包括：
 - 对记录级别的更新、删除的原生支持；
 - 面向查询优化：小文件自动管理，针对增量拉取优化的设计，自动压缩、聚类以优化文件布局；
 
-![14.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680490126282-91fff1a0-9535-453c-b4d1-5aaebbcc8eac.png#clientId=u899db9a9-af75-4&height=638&id=MhKL6&name=14.png&originHeight=638&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u2ddc8121-af92-4751-9dd8-9fa5ffea6ef&title=&width=1080)
+![14.png](https://img.alicdn.com/imgextra/i1/O1CN01UKThRE1Tt6yqDVSrw_!!6000000002439-49-tps-1080-638.webp)
 
 Apache Hudi是一套完整的数据湖平台。它的特点有：
 
@@ -282,7 +282,7 @@ Apache Hudi主要针对以下三类场景进行优化：
 (2) 快速、高效；
 (3) 扫描、列存格式。
 
-![15.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680490126254-d37d9186-a852-4e67-9ef8-7424e7d5d4c9.png#clientId=u899db9a9-af75-4&height=844&id=GXEQb&name=15.png&originHeight=844&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u2f3d1534-43f9-4b8c-9741-bf86c642505&title=&width=1080)
+![15.png](https://img.alicdn.com/imgextra/i2/O1CN01qwLdc029btxVMSbYK_!!6000000008087-49-tps-1080-844.webp)
 
 ## 构建 Lakehouse 实操
 
@@ -349,12 +349,12 @@ connector-offset-topic （sink消费进度） connector-position-topic （source
 
 (1) RocketMQ connector需要配置RocketMQ集群信息和connector插件位置，包含：connect工作节点id标识workerid、connect服务命令接收端口httpPort、rocketmq集群namesrvAddr、connect本地配置储存目录storePathRootDir、connector插件目录pluginPaths 。
 
-![16.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680490126354-f8f74a3a-9d21-4d1d-9c6e-6a1b21f6efcf.png#clientId=u899db9a9-af75-4&height=383&id=m0Ybp&name=16.png&originHeight=383&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u99ff4a15-5b10-4706-a25e-0e1ce2ca66a&title=&width=1080)
+![16.png](https://img.alicdn.com/imgextra/i2/O1CN01Q2lu0U26lZTQPsU55_!!6000000007702-49-tps-1080-383.webp)
 RocketMQ connector配置表
 
 (2) Hudi任务需要配置Hudi表路径tablePath和表名称tableName，以及Hudi使用的Schema文件。
 
-![17.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680490126717-c3bb9c26-6b91-4605-bf51-fa879c89bb55.png#clientId=u899db9a9-af75-4&height=1060&id=HKlzy&name=17.png&originHeight=1060&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u779cfa62-92ca-410c-af62-e7f4185c556&title=&width=1080)
+![17.png](https://img.alicdn.com/imgextra/i3/O1CN01WBD7tZ1H88yOrkzfr_!!6000000000712-49-tps-1080-1060.webp)
 Hudi任务配置表
 
 _点击_[_此处_](https://developer.aliyun.com/live/247789)_即可查看Lakehouse构建实操视频_
@@ -464,5 +464,5 @@ _点击_[_此处_](https://developer.aliyun.com/live/247789)_即可查看Lakehou
 
 1、新用户首次购买包年包月，即可享受全系列 85折优惠！ 了解活动详情：[https://www.aliyun.com/product/rocketmq](https://www.aliyun.com/product/rocketmq)
 
-![e728c42e80cb67bf020e646e58619bcd.jpg](https://intranetproxy.alipay.com/skylark/lark/0/2023/jpeg/59356401/1680576637562-9af35fbf-d64b-4f81-b950-7e72f91b5ca2.jpeg#clientId=u449ffa34-59ce-4&from=paste&height=675&id=u462ad3c6&name=e728c42e80cb67bf020e646e58619bcd.jpg&originHeight=675&originWidth=1920&originalType=binary&ratio=1&rotation=0&showTitle=false&size=258156&status=done&style=none&taskId=u26cea311-dc98-45bd-8c8c-c7884e57c37&title=&width=1920)
+![e728c42e80cb67bf020e646e58619bcd.jpg](https://img.alicdn.com/imgextra/i4/O1CN01Xi1rcu1DM6aIC7ypz_!!6000000000201-0-tps-1920-675.jpg)
 
