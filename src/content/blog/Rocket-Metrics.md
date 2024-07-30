@@ -11,14 +11,14 @@ description: " RocketMQ 的消息是按照队列的方式分区有序储存的�
 
 在进入主题之前先来看一下 RocketMQ 生产者、消费者和服务端交互的流程：
 
-![1.jpeg](https://intranetproxy.alipay.com/skylark/lark/0/2023/jpeg/59356401/1680501494845-383f9d6e-d0a4-4b61-80f2-743d9e834298.jpeg#clientId=ua1a26c2d-144a-4&height=927&id=VMVfX&name=1.jpeg&originHeight=927&originWidth=2410&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ucb9eba04-e8b0-45e9-b6b5-a973176f86b&title=&width=2410)
+![1.jpeg](https://img.alicdn.com/imgextra/i1/O1CN017YCQII1XLujb1avsC_!!6000000002908-0-tps-2410-927.jpg)
 message produce and consume process
 
 RocketMQ 的消息是按照队列的方式分区有序储存的，这种队列模型使得生产者、消费者和读写队列都是多对多的映射关系，彼此之间可以无限水平扩展。对比传统的消息队列如 RabbitMQ 是很大的优势，尤其是在流式处理场景下能够保证同一队列的消息被相同的消费者处理，对于批量处理、聚合处理更友好。
 
 接下来我们来看一下消息的整个生命周期中需要关注的重要节点：
 
-![2.jpeg](https://intranetproxy.alipay.com/skylark/lark/0/2023/jpeg/59356401/1680501494880-49c5c900-38de-45a1-8528-85b56fe338a4.jpeg#clientId=ua1a26c2d-144a-4&height=1222&id=Gpq8v&name=2.jpeg&originHeight=1222&originWidth=4026&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u3309f92c-c14e-4a99-b8c7-83a1aa2aac5&title=&width=4026)
+![2.jpeg](https://img.alicdn.com/imgextra/i3/O1CN01GgUApx1RPDtyuAHsD_!!6000000002103-0-tps-4026-1222.jpg)
 message life cycle
 
 首先是消息发送：发送耗时是指一条消息从生产者开始发送到服务端接收到并储存在硬盘上的时间。如果是定时消息，需要到达指定的定时时间才能被消费者可见。
@@ -41,14 +41,14 @@ message life cycle
 
 RocketMQ 团队贡献的 RocketMQ exporter 已被 Prometheus 官方的开源 Exporter 生态所收录，提供了 Broker、Producer、Consumer 各个阶段丰富的监控指标。
 
-![3.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680501496608-999d4506-cda6-4b7e-b04c-49e18c946aa2.png#clientId=ua1a26c2d-144a-4&height=493&id=V3IIQ&name=3.png&originHeight=493&originWidth=845&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u19e09745-eeff-452d-bd76-ffe046821e2&title=&width=845)
+![3.png](https://img.alicdn.com/imgextra/i2/O1CN0147mrmO1RyUOmBVzuE_!!6000000002180-2-tps-845-493.png)
 exporter metrics spec
 
 ## Exporter 原理解析
 
 RocketMQ expoter 获取监控指标的流程如下图所示，Expoter 通过 MQAdminExt 向 RocketMQ 集群请求数据。获取的数据转换成 Prometheus 需要的格式，然后通过 /metics 接口暴露出来。
 
-![4.jpeg](https://intranetproxy.alipay.com/skylark/lark/0/2023/jpeg/59356401/1680501494740-d8c0f040-c795-4702-a790-07a90ed8dc88.jpeg#clientId=ua1a26c2d-144a-4&height=1080&id=bO0H9&name=4.jpeg&originHeight=1080&originWidth=1798&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u9ed00209-0e1c-45d5-82b4-ecdd162c978&title=&width=1798)
+![4.jpeg](https://img.alicdn.com/imgextra/i4/O1CN01CFyzOL1C6FFoeydeI_!!6000000000031-0-tps-1798-1080.jpg)
 rocketmq exporter
 
 随着 RocketMQ 的演进，exporter 模式逐渐暴露出一些缺陷：
@@ -80,19 +80,19 @@ OpenTelemetry 是 CNCF 的一个可观测性项目，旨在提供可观测性领
 
 Pull 模式旨在与 Prometheus 兼容。在 K8s 部署环境中无需部署额外的组件，prometheus 可以通过社区提供的 K8s 服务发现机制（创建 PodMonitor、ServiceMonitor CDR）自动获取要拉取的 broker/proxy 列表，并从他们提供的 endpoint 中拉取 metrics 数据。
 
-![5.jpeg](https://intranetproxy.alipay.com/skylark/lark/0/2023/jpeg/59356401/1680501494773-6c933dba-df02-4d44-95fc-f15d2d570c28.jpeg#clientId=ua1a26c2d-144a-4&height=1182&id=XYJAE&name=5.jpeg&originHeight=1182&originWidth=1378&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u3d033d2b-ec26-4815-b367-45e88176a10&title=&width=1378)
+![5.jpeg](https://img.alicdn.com/imgextra/i4/O1CN0176eCXt1zcgTjY4wVl_!!6000000006735-0-tps-1378-1182.jpg)
 pull mode
 
 ### Push
 
 OpenTelemetry 推荐使用 Push 模式，这意味着它需要部署一个 collector 来传输指标数据。
 
-![6.jpeg](https://intranetproxy.alipay.com/skylark/lark/0/2023/jpeg/59356401/1680501496974-675d3cc1-1fd3-4d42-a771-60ddeac268fc.jpeg#clientId=ua1a26c2d-144a-4&height=1112&id=juAIR&name=6.jpeg&originHeight=1112&originWidth=1458&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ua9e7a942-e587-41ce-8ebf-3856ec0c97b&title=&width=1458)
+![6.jpeg](https://img.alicdn.com/imgextra/i1/O1CN01xTPKRG1EW0leabKiB_!!6000000000358-0-tps-1458-1112.jpg)
 push mode
 
 OpenTelemetry 官方提供了 collector 的实现，支持对指标做自定义操作如过滤、富化，可以利用社区提供的插件实现自己的 collector。并且云厂商提供的可观测服务（如 AWS CloudWatch、阿里云 SLS）大多已经拥抱了 OpenTelemetry 社区，可以直接将数据推送到它们提供的 collector 中，无需额外的组件进行桥接。
 
-![7.jpeg](https://intranetproxy.alipay.com/skylark/lark/0/2023/jpeg/59356401/1680501497147-ab9b54b8-2c1d-4ef6-828c-cf0932c93954.jpeg#clientId=ua1a26c2d-144a-4&height=1026&id=VC4wE&name=7.jpeg&originHeight=1026&originWidth=1838&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u99b19d06-7497-45b4-8109-f61486fda16&title=&width=1838)
+![7.jpeg](https://img.alicdn.com/imgextra/i1/O1CN01m7BymW27tBfsAncd8_!!6000000007854-0-tps-1838-1026.jpg)
 OpenTelemetry collector
 
 ### 兼容 RocketMQ Exporter
@@ -101,7 +101,7 @@ OpenTelemetry collector
 
 RocketMQ 社区在 Exporter 中嵌入了一个 OpenTelemetry collector 实现，Broker 将 Metrics 数据导出到 Exporter，Exporter 提供了一个新的 endpoint（下图中的 metrics-v2）供 Prometheus 拉取。
 
-![8.jpeg](https://intranetproxy.alipay.com/skylark/lark/0/2023/jpeg/59356401/1680501497240-f8f7ca0b-a2c9-4958-a4ac-bb85990edbfa.jpeg#clientId=ua1a26c2d-144a-4&height=1118&id=l3RRo&name=8.jpeg&originHeight=1118&originWidth=1918&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u658ab0d0-7721-4816-becc-7bc09112016&title=&width=1918)
+![8.jpeg](https://img.alicdn.com/imgextra/i1/O1CN01pv9UYY29jgh3MFM3z_!!6000000008104-0-tps-1918-1118.jpg)
 exporter mode
 
 # 构建监控体系最佳实践
@@ -119,7 +119,7 @@ exporter mode
 监控接口调用情况，可以据此快速抓出异常的请求对症下药
 下图给出一些相关示例：所有 RPC 的耗时（avg、pt90、pt99 等）、成功率、失败原因、接口调用与返回值分布情况等。
 
-![9.jpeg](https://intranetproxy.alipay.com/skylark/lark/0/2023/jpeg/59356401/1680501497270-4e8b1814-49b4-4cc8-ba1d-310fc14d521d.jpeg#clientId=ua1a26c2d-144a-4&height=1220&id=HHgBs&name=9.jpeg&originHeight=1220&originWidth=4962&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u02146e75-1ded-473b-be86-833aa16486a&title=&width=4962)
+![9.jpeg](https://img.alicdn.com/imgextra/i1/O1CN01bDc3dF1safQPCbrvS_!!6000000005783-0-tps-4962-1220.jpg)
 rpc metrics
 
 **客户端监控：**
@@ -128,7 +128,7 @@ rpc metrics
 
 下图给出一些相关示例：客户端连接数、客户端语言/版本分布、发送的消息大小/类型分布。
 
-![10.jpeg](https://intranetproxy.alipay.com/skylark/lark/0/2023/jpeg/59356401/1680501497546-6fb28646-be54-4f36-aeca-ca6a21e6315b.jpeg#clientId=ua1a26c2d-144a-4&height=1522&id=Z3Od9&name=10.jpeg&originHeight=1522&originWidth=4976&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u6aedd44d-f340-4453-acde-758af8ac511&title=&width=4976)
+![10.jpeg](https://img.alicdn.com/imgextra/i1/O1CN016yLTju1lShDnc1rQ1_!!6000000004818-0-tps-4976-1522.jpg)
 client metrics
 
 **Broker 监控：**
@@ -137,7 +137,7 @@ client metrics
 
 下图给出一些相关示例：Dispatch 延迟、消息保留时间、线程池排队、消息堆积情况。
 
-![11.jpeg](https://intranetproxy.alipay.com/skylark/lark/0/2023/jpeg/59356401/1680501497915-d008e82a-b91e-46dc-b761-79b89142a11c.jpeg#clientId=ua1a26c2d-144a-4&height=1224&id=Kuzzr&name=11.jpeg&originHeight=1224&originWidth=4956&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u3f31fd1a-90a6-49e9-8b86-ff59a842302&title=&width=4956)
+![11.jpeg](https://img.alicdn.com/imgextra/i3/O1CN01C2GZTo27wqqSrEDBq_!!6000000007862-0-tps-4956-1224.jpg)
 broker metrics
 
 以上的示例只是 Metrics 的冰山一角，需要根据业务需要灵活组合不同的指标配置监控与巡检。
@@ -146,12 +146,12 @@ broker metrics
 
 有了完善的监控就可以对需要关注的指标配置告警，比如可以配置 Broker 监控中 Dispatch 延迟这个指标的告警：
 
-![12.jpeg](https://intranetproxy.alipay.com/skylark/lark/0/2023/jpeg/59356401/1680501497952-6a59603e-6899-4025-8cc5-55f4a0b09fb0.jpeg#clientId=ua1a26c2d-144a-4&height=2180&id=lbC3Z&name=12.jpeg&originHeight=2180&originWidth=1320&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u9a85f933-0097-4edf-937d-f4ba9d26bcf&title=&width=1320)
+![12.jpeg](https://img.alicdn.com/imgextra/i2/O1CN01GlWeaa2AGfD1MrjpV_!!6000000008176-0-tps-1320-2180.jpg)
 broker alert
 
 收到告警后可以联动监控查看具体原因，关联发送接口的失败率可以发现有 1.7% 的消费发送失败，对应的报错是没有创建订阅组：
 
-![13.jpeg](https://intranetproxy.alipay.com/skylark/lark/0/2023/jpeg/59356401/1680501498482-6ca45e78-60bb-4945-98f7-77a9e5c414a4.jpeg#clientId=ua1a26c2d-144a-4&height=600&id=IxCVp&name=13.jpeg&originHeight=600&originWidth=2416&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ue35281b7-d3c4-43aa-8718-2b7d6c894cd&title=&width=2416)
+![13.jpeg](https://img.alicdn.com/imgextra/i3/O1CN01h6PBjt28LaEViHBZW_!!6000000007916-0-tps-2416-600.jpg)
 promblem analysis
 
 ## 问题排查分析
@@ -167,7 +167,7 @@ promblem analysis
 - 就绪消息：就绪消息是可供消费但还未被拉取的消息，即在服务端堆积的消息；
 - 处理中消息：处理中的消息是被客户端拉取但是还未被消费的消息。
 
-![14.jpeg](https://intranetproxy.alipay.com/skylark/lark/0/2023/jpeg/59356401/1680501498590-7e836bbd-c9fd-4692-9faf-d2e8578b2676.jpeg#clientId=ua1a26c2d-144a-4&height=784&id=QNmRX&name=14.jpeg&originHeight=784&originWidth=2008&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ua065d6d1-2147-43e2-8270-df05994db65&title=&width=2008)
+![14.jpeg](https://img.alicdn.com/imgextra/i2/O1CN01k0xsNX1HSknUxNSSQ_!!6000000000757-0-tps-2008-784.jpg)
 consume lag
 
 ### 多维度指标分析堆积问题
@@ -200,4 +200,4 @@ consume lag
 
 1、新用户首次购买包年包月，即可享受全系列 85折优惠！ 了解活动详情：[https://www.aliyun.com/product/rocketmq](https://www.aliyun.com/product/rocketmq)
 
-![e728c42e80cb67bf020e646e58619bcd.jpg](https://intranetproxy.alipay.com/skylark/lark/0/2023/jpeg/59356401/1680576637562-9af35fbf-d64b-4f81-b950-7e72f91b5ca2.jpeg#clientId=u449ffa34-59ce-4&from=paste&height=675&id=u462ad3c6&name=e728c42e80cb67bf020e646e58619bcd.jpg&originHeight=675&originWidth=1920&originalType=binary&ratio=1&rotation=0&showTitle=false&size=258156&status=done&style=none&taskId=u26cea311-dc98-45bd-8c8c-c7884e57c37&title=&width=1920)
+![e728c42e80cb67bf020e646e58619bcd.jpg](https://img.alicdn.com/imgextra/i4/O1CN01Xi1rcu1DM6aIC7ypz_!!6000000000201-0-tps-1920-675.jpg)

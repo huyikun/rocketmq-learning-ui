@@ -13,7 +13,7 @@ description: "在 RocketMQ 5.0 中，更加强调了客户端类型的概念，�
 
 本篇文章也会根据不同的消费者类型来进行讲述。在介绍不同的消息类型之前，先明确一下不同 RocketMQ 消费者中的一个通用工作流程：在消费者中，到达客户端的消息都是由客户端主动向服务端请求并挂起长轮询获得的。为了保证消息到达的及时性，客户端需要不断地向服务端发起请求（请求是否需要由客户端主动发起则与具体的客户端类型有关），而新的符合条件的消息一旦到达服务端，就会客户端请求走。最终根据客户端处理的结果不同，服务端对消息的处理结果进行记录。
 
-![图片 1.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680501414016-00c5a230-71d4-45af-980a-9069a02bdcfd.png#clientId=u59381ef7-019b-4&height=381&id=F0ctB&name=%E5%9B%BE%E7%89%87%201.png&originHeight=381&originWidth=958&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u0f5ef084-a897-4072-8429-5f84a010b0c&title=&width=958)
+![图片 1.png](https://img.alicdn.com/imgextra/i2/O1CN01NNMX8M1jD0Q6gBqZj_!!6000000004513-2-tps-958-381.png)
 
 另外 **PushConsumer **和** SimpleConsumer **中还会有一个 ConsumerGroup 的概念，ConsumerGroup 相当于是一组相同订阅关系的消费者的共同身份标识。而服务端也会根据 ConsumerGroup 来记录对应的消费进度。同一个 ConsumerGroup 下的消息消费者将共同消费符合当前订阅组要求的所有消息，而不是独立进行消费。相比较于 **PullConsumer**，**PushConsumer **和** SimpleConsumer **更加适用于业务集成的场景，由服务端来托管消费状态和进度，相对来说更加的轻量与简单。
 
@@ -133,7 +133,7 @@ pushConsumer.setMaxCachedMessageSizeInBytes(128 * 1024 * 1024);
 
 在 **SimpleConsumer** 中，用户需要通过 SimpleConsumer#receive 设置一个消息不重复的时间窗口（或者说关于通过这个接口收到的消息的一个不可见时间窗口），这个时间窗口从用户接受到这条消息开始计时，在这段时间之内消息是不会重复投递到消费者的，而超出这个时间窗口之后，则会对这条消息进行再一次的投递。在这个过程中，消息的消费次数也会进行递增。与 **PushConsumer** 类似的是，一旦消费次数超出 ConsumerGroup 的最大次数，也就不会进行重投了。
 
-![图片 2.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680501413860-cb78f33d-ee10-48cf-8f97-dd2a91817b54.png#clientId=u59381ef7-019b-4&height=306&id=xhNZh&name=%E5%9B%BE%E7%89%87%202.png&originHeight=306&originWidth=958&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u971fdcde-7cae-4ecf-bb52-8bfa93937fb&title=&width=958)
+![图片 2.png](https://img.alicdn.com/imgextra/i2/O1CN01atqx6f20zs98cnNPp_!!6000000006921-0-tps-958-306.jpg)
 
 相比较于** PushConsumer** 而言，**SimpleConsumer** 用户可以自主控制接受消息的节奏。SimpleConsumer#receive 会针对于当前的订阅关系去服务端拉取符合条件的消息。**SimpleConsumer** 实际上的每次消息接收请求是按照具体 Topic 的分区来 one by one 发起请求的，实际的 Topic 分区可能会比较多，因此为了保证消息接收的及时性，建议综合自己的业务处理能力一定程度上提高 SimpleConsumer#receive 的并发度。
 
@@ -180,7 +180,7 @@ pushConsumer.setMaxCachedMessageSizeInBytes(128 * 1024 * 1024);
       
 
 在 RocketMQ 中，无论是消息的发送还是接收，都是通过队列来进行的，一个 Topic 由若干个队列组成，消息本身也是按照队列的形式来一个个进行存储的，同一个队列中的消息拥有不同的位点，且位点的大小是随随消息达到服务端的时间逐次递增的，本质上不同 ConsumerGroup 在服务端的消费进度就是一个个队列中的位点信息，客户端将自己的消费进度同步给服务端本质上其实就是在同步一个个消息的位点。
-![图片 3.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680501415607-212317db-f29a-4d4e-9ba2-8ad8ac863804.png#clientId=u59381ef7-019b-4&height=458&id=WleOO&name=%E5%9B%BE%E7%89%87%203.png&originHeight=458&originWidth=883&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u37144154-7666-4db9-bc56-b1225088def&title=&width=883)
+![图片 3.png](https://img.alicdn.com/imgextra/i1/O1CN01t1xolT1mi69mCvOiz_!!6000000004987-2-tps-883-458.png)
 
 在 PullConsumer 中将队列这个概念完整地暴露给了用户。用户可以针对自己关心的 topic 设置路由监听器从而感知队列的变化，并将队列 assign 给当前消费者，当用户使用 LitePullConsumer#poll 时会尝试获取已经 assign 好了的队列中的消息。如果设置了 LitePullConsumer#setAutoCommit 的话，一旦消息达到了客户端就会自动进行位点的提交，否则则需要使用 LitePullConsumer#commitSync 接口来进行手动提交。
 
@@ -194,4 +194,4 @@ pushConsumer.setMaxCachedMessageSizeInBytes(128 * 1024 * 1024);
 
 1、新用户首次购买包年包月，即可享受全系列 85折优惠！ 了解活动详情：[https://www.aliyun.com/product/rocketmq](https://www.aliyun.com/product/rocketmq)
 
-![e728c42e80cb67bf020e646e58619bcd.jpg](https://intranetproxy.alipay.com/skylark/lark/0/2023/jpeg/59356401/1680576637562-9af35fbf-d64b-4f81-b950-7e72f91b5ca2.jpeg#clientId=u449ffa34-59ce-4&from=paste&height=675&id=u462ad3c6&name=e728c42e80cb67bf020e646e58619bcd.jpg&originHeight=675&originWidth=1920&originalType=binary&ratio=1&rotation=0&showTitle=false&size=258156&status=done&style=none&taskId=u26cea311-dc98-45bd-8c8c-c7884e57c37&title=&width=1920)
+![e728c42e80cb67bf020e646e58619bcd.jpg](https://img.alicdn.com/imgextra/i4/O1CN01Xi1rcu1DM6aIC7ypz_!!6000000000201-0-tps-1920-675.jpg)

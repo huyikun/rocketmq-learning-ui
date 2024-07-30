@@ -5,16 +5,24 @@
 <div id="docsearch"></div>
 <style is:global>
   .DocSearch-Button:hover {
-    box-shadow: 0 0 0 2px #FF6A00 !important;
+    box-shadow: 0 0 0 2px #ff6a00 !important;
   }
 </style>
 <script>
   import docsearch from "@docsearch/js";
   import "@docsearch/css";
-  docsearch({
-    container: "#docsearch",
-    appId: "JDNNSL3FE3",
-    indexName: "rocketmq-learning",
-    apiKey: "c592bab45d466e353494eb684d89bea0",
-  });
+
+  function initSearch() {
+    setTimeout(() => {
+      docsearch({
+        container: "#docsearch",
+        appId: "JDNNSL3FE3",
+        indexName: "rocketmq-learning",
+        apiKey: "c592bab45d466e353494eb684d89bea0",
+      });
+    }, 0);
+  }
+
+  document.addEventListener("astro:page-load", initSearch);
+  document.addEventListener("DOMContentLoaded", initSearch);
 </script>

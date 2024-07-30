@@ -10,7 +10,7 @@ description: "RocketMQ 5.0 发布后，阿里云商业会持续采取 OpenCore �
 ## 阿里云消息队列 RocketMQ 商业化历程
 
 
-![1.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680500243177-88395440-d444-4f69-8d5e-1234465d57cd.png#clientId=uafa6c11d-42c2-4&height=604&id=vTpgh&name=1.png&originHeight=604&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u8d465533-127b-4a59-bb73-3f402cc51a4&title=&width=1080)
+![1.png](https://img.alicdn.com/imgextra/i4/O1CN01P9ZUNI1OXWECFhVuL_!!6000000001715-0-tps-1080-604.jpg)
 
 RocketMQ 诞生于 2012 年，诞生即开源。2012～2015 年，RocketMQ 一直在通过内部电商业务打磨自身服务能力,并在 2015 年于阿里云上线公测。2016 年，阿里云 RocketMQ 完成商业化，同时被捐赠给 Apache 基金会，同年获得了年度受欢迎中国开源软件荣誉。
 
@@ -20,7 +20,7 @@ RocketMQ 5.0 发布后，阿里云商业会持续采取 OpenCore 的发展模式
 
 ## 阿里云消息队列产品矩阵
 
-![2.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680500243280-acd657cd-b3a0-4998-b74d-e64cf4b680b2.png#clientId=uafa6c11d-42c2-4&height=604&id=QxR9B&name=2.png&originHeight=604&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u77fa6ce6-1612-4ba2-9322-1333b0b7fb2&title=&width=1080)
+![2.png](https://img.alicdn.com/imgextra/i2/O1CN01otUObP1sQ8JYQ0KH6_!!6000000005760-0-tps-1080-604.jpg)
 
 阿里云基于 RocketMQ 消息底座，构建了多元化的消息产品系列。
 
@@ -32,7 +32,7 @@ RocketMQ 在阿里云商业化历程中，一直致力于探索业务消息实�
 
 ## RocketMQ 4.0 业务消息探索之路
 
-![3.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680500244884-49adb844-83dc-474e-8eb3-b90cad1a612e.png#clientId=uafa6c11d-42c2-4&height=599&id=ETqo6&name=3.png&originHeight=599&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u7921b071-7b20-41b6-9f8a-2b5b22e44f8&title=&width=1080)
+![3.png](https://img.alicdn.com/imgextra/i3/O1CN01T5Fxuc1IKnX7owyNh_!!6000000000875-0-tps-1080-599.jpg)
 
 RocketMQ 在商业化过程中，陆续推出了四种消息类型来满足丰富的业务场景。
 
@@ -44,7 +44,7 @@ RocketMQ 在商业化过程中，陆续推出了四种消息类型来满足丰�
 
 - 事务消息：分布式、高性能、高可用的最终一致性事务解决方案，广泛应用于电商交易系统中服务的一致性协调场景并且已经开源。 
 
-![4.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680500243117-3cbac1e0-22de-43db-8bfe-6625389f01e7.png#clientId=uafa6c11d-42c2-4&height=597&id=YGdJq&name=4.png&originHeight=597&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u5bd123fa-258c-4ab8-99a9-350d6dbd7f2&title=&width=1080)
+![4.png](https://img.alicdn.com/imgextra/i3/O1CN01zwIMk11lLpHEHO9NS_!!6000000004803-0-tps-1080-597.jpg)
 
 RocketMQ 4.0 期间，商业和开源都致力于全方位拓展消息接入能力，使 RocketMQ 能够非常轻松地连接应用开源和云产品生态。比如商业上提供了多语言 SDK ，开源也有相应的 SDK 能够覆盖 Java、Go、Python 、C++使用 RocketMQ。同时支持 Spring 生态，能够通过 Spring Cloud 的方式使用 RocketMQ。商业上提供了一组非常简单易用的 HTTP API，提供了 6-7 种语言的实现。
 
@@ -56,7 +56,7 @@ RocketMQ 也大力在发展 connector 生态，能够通过 RocketMQ connector �
 
 RocketMQ 4.0 版本做了大量尝试，提供了全方位的消息接入能力。
 
-![5.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680500243121-f8fa259d-5ef6-4ef6-b3e1-68438027780d.png#clientId=uafa6c11d-42c2-4&height=603&id=GhRWW&name=5.png&originHeight=603&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=uae69e4d2-bef6-4b50-8b71-26b3d0d7cc2&title=&width=1080)
+![5.png](https://img.alicdn.com/imgextra/i3/O1CN01myXQeV1Q8uAtqjOgP_!!6000000001932-0-tps-1080-603.jpg)
 
 RocketMQ 在服务阿里集团用户和商业化历程中，沉淀了大量领先的业务消息处理与服务能力。比如消息订阅方面，RocketMQ 支持集群分布式消费能力，也支持广播消费。在消息处理方面支持基于 Tag 和 SQL 做灵活过滤，其中基于 SQL 过滤是电商交易中非常重要的特性，能够支持在非常订阅比的情况下实现较低的投递比。
 
@@ -68,13 +68,13 @@ RocketMQ 在服务阿里集团用户和商业化历程中，沉淀了大量领�
 
 服务能力方面，RocketMQ 经历了非常多沉淀，它在为交易链路服务了 12  年，参加了 10 年双 11，这也保证了 RocketMQ 能够在阿里云上提供非常高的可靠性。双 11 消息收发 TPS 峰值过亿，日消息收发总量超过 3 万亿。而即使在双十一万亿级数据洪峰下，消息也能做到 99.996% 毫秒级响应能力，消息发布平均响应时间不超过 3 毫秒，最大不超过 20 毫秒，真正实现了低延迟消息发布。
 
-![6.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680500247587-609898dc-a7b0-482e-85b1-1d54afdfedf5.png#clientId=uafa6c11d-42c2-4&height=619&id=wWY6C&name=6.png&originHeight=619&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ua950dff4-aec5-4d47-b9fa-34c396aa135&title=&width=1080)
+![6.png](https://img.alicdn.com/imgextra/i2/O1CN01lksQUR20XTaf9sCLM_!!6000000006859-0-tps-1080-619.jpg)
 
 商业化初期，客户遇到最大难题是在分布式环境下如何完整地追踪异步消息链路。基于此背景，我们打造了可视化全生命周期消息轨迹追踪系统，能够提供丰富的消息查询、消息下载、定点重投、轨迹追踪能力，通过可观测系统帮助用户解决分布式环境中不可观测的问题。
 
 如上图所示，一条消息从产生、发送至服务端存储到最终投递到消费者，整个发送和消费轨迹都有迹可循，包括投递给哪些消费者、哪些消费者在什么地方成功消费或者消费失败、何时进行重投，真正帮助客户解决了分布式观测难题。
 
-![7.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680500247513-11e5508c-1251-4e89-b1a7-ff0616684dd9.png#clientId=uafa6c11d-42c2-4&height=602&id=ghc3R&name=7.png&originHeight=602&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=uf0589782-1f1a-41cb-bd15-b370ead3ddc&title=&width=1080)
+![7.png](https://img.alicdn.com/imgextra/i4/O1CN01k3mk5s21CEq8ruIxB_!!6000000006948-0-tps-1080-602.jpg)
 
 除了功能特性，RocketMQ 在稳定性方面也做了很多建设。我们始终坚持，SLA 是云原生的根本，因此整个研发运维链路都有严格的稳定性保障措施：
 
@@ -92,7 +92,7 @@ RocketMQ 在服务阿里集团用户和商业化历程中，沉淀了大量领�
 
 云原生时代，云上用户对云产品服务化程度、弹性能力、可控制性能力以及韧性都有了更高的要求。在此背景之下，我们对 RocketMQ 进行了云原生架构升级，这也是 RocketMQ 5.0 的诞生背景。
 
-![8.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680500248876-b5ebf0f7-4bc4-4cb8-a689-e7b433434468.png#clientId=uafa6c11d-42c2-4&height=600&id=Z7Bnx&name=8.png&originHeight=600&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u3d64fe38-0205-41de-8ebc-e809dea4f34&title=&width=1080)
+![8.png](https://img.alicdn.com/imgextra/i1/O1CN01rXhLhR1NgqgCao8NK_!!6000000001600-0-tps-1080-600.jpg)
 
 - 轻量级 SDK：基于云原生通信标准 gRPC 开发了一组轻量级 SDK，能够与当前富客户端优势互补。  
 
@@ -102,7 +102,7 @@ RocketMQ 在服务阿里集团用户和商业化历程中，沉淀了大量领�
 
 - 云原生基础设施：可观测验能力云原生化，OpenTelemetry 标准化。整体架构走向 Kubernetes 化，能够充分利用售卖区的资源弹性能力。
 
-![9.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680500248951-38f30665-0357-4961-bc92-4df2784c324c.png#clientId=uafa6c11d-42c2-4&height=603&id=T7syq&name=9.png&originHeight=603&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u0ff4444b-a2aa-4540-886e-349dc7f263f&title=&width=1080)
+![9.png](https://img.alicdn.com/imgextra/i1/O1CN01ZJzpeD20bb9dwa9As_!!6000000006868-0-tps-1080-603.jpg)
 
 RocketMQ 4.0 推荐的接入方式主要是富客户端。富客户端提供了诸如客户端侧负载均衡、消息缓存、故障转移等一系列企业级特性。但在云原生时代，轻量级、高性能的客户端更容易被云原生技术栈所集成。
 
@@ -116,7 +116,7 @@ RocketMQ 4.0 推荐的接入方式主要是富客户端。富客户端提供了�
 
 - **云原生可观测性**：客户端实现了 OpenTelemetry 标准，能够支持以 OpenTelemetry 形式导出 Metrics 与 Tracing。
 
-![10.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680500249850-6dbd6c06-cd8a-4237-bee6-92b562314636.png#clientId=uafa6c11d-42c2-4&height=608&id=yD7Yi&name=10.png&originHeight=608&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u6d0251d7-9f73-4a92-b88c-feb05e39a30&title=&width=1080)
+![10.png](https://img.alicdn.com/imgextra/i4/O1CN01XTkONa1cbYKuEKGf9_!!6000000003619-0-tps-1080-608.jpg)
 
 RocketMQ 5.0 的另一个重大升级是引入了全新的无状态消费模型。该消费模型完全构建在原先的队列模型之上。队列模型是与存储模型一致的消费模型，消费者完全按照队列做负载均衡，也按照队列做消息拉取，非常适合批量高速拉取以及对单条消息状态不敏感的场景，比如流计算等。
 
@@ -126,7 +126,7 @@ RocketMQ 5.0 推出了 PoP 机制，巧妙地在队列模型之上构建了消�
 
 基于消息系模型的消费流程下，API 完全面向消息而不是面向队列。而当 PoP 机制遇见了无状态 Proxy，除了存储层，其他节点都是无状态的；客户端、连接和消费也是无状态的，可任意在 Proxy 节点上飘移，真正做到轻量级。
 
-![11.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680500251963-06ed6933-8a44-42b2-a76e-fa79530bffb3.png#clientId=uafa6c11d-42c2-4&height=606&id=NVP3T&name=11.png&originHeight=606&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=uf69c781f-9bd1-4e77-ab36-5293d7e0010&title=&width=1080)
+![11.png](https://img.alicdn.com/imgextra/i3/O1CN01cUnp531qQvlvKCD3l_!!6000000005491-0-tps-1080-606.jpg)
 
 经过重构，RocketMQ 5.0 的可观测性也走向了云原生标准。
 
@@ -148,7 +148,7 @@ RocketMQ 5.0 推出了 PoP 机制，巧妙地在队列模型之上构建了消�
 - Error Message 完整：包含完整的错误信息和排序所需要的资源信息。
 - Error Level 标准化：细化了各种不同错误信息的日志级别，用户可根据 Error、Warn 等级别配置更适合的监控告警。
 
-![12.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680500252131-fa26ff1b-3c64-40d4-9184-035885b5431e.png#clientId=uafa6c11d-42c2-4&height=586&id=t82hE&name=12.png&originHeight=586&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u330e278b-7e2c-40f6-b3c1-35f84b16c77&title=&width=1080)
+![12.png](https://img.alicdn.com/imgextra/i4/O1CN01Hh8sZt1LdWZdqfi3S_!!6000000001322-0-tps-1080-586.jpg)
 
 弹性方面，RocketMQ 5.0 商业版能够充分撬动云的计算、存储和网络的池化资源。比如在计算方面，RocketMQ 5.0 所有工作负载完全部署在 ACK 之上，充分利用了 ACK 弹性能力，撬动 ACK 弹性资源。主要依赖 ACK 的两项技术，一是弹性资源池，另一个是 HPA 支持计算能力快速弹性。同时也会在 ACK 之上做跨可用区部署以提供高可用保障。
 
@@ -160,7 +160,7 @@ RocketMQ 5.0 推出了 PoP 机制，巧妙地在队列模型之上构建了消�
 
 RocketMQ 4.0 历经了五年发展，开源和商业版本共同迈入了 5.0 时代。7 月底，阿里云消息队列将会基于开源版发布全新的 5.0 商业化版本。注：截止发稿前，RocketMQ 5.0 已经在阿里云消息队列 RocketMQ 产品上全新发布，目前支持国内主要地域。
 
-![13.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680500252912-fb5c8303-2616-4755-b056-7cea455991ad.png#clientId=uafa6c11d-42c2-4&height=603&id=HM0lK&name=13.png&originHeight=603&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u5c5da9e6-5259-4597-a85f-8dc67980adb&title=&width=1080)
+![13.png](https://img.alicdn.com/imgextra/i1/O1CN01FebUiC22nAOH76g78_!!6000000007164-0-tps-1080-603.jpg)
 
 RocketMQ 5.0 版相对于 4.0 版实例主要有以下几大改变：
 
@@ -176,7 +176,7 @@ RocketMQ 5.0 版相对于 4.0 版实例主要有以下几大改变：
 
 基于此，阿里云推出了全新事件型产品 EventBridge。该产品构建在 RocketMQ 之上，是 RocketMQ 之上的一个事件驱动架构实践。
 
-![14.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680500254845-faaa3663-a421-4f17-a25e-79ad1819b4cd.png#clientId=uafa6c11d-42c2-4&height=600&id=yTfvx&name=14.png&originHeight=600&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u1165425e-88b9-408d-a1d8-f76db1e6d40&title=&width=1080)
+![14.png](https://img.alicdn.com/imgextra/i4/O1CN01uvkj3e1SKvo42t4KV_!!6000000002229-0-tps-1080-600.jpg)
 
 EventBridge 的事件源包括阿里云服务的管控事件比如资源变更事件、审计事件、配置变更事件，阿里云服务的数据事件，也包括自定义应用、SaaS 应用、自建数据平台、其他云厂商服务等。
 
@@ -194,7 +194,7 @@ EventBridge 具有如下特点：
 
 - 全球事件任意互通：组建了全球事件任意互通网络，组件了跨地域、跨账户的事件网络，能够支持跨云、跨数据中心的事件路由。
 
-![15.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680500255756-fa379aae-125b-4490-8a3a-73ccf073056a.png#clientId=uafa6c11d-42c2-4&height=602&id=r1bvx&name=15.png&originHeight=602&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u9eb20352-e2a8-4891-af43-5571d717d71&title=&width=1080)
+![15.png](https://img.alicdn.com/imgextra/i2/O1CN01vFNiYe1qVy86CHsE5_!!6000000005502-0-tps-1080-602.jpg)
 
 EventBridge在云上生态已经初具规模，已经集成了 255+ 云产品事件源和 1000+ 事件类型。
 
@@ -211,6 +211,6 @@ EventBridge 目前已经在内部接入钉钉 ISV、聚石塔 ISV，外部也有
 
 1、新用户首次购买包年包月，即可享受全系列 85折优惠！ 了解活动详情：[https://www.aliyun.com/product/rocketmq](https://www.aliyun.com/product/rocketmq)
 
-![e728c42e80cb67bf020e646e58619bcd.jpg](https://intranetproxy.alipay.com/skylark/lark/0/2023/jpeg/59356401/1680576637562-9af35fbf-d64b-4f81-b950-7e72f91b5ca2.jpeg#clientId=u449ffa34-59ce-4&from=paste&height=675&id=u462ad3c6&name=e728c42e80cb67bf020e646e58619bcd.jpg&originHeight=675&originWidth=1920&originalType=binary&ratio=1&rotation=0&showTitle=false&size=258156&status=done&style=none&taskId=u26cea311-dc98-45bd-8c8c-c7884e57c37&title=&width=1920)
+![e728c42e80cb67bf020e646e58619bcd.jpg](https://img.alicdn.com/imgextra/i4/O1CN01Xi1rcu1DM6aIC7ypz_!!6000000000201-0-tps-1920-675.jpg)
 
 

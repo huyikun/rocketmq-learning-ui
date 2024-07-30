@@ -12,7 +12,7 @@ RocketMQ 5.0 SDK 采用了全新的 API，使用 gRPC 作为通信层的实现�
 
 此处的 API 并不单单只是接口上的定义，同时也规定了各个接口不同的方法和行为，明确了整个消息模型。
 
-![1.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680500518867-11c9c73e-827f-4922-8fe1-57bce152c369.png#clientId=u33bcd9dd-96de-4&height=606&id=GetIQ&name=1.png&originHeight=606&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=uaacb5dd4-f343-4c82-8a4b-14b4646a84d&title=&width=1080)
+![1.png](https://img.alicdn.com/imgextra/i3/O1CN01eZaXRn21Lr9rK6vfY_!!6000000006969-0-tps-1080-606.jpg)
 
 RocketMQ 过去的 API 从第一版开始，至今已经过了很长时间，长期依赖是一个缺乏变革的状态，对于一些中途打算废弃或者变更的 API 也没有进行后续的迭代。此外，接口的定义也不够清晰。因此，RocketMQ 希望在 5.0 中能够建立一个统一的规范，精简整个 API，通过引入 builder 模式来引入更多的不变性，同时做好异常管理，给开发者和用户一个更加清爽的面貌。
 
@@ -29,7 +29,7 @@ RocketMQ 过去的 API 从第一版开始，至今已经过了很长时间，长
 
 RocketMQ 5.0 定义了四种不同的消息类型。过去的开源版本中其实我们并没有去突出消息类型这样一个概念，后续出于维护及运维方面的需要以及模型定义的完备，才让今天的 5.0 有了消息类型的这样一个概念。
 
-![2.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680500519030-44f8519b-6100-4f07-9479-9432a49f38ff.png#clientId=u33bcd9dd-96de-4&height=606&id=ukz21&name=2.png&originHeight=606&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u89a11c70-2e5b-4028-9759-b599474c473&title=&width=1080)
+![2.png](https://img.alicdn.com/imgextra/i3/O1CN01Ozt7In1tp9ZEufbcq_!!6000000005950-0-tps-1080-606.jpg)
 
 1、**NORMAL**：普通消息。
 2、**FIFO**：满足先入先出的语义。用户可以通过定义 message group 来控制消息间的消费顺序。例如图中的 fruit 这个 topic 下，可以定义不同的 message group，在 apple 这个 message group 下，会按照发送顺序决定消息被消费的顺序，并且不同的 message group 之间不会互相干扰。
@@ -42,7 +42,7 @@ RocketMQ 5.0 定义了四种不同的消息类型。过去的开源版本中其�
 
 RocketMQ 5.0 在客户端的启动过程中提前进行了更多的准备工作。比如用户提前设置要发送消息的 topic 时，Producer 会在启动过程中尝试获取对应 topic 的路由。在过去的客户端实现中，在针对于某个 topic 第一次发送消息时，需要先获取路由，这里就会有一个类似冷启动的过程。
 
-![3.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680500520615-44050f42-a979-4fae-a921-fe1146b26dbd.png#clientId=u33bcd9dd-96de-4&height=606&id=YxJuh&name=3.png&originHeight=606&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u86f188d9-179a-44a3-a6fa-b493af53d71&title=&width=1080)
+![3.png](https://img.alicdn.com/imgextra/i2/O1CN01UTedqD24cIDepzxX6_!!6000000007411-0-tps-1080-606.jpg)
 
 提前获取 Topic 的路由信息有两点好处：
 
@@ -55,24 +55,24 @@ RocketMQ 5.0 在客户端的启动过程中提前进行了更多的准备工作�
 
 总的来说，客户端的启动过程会尽可能将所有准备工作做好。同时在客户端和服务端之间建立 Telemetry 这样一个通讯通道。
 
-![4.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680500518881-1d16a72d-5c34-4109-add3-f2ad46c02f18.png#clientId=u33bcd9dd-96de-4&height=608&id=PweFx&name=4.png&originHeight=608&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=uf7c78bd5-dc09-4719-a4fb-8bff47b3488&title=&width=1080)
+![4.png](https://img.alicdn.com/imgextra/i1/O1CN011qUCtH1XFxaReayIp_!!6000000002895-0-tps-1080-608.jpg)
 
 客户端内部存在一些周期性的任务，比如路由的定时更新以及客户端往服务端发送心跳等。对于上文中提到的 Telemetry 过程中，客户端的配置上报也是周期性的。
 
-![5.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680500518941-ed681d2b-d1fd-406b-8992-8cde3af0bd71.png#clientId=u33bcd9dd-96de-4&height=607&id=SKc3G&name=5.png&originHeight=607&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u7986b194-df98-4b28-a85c-103175247ad&title=&width=1080)
+![5.png](https://img.alicdn.com/imgextra/i4/O1CN01HDbnho1QMBf3HjdHN_!!6000000001961-0-tps-1080-607.jpg)
 Producer 在 RocketMQ 5.0 中的具体工作流程
 
 消息在发送时，会检查是否已经获取对应 topic 的路由信息。如果已经获取，则尝试在路由中选取队列，随即查看要发送的消息的类型是否与 topic 类型匹配，如果匹配，则进行消息发送。如果发送成功，则返回；否则，判断当前重试次数是否超出用户设置的上限，如果超出，则返回失败；否则轮转到下一个队列，然后对新的队列进行重试直到消费次数超出上线。而如果启动过程中没有提前获取路由，那么消息发送时依然会先尝试获取路由，然后再进行下一步操作。
 
 另外一点相对于老客户端较大的改变在于，客户端从底层 RPC 交互到上层的业务逻辑全部采用异步实现。Producer 依然会提供一个同步发送接口和异步发送接口，但同步的方法也是使用异步来实现，整个逻辑非常统一和清爽。
 
-![6.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680500523561-f3ddfcb1-eb45-4d7b-957d-8ab2b9453f81.png#clientId=u33bcd9dd-96de-4&height=608&id=SrpCx&name=6.png&originHeight=608&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ub3199353-8285-401c-8ba0-79f32e0d664&title=&width=1080)
+![6.png](https://img.alicdn.com/imgextra/i1/O1CN010R4r481erF8coshWf_!!6000000003924-0-tps-1080-608.jpg)
 
 Push Consumer 分为两部分，消息的接收和消费。
 
 消息接收流程为：客户端需要不断地从服务端拉取消息，并将消息缓存。Push Consumer 会将消息先缓存到客户端的本地，再进行消费，因此它会判断客户端本地的 Cache 是否已满，如果已满，则隔一段时间再判断，直到消息被客户端消费，Cache 尚有余量时再进行消息拉取。为了避免出现一些内存问题，Cache 的大小也是被严格限制的。
 
-![7.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680500524086-e32ddd4d-f688-4fcf-a073-6ae1f540823b.png#clientId=u33bcd9dd-96de-4&height=606&id=Xwu98&name=7.png&originHeight=606&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ua9af97ef-a283-47db-822e-1b5052ead92&title=&width=1080)
+![7.png](https://img.alicdn.com/imgextra/i2/O1CN01CXKltE1Gm9xfpYpnT_!!6000000000664-0-tps-1080-606.jpg)
 
 消息消费过程分为两个类型，顺序类型和非顺序类型。
 
@@ -84,7 +84,7 @@ Push Consumer 分为两部分，消息的接收和消费。
 
 此外，因为不同 message group 的顺序消息最终可能会映射到同一个队列上，这可能会导致不同的 message group 之间的消费形成阻塞，因此服务端未来会实现一个虚拟队列，让不同的 message group 映射到客户端的虚拟队列，保证他们之间没有任何阻塞，从而加速数据消息的消费过程。
 
-![8.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680500524163-b1becafe-cd68-4489-a907-aac3620c0849.png#clientId=u33bcd9dd-96de-4&height=606&id=EF7Tg&name=8.png&originHeight=606&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ucf81d6ee-eb74-4fda-9330-2cdc4085f25&title=&width=1080)
+![8.png](https://img.alicdn.com/imgextra/i3/O1CN01zf8VFI1w5l9zzDCLH_!!6000000006257-0-tps-1080-606.jpg)
 
 对于 Simple Consumer，用户可以主动控制消息接收和确认的流程。比如用户收到消息后，可以根据业务决定是否过一段时间再消费该消息，或者不需要再收到该消息。消费成功后将消息 ACK 掉，如果失败则主动修改可见时间，选择该消息下一次什么时候可见，即由用户自发地控制整个过程。
 
@@ -93,7 +93,7 @@ Push Consumer 分为两部分，消息的接收和消费。
 
 ### Shaded Logback
 
-![9.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680500525247-96a9517a-2ebc-45dc-b0df-b571ee85ab2b.png#clientId=u33bcd9dd-96de-4&height=606&id=GeOMU&name=9.png&originHeight=606&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u74553438-854f-41b0-b1a3-66ce0e1b0ac&title=&width=1080)
+![9.png](https://img.alicdn.com/imgextra/i4/O1CN01GEbD9f1gkwvUFHmHK_!!6000000004181-0-tps-1080-606.jpg)
 
 因为历史原因，RocketMQ 的老客户端并不是面向 SLF4J 进行编程的，而是面向 logback 的。这么做的目的其实是为了方便快捷地获取日志，不需要让用户自己去手动配置。
 
@@ -109,7 +109,7 @@ RocketMQ 中专门有一个 logging 模块是负责日志部分的，像用户�
 
 5.0 的消息轨迹基于 OpenTelemetry 模型进行定义与实现，消息发送或接收消息的流程被定义为一个个独立的 span ，这一套 span 规范参照了 OpenTelemetry 关于 Messaging 的定义。图中这里 Process P 表示 Producer ，Process C 表示 Consumer。消息的全生命周期，从发送到接收到消费，就可以具象化为这样一个个的 span。
 
-![10.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680500527043-072906b1-13b3-443e-bd32-306fb7aeb870.png#clientId=u33bcd9dd-96de-4&height=604&id=eGScu&name=10.png&originHeight=604&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u788ce79c-e0a1-472d-87a7-abbe2810dfd&title=&width=1080)
+![10.png](https://img.alicdn.com/imgextra/i4/O1CN011lOC771JfEpDzgpJQ_!!6000000001055-0-tps-1080-604.jpg)
 
 比如，针对 Push Consumer 而言，先会有一个 receive 的 span 来表示从服务端获取消息的过程，收到消息后到会先等待消息被处理，这个也就是 await span 表示的过程，消息被处理则对应图中的 process span，消息消费结束之后，向服务端反馈消息处理结果也会有专门的 span 进行描述。
 
@@ -121,7 +121,7 @@ RocketMQ 中专门有一个 logging 模块是负责日志部分的，像用户�
 
 Tracing 相对来说成本是比较高的，因为一条消息从发送到接收，可能会有很多流程，这就伴随着很多的 span，这就导致相对来说，tracing 数据的存储查询成本相对来说比较高。我们希望诊断整个 SDK 的健康状况，同时又不希望收集太多的 tracing 信息提高成本，此时提供一份 metrics 数据就能比较好地满足我们的需求。
 
-![11.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680500527620-430def84-c83b-4e1e-936e-2a2d5f17e7e5.png#clientId=u33bcd9dd-96de-4&height=605&id=zNXRY&name=11.png&originHeight=605&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ue1d772f3-de53-40c0-9545-3cdde060cb2&title=&width=1080)
+![11.png](https://img.alicdn.com/imgextra/i1/O1CN01xsZ8YJ1qOBOfZwirI_!!6000000005485-0-tps-1080-605.jpg)
 
 在 SDK 的 metrics 中我们新增了诸多指标，包括不限于 Producer 中消息发送延时，Push Consumer 中消息的消费耗时和消息缓存量，可以帮助用户和运维者更快更好地发现异常。
 
@@ -136,4 +136,4 @@ _艾阳坤，Apache RocketMQ 5.0 Java SDK 作者，CNCF Envoy Contributor，CNCF
 
 1、新用户首次购买包年包月，即可享受全系列 85折优惠！ 了解活动详情：[https://www.aliyun.com/product/rocketmq](https://www.aliyun.com/product/rocketmq)
 
-![e728c42e80cb67bf020e646e58619bcd.jpg](https://intranetproxy.alipay.com/skylark/lark/0/2023/jpeg/59356401/1680576637562-9af35fbf-d64b-4f81-b950-7e72f91b5ca2.jpeg#clientId=u449ffa34-59ce-4&from=paste&height=675&id=u462ad3c6&name=e728c42e80cb67bf020e646e58619bcd.jpg&originHeight=675&originWidth=1920&originalType=binary&ratio=1&rotation=0&showTitle=false&size=258156&status=done&style=none&taskId=u26cea311-dc98-45bd-8c8c-c7884e57c37&title=&width=1920)
+![e728c42e80cb67bf020e646e58619bcd.jpg](https://img.alicdn.com/imgextra/i4/O1CN01Xi1rcu1DM6aIC7ypz_!!6000000000201-0-tps-1920-675.jpg)

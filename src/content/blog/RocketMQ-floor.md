@@ -10,7 +10,7 @@ description: "本篇文章的核心就消息架构以及产品能力的云原生
 
 在上个月结束的 RocketMQ Summit 全球开发者峰会中，Apache RocketMQ 社区发布了新一代 RocketMQ 的能力全景图，为众多开发者阐述 RocketMQ 5.0 这一大版本的技术定位与发展方向。
 
-![1.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680493044197-6ea509e8-13ae-41b5-b713-c884a3d299d4.png#clientId=udb4ee6c5-dc95-4&height=545&id=AR74u&name=1.png&originHeight=545&originWidth=969&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u2795ba46-32b4-42a1-846a-4dbfaf05803&title=&width=969)
+![1.png](https://img.alicdn.com/imgextra/i2/O1CN01J2tGwu1DiXzZOeLcZ_!!6000000000250-0-tps-969-545.jpg)
 
 在过去七年大规模云计算实践中，RocketMQ 不断自我演进，今天，RocketMQ 正式迈进 5.0 时代。
 
@@ -22,7 +22,7 @@ description: "本篇文章的核心就消息架构以及产品能力的云原生
 
 面向未来，适应云原生架构的消息产品能力应该在以下方面做出重要突破：
 
-![2.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680493044098-24d4d6d8-9ab3-4f52-b286-b1d9ca9a7627.png#clientId=udb4ee6c5-dc95-4&height=566&id=dpx7i&name=2.png&originHeight=566&originWidth=969&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u1556b88e-2e25-451c-94a0-9f6ae915b27&title=&width=969)
+![2.png](https://img.alicdn.com/imgextra/i3/O1CN01qzQKVj1VGl2qHh2YP_!!6000000002626-0-tps-969-566.jpg)
 
 - **大规模弹性**：企业上云的本质是解放资源供给的负担和压力，专注于业务的集成和发展。作为消息服务的运维方，应该为上层业务提供与模型匹配的资源供给能力，伴随业务流量的发展提供最贴合的弹性能力。一方面可以解决面向不确定突发流量的系统风险，另一方面也可以实现资源利用率的提升。 
 
@@ -40,11 +40,11 @@ description: "本篇文章的核心就消息架构以及产品能力的云原生
 
 面对波动的业务场景，阿里云 RocketMQ 5.0 的消息服务可以伴随业务的诉求进行自适应实现资源扩缩。一方面在比较稳定的业务处理基线范围内，按照最低的成本预留固定的资源；另一方面在偶尔存在的突发流量毛刺时，支持自适应弹性，按量使用，按需付费。两种模式相互结合，可以实现稳定安全的高水位运行，无需一直为不确定的流量峰值预留大量资源。
 
-![3.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680493045902-11c0254a-d718-4eff-ab2a-028fa9dee285.png#clientId=udb4ee6c5-dc95-4&height=327&id=gzpez&name=3.png&originHeight=327&originWidth=969&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ud6085df1-76e2-4dbd-87a1-b1047ce1649&title=&width=969)
+![3.png](https://img.alicdn.com/imgextra/i2/O1CN01sAlkL51wWK8BarekP_!!6000000006315-0-tps-969-327.jpg)
 
 除了消息处理流量的弹性适应外，消息系统也是有状态的系统，存储了大量高价值的业务数据。当系统调用压力变化时，存储本身也需要具备弹性能力，一方面需要保障数据不丢失，另一方面还需要节省存储的成本，避免浪费。传统的基于本地磁盘的架构天然存在扩缩容问题，其一本地磁盘容量有限，当需要扩大容量时只能加节点，带来计算资源的浪费；其二本地磁盘无法动态缩容，只能基于业务侧流量的隔离下线才能缩减存储成本，操作非常复杂。
 
-![4.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680493044043-3d26a037-b9e1-44e1-b1b7-5dbf21618433.png#clientId=udb4ee6c5-dc95-4&height=369&id=DSROu&name=4.png&originHeight=369&originWidth=969&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u19bc3ff7-c67d-44e4-abad-08947f9e632&title=&width=969)
+![4.png](https://img.alicdn.com/imgextra/i4/O1CN012O5KPD1TAgYlzoK6i_!!6000000002342-0-tps-969-369.jpg)
 
 阿里云 RocketMQ 5.0 的消息存储具备天然的 Serverless 能力，存储空间按需使用，按量付费，业务人员只需要按照需求设置合理的 TTL 时间，即可保障长时间存储时的数据完整性。
 
@@ -56,11 +56,11 @@ description: "本篇文章的核心就消息架构以及产品能力的云原生
 
 阿里云 RocketMQ 5.0 正是基于这种思想提供了全新的 SimpleConsumer 模型，支持任意单条消息粒度的消费、重试和提交等原子能力。
 
-![5.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680493043993-a56a5298-4b6c-4aa3-a3a6-4634e9bd4f75.png#clientId=udb4ee6c5-dc95-4&height=648&id=fFfLk&name=5.png&originHeight=648&originWidth=947&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u31fd55ca-a1bc-4f34-8f22-08eefb8aeb8&title=&width=947)
+![5.png](https://img.alicdn.com/imgextra/i3/O1CN01rxyzLO1Ros564Xh36_!!6000000002159-2-tps-947-648.png)
 
 ### 可观测性：提供边界清晰、标准开放的自助诊断能力
 
-![6.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680493046321-aac98dcf-1bcd-465d-97bc-0b225646003f.png#clientId=udb4ee6c5-dc95-4&height=455&id=LyFa8&name=6.png&originHeight=455&originWidth=446&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u74f49fbd-655c-4488-a4e7-0e3967bc82a&title=&width=446)
+![6.png](https://img.alicdn.com/imgextra/i1/O1CN016CUuTh1FY8DS1nm5r_!!6000000000498-2-tps-446-455.png)
 
 有运维消息队列经验的同学都会发现，消息系统耦合了业务的上游生产和下游消费处理，往往业务侧出问题时无法清晰地界定是消息服务异常还是业务处理逻辑的异常。
 
@@ -74,7 +74,7 @@ description: "本篇文章的核心就消息架构以及产品能力的云原生
 
 - 指标：指标则是更大范围的观测和预警，量化消息系统的各种能力，例如收发 TPS、吞吐、流量、存储空间、失败率和成功率等。
 
-![7.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680493046465-6d049e12-1aa0-4869-85c2-79fb47d5be59.png#clientId=udb4ee6c5-dc95-4&height=419&id=yYK1Q&name=7.png&originHeight=419&originWidth=969&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u711f462b-b294-45c7-a191-4a85d0ce51f&title=&width=969)
+![7.png](https://img.alicdn.com/imgextra/i4/O1CN01IC1UYA1waRhCWDOJr_!!6000000006324-0-tps-969-419.jpg)
 
 阿里云 RocketMQ 在可观测性方面也是积累良多，不仅率先支持了完善的消息轨迹链路查询，而且在 5.0 新版本中还支持将客户端和服务端的 Trace、Metrics 信息以标准的 OpenTelemetry协议上报到第三方Trace、Metrics中存储，借助开源的 Prometheus 和 Grafana 等产品可以实现标准化的展示和分析。
 
@@ -82,7 +82,7 @@ description: "本篇文章的核心就消息架构以及产品能力的云原生
 
 稳定性是生产系统必备的核心能力，消息系统往往集成在核心交易链路，消息系统是否稳定直接影响了业务是否完整和可用。但稳定性的保障本身并不只是运维管理，而是要从系统架构的设计阶段开始梳理，量化服务边界和服务指标，只有明确了服务的可用性和可靠性指标，使用方才能设计自己的故障兜底和冗余安全机制。
 
-![8.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680493046683-bee4f1f2-4f70-402b-9855-3d35eca93933.png#clientId=udb4ee6c5-dc95-4&height=432&id=SjSEH&name=8.png&originHeight=432&originWidth=969&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u10ab412e-12d3-41b7-98b9-d038eeb3817&title=&width=969)
+![8.png](https://img.alicdn.com/imgextra/i3/O1CN01JQDRBN1yb1QKVSlPE_!!6000000006596-0-tps-969-432.jpg)
 
 传统的基于运维手段的被动保障方式，只能做基本的扩缩容和系统指标监控，对于消息的各种复杂边界场景，例如消息堆积、冷读、广播等并不能很好的提供量化服务能力。一旦上层业务方触发这些场景，系统则会被打穿，从而丧失服务能力。
 
@@ -101,4 +101,4 @@ description: "本篇文章的核心就消息架构以及产品能力的云原生
 
 1、新用户首次购买包年包月，即可享受全系列 85折优惠！ 了解活动详情：[https://www.aliyun.com/product/rocketmq](https://www.aliyun.com/product/rocketmq)
 
-![e728c42e80cb67bf020e646e58619bcd.jpg](https://intranetproxy.alipay.com/skylark/lark/0/2023/jpeg/59356401/1680576637562-9af35fbf-d64b-4f81-b950-7e72f91b5ca2.jpeg#clientId=u449ffa34-59ce-4&from=paste&height=675&id=u462ad3c6&name=e728c42e80cb67bf020e646e58619bcd.jpg&originHeight=675&originWidth=1920&originalType=binary&ratio=1&rotation=0&showTitle=false&size=258156&status=done&style=none&taskId=u26cea311-dc98-45bd-8c8c-c7884e57c37&title=&width=1920)
+![e728c42e80cb67bf020e646e58619bcd.jpg](https://img.alicdn.com/imgextra/i4/O1CN01Xi1rcu1DM6aIC7ypz_!!6000000000201-0-tps-1920-675.jpg)

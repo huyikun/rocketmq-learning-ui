@@ -12,7 +12,7 @@ description: "以“深入数字经济·洞见技术价值”为主题的【Info
 
 伴随着云原生时代的到来以及实时计算的兴起， 生于云、长于云的 RocketMQ 5.0 应运而生，全新升级为**云原生消息、事件、流融合处理平台**，帮助用户更容易地构建下一代事件驱动和流处理应用。**RocketMQ 5.0 专注于消息基础架构的云原生化演进，聚焦在消息领域的后处理场景，支持消息的流式处理和轻计算，帮助用户实现消息的就近计算和分析，并全面拥抱 Serverless 和 EDA。**
 
-![1.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680501979427-ec89d4b7-d3b6-4d8d-b0f4-057d1a0336cc.png#clientId=u40100436-6779-4&height=1200&id=WIdJx&name=1.png&originHeight=1200&originWidth=362&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u3764c620-53ce-40d0-a179-93b91775018&title=&width=362)
+![1.png](https://img.alicdn.com/imgextra/i4/O1CN01DC8PCR1GtUIjoeONn_!!6000000000680-0-tps-362-1200.jpg)
 
 在技术迎来重要革新的同时，回顾 Apache RocketMQ 社区这些年的成长历程。目前，全球 Apache RocketMQ Contributors  700+，促进整个社区长期和健康发展。同时，为了帮助社区开发者更好地找到感兴趣的技术方向，快速参与到社区并推动相关特性优化的快速演进，RocketMQ 还成立内核、批处理、Connect、Streaming、多语言客户端、RocketMQ-Flink、Operator、Exporter 等不同兴趣小组。
 
@@ -28,4 +28,4 @@ description: "以“深入数字经济·洞见技术价值”为主题的【Info
 
 1、新用户首次购买包年包月，即可享受全系列 85折优惠！ 了解活动详情：[https://www.aliyun.com/product/rocketmq](https://www.aliyun.com/product/rocketmq)
 
-![e728c42e80cb67bf020e646e58619bcd.jpg](https://intranetproxy.alipay.com/skylark/lark/0/2023/jpeg/59356401/1680576637562-9af35fbf-d64b-4f81-b950-7e72f91b5ca2.jpeg#clientId=u449ffa34-59ce-4&from=paste&height=675&id=u462ad3c6&name=e728c42e80cb67bf020e646e58619bcd.jpg&originHeight=675&originWidth=1920&originalType=binary&ratio=1&rotation=0&showTitle=false&size=258156&status=done&style=none&taskId=u26cea311-dc98-45bd-8c8c-c7884e57c37&title=&width=1920)
+![e728c42e80cb67bf020e646e58619bcd.jpg](https://img.alicdn.com/imgextra/i4/O1CN01Xi1rcu1DM6aIC7ypz_!!6000000000201-0-tps-1920-675.jpg)
