@@ -15,11 +15,11 @@ description: "本文介绍 RocketMQ 负载均衡机制，主要涉及负载均�
 ## 负载均衡意义
 
 
-![1.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680501218700-1ed7e3be-c828-46c0-bbb7-45b4eb312c76.png#clientId=ufa3f06d3-882d-4&height=618&id=lYwPO&name=1.png&originHeight=618&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u37f534ef-7fd9-4f4d-96fb-c263fd1faba&title=&width=1080)
+![1.png](https://img.alicdn.com/imgextra/i1/O1CN01MePvS1214uVHkt6XM_!!6000000006932-0-tps-1080-618.jpg)
 
 上图是 RocketMQ 的消息储存模型：消息是按照队列的方式分区有序储存的。RocketMQ 的队列模型使得生产者、消费者和读写队列都是多对多的映射关系，彼此之间都可以无限水平扩展。对比传统的消息队列如 RabbitMQ 是很大的优势。尤其是在流式处理场景下有天然优势，能够保证同一队列的消息被相同的消费者处理，对于批量处理、聚合处理更友好。
 
-![2.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680501218852-1f98130d-3d3e-424e-9318-25507597574e.png#clientId=ufa3f06d3-882d-4&height=565&id=rXHZp&name=2.png&originHeight=565&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u0373f99b-af27-4a5c-b21d-8d5336d377c&title=&width=1080)
+![2.png](https://img.alicdn.com/imgextra/i1/O1CN01oHSYLU1ExUX0EwVET_!!6000000000418-2-tps-1080-565.png)
 
 消费者消费某个 topic 的消息等同于消费这个 topic 上所有队列的消息（上图中 Consumer A1 消费队列 1，Consumer A2 消费队列 2、3）。
 
@@ -35,7 +35,7 @@ description: "本文介绍 RocketMQ 负载均衡机制，主要涉及负载均�
 - **客户端主动负载均衡**
 ** **
 
-![3.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680501220551-73bc168e-e9c0-4a0b-aed7-fb79fefa4aea.png#clientId=ufa3f06d3-882d-4&height=450&id=ms7Dr&name=3.png&originHeight=450&originWidth=582&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=uc7f15aad-9c69-46f7-9344-6e712e767d7&title=&width=582)
+![3.png](https://img.alicdn.com/imgextra/i3/O1CN01LR1Ecp1iOcqwNFMsh_!!6000000004403-2-tps-582-450.png)
 
 上图是 RocketMQ 客户端相关类的结构，其中 MQClientInstance 负责和服务端的交互以及底层服务的协调，这其中就包括负载均衡。
 
@@ -51,7 +51,7 @@ MQClientInstance 中有两个相关的方法 rebalanceImmediately 和 doRebalanc
 
 服务端通知客户端进行负载均衡也是通过 MQClientInstance#rebalanceImmediately 方法实现的，我们同样在服务端代码中寻找相关调用。
 
-![4.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680501218762-d6e855f2-177a-4ec6-9c9d-a9ffd082a28c.png#clientId=ufa3f06d3-882d-4&height=139&id=HeuTK&name=4.png&originHeight=139&originWidth=660&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u6440c658-83e4-4224-b00a-6cd3ad15666&title=&width=660)
+![4.png](https://img.alicdn.com/imgextra/i3/O1CN01wa1Kmy1WrECMr8R9a_!!6000000002841-2-tps-660-139.png)
 
 分析以上几个方法可以得出结论，在如下场景服务端会主动通知客户端触发负载均衡：
 
@@ -112,7 +112,7 @@ MQClientInstance 中有两个相关的方法 rebalanceImmediately 和 doRebalanc
 
 下图中绿色的线代表发送 tps，黄色的线代表消费 tps，我们很容易发现在 21:00 和 21:50 分左右存在消费毛刺。
 
-![5.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680501218672-65ed1409-e713-4a4e-9342-afbd133c776d.png#clientId=ufa3f06d3-882d-4&height=401&id=aGerR&name=5.png&originHeight=401&originWidth=725&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ue67e0213-8f96-4575-b501-84c067b5b14&title=&width=725)
+![5.png](https://img.alicdn.com/imgextra/i4/O1CN01r5IC5C217CU4lqyH3_!!6000000006937-2-tps-725-401.png)
 
 这两个时间点在进行应用发布，根据我们上文的分析某个消费者下线后同组的其他消费者感知这一变化需要一定时间，导致有秒级的消费延迟产生。在发布结束后消费者快速处理堆积的消息，可以发现消费速度有一个明显的上涨。
 
@@ -157,13 +157,13 @@ RocketMQ 的负载均衡是每个客户端独立进行计算，所以务必要�
 
 同一个队列的消息可以由多个消费者消费，服务端会确保消息不重不漏的被客户端消费到：
 
-![6.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680501220705-c4979118-32df-4a9a-9c23-bbc8a83ca31d.png#clientId=ufa3f06d3-882d-4&height=328&id=IVKwp&name=6.png&originHeight=328&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u7749d9b1-da85-44e8-97a8-c8fd76ade9a&title=&width=1080)
+![6.png](https://img.alicdn.com/imgextra/i3/O1CN015rlQDv1nDhU5ZgOS3_!!6000000005056-2-tps-1080-328.png)
 
 消息粒度的负载均衡机制，是基于内部的单条消息确认语义实现的。消费者获取某条消息后，服务端会将该消息加锁，保证这条消息对其他消费者不可见，直到该消息消费成功或消费超时。因此，即使多个消费者同时消费同一队列的消息，服务端也可保证消息不会被多个消费者重复消费。
 
 在 4.x 的客户端中，顺序消费的实现强依赖于队列的分配。RocketMQ 5.0 在消息维度的负载均衡的基础上也实现了顺序消费的语意：不同消费者处理同一个消息组内的消息时，会严格按照先后顺序锁定消息状态，确保同一消息组的消息串行消费。
 
-![7.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680501220869-7b8f2e56-5156-4304-8110-97aa6cc2b051.png#clientId=ufa3f06d3-882d-4&height=464&id=YjkTu&name=7.png&originHeight=464&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ucafdfcf4-5099-43d0-9221-527086df6bd&title=&width=1080)
+![7.png](https://img.alicdn.com/imgextra/i2/O1CN01kC3UYJ1RILxbLs0x0_!!6000000002088-2-tps-1080-464.png)
 
 如上图所述，队列 Queue1 中有 4 条顺序消息，这 4 条消息属于同一消息组 G1，存储顺序由 M1 到 M4。在消费过程中，前面的消息 M1、M2 被 消费者Consumer A1 处理时，只要消费状态没有提交，消费者 A2 是无法并行消费后续的 M3、M4 消息的，必须等前面的消息提交消费状态后才能消费后面的消息。
 
@@ -173,4 +173,4 @@ RocketMQ 的负载均衡是每个客户端独立进行计算，所以务必要�
 
 1、新用户首次购买包年包月，即可享受全系列 85折优惠！ 了解活动详情：[https://www.aliyun.com/product/rocketmq](https://www.aliyun.com/product/rocketmq)
 
-![e728c42e80cb67bf020e646e58619bcd.jpg](https://intranetproxy.alipay.com/skylark/lark/0/2023/jpeg/59356401/1680576637562-9af35fbf-d64b-4f81-b950-7e72f91b5ca2.jpeg#clientId=u449ffa34-59ce-4&from=paste&height=675&id=u462ad3c6&name=e728c42e80cb67bf020e646e58619bcd.jpg&originHeight=675&originWidth=1920&originalType=binary&ratio=1&rotation=0&showTitle=false&size=258156&status=done&style=none&taskId=u26cea311-dc98-45bd-8c8c-c7884e57c37&title=&width=1920)
+![e728c42e80cb67bf020e646e58619bcd.jpg](https://img.alicdn.com/imgextra/i4/O1CN01Xi1rcu1DM6aIC7ypz_!!6000000000201-0-tps-1920-675.jpg)

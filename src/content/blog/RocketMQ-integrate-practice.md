@@ -9,7 +9,7 @@ description: "本文讲述了 RocketMQ 的业务消息场景、一些功能特�
 ## 消息典型应用场景
 
 
-![1.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680500336373-d286a5e9-9af8-41c9-875a-d250541631e5.png#clientId=u450def5c-519f-4&height=484&id=YLxG3&name=1.png&originHeight=484&originWidth=967&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=uf053b5a6-1313-48c1-98c5-a0a38da1dfc&title=&width=967)
+![1.png](https://img.alicdn.com/imgextra/i3/O1CN01U0Prn41IDTCEBe9ER_!!6000000000859-0-tps-967-484.jpg)
 
 阿里云拥有丰富的消息产品家族，除了 RocketMQ 以外，还有大家熟知的对标开源的云 Kafka、支持 AMQP 协议的开源消息队列 RabbitMQ、物联网通信网关 MQTT、 对标 AWS SQS/SNS 的 Serverless 版消息 MNS（现在也是轻量版 RocketMQ）以及云上事件总线、事件中心 EeventBridge 。
 
@@ -26,7 +26,7 @@ description: "本文讲述了 RocketMQ 的业务消息场景、一些功能特�
 ## 业务消息使用场景
 
 
-![2.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680500336333-11837272-20fe-4836-975a-29519146250a.png#clientId=u450def5c-519f-4&height=476&id=SYuwL&name=2.png&originHeight=476&originWidth=966&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u906cca36-3c28-4147-86a1-df3f6d9d034&title=&width=966)
+![2.png](https://img.alicdn.com/imgextra/i4/O1CN01PL8hdm1rFljcc0pl5_!!6000000005602-0-tps-966-476.jpg)
 
 RocketMQ 经过阿里集团内部十年锤炼，经过双 11 大促等万亿级规模的实时场景验证，SLA 最高可支持 4 个9，数据可靠性支持 9 个9。
 
@@ -39,7 +39,7 @@ RocketMQ 经过阿里集团内部十年锤炼，经过双 11 大促等万亿级�
 
 ### 实现订单状态机异步流转
 
-![3.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680500337958-a31c6acd-a926-4a20-84a1-0e6202327663.png#clientId=u450def5c-519f-4&height=482&id=tA7Un&name=3.png&originHeight=482&originWidth=967&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ud8731471-c5c4-4b2f-b5b1-289d2309547&title=&width=967)
+![3.png](https://img.alicdn.com/imgextra/i2/O1CN01iqxaTI1cR1EBbE3Ch_!!6000000003596-0-tps-967-482.jpg)
 
 以订单状态机异步流转为例。此前，如果收到一笔订单交易，需要逐个通知下游的服务模块，比如需要更新购物车、更新积分等。每个业务模块耦合在一起会导致大促时的流量峰值非常大，需要每个服务模块保障其处理性能。而基于 RocketMQ 的事务消息能力，即可轻松实现订单子流程系统的异步解耦和流量的削峰填谷，事务消息可以确保数据库订单状态持久化和下游通知的事务性。
 
@@ -49,7 +49,7 @@ RocketMQ 经过阿里集团内部十年锤炼，经过双 11 大促等万亿级�
 
 ### 超时中心
 
-![4.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680500336456-a1f927ab-ebed-44d6-a9e1-4aea9daf5d30.png#clientId=u450def5c-519f-4&height=469&id=TtSot&name=4.png&originHeight=469&originWidth=967&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ue0046679-013a-4deb-8974-e90de91858d&title=&width=967)
+![4.png](https://img.alicdn.com/imgextra/i4/O1CN01pcKZtd1MvfsyhArVG_!!6000000001497-0-tps-967-469.jpg)
 
 RocketMQ 的定时消息场景也是常见的使用方式。
 
@@ -62,7 +62,7 @@ RocketMQ 的定时消息场景也是常见的使用方式。
 
 ### 微服务全链路灰度
 
-![5.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680500336343-cd01f25b-d3b4-4b4b-a184-62a7fdbdc161.png#clientId=u450def5c-519f-4&height=494&id=dde2Q&name=5.png&originHeight=494&originWidth=967&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u89da6a2c-b9b8-4d8c-b648-bb5bf01dc38&title=&width=967)
+![5.png](https://img.alicdn.com/imgextra/i4/O1CN01YPjiRI25X5KZu1Yqp_!!6000000007535-0-tps-967-494.jpg)
 
 微服务场景下，精准地控制灰度流量并进行灰度版本验证，是保障线上业务稳定运行的关键。大部分情况下，用户通过划分不同的环境来进行灰度发布，对应 RocketMQ 的不同实例。但是很多用户希望能够简化环境管理，尽可能复用线上资源，结合消息来提供微服务全链路灰度能力。
 
@@ -77,4 +77,4 @@ RocketMQ 支持透传环境标签，可在生产端给消息属性添加标签�
 
 1、新用户首次购买包年包月，即可享受全系列 85折优惠！ 了解活动详情：[https://www.aliyun.com/product/rocketmq](https://www.aliyun.com/product/rocketmq)
 
-![e728c42e80cb67bf020e646e58619bcd.jpg](https://intranetproxy.alipay.com/skylark/lark/0/2023/jpeg/59356401/1680576637562-9af35fbf-d64b-4f81-b950-7e72f91b5ca2.jpeg#clientId=u449ffa34-59ce-4&from=paste&height=675&id=u462ad3c6&name=e728c42e80cb67bf020e646e58619bcd.jpg&originHeight=675&originWidth=1920&originalType=binary&ratio=1&rotation=0&showTitle=false&size=258156&status=done&style=none&taskId=u26cea311-dc98-45bd-8c8c-c7884e57c37&title=&width=1920)
+![e728c42e80cb67bf020e646e58619bcd.jpg](https://img.alicdn.com/imgextra/i4/O1CN01Xi1rcu1DM6aIC7ypz_!!6000000000201-0-tps-1920-675.jpg)

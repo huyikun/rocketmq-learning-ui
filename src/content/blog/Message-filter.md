@@ -12,7 +12,7 @@ description: "在消息中间件的使用过程中，一个主题对应的消费
 
 在消息中间件的使用过程中，一个主题对应的消费者想要通过规则只消费这个主题下具备某些特征的消息，过滤掉自己不关心的消息，这个功能就叫消息过滤。
 
-![1.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680500707650-b3063936-286f-4de4-a1fa-68b6db7cf8f9.png#clientId=uf1e4bd52-62c0-4&height=344&id=qwedE&name=1.png&originHeight=344&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u119ed94d-78c3-4b8f-aa5b-219f910a094&title=&width=1080)
+![1.png](https://img.alicdn.com/imgextra/i1/O1CN01SbNMjY1k8FvhOnyP8_!!6000000004638-2-tps-1080-344.png)
 
 就如上图所描述的，生产者会向主题中写入形形色色的消息，有橙色的、黄色的、还有灰色的，而这个主题有两个消费者，第一个消费者只想要消费橙色的消息，第二个消费者只想要消费黄色的和灰色的消息，那么这个效果就需要通过消息过滤来实现。
 
@@ -21,7 +21,7 @@ description: "在消息中间件的使用过程中，一个主题对应的消费
 
 我们以常见的电商场景为例，来看看消息过滤在实际应用过程中起到的作用。
 
-![2.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680500707750-6aba9f45-c1de-48c6-ba25-94e34a35070a.png#clientId=uf1e4bd52-62c0-4&height=691&id=KM2y6&name=2.png&originHeight=691&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u5a33cf43-ef65-477d-b6eb-2b8bda3895e&title=&width=1080)
+![2.png](https://img.alicdn.com/imgextra/i3/O1CN01bD9oEM1FVqEk3nwR1_!!6000000000493-2-tps-1080-691.png)
 
 电商平台在设计时，往往存在系统拆分细、功能模块多、调用链路长、系统依赖复杂等特点，消息中间件在其中就起到了异步解耦、异步通信的作用，特别是在双十一这样的流量高峰期，消息中间件还起到了削峰填谷的作用。
 
@@ -102,7 +102,7 @@ Tag 标签过滤方式是 RocketMQ 提供的基础消息过滤能力，基于生
 
 - **技术原理**
 
-![3.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680500709366-fc57e2b7-a324-40ef-ab26-36a523bd003a.png#clientId=uf1e4bd52-62c0-4&height=551&id=U4mtt&name=3.png&originHeight=551&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u6d876282-a243-4d63-9684-cdfe1102998&title=&width=1080)
+![3.png](https://img.alicdn.com/imgextra/i3/O1CN01T8dAbE1uQFe942wO3_!!6000000006031-2-tps-1080-551.png)
 
 RocketMQ 在存储消息的时候，是通过 Append-Only 的方式将所有主题的消息都写在同一个 CommitLog 文件中，这可以有效的提升了消息的写入速率。为了消费时能够快速检索消息，它会在后台启动异步方式将消息所在位点、消息的大小，以及消息的标签哈希值存储到 ConsumeQueue 索引文件中。将标签存储到这个索引文件中，就是为了在通过标签进行消息过滤的时候，可以在索引层面就可以获取到消息的标签，不需要从 CommitLog 文件中读取，这样就减少消息读取产生的系统 IO 和内存开销。标签存储哈希值，主要是为了保证 ConsumeQueue 索引文件能够定长处理，这样可以有效较少存储空间，提升这个索引文件的读取效率。
 
@@ -169,7 +169,7 @@ SQL 属性过滤是 RocketMQ 提供的高级消息过滤方式，通过生产者
 - **技术原理**
 ** **
 
-![4.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680500707487-9c5f0c5c-4f7c-4848-a141-7338bd7cc258.png#clientId=uf1e4bd52-62c0-4&height=542&id=HUwPi&name=4.png&originHeight=542&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u18e72149-2cb7-4423-89dd-af170046486&title=&width=1080)
+![4.png](https://img.alicdn.com/imgextra/i3/O1CN0131W4Lt27TztPbMYUv_!!6000000007799-2-tps-1080-542.png)
 
 由于 SQL 过滤需要将消息的属性和 SQL 表达式进行匹配，这会对服务端的内存和 CPU 增加很大的开销。为了降低这个开销，RocketMQ 采用了布隆过滤器进行优化。当 Broker 在收到消息后，会预先对所有的订阅者进行 SQL 匹配，并将匹配结果生成布隆过滤器的位图存储在 ConsumeQueueExt 索引扩展文件中。在消费时，Broker 就会使用使用这个过滤位图，通过布隆过滤器对消费者的 SQL 进行过滤，这可以避免消息在一定不匹配的时候，不需要去 CommitLog 中将消息的属性拉取到内存进行计算，可以有效地降低属性和 SQL 进行匹配的消息量，减少服务端的内存和 CPU 开销。
 
@@ -183,7 +183,7 @@ SQL 属性过滤是 RocketMQ 提供的高级消息过滤方式，通过生产者
 
 ### 差异及对比
 
-![5.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680500707519-a29e25dc-82a5-4fce-847e-e4ed0db412a8.png#clientId=uf1e4bd52-62c0-4&height=568&id=mMeoY&name=5.png&originHeight=568&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u26c60fb3-51ad-4d00-8c80-57ca453964b&title=&width=1080)
+![5.png](https://img.alicdn.com/imgextra/i1/O1CN01KekboV1p7PGzegjn7_!!6000000005313-0-tps-1080-568.jpg)
 
 ## 最佳实践
 
@@ -194,7 +194,7 @@ SQL 属性过滤是 RocketMQ 提供的高级消息过滤方式，通过生产者
 
 那么如何做好主题划分和消息定义呢，我们以订单实体为例，来看看主题划分和消息定义的原则。
 
-![6.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680500709992-0a43b3fd-3402-4f89-a7aa-b8f2ee6557c5.png#clientId=uf1e4bd52-62c0-4&height=733&id=TJJmr&name=6.png&originHeight=733&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u53958556-6c7e-4a7d-8b5c-56b981c4b17&title=&width=1080)
+![6.png](https://img.alicdn.com/imgextra/i4/O1CN01m7LtUP1LCxbOSZScz_!!6000000001264-2-tps-1080-733.png)
 
 - **主题划分的原则**
 ** **
@@ -230,7 +230,7 @@ SQL 属性过滤是 RocketMQ 提供的高级消息过滤方式，通过生产者
 
 订阅关系一致是指同一个消费者组下面的所有的消费者所订阅的 Topic 和过滤表达式都必须完全一致。
 
-![7.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680500710113-c3d77011-3f1d-45ad-8900-b8a3907ff353.png#clientId=uf1e4bd52-62c0-4&height=782&id=ahfDB&name=7.png&originHeight=782&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u49274bed-a2db-4cfd-9164-2740f17769e&title=&width=1080)
+![7.png](https://img.alicdn.com/imgextra/i2/O1CN01BwAIDV1Xx0od1PPHi_!!6000000002989-2-tps-1080-782.png)
 
 正如上图所示，一个消费者组包含两个消费者，他们同时订阅了 Topic-A 这个主题，但是消费者一订阅的是 Tag-A 这个标签的消息，消费者二订阅的是 Tag-B 这个标签的消息，那么他们两者的订阅关系就存在不一致。
 
@@ -282,4 +282,4 @@ SQL 属性过滤是 RocketMQ 提供的高级消息过滤方式，通过生产者
 
 1、新用户首次购买包年包月，即可享受全系列 85折优惠！ 了解活动详情：[https://www.aliyun.com/product/rocketmq](https://www.aliyun.com/product/rocketmq)
 
-![e728c42e80cb67bf020e646e58619bcd.jpg](https://intranetproxy.alipay.com/skylark/lark/0/2023/jpeg/59356401/1680576637562-9af35fbf-d64b-4f81-b950-7e72f91b5ca2.jpeg#clientId=u449ffa34-59ce-4&from=paste&height=675&id=u462ad3c6&name=e728c42e80cb67bf020e646e58619bcd.jpg&originHeight=675&originWidth=1920&originalType=binary&ratio=1&rotation=0&showTitle=false&size=258156&status=done&style=none&taskId=u26cea311-dc98-45bd-8c8c-c7884e57c37&title=&width=1920)
+![e728c42e80cb67bf020e646e58619bcd.jpg](https://img.alicdn.com/imgextra/i4/O1CN01Xi1rcu1DM6aIC7ypz_!!6000000000201-0-tps-1920-675.jpg)

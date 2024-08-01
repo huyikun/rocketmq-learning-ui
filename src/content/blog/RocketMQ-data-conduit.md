@@ -12,7 +12,7 @@ description: "本文将从业务架构和 API 使用等方面讲解如何使用 
 
 阿里云 EventBridge 作为云上事件枢纽一直以来都保持着对云上事件、数据的友好生态支持。随着 RocketMQ 5.0版本的用户日渐增多，EventBridge 在近期对 RocketMQ Connector 进行了全面升级。升级之后的 RocketMQ Connector 不仅可以支持RocketMQ 5.0 版本，同时也能支持云上自建 RocketMQ 实例。除此之外，基于成熟的事件流能力，用户使用 EventBridge 也能轻松构建消息路由能力，实现对灾备、数据同步的需求。
 
-![1.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680502145743-94777b80-5a55-4061-9a6a-ad175b88ab44.png#clientId=u530d7dc4-3557-4&height=544&id=snCIp&name=1.png&originHeight=544&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u49161fb3-1708-4bcb-a038-5b0a7b6dc9f&title=&width=1080)
+![1.png](https://img.alicdn.com/imgextra/i1/O1CN013RMYJ81yK4luUHep5_!!6000000006559-2-tps-1080-544.png)
 
 本文将从业务架构和 API 使用等方面讲解**如何使用 EventBridge 创建阿里云 RocketMQ 4.0、5.0 版本**，开源自建版本以及消息路由的相关任务。
 
@@ -23,7 +23,7 @@ description: "本文将从业务架构和 API 使用等方面讲解如何使用 
 
 RocketMQ 4.0 版本使用较为经典的 client-nameserver-broker 架构，整个应用主要由生产者、消费者、NameServer 和 Broker 组成。
 
-![2.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680502145744-a8f5c31b-b5fb-484a-ae3c-537f70a14ce5.png#clientId=u530d7dc4-3557-4&height=545&id=pOcUl&name=2.png&originHeight=545&originWidth=929&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u5fa09b1d-18d4-40b4-9bb7-6cd9783f20a&title=&width=929)
+![2.png](https://img.alicdn.com/imgextra/i4/O1CN01XY3Bd81xNS4ZU06wI_!!6000000006431-2-tps-929-545.png)
 
 - Name Server：是一个几乎无状态节点，可集群部署，在消息队列 RocketMQ 版中提供命名服务，更新和发现 Broker 服务。
 - Broker：消息中转角色，负责存储消息，转发消息。分为 Master Broker 和 Slave Broker，一个 Master Broker 可以对应多个 Slave Broker，但是一个 Slave Broker 只能对应一个 Master Broker。Broker 启动后需要完成一次将自己注册至 Name Server 的操作；随后每隔 30s 定期向 Name Server 上报 Topic 路由信息。
@@ -47,7 +47,7 @@ EventBridge在获取用户授权之后，利用生成的 sts 临时授权对客�
 
 
 
-![3.jpeg](https://intranetproxy.alipay.com/skylark/lark/0/2023/jpeg/59356401/1680502147463-0e87e007-03b1-45c2-bb28-06ec8a92853c.jpeg#clientId=u530d7dc4-3557-4&height=1282&id=VaOkK&name=3.jpeg&originHeight=1282&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=uda2f470b-e361-402a-b523-d165278b29c&title=&width=1080)
+![3.jpeg](https://img.alicdn.com/imgextra/i3/O1CN01Wd0Oiq1cCowyY818n_!!6000000003565-0-tps-1080-1282.jpg)
 
 ## EventBridge-RocketMQ 5.0
 
@@ -61,7 +61,7 @@ RocketMQ 5.0 版将通用的存储逻辑下沉，集中解决消息存储的多�
 3. 多网络访问支持：新版本支持单一实例同时暴露公网、内网等访问形式，方便客户多网络接入访问。
 4. 海量分级存储：新版本开放分级存储历史消息保存能力，消息低成本无大小限制，最长保存 30 天。冷热数据进行分离设计，极大降低消费历史消息对实例的性能影响。
 
-![4.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680502145658-2dfe9cb1-0256-45ac-a84e-876fc4963580.png#clientId=u530d7dc4-3557-4&height=828&id=hfO9D&name=4.png&originHeight=828&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u4bc65a69-483b-43ab-9152-f6462633b9b&title=&width=1080)
+![4.png](https://img.alicdn.com/imgextra/i4/O1CN01coAAPt1ffAJEStrzk_!!6000000004033-0-tps-1080-828.jpg)
 
 RocketMQ 5.0 版本 可以支持 VPC 内部安全识别，用户上云无需修改代码。在用户授予 EventBridge 网络和 RocketMQ 相关权限之后，用户在 EventBridge 创建 MQ 5.0 Source&Sink 任务的时，EventBridge 会根据 RocketMQ 5.0 实例的 VPC 信息，调用网络组件获取相应代理信息。MQ sdk 侧通过配置代理实现消息的收发。
 
@@ -74,7 +74,7 @@ RocketMQ 5.0 版本 可以支持 VPC 内部安全识别，用户上云无需修�
 
 安全组参数限制了 EventBridge 在 vpc 内的访问策略，用户可以选择使用已有安全组也可以选择快速创建，让 EventBridge 快速创建一个安全组供任务使用。安全组策略推荐使用默认的安全组策略。使用上推荐第一次在此vpc内创建任务时，使用 EventBridge 自动创建一个安全组，后续在此 VPC 内再创建其他任务时，在使用已有中选择 EventBridge 创建的安全组。
 
-![5.jpeg](https://intranetproxy.alipay.com/skylark/lark/0/2023/jpeg/59356401/1680502145624-068bad2a-271d-4f11-a45b-7f30c68c9f26.jpeg#clientId=u530d7dc4-3557-4&height=766&id=Bd5Xe&name=5.jpeg&originHeight=766&originWidth=459&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=uda0daf4f-0bd8-46f9-81a6-0ee24033f90&title=&width=459)
+![5.jpeg](https://img.alicdn.com/imgextra/i1/O1CN012MECv11ohl5tRRl5b_!!6000000005257-0-tps-459-766.jpg)
 
 ## EventBridge-自建 Apache RocketMQ
 
@@ -86,7 +86,7 @@ RocketMQ 5.0 版本 可以支持 VPC 内部安全识别，用户上云无需修�
 
 抽象来看，EventBridge 访问自建 MQ 实例的链路和阿里云 5.0 版本基本一致，都是从用户 vpc 发起对 MQ 实例的访问。区别在于接入点的不同，前者是用户自建 MQ 集群的nameserver，而后者为阿里云 RocketMQ 提供的接入点，不需要感知真实的 MQ 集群是部署在用户 vpc 还是阿里云 RocketMQ 自身的生产环境。
 
-![6.jpeg](https://intranetproxy.alipay.com/skylark/lark/0/2023/jpeg/59356401/1680502147672-c9e9c52d-da40-4524-8a33-09ad53d8f733.jpeg#clientId=u530d7dc4-3557-4&height=418&id=cTpsa&name=6.jpeg&originHeight=418&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ucb90824c-93a9-457f-873b-a216444bc47&title=&width=1080)
+![6.jpeg](https://img.alicdn.com/imgextra/i1/O1CN01vANIZW1useCmHEo6R_!!6000000006093-0-tps-1080-418.jpg)
 
 ### API 使用
 
@@ -106,14 +106,14 @@ RocketMQ 5.0 版本 可以支持 VPC 内部安全识别，用户上云无需修�
 
 
 
-![7.jpeg](https://intranetproxy.alipay.com/skylark/lark/0/2023/jpeg/59356401/1680502147797-6d3b1004-57ff-4736-bcde-dd381122d3fc.jpeg#clientId=u530d7dc4-3557-4&height=787&id=sMaNy&name=7.jpeg&originHeight=787&originWidth=420&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ud3cbc72f-0ed8-4d6d-9edd-38cd4105e7e&title=&width=420)
+![7.jpeg](https://img.alicdn.com/imgextra/i4/O1CN01i5YhMh1oD4YZ3ITrI_!!6000000005190-0-tps-420-787.jpg)
 
 ## RocketMQ 消息路由
 
 
 当用户有灾备或者消息同步的需求时，可能就会需要消息路由能力，即将 A region 下某实例 topic 的消息同步到 B region 的某 topic 中。
 
-![8.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680502147894-a173dfdc-f3f4-44c0-8ae7-625ca9eda62a.png#clientId=u530d7dc4-3557-4&height=580&id=D23xv&name=8.png&originHeight=580&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u08010f48-0db1-4dd2-ae01-6bb9f8d519f&title=&width=1080)
+![8.png](https://img.alicdn.com/imgextra/i3/O1CN01TPGMtN1FcFmMdbQgt_!!6000000000507-0-tps-1080-580.jpg)
 
 对于 EventBridge 而言，消息路由并非单独的一个产品能力，用户通过使用事件流即可实现消息路由。
 
@@ -125,23 +125,23 @@ RocketMQ 5.0 版本 可以支持 VPC 内部安全识别，用户上云无需修�
 
 1.进入 EventBridge 控制台，regionBar 选择到呼和浩特，点击左侧“事件流”，然后选择“创建事件流”。
 
-![9.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680502148235-8969935c-45f1-468c-bd4f-9840c563791d.png#clientId=u530d7dc4-3557-4&height=355&id=vHIYF&name=9.png&originHeight=355&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=uc46ad6b5-9d3a-4d6d-bb8f-a6015449a56&title=&width=1080)
+![9.png](https://img.alicdn.com/imgextra/i2/O1CN016CeJfO1QDwX0rM5Oe_!!6000000001943-0-tps-1080-355.jpg)
 
 2.在事件源页面，事件提供方选择“消息队列 RocketMQ 版”，地域选择青岛，剩余 RocketMQ 相关参数按需求选择。
 
-![10.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680502148269-f69d48dc-aabf-4901-9b15-dd98a651a116.png#clientId=u530d7dc4-3557-4&height=1038&id=Yrios&name=10.png&originHeight=1038&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u0fad7e18-21fc-416d-a51e-0f07f478842&title=&width=1080)
+![10.png](https://img.alicdn.com/imgextra/i2/O1CN01N9eb6M1efKq8asTKL_!!6000000003898-0-tps-1080-1038.jpg)
 
 3.规则页面按需填写，这里选择默认内容。
 
-![11.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680502148304-c620c2ad-3098-49f6-a874-c557d2babb0b.png#clientId=u530d7dc4-3557-4&height=535&id=Qu71b&name=11.png&originHeight=535&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u41496edf-1022-46ad-b604-a4d0beab48f&title=&width=1080)
+![11.png](https://img.alicdn.com/imgextra/i4/O1CN0110VIpx1fx1kxkOEwB_!!6000000004072-0-tps-1080-535.jpg)
 
 4.在“目标”页面，服务类型选择“消息队列 RocketMQ 版”，剩余参数按需填写。
 
-![12.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680502148348-c63b6df3-ae48-4789-be2a-ce1355a8bda7.png#clientId=u530d7dc4-3557-4&height=1244&id=OXub6&name=12.png&originHeight=1244&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u7f0710a8-2f60-4fc5-8f16-15b45c1ba73&title=&width=1080)
+![12.png](https://img.alicdn.com/imgextra/i4/O1CN01YKWD0B1UhwwZoo8OK_!!6000000002550-0-tps-1080-1244.jpg)
 
 5.点击“创建”，等待事件流任务启动即可。
 
-![13.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680502148988-8d4dc585-7dd7-40e2-bab7-4674c787de81.png#clientId=u530d7dc4-3557-4&height=284&id=TmvQq&name=13.png&originHeight=284&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ua8461b90-2b04-43f2-860d-55ae33426e6&title=&width=1080)
+![13.png](https://img.alicdn.com/imgextra/i4/O1CN01jZIMnD1jIxZJcJUS5_!!6000000004526-0-tps-1080-284.jpg)
 
 ## 总结
 
@@ -154,4 +154,4 @@ RocketMQ 5.0 版本 可以支持 VPC 内部安全识别，用户上云无需修�
 
 1、新用户首次购买包年包月，即可享受全系列 85折优惠！ 了解活动详情：[https://www.aliyun.com/product/rocketmq](https://www.aliyun.com/product/rocketmq)
 
-![e728c42e80cb67bf020e646e58619bcd.jpg](https://intranetproxy.alipay.com/skylark/lark/0/2023/jpeg/59356401/1680576637562-9af35fbf-d64b-4f81-b950-7e72f91b5ca2.jpeg#clientId=u449ffa34-59ce-4&from=paste&height=675&id=u462ad3c6&name=e728c42e80cb67bf020e646e58619bcd.jpg&originHeight=675&originWidth=1920&originalType=binary&ratio=1&rotation=0&showTitle=false&size=258156&status=done&style=none&taskId=u26cea311-dc98-45bd-8c8c-c7884e57c37&title=&width=1920)
+![e728c42e80cb67bf020e646e58619bcd.jpg](https://img.alicdn.com/imgextra/i4/O1CN01Xi1rcu1DM6aIC7ypz_!!6000000000201-0-tps-1920-675.jpg)

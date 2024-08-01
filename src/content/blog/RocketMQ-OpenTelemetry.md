@@ -15,7 +15,7 @@ tags: ["practice", "home"]
 
 Apache RocketMQ 5.0 版本作为近几年来最大的一次迭代，在整个可观测性上也进行了诸多改进。其中，支持标准化的分布式全链路追踪就是一个重要的特性。
 
-![](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/200096/1678775470861-a5e9338d-93b8-485f-90e6-1de9bab5772c.png#clientId=u05438468-4731-4&from=paste&height=381&id=ueca9b08e&originHeight=539&originWidth=541&originalType=url&ratio=2&rotation=0&showTitle=false&status=done&style=none&taskId=ud04c8a39-4127-40ba-ac48-c0d9d1e2ecc&title=&width=382)
+![](https://img.alicdn.com/imgextra/i1/O1CN01sO0Ohd28ahIoP0Pju_!!6000000007949-2-tps-541-539.png)
 
 RocketMQ 5.0 可观测
 
@@ -23,7 +23,7 @@ RocketMQ 5.0 可观测
 
 分布式链路追踪系统的起源可以追溯到 2007 年 Google 发布的[《Dapper, a Large-Scale Distributed Systems Tracing Infrastructure》](https://research.google/pubs/pub36356.pdf)论文。这篇论文详细介绍了 Google 内部使用的链路追踪系统 Dapper，其中使用的 span 概念被广泛采用，并成为后来开源链路追踪系统中的基础概念之一。
 
-![](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/200096/1678775472870-add1e07d-268e-4ce7-9204-89893f3fca75.png#clientId=u05438468-4731-4&from=paste&height=464&id=ucd20496c&originHeight=736&originWidth=836&originalType=url&ratio=2&rotation=0&showTitle=false&status=done&style=none&taskId=ud97c8c49-a588-4d75-a720-2d2bee77189&title=&width=527)
+![](https://img.alicdn.com/imgextra/i4/O1CN01CiMybD204AF5via0d_!!6000000006795-2-tps-836-736.png)
 
 Dapper Trace Tree
 
@@ -31,7 +31,7 @@ Dapper Trace Tree
 
 OpenTelemetry 为 messaging 相关的 span 定义了[一组语义约定（semantic convention）](https://github.com/open-telemetry/opentelemetry-specification/blob/main/specification/trace/semantic_conventions/messaging.md)，旨在制定一套与特定消息系统无关的 specification，而 OpenTelmetry 自身的开发其实也都是由 specification 驱动进行展开。
 
-![](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/200096/1678775470885-b0271503-1eb7-4fc2-ade1-b7c2f285b0a9.png#clientId=u05438468-4731-4&from=paste&height=429&id=u3c44d76f&originHeight=1199&originWidth=1600&originalType=url&ratio=2&rotation=0&showTitle=false&status=done&style=none&taskId=u13bdcf02-3de6-42ac-b57f-38cb5e16c8c&title=&width=572)
+![](https://img.alicdn.com/imgextra/i3/O1CN01bXJfUG1Y7XvIDgrx3_!!6000000003012-0-tps-1600-1199.jpg)
 
 Specification Driven Development
 
@@ -47,7 +47,7 @@ Specifaition 中描述了 messaging span 的拓扑关系，包括代表消息发
 
 特别地，默认情况下，receive span 是不启用的。在 receive span 启用和不启用的两种情况下，span 之间的组织关系是不同的：
 
-![](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/200096/1678775472906-25b5cc24-773a-479f-8e80-768a0334ab37.png#clientId=u05438468-4731-4&from=paste&id=u10096f2c&originHeight=580&originWidth=1652&originalType=url&ratio=2&rotation=0&showTitle=false&status=done&style=none&taskId=u0b2cbfd8-f32f-4341-83c8-c651d218d97&title=)
+![](https://img.alicdn.com/imgextra/i3/O1CN01u58QjK1ptxFlzdIUS_!!6000000005419-0-tps-1652-580.jpg)
 
 启用 receive span 前后的 span 关系
 
@@ -91,7 +91,7 @@ Specifaition 中描述了 messaging span 的拓扑关系，包括代表消息发
 
 首先准备好 RocketMQ 5.0 Java 客户端，可以参考 [example](https://github.com/apache/rocketmq-clients/tree/master/java/client/src/main/java/org/apache/rocketmq/client/java/example) 进行消息的收发。关于 RocketMQ 5.0 的更多细节，欢迎大家参考和关注 [rocketmq-clients  仓库](https://github.com/apache/rocketmq-clients) 和 [RocketMQ  官网](https://rocketmq.apache.org/)。
 
-![](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/200096/1678775471016-ddaa59be-0c21-419c-bd51-918ba88ac824.png#clientId=u05438468-4731-4&from=paste&height=268&id=ud5ac64df&originHeight=462&originWidth=1078&originalType=url&ratio=2&rotation=0&showTitle=false&status=done&style=none&taskId=ufe95e76a-af0c-4c24-8f7d-fdaced74fc4&title=&width=625)
+![](https://img.alicdn.com/imgextra/i1/O1CN013l8E7M1JXS5ifm9a0_!!6000000001038-2-tps-1078-462.png)
 
 然后准备好 OpenTelemetry agent jar，可以从 OpenTelemetry 官方[下载最新  agent](https://github.com/open-telemetry/opentelemetry-java-instrumentation/releases/latest/download/opentelemetry-javaagent.jar)，在应用程序启动时增加 -javaagent:yourpath/opentelemetry-javaagent.jar 即可。可以通过设置 OTEL_EXPORTER_OTLP_ENDPOINT 环境变量来设置 OpenTelemetry collector 的接入点。
 
@@ -104,7 +104,7 @@ Specifaition 中描述了 messaging span 的拓扑关系，包括代表消息发
 为了更好地展示分布式全链路追踪的过程，这里提供了一个代码示例：[rocketmq-opentelemetry](https://github.com/aaron-ai/rocketmq-opentelemetry) 。在这个代码示例中，会启动三个不同的进程，涉及三种不同类库和业务逻辑之间的相互调用，展示了一个在分布式环境较复杂中间件之间进行交互的典型案例。
 请求首先会从 gRPC 客户端发往 gRPC 服务端，在 gRPC 服务端收到请求之后，会向 RocketMQ 5.0 的 Producer 往服务端发送一条消息，然后再回复对应的 response 给客户端。在 RocketMQ 5.0 的 PushConsumer 接受到消息之后，会在 MessageListener 中使用 Apache HttpClient 往淘宝网发送一条 GET 请求。
 
-![](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/200096/1678775472062-88375d95-8629-4dd0-9ead-5d6453f3ad7f.png#clientId=u05438468-4731-4&from=paste&height=183&id=ueb3c0812&originHeight=252&originWidth=896&originalType=url&ratio=2&rotation=0&showTitle=false&status=done&style=none&taskId=ueb729332-f5b6-470f-8034-e8240c18953&title=&width=649)
+![](https://img.alicdn.com/imgextra/i2/O1CN01FtcSrQ1E39oYLSTK2_!!6000000000295-0-tps-896-252.jpg)
 
 示例代码调用链路
 
@@ -124,7 +124,7 @@ Specifaition 中描述了 messaging span 的拓扑关系，包括代表消息发
 
 在补充好信息之后完成接入之后，稍等一会就可以看到对应的 Trace 信息已经被上传到 SLS trace 服务中：
 
-![](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/200096/1678775472069-37122401-90da-40cb-8e99-425ccddd0d99.png#clientId=u05438468-4731-4&from=paste&height=267&id=u0de97000&originHeight=1248&originWidth=3032&originalType=url&ratio=2&rotation=0&showTitle=false&status=done&style=none&taskId=ud9892440-94d8-4f78-aa96-322db9802dc&title=&width=649)
+![](https://img.alicdn.com/imgextra/i3/O1CN01MbCwiv1VPSZIYKe39_!!6000000002645-0-tps-3032-1248.jpg)
 
 SLS Trace 服务分布式全链路展示
 
@@ -137,7 +137,7 @@ Trace 服务其实是将相关数据存储到日志中，因此这些数据也�
 - [消息中间件分析  Tab](https://sls4service.console.aliyun.com/lognext/trace/qs-demos/sls-mall?resource=/project/qs-demos/dashboard/dashboard-1678326718269-786886)：展示利用 Trace 数据得到的包括发送延时、发送成功率、消费成功率、端到端延时在内的一系列指标。
 - [查看  RocketMQ Trace Tab](https://sls4service.console.aliyun.com/lognext/trace/qs-demos/sls-mall?resource=/project/qs-demos/dashboard/dashboard-1678679142159-569590)：可以根据上一步得到的差错长 message id 进行进一步的细粒度查询。
 
-![](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/200096/1678775472711-4590d186-5519-4d2d-8bb3-3c36502f9c40.png#clientId=u05438468-4731-4&from=paste&height=321&id=u910fec7c&originHeight=2436&originWidth=5064&originalType=url&ratio=2&rotation=0&showTitle=false&status=done&style=none&taskId=u7bdc2243-c28d-45df-a95a-ed08a50420e&title=&width=668)
+![](https://img.alicdn.com/imgextra/i1/O1CN01XMAkNY1yvdFIhaFI2_!!6000000006641-0-tps-5064-2436.jpg)
 
 消息中间件分析
 
@@ -147,13 +147,13 @@ Trace 服务其实是将相关数据存储到日志中，因此这些数据也�
 
 配置好参数之后，启动自己的相关应用程序，稍等一会儿，就可以在 ARMS Trace Explorer 里看到对应的数据了。
 
-![](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/200096/1678775473024-fc094fd8-b434-4a9e-917e-0f379a1d4dd8.png#clientId=u05438468-4731-4&from=paste&id=u85651ea5&originHeight=1278&originWidth=4204&originalType=url&ratio=2&rotation=0&showTitle=false&status=done&style=none&taskId=uf7462d14-4757-4ec1-af99-2772005b59a&title=)
+![](https://img.alicdn.com/imgextra/i2/O1CN01z5xSuQ1t5LxRW1ADm_!!6000000005850-0-tps-4204-1278.jpg)
 
 Trace Explorer
 
 还可以查看 span 之间的时序关系。
 
-![](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/200096/1678775473725-1a63bb6f-7294-4e5f-9d66-0581769597ca.png#clientId=u05438468-4731-4&from=paste&id=ue0e5b149&originHeight=928&originWidth=4012&originalType=url&ratio=2&rotation=0&showTitle=false&status=done&style=none&taskId=uf608fe7d-2a61-48be-8fb1-6cad83ab996&title=)
+![](https://img.alicdn.com/imgextra/i3/O1CN0165NzIy1LgjLXPKnhT_!!6000000001329-0-tps-4012-928.jpg)
 
 ARMS Trace Explorer 分布式全链路追踪展示
 
@@ -185,4 +185,4 @@ Service Mesh 中反映出的技术趋势很大一部分已经在 RocketMQ 5.0 pr
 
 1、新用户首次购买包年包月，即可享受全系列 85 折优惠！ 了解活动详情：[https://www.aliyun.com/product/rocketmq](https://www.aliyun.com/product/rocketmq)
 
-![e728c42e80cb67bf020e646e58619bcd.jpg](https://intranetproxy.alipay.com/skylark/lark/0/2023/jpeg/59356401/1680576637562-9af35fbf-d64b-4f81-b950-7e72f91b5ca2.jpeg#clientId=u449ffa34-59ce-4&from=paste&height=675&id=u462ad3c6&name=e728c42e80cb67bf020e646e58619bcd.jpg&originHeight=675&originWidth=1920&originalType=binary&ratio=1&rotation=0&showTitle=false&size=258156&status=done&style=none&taskId=u26cea311-dc98-45bd-8c8c-c7884e57c37&title=&width=1920)
+![e728c42e80cb67bf020e646e58619bcd.jpg](https://img.alicdn.com/imgextra/i4/O1CN01Xi1rcu1DM6aIC7ypz_!!6000000000201-0-tps-1920-675.jpg)

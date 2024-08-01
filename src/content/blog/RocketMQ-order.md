@@ -15,7 +15,7 @@ Apache RocketMQ 诞生至今，历经十余年大规模业务稳定性打磨，�
 
 顺序消息是消息队列 RocketMQ 版提供的一种对消息发送和消费顺序有严格要求的消息。对于一个指定的 Topic，同一 MessageGroup 的消息按照严格的先进先出（FIFO）原则进行发布和消费，即先发布的消息先消费，后发布的消息后消费，服务端严格按照发送顺序进行存储、消费。同一 MessageGroup 的消息保证顺序，不同 MessageGroup 之间的消息顺序不做要求，因此需做到两点，发送的顺序性和消费的顺序性。
 
-![1.jpeg](https://intranetproxy.alipay.com/skylark/lark/0/2023/jpeg/59356401/1680492932420-5ab4067f-3e79-4130-8cf4-08ce587deade.jpeg#clientId=uda4f2307-3453-4&height=119&id=zuIoa&name=1.jpeg&originHeight=159&originWidth=718&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u73abd44f-71d3-48ef-944e-1d5425b90f8&title=&width=539)
+![1.jpeg](https://img.alicdn.com/imgextra/i4/O1CN01En4Koa1eSy9B4xCo2_!!6000000003871-0-tps-718-159.jpg)
 
 ## 功能原理
 
@@ -26,11 +26,11 @@ Apache RocketMQ 诞生至今，历经十余年大规模业务稳定性打磨，�
 
 在分布式环境下，保证消息的全局顺序性是十分困难的，例如两个 RocketMQ Producer A 与 Producer B，它们在没有沟通的情况下各自向 RocketMQ 服务端发送消息 a 和消息 b，由于分布式系统的限制，我们无法保证 a 和 b 的顺序。因此业界消息系统通常保证的是分区的顺序性，即保证带有同一属性的消息的顺序，我们将该属性称之为 MessageGroup。如图所示，ProducerA 发送了 MessageGroup 属性为 A 的两条消息 A1，A2 和 MessageGroup 属性为 B 的 B1，B2，而 ProducerB 发送了 MessageGroup 属性为 C 的两条属性 C1，C2。
 
-![2.jpeg](https://intranetproxy.alipay.com/skylark/lark/0/2023/jpeg/59356401/1680492932398-a647f435-9f10-4e9d-8a7f-62efe56613ec.jpeg#clientId=uda4f2307-3453-4&height=98&id=ayDTB&name=2.jpeg&originHeight=196&originWidth=718&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u12080fd9-84f5-457a-9c80-7851e8f4769&title=&width=359)
+![2.jpeg](https://img.alicdn.com/imgextra/i1/O1CN01DEahRx1P2f9zyOj39_!!6000000001783-0-tps-718-196.jpg)
 
 同时，对于同一 MessageGroup，为了保证其发送顺序的先后性，比较简单的做法是构造一个单线程的场景，即不同的 MessageGroup 由不同的 Producer 负责，并且对于每一个 Producer 而言，顺序消息是同步发送的。同步发送的好处是显而易见的，在客户端得到上一条消息的发送结果后再发送下一条，即能准确保证发送顺序，若使用异步发送或多线程则很难保证这一点。 
 
-![3.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680492934184-5f2a9b90-2426-4029-a39f-8a2b9ef2e6ef.png#clientId=uda4f2307-3453-4&height=150&id=yB3qe&name=3.png&originHeight=300&originWidth=696&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ud6d9a58f-a7ef-4bfa-abc2-07213798661&title=&width=348)
+![3.png](https://img.alicdn.com/imgextra/i4/O1CN01vn8EAQ1WjtrU2Gnxl_!!6000000002825-0-tps-696-300.jpg)
 
 因此可以看到，虽然在底层原理上，顺序消息发送和普通消息发送并无二异，但是为了保证顺序消息的发送顺序性，同步发送的方式相比较普通消息，实际上降低了消息的最大吞吐。
 
@@ -38,7 +38,7 @@ Apache RocketMQ 诞生至今，历经十余年大规模业务稳定性打磨，�
 
 与顺序消息不同的是，普通消息的消费实际上没有任何限制，消费者拉取的消息是被异步、并发消费的，而顺序消息，需要保证对于同一个 MessageGroup，同一时刻只有一个客户端在消费消息，并且在该条消息被确认消费完成之前（或者进入死信队列），消费者无法消费同一 MessageGroup 的下一条消息，否则消费的顺序性将得不到保证。因此这里存在着一个消费瓶颈，该瓶颈取决于用户自身的业务处理逻辑。极端情况下当某一 MessageGroup 的消息过多时，就可能导致消费堆积。当然也需要明确的是，这里的语境都指的是同一 MessageGroup，不同 MessageGroup 的消息之间并不存在顺序性的关联，是可以进行并发消费的。因此全文中提到的顺序实际上是一种偏序。
 
-![4.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680492932328-80b42467-77ca-4564-8557-de7e04742b78.png#clientId=uda4f2307-3453-4&height=134&id=GVP9V&name=4.png&originHeight=268&originWidth=790&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ua801e7e3-f369-4944-aea7-b960b6a4f47&title=&width=395)
+![4.png](https://img.alicdn.com/imgextra/i2/O1CN01wxAOdX1agTMObgJr4_!!6000000003359-0-tps-790-268.jpg)
 
 ### 小结
 
@@ -53,7 +53,7 @@ Apache RocketMQ 诞生至今，历经十余年大规模业务稳定性打磨，�
 
 下述是一个表格，简要对比了顺序消息和普通消息。
 
-![5.jpeg](https://intranetproxy.alipay.com/skylark/lark/0/2023/jpeg/59356401/1680492932308-55f5fc20-b393-4865-97c3-ed8fe1ed5d7f.jpeg#clientId=uda4f2307-3453-4&height=375&id=VD4it&name=5.jpeg&originHeight=500&originWidth=612&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u265744b0-c380-4418-b928-b42fb92da5c&title=&width=459)
+![5.jpeg](https://img.alicdn.com/imgextra/i2/O1CN013jI3O124jcYXr5GcB_!!6000000007427-0-tps-612-500.jpg)
 
 ## 最佳实践
 
@@ -79,7 +79,7 @@ MessageGroup 会有很多错误的选择，以某电商平台为例，某电商�
 - 电商的订单创建，以订单 ID 作为 MessageGroup，那么同一个订单相关的创建订单消息、订单支付消息、订单退款消息、订单物流消息都会按照发布的先后顺序来消费。
  
 
-![6.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680492934431-500164ed-dabc-4aba-a4b4-24b592753f66.png#clientId=uda4f2307-3453-4&height=450&id=C1ge4&name=6.png&originHeight=450&originWidth=843&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u40aafa84-5b6b-41f2-a466-73dc92e64a3&title=&width=843)
+![6.png](https://img.alicdn.com/imgextra/i2/O1CN01toiL3921BK36OPEY7_!!6000000006946-2-tps-843-450.png)
 
 ## 实战
 
@@ -206,4 +206,4 @@ MessageGroup 会有很多错误的选择，以某电商平台为例，某电商�
 
 1、新用户首次购买包年包月，即可享受全系列 85折优惠！ 了解活动详情：[https://www.aliyun.com/product/rocketmq](https://www.aliyun.com/product/rocketmq)
 
-![e728c42e80cb67bf020e646e58619bcd.jpg](https://intranetproxy.alipay.com/skylark/lark/0/2023/jpeg/59356401/1680576637562-9af35fbf-d64b-4f81-b950-7e72f91b5ca2.jpeg#clientId=u449ffa34-59ce-4&from=paste&height=675&id=u462ad3c6&name=e728c42e80cb67bf020e646e58619bcd.jpg&originHeight=675&originWidth=1920&originalType=binary&ratio=1&rotation=0&showTitle=false&size=258156&status=done&style=none&taskId=u26cea311-dc98-45bd-8c8c-c7884e57c37&title=&width=1920)
+![e728c42e80cb67bf020e646e58619bcd.jpg](https://img.alicdn.com/imgextra/i4/O1CN01Xi1rcu1DM6aIC7ypz_!!6000000000201-0-tps-1920-675.jpg)

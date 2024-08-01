@@ -21,7 +21,7 @@ description: "本文主要向大家介绍如何利用 RocketMQ 可观测体系�
 
 鉴于消息链路耦合业务系统，复杂带状态，RocketMQ 通过强大的可观测系统和经验支撑，及时发现问题、定位问题、解决问题有助于提升运维效率，对于业务运行是一项重要的保障能力。
 
-![1.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680502102048-8eba0f0a-6263-420b-8eb9-08000c84b61c.png#clientId=ueacb93f6-0fd6-4&height=576&id=I66Ee&name=1.png&originHeight=576&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ufe2d1f04-7609-401c-bcd6-00afe634532&title=&width=1080)
+![1.png](https://img.alicdn.com/imgextra/i4/O1CN014fd5N71ZCPkebjWlc_!!6000000003158-0-tps-1080-576.jpg)
 
 RocketMQ 的可观测体系主要由指标（Metrics）、轨迹（Tracing）和日志（Logging）组成。
 
@@ -56,7 +56,7 @@ RocketMQ 联合阿里云云监控提供了开箱即用且免费的监控报警�
 
 RocketMQ 版提供了丰富的 Metric 指标和告警监控项。各监控项可分为运行水位、收发性能、异常错误事件三类告警。根据大量生产环境实践经验，建议您根据以下原则配置如下告警
 
-![2.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680502102068-59cf9b47-b2f0-49a4-849b-75eb83fd2f6c.png#clientId=ueacb93f6-0fd6-4&height=844&id=Ha5lg&name=2.png&originHeight=844&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u3a8d5ba3-a1b1-41d5-b789-10a8b590e1d&title=&width=1080)
+![2.png](https://img.alicdn.com/imgextra/i2/O1CN01YDJeZO1Yob9mdmmPp_!!6000000003106-0-tps-1080-844.jpg)
 
 接下来重点通过消息堆积和消息收发失败这两个典型场景来阐述基于可观测体系中的指标（Metrics），RocketMQ 如何通过云监控创建监控规则，将关键的 Metrics 指标作为告警项，帮助您自动监控服务的运行状态，并自动发送报警通知， 便于您及时预警服务的异常信息，提高运维效率。
 
@@ -64,14 +64,14 @@ RocketMQ 版提供了丰富的 Metric 指标和告警监控项。各监控项可
 
 #### 消息堆积指标及监控配置
 
-![3.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680502103776-224e38d1-e3a5-4e27-9d3a-cba071111280.png#clientId=ueacb93f6-0fd6-4&height=246&id=bODQ4&name=3.png&originHeight=246&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u361edf7d-8b9f-4a16-8fdd-35a0ea312f4&title=&width=1080)
+![3.png](https://img.alicdn.com/imgextra/i4/O1CN01nTuuxr1wQMz1DLl1D_!!6000000006302-2-tps-1080-246.png)
 
 业界通用指标：使用消息堆积量（ready + inflight）来度量消费健康度，表示未处理完成的消息量；部分产品额外增加已就绪消息量来度量消息拉取的及时性；使用上述 2 个指标直接来配置报警有以下缺点：
 
 - 有误报或无法触发报警的问题
 - 及时性的间接指标，不直观
 
-![4.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680502102046-3febfd28-5a2f-4400-82db-75b4672c52a7.png#clientId=ueacb93f6-0fd6-4&height=317&id=gx2OO&name=4.png&originHeight=317&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u96210f7d-32d0-42fb-bd3c-1413b8756ce&title=&width=1080)
+![4.png](https://img.alicdn.com/imgextra/i3/O1CN017eVwge1P0pZrrdFKV_!!6000000001779-2-tps-1080-317.png)
 
 RocketMQ 指标：额外支持延时时间来度量消费健康度，涵盖了所有业务场景，根据业务容忍延迟度直接配置时间告警阈值。
 
@@ -80,8 +80,8 @@ RocketMQ 指标：额外支持延时时间来度量消费健康度，涵盖了�
 
 建议对消息堆积敏感的用户，都在 RocketMQ 实例页的监控报警，添加如下报警指标，并设置符合业务需求的阈值。
 
-![5.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680502102146-42561ecc-2f72-433f-a32b-5ef795b921c4.png#clientId=ueacb93f6-0fd6-4&height=1092&id=MmzIc&name=5.png&originHeight=1092&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u9dd71db8-9aeb-49a9-ad97-ab937b18747&title=&width=1080)
-![6.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680502104287-77021ec9-cc90-461d-83a8-ba92c9b768b7.png#clientId=ueacb93f6-0fd6-4&height=1106&id=zCqSP&name=6.png&originHeight=1106&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ubbde3f63-f589-4287-ace7-7108b2a5867&title=&width=1080)
+![5.png](https://img.alicdn.com/imgextra/i1/O1CN01oszhXt1tqWku75aIr_!!6000000005953-0-tps-1080-1092.jpg)
+![6.png](https://img.alicdn.com/imgextra/i2/O1CN01U0fVKQ1VQpl2kZSE1_!!6000000002648-0-tps-1080-1106.jpg)
 
 #### 如何定位和处理堆积问题
 
@@ -99,13 +99,13 @@ RocketMQ 指标：额外支持延时时间来度量消费健康度，涵盖了�
 
 查看消费者状态，在客户端连接信息中查看业务处理时间，获取消费耗时的平均值。
 
-![7.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680502104364-9d14e659-4d33-4b6b-b10c-c509f2adf088.png#clientId=ueacb93f6-0fd6-4&height=183&id=OBrIj&name=7.png&originHeight=183&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ud8a36b4d-f740-42b1-b0c7-7ffa89e3d8d&title=&width=1080)
+![7.png](https://img.alicdn.com/imgextra/i2/O1CN01jyWdfy1HQSolXHd8i_!!6000000000752-0-tps-1080-183.jpg)
 
 3. 查看客户端堆栈信息。只需要关注线程名为 ConsumeMessageThread 的线程，这些都是业务消费消息的逻辑。
 - 客户端堆栈信息可以通过以下方式获取：查看消费者状态，在客户端连接信息中查看 Java 客户端堆栈信息
 
-![8.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680502104522-5c30207e-c77a-42ca-8531-54e07774fd3b.png#clientId=ueacb93f6-0fd6-4&height=341&id=piErC&name=8.png&originHeight=341&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ufdfb2830-2eb2-4e20-b0af-689a99de0a4&title=&width=1080)
-![9.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680502104545-75fd8374-5a81-4dbe-8b46-5af197fbfd51.png#clientId=ueacb93f6-0fd6-4&height=596&id=Zef3v&name=9.png&originHeight=596&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u6db26489-9b4f-45bd-b232-404ff1a0af2&title=&width=1080)
+![8.png](https://img.alicdn.com/imgextra/i4/O1CN015DSOFK1DhdCSwm36y_!!6000000000248-0-tps-1080-341.jpg)
+![9.png](https://img.alicdn.com/imgextra/i1/O1CN01PX37h51DPlkkHc2VX_!!6000000000209-0-tps-1080-596.jpg)
 
 - 使用 Jstack 工具打印堆栈信息。
 
@@ -115,13 +115,13 @@ RocketMQ 指标：额外支持延时时间来度量消费健康度，涵盖了�
 
     - 示例一：
 
-![10.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680502104611-406c05f8-3634-46b0-b06f-c78d3ac19651.png#clientId=ueacb93f6-0fd6-4&height=230&id=ZoeAt&name=10.png&originHeight=230&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ud04fb9c2-6f19-4055-945f-2766c4295f0&title=&width=1080)
+![10.png](https://img.alicdn.com/imgextra/i1/O1CN01aanULC1FUT2ud9AWn_!!6000000000490-2-tps-1080-230.png)
 
 消费逻辑操作数据库等外部存储卡住。消费线程阻塞在外部的 HTTP 调用上，导致消费缓慢。
 
     - 示例二：
 
-![11.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680502104944-bd616f1a-b7f4-469b-84ff-89a6ac224969.png#clientId=ueacb93f6-0fd6-4&height=320&id=jJGUs&name=11.png&originHeight=320&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ue5baefee-5311-41e3-b7ce-1d4fed4e298&title=&width=1080)
+![11.png](https://img.alicdn.com/imgextra/i2/O1CN013d9gm21yfbO1ts0r6_!!6000000006606-2-tps-1080-320.png)
 
 4. 针对某些特殊业务场景，如果消息堆积已经影响到业务运行，且堆积的消息本身可以跳过不消费，您可以通过重置消费位点跳过这些堆积的消息从最新位点开始消费，快速恢复业务。
 
@@ -144,7 +144,7 @@ RocketMQ 指标：额外支持延时时间来度量消费健康度，涵盖了�
 
 #### 消息收发的核心流程
 
-![12.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680502105169-77fccc1e-9097-4500-9d69-0f02369d1b76.png#clientId=ueacb93f6-0fd6-4&height=693&id=qx1Il&name=12.png&originHeight=693&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ud9293803-e7f9-48a5-808b-4f89c6dd9c5&title=&width=1080)
+![12.png](https://img.alicdn.com/imgextra/i1/O1CN01INlJqt29AQCBiVPse_!!6000000008027-2-tps-1080-693.png)
 
 从上图中可以看出消息收发都要先从 NameServer 返回路由，再通过 broker 的鉴权以及实例规格是否超限的判断，才能进行正常收发消息。根据经验检消息收发失败的原因有如下情况：
 
@@ -167,13 +167,13 @@ RocketMQ 指标：额外支持延时时间来度量消费健康度，涵盖了�
 
 建议设置为规格上限的 70%。例如，您购买的实例消息收发 TPS 上限为 10000，则告警阈值建议设置为 7000。
 
-![13.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680502105280-21e5905b-5269-43f4-9ba1-dabd303ddef8.png#clientId=ueacb93f6-0fd6-4&height=575&id=wXqUI&name=13.png&originHeight=575&originWidth=629&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ua139f008-1434-4a2e-a10a-f2c2f137b45&title=&width=629)
+![13.png](https://img.alicdn.com/imgextra/i4/O1CN01DklX1M1JPfMMzD88c_!!6000000001021-2-tps-629-575.png)
 
     1. 配置限流次数告警
 
 RocketMQ 支持将指定实例触发限流的事件作为监控项，通过对限流次数的监控，可以帮助您了解当前业务的受损情况。
 
-![14.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680502105524-37bde2b4-182f-4a6f-a667-99f07b1eaf2f.png#clientId=ueacb93f6-0fd6-4&height=577&id=DSuSX&name=14.png&originHeight=577&originWidth=615&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u3fc6101a-b8b9-402a-8caa-9703650260e&title=&width=615)
+![14.png](https://img.alicdn.com/imgextra/i4/O1CN01veYBSJ1t86Kx6wLYb_!!6000000005856-2-tps-615-577.png)
 
 2. 在客户端日志中出现RemotingConnectException: connect to <118.xx.xx.xx:80> failed 或者 RemotingTimeoutException 等异常信息。
 
@@ -194,5 +194,5 @@ RocketMQ 支持将指定实例触发限流的事件作为监控项，通过对�
 
 1、新用户首次购买包年包月，即可享受全系列 85折优惠！ 了解活动详情：[https://www.aliyun.com/product/rocketmq](https://www.aliyun.com/product/rocketmq)
 
-![e728c42e80cb67bf020e646e58619bcd.jpg](https://intranetproxy.alipay.com/skylark/lark/0/2023/jpeg/59356401/1680576637562-9af35fbf-d64b-4f81-b950-7e72f91b5ca2.jpeg#clientId=u449ffa34-59ce-4&from=paste&height=675&id=u462ad3c6&name=e728c42e80cb67bf020e646e58619bcd.jpg&originHeight=675&originWidth=1920&originalType=binary&ratio=1&rotation=0&showTitle=false&size=258156&status=done&style=none&taskId=u26cea311-dc98-45bd-8c8c-c7884e57c37&title=&width=1920)
+![e728c42e80cb67bf020e646e58619bcd.jpg](https://img.alicdn.com/imgextra/i4/O1CN01Xi1rcu1DM6aIC7ypz_!!6000000000201-0-tps-1920-675.jpg)
 

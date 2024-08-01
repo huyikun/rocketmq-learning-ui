@@ -30,7 +30,7 @@ RocketMQ 多级存储对比 Kafka 和 Pulsar 的实现最大的不同是我们�
 
 更多使用说明和配置项可以在 GitHub 上查看多级存储的 [README](https://github.com/apache/rocketmq/blob/develop/tieredstore/README.md)
 ## 技术架构
-![image.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1677550417890-a72831ff-5504-49f8-9025-f8b6ec0f6626.png#clientId=ub7816d68-42ff-4&from=paste&id=u84bc9f67&originHeight=2400&originWidth=2124&originalType=url&ratio=1&rotation=0&showTitle=false&size=805369&status=done&style=none&taskId=u7c6cfb8e-f9fb-4f30-9f0a-3cb438eddc0&title=)
+![image.png](https://img.alicdn.com/imgextra/i2/O1CN012iHNfA1Q2Ud6a23sI_!!6000000001918-0-tps-2124-2400.jpg)
 
 architecture
 
@@ -48,13 +48,13 @@ architecture
 ### 消息上传
 RocketMQ 多级存储的消息上传是由 dispatch 机制触发的：初始化多级存储时会将 TieredDispatcher 注册为 CommitLog 的 dispacher。这样每当有消息发送到 Broker 会调用 TieredDispatcher 进行消息分发，TieredDispatcher 将该消息写入到 upload buffer 后立即返回成功。整个 dispatch 流程中不会有任何阻塞逻辑，确保不会影响本地 ConsumeQueue 的构建。
 
-![image.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1677550418038-bb873767-ceed-46c4-ba41-4d736b40c495.png#clientId=ub7816d68-42ff-4&from=paste&id=uf50e6712&originHeight=442&originWidth=631&originalType=url&ratio=1&rotation=0&showTitle=false&size=40707&status=done&style=none&taskId=u1767467c-78f6-4df1-ae86-97c60cd4bd4&title=)
+![image.png](https://img.alicdn.com/imgextra/i4/O1CN01tMcTkF1c7maoSzf1v_!!6000000003554-0-tps-631-442.jpg)
 
 TieredDispatcher
 
 TieredDispatcher 写入 upload buffer 的内容仅为消息的引用，不会将消息的 body 读入内存。因为多级储存以 queue 维度构建 CommitLog，此时需要重新生成 commitLog offset 字段
 
-![image.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1677550418003-a8d323fa-7a50-434d-936c-131be64406a7.png#clientId=ub7816d68-42ff-4&from=paste&id=ue2b703b1&originHeight=290&originWidth=636&originalType=url&ratio=1&rotation=0&showTitle=false&size=51644&status=done&style=none&taskId=ud8322f64-94fe-4067-901a-468bbd52f44&title=)
+![image.png](https://img.alicdn.com/imgextra/i3/O1CN01GIkRMu1OX3pcn5O45_!!6000000001714-0-tps-636-290.jpg)
 
 upload buffer
 
@@ -65,7 +65,7 @@ upload buffer
 1. dispatch offset：已经写入缓存但是未上传的消息位点
 2. commit offset：已上传的消息位点
 
-![image.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1677550418091-69612216-7705-41d6-9b98-7e74f2c330cc.png#clientId=ub7816d68-42ff-4&from=paste&id=u4306880e&originHeight=400&originWidth=950&originalType=url&ratio=1&rotation=0&showTitle=false&size=136753&status=done&style=none&taskId=u776b5654-aab4-4a4e-afc2-8031a795ae5&title=)
+![image.png](https://img.alicdn.com/imgextra/i3/O1CN01HBE1cf1e6WjqzSZeI_!!6000000003822-0-tps-950-400.jpg)
 
 upload progress
 
@@ -101,7 +101,7 @@ TieredMessageFetcher 读取消息时会预读一部分消息供下次使用，�
 ### 故障恢复
 上文中我们介绍上传进度由 commit offset 和 dispatch offset 控制。多级存储会为每个 topic、queue、fileSegment 创建元数据并持久化这两种位点。当 Broker 重启后会从元数据中恢复，继续从 commit offset 开始上传消息，之前缓存的消息会重新上传并不会丢失。
 
-![image.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1677550943568-23b26c2d-5b7d-4fe2-ac3d-54d63e276bf0.png#clientId=ub7816d68-42ff-4&from=paste&height=616&id=u02441602&originHeight=616&originWidth=464&originalType=binary&ratio=1&rotation=0&showTitle=false&size=145327&status=done&style=none&taskId=ucaab2f1f-fdb7-49a5-91ab-6ee4405b847&title=&width=464)
+![image.png](https://img.alicdn.com/imgextra/i4/O1CN01upFBDY24av1vxh8bD_!!6000000007408-0-tps-464-616.jpg)
 
 ## 开发计划
 面向云原生的存储系统要最大化利用云上存储的价值，而对象存储正是云计算红利的体现。 RocketMQ 多级存储希望一方面利用对象存储低成本的优势延长消息存储时间、拓展数据的价值；另一方面利用其共享存储的特性在多副本架构中兼得成本和数据可靠性，以及未来向 Serverless 架构演进。
@@ -127,5 +127,5 @@ TieredMessageFetcher 读取消息时会预读一部分消息供下次使用，�
 
 1、新用户首次购买包年包月，即可享受全系列 85折优惠！ 了解活动详情：[https://www.aliyun.com/product/rocketmq](https://www.aliyun.com/product/rocketmq)
 
-![e728c42e80cb67bf020e646e58619bcd.jpg](https://intranetproxy.alipay.com/skylark/lark/0/2023/jpeg/59356401/1680576637562-9af35fbf-d64b-4f81-b950-7e72f91b5ca2.jpeg#clientId=u449ffa34-59ce-4&from=paste&height=675&id=u462ad3c6&name=e728c42e80cb67bf020e646e58619bcd.jpg&originHeight=675&originWidth=1920&originalType=binary&ratio=1&rotation=0&showTitle=false&size=258156&status=done&style=none&taskId=u26cea311-dc98-45bd-8c8c-c7884e57c37&title=&width=1920)
+![e728c42e80cb67bf020e646e58619bcd.jpg](https://img.alicdn.com/imgextra/i4/O1CN01Xi1rcu1DM6aIC7ypz_!!6000000000201-0-tps-1920-675.jpg)
 

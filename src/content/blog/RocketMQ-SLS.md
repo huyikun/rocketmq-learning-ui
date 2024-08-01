@@ -22,7 +22,7 @@ description: "本文将从 SLS 在 EventBridge上 的使用以及若干最佳实
 
 日志服务 SLS**[****1]** 是一款云原生观测与分析平台，为 Log、Metric、Trace 等数据提供大规模、低成本、实时的平台化服务，提供数据采集、加工、查询与分析、可视化、告警、消费与投递等功能。
 
-![1.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680500746970-627fec1b-e719-4a3b-aa83-162f85c595d1.png#clientId=u747c3400-43a3-4&height=585&id=Jd0W1&name=1.png&originHeight=585&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u8aa6da49-dc27-4669-9fef-bc3e7a5d846&title=&width=1080)
+![1.png](https://img.alicdn.com/imgextra/i3/O1CN01wIOs991glribBGtEt_!!6000000004183-2-tps-1080-585.png)
 
 ### SLS 在 EventBridge 上的应用
 
@@ -32,7 +32,7 @@ description: "本文将从 SLS 在 EventBridge上 的使用以及若干最佳实
 
 针对 SLS 事件源，EventBridge 会构造一个 SLS source connector，其会实时地从 SLS 服务端拉取日志。数据拉取到 EventBridge 后，会进行一定的结构封装，保留用户日志、SLS 系统参数等数据，同时增加 event 所需要的一些系统属性。
 
-![2.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680500746950-f69d2ac9-4e1a-47c0-a7b5-6c24117956e7.png#clientId=u747c3400-43a3-4&height=424&id=e1PaN&name=2.png&originHeight=424&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=uc8204717-0d87-475d-bde3-2e38d55a658&title=&width=1080)
+![2.png](https://img.alicdn.com/imgextra/i4/O1CN01eMbrOo1KdEi1Fuuvt_!!6000000001186-0-tps-1080-424.jpg)
 
 SLS Event 样例可参考如下示例。
 
@@ -66,7 +66,7 @@ data 部分代表用户日志内容，其中以“__”开头和结尾的字段�
 
 针对 SLS 事件目标，EventBridge 使用 logProducer 将 event 整体作为一个字段投递到 SLS，字段 key 名称为“content”。
 
-![3.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680500748753-ceb51377-1030-44d1-a396-6970a3153fca.png#clientId=u747c3400-43a3-4&height=360&id=ggTnU&name=3.png&originHeight=360&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ufeaa0593-a462-49b7-80df-8c0bcdcac6a&title=&width=1080)
+![3.png](https://img.alicdn.com/imgextra/i4/O1CN01Tan5iI1LOrtwIKJMT_!!6000000001290-0-tps-1080-360.jpg)
 
 ### 使用介绍
 
@@ -166,7 +166,7 @@ SLS 事件源和事件目标，其事件总线与事件流的参数配置相同�
 
 4. 在“日志服务 SLS”一栏中选配置 SLS Project、LogStore、起始消费位点与角色配置。
 
-![4.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680500746973-25f449a5-f3a8-466b-93ac-f63f608d18ae.png#clientId=u747c3400-43a3-4&height=709&id=LCldu&name=4.png&originHeight=709&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u33c0c427-70a4-4fa1-9ef5-9f144ae3bd1&title=&width=1080)
+![4.png](https://img.alicdn.com/imgextra/i1/O1CN01k7xdMt1NPRd9jlm41_!!6000000001562-0-tps-1080-709.jpg)
 
 - **创建 SLS 事件目标**
 ** **
@@ -175,11 +175,11 @@ SLS 事件源和事件目标，其事件总线与事件流的参数配置相同�
 
 2. 配置 SLS Project、LogStore、日志主题、日志内容、角色配置等参数。
 
-![5.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680500746874-df3e7565-e1e8-4898-8568-740680f9f736.png#clientId=u747c3400-43a3-4&height=899&id=dMEDA&name=5.png&originHeight=899&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u2168a2dc-cfe0-43d9-b80b-ff260f6be56&title=&width=1080)
+![5.png](https://img.alicdn.com/imgextra/i1/O1CN01l4iQde1NBhkLiVaUI_!!6000000001532-0-tps-1080-899.jpg)
 
 3. 保存启动即可创建事件流。
 
-![6.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680500749410-be24f38f-cb73-4a07-bf8c-4aa5f6bfc77b.png#clientId=u747c3400-43a3-4&height=271&id=aRCu5&name=6.png&originHeight=271&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ua09a4b3e-a883-43a2-a88b-442b5bae2e4&title=&width=1080)
+![6.png](https://img.alicdn.com/imgextra/i2/O1CN01Dm15Ny27wqqRuqRnt_!!6000000007862-0-tps-1080-271.jpg)
 
 ## 最佳实践示例
 
@@ -196,7 +196,7 @@ SLS 事件源和事件目标，其事件总线与事件流的参数配置相同�
 
 4. FC 中的服务读取 SLS 中日志内容，若发现针对某条消息，若仅有发送日志无消费日志，则说明可能存在漏消息的可能性，需要相关人员及时介入排查。
 
-![7.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680500749520-535714fd-edc1-48bb-b093-24a11d87da4d.png#clientId=u747c3400-43a3-4&height=717&id=jBuyz&name=7.png&originHeight=717&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ube8570f9-b62b-4184-8bfd-67161ee73da&title=&width=1080)
+![7.png](https://img.alicdn.com/imgextra/i4/O1CN018nos8A1U3Bh3fx3Mj_!!6000000002461-0-tps-1080-717.jpg)
 
 ### 异常业务异步处理
 
@@ -212,7 +212,7 @@ SLS 事件源和事件目标，其事件总线与事件流的参数配置相同�
 
 4. 当有异常业务日志产生时，日志内容被 SLS 事件源拉取，随后投递到 FC，由专门的服务来处理异常订单。当然，在架构设计时也可以将异常订单信息直接投递到函数计算，但对于大部分业务系统而言，当有异常出现时通常都会进行相关日志的打印，即异常日志大概率是存在的，这个时候使用 SLS + EventBridge 则无需再使用函数计算的发送客户端，仅按需打印日志即可，对业务的侵入性更小。
 
-![8.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680500750470-2b79afec-09d8-4047-a5b7-c6adcebec44b.png#clientId=u747c3400-43a3-4&height=640&id=cSD5G&name=8.png&originHeight=640&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u74a2082f-d5e4-4f39-8fdd-bfdfac2f7ff&title=&width=1080)
+![8.png](https://img.alicdn.com/imgextra/i2/O1CN01HXV0fq1kL51DEysRd_!!6000000004666-0-tps-1080-640.jpg)
 
 ### 消息备份
 
@@ -222,7 +222,7 @@ SLS 事件源和事件目标，其事件总线与事件流的参数配置相同�
 
 2. 使用 SLS 的能力完成消息的加工、查询、分析与可视化。
 
-![9.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680500750553-fdb39592-da9a-4aaf-8c6a-c863d3cf2462.png#clientId=u747c3400-43a3-4&height=713&id=CQZ0e&name=9.png&originHeight=713&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ue63ef95c-2dc1-41d1-a828-7dbc5d15054&title=&width=1080)
+![9.png](https://img.alicdn.com/imgextra/i3/O1CN01hlbGfV1NBFLuK4DFj_!!6000000001531-0-tps-1080-713.jpg)
 
 ### 自建 SQL 审计
 
@@ -234,7 +234,7 @@ SLS 事件源和事件目标，其事件总线与事件流的参数配置相同�
 
 3. 用户需要对 SQL 进行审计时，通过查询 SLS 进行。
 
-![10.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680500750586-9b12fed5-791f-47fc-bb83-1dae1973964e.png#clientId=u747c3400-43a3-4&height=629&id=LQQuo&name=10.png&originHeight=629&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u6b1979e2-149d-4bf7-a8ab-07d3c73523f&title=&width=1080)
+![10.png](https://img.alicdn.com/imgextra/i3/O1CN01Su3ykw1UGTBEJfnUd_!!6000000002490-0-tps-1080-629.jpg)
 
 ## _相关链接_
 
@@ -255,4 +255,4 @@ _[3] 事件流_
 
 1、新用户首次购买包年包月，即可享受全系列 85折优惠！ 了解活动详情：[https://www.aliyun.com/product/rocketmq](https://www.aliyun.com/product/rocketmq)
 
-![e728c42e80cb67bf020e646e58619bcd.jpg](https://intranetproxy.alipay.com/skylark/lark/0/2023/jpeg/59356401/1680576637562-9af35fbf-d64b-4f81-b950-7e72f91b5ca2.jpeg#clientId=u449ffa34-59ce-4&from=paste&height=675&id=u462ad3c6&name=e728c42e80cb67bf020e646e58619bcd.jpg&originHeight=675&originWidth=1920&originalType=binary&ratio=1&rotation=0&showTitle=false&size=258156&status=done&style=none&taskId=u26cea311-dc98-45bd-8c8c-c7884e57c37&title=&width=1920)
+![e728c42e80cb67bf020e646e58619bcd.jpg](https://img.alicdn.com/imgextra/i4/O1CN01Xi1rcu1DM6aIC7ypz_!!6000000000201-0-tps-1920-675.jpg)
