@@ -183,8 +183,6 @@ Service Mesh 中反映出的技术趋势很大一部分已经在 RocketMQ 5.0 pr
 
 阿里云基于 Apache RocketMQ 构建的企业级产品-消息队列 RocketMQ 5.0 版现开启活动：
 
-1、新用户免费试用（2000TPS，1 个月），优惠金额 2000 元！点击立即领取：[https://free.aliyun.com/?product=9724382](https://free.aliyun.com/?product=9724382)
-
-2、新用户首次购买包年包月，即可享受全系列 85 折优惠！ 了解活动详情：[https://www.aliyun.com/product/rocketmq](https://www.aliyun.com/product/rocketmq)
+1、新用户首次购买包年包月，即可享受全系列 85 折优惠！ 了解活动详情：[https://www.aliyun.com/product/rocketmq](https://www.aliyun.com/product/rocketmq)
 
 ![e728c42e80cb67bf020e646e58619bcd.jpg](https://img.alicdn.com/imgextra/i4/O1CN01Xi1rcu1DM6aIC7ypz_!!6000000000201-0-tps-1920-675.jpg)
