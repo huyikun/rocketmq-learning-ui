@@ -16,7 +16,7 @@ CDC（Change Data Capture）指的是监听上游数据变更，并将变更信�
 
 CDC 从源数据库捕获增量的数据以及数据模式变更，以高可靠、低延时的数据传输将这些变更有序地同步到目标数据库、数据湖或者其他数据分析服务。目前业界主流的开源 CDC 工具包括 Debezium**[2****]**、Canal**[3****]** 以及 Maxwell**[4****]**。
 
-![1.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1691118122922-25527a11-0176-4b78-94c1-d1e063778663.png#clientId=u73f1d353-8f4c-4&height=646&id=afvnq&originHeight=646&originWidth=716&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ub56ae9ec-96b9-4d0d-aec0-1c5a3cd44ee&title=&width=716)
+![1.png](https://img.alicdn.com/imgextra/i4/O1CN018IRQ7p1uELLp62JMk_!!6000000006005-2-tps-716-646.png)
 
 图片来源：[https://dbconvert.com](https://dbconvert.com)
 
@@ -44,7 +44,7 @@ CDC 的应用场景广泛，包括但不限于这些方面：异地机房数据�
 
 数据传输服务 DTS（Data Transmission Service）是阿里云提供的实时数据流服务，支持关系型数据库（RDBMS）、非关系型的数据库（NoSQL）、数据多维分析（OLAP）等数据源间的数据交互，集数据同步、迁移、订阅、集成、加工于一体。其中，DTS 数据订阅**[****5****]**功能可以帮助用户获取自建 MySQL、RDS MySQL、Oracle 等数据库的实时增量数据。
 
-![2.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1691118122961-c640e15e-a1f0-4867-9aa6-97315c3a5f78.png#clientId=u73f1d353-8f4c-4&height=614&id=ZaBEK&originHeight=614&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u4a428208-65fd-4e29-93dd-5e927e6a417&title=&width=1080)
+![2.png](https://img.alicdn.com/imgextra/i3/O1CN01IAXHVc1zp3An4HJS2_!!6000000006762-0-tps-1080-614.jpg)
 
 ## CDC 在EventBrige上的应用
 
@@ -54,15 +54,17 @@ CDC 的应用场景广泛，包括但不限于这些方面：异地机房数据�
 
 事件流适用于端到端的流式数据处理场景，对源端产生的事件实时抽取、转换和分析并加载至目标端，无需创建事件总线，端到端转储效率更高，使用更轻便。
 
-为了更好地支持用户在 CDC 场景下的需求，EventBridge 在事件流源端支持了阿里云 DTS 的数据订阅功能，用户仅需简单配置，即可将数据库变更信息同步到 EventBridge 事件流。![image.gif](https://intranetproxy.alipay.com/skylark/lark/0/2023/gif/59356401/1691118122543-33919504-8e68-4a6f-a652-2d7cb6fbd363.gif#clientId=u73f1d353-8f4c-4&height=1&id=JOeS7&originHeight=1&originWidth=1&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u1f5d8ad0-72e3-468a-9114-9544e267cd1&title=&width=1)
+为了更好地支持用户在 CDC 场景下的需求，EventBridge 在事件流源端支持了阿里云 DTS 的数据订阅功能，用户仅需简单配置，即可将数据库变更信息同步到 EventBridge 事件流。
+<!-- ![image.gif](https://intranetproxy.alipay.com/skylark/lark/0/2023/gif/59356401/1691118122543-33919504-8e68-4a6f-a652-2d7cb6fbd363.gif#clientId=u73f1d353-8f4c-4&height=1&id=JOeS7&originHeight=1&originWidth=1&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u1f5d8ad0-72e3-468a-9114-9544e267cd1&title=&width=1) -->
 
-![3.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1691118122883-1f53bbf5-83df-4947-9c2a-e614dcdf9c7a.png#clientId=u73f1d353-8f4c-4&height=407&id=xlUd1&originHeight=407&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u55aa3122-8b8f-46fb-810f-43e606a7fac&title=&width=1080)
+![3.png](https://img.alicdn.com/imgextra/i2/O1CN013XP1x81ZwDMKJAAMC_!!6000000003258-0-tps-1080-407.jpg)
 
 EventBridge 定制了基于 DTS sdk 的 DTS Source Connector。当用户配置事件提供方为 DTS 的事件流时，source connector 会实时地从 DTS 服务端拉取 DTS record 数据。数据拉取到本地后，会进行一定的结构封装，保留 id、operationType、topicPartition、beforeImage、afterImage 等数据，同时增加 streaming event 所需要的一些系统属性。
 
-DTS Event 样例可参考 EventBridge 官方文档![image.gif](https://intranetproxy.alipay.com/skylark/lark/0/2023/gif/59356401/1691118122549-bca69239-5585-4222-a063-ce76c531c64e.gif#clientId=u73f1d353-8f4c-4&height=1&id=LIkn1&originHeight=1&originWidth=1&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ue1a895a4-a56b-4fb1-8f52-beb64b4ae77&title=&width=1)
+DTS Event 样例可参考 EventBridge 官方文档
+<!-- ![image.gif](https://intranetproxy.alipay.com/skylark/lark/0/2023/gif/59356401/1691118122549-bca69239-5585-4222-a063-ce76c531c64e.gif#clientId=u73f1d353-8f4c-4&height=1&id=LIkn1&originHeight=1&originWidth=1&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ue1a895a4-a56b-4fb1-8f52-beb64b4ae77&title=&width=1) -->
 
-![4.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1691118123464-5844da09-ca38-46eb-bde5-bcc2e6024434.png#clientId=u73f1d353-8f4c-4&height=755&id=ene0M&originHeight=755&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u2e5fde4f-ec73-44e9-a6be-09e1ad17134&title=&width=1080)
+![4.png](https://img.alicdn.com/imgextra/i1/O1CN01ouckvD1lsnnPKJeBF_!!6000000004875-0-tps-1080-755.jpg)
 
 EventBridge Streaming 保证了 DTS 事件的顺序性，但存在事件重复投递的可能性，EventId 在保证了和每条 DTS record 的一一映射关系，用户可依据此字段来对事件做幂等处理。
 
@@ -86,13 +88,15 @@ EventBridge Streaming 保证了 DTS 事件的顺序性，但存在事件重复�
 
 3. 在创建事件流，选择事件提供方时，下拉框选择“数据库 DTS”；
 
-4. 在“数据订阅任务”一栏中选择已创建的 DTS 数据订阅任务。在消费组一栏，选择要使用哪个消费组消费订阅数据，同时填写消费组密码与初始消费时间。![image.gif](https://intranetproxy.alipay.com/skylark/lark/0/2023/gif/59356401/1691118123354-eb1dec72-a916-459f-9e2b-59d5f5a9b1b2.gif#clientId=u73f1d353-8f4c-4&height=1&id=z8qYR&originHeight=1&originWidth=1&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u0a6fa307-ac20-4539-b5b1-c2949fe7ab6&title=&width=1)
+4. 在“数据订阅任务”一栏中选择已创建的 DTS 数据订阅任务。在消费组一栏，选择要使用哪个消费组消费订阅数据，同时填写消费组密码与初始消费时间。
+<!-- ![image.gif](https://intranetproxy.alipay.com/skylark/lark/0/2023/gif/59356401/1691118123354-eb1dec72-a916-459f-9e2b-59d5f5a9b1b2.gif#clientId=u73f1d353-8f4c-4&height=1&id=z8qYR&originHeight=1&originWidth=1&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u0a6fa307-ac20-4539-b5b1-c2949fe7ab6&title=&width=1) -->
 
-![5.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1691118123724-d97a7bfb-13f8-410d-89c7-88b8dad00a66.png#clientId=u73f1d353-8f4c-4&height=1402&id=OBMwW&originHeight=1402&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ub52a3c52-1b13-41fd-b505-b9ef6979d42&title=&width=1080)
+![5.png](https://img.alicdn.com/imgextra/i4/O1CN01u6ju8Z1FCbbMvVabr_!!6000000000451-0-tps-1080-1402.jpg)
 
-5. 事件流规则与目标按照需要填写，保存启动即可创建以 DTS 数据订阅为事件源的事件流。![image.gif](https://intranetproxy.alipay.com/skylark/lark/0/2023/gif/59356401/1691118124002-7d2ad2c7-6217-4f16-8d23-6adedbef34e1.gif#clientId=u73f1d353-8f4c-4&height=1&id=FmyL6&originHeight=1&originWidth=1&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=uce5d06cd-3d26-44bd-8185-c7e00c6351f&title=&width=1)
+5. 事件流规则与目标按照需要填写，保存启动即可创建以 DTS 数据订阅为事件源的事件流。
+<!-- ![image.gif](https://intranetproxy.alipay.com/skylark/lark/0/2023/gif/59356401/1691118124002-7d2ad2c7-6217-4f16-8d23-6adedbef34e1.gif#clientId=u73f1d353-8f4c-4&height=1&id=FmyL6&originHeight=1&originWidth=1&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=uce5d06cd-3d26-44bd-8185-c7e00c6351f&title=&width=1) -->
 
-![6.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1691118123979-5df846cc-f029-432d-b81a-c9f299d2d109.png#clientId=u73f1d353-8f4c-4&height=289&id=oeJQ9&originHeight=289&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u0ef530d0-1e83-4ba2-a68f-74a81c3f3b2&title=&width=1080)
+![6.png](https://img.alicdn.com/imgextra/i4/O1CN01V6WoJo1MgYofLn7OU_!!6000000001464-0-tps-1080-289.jpg)
 
 ### 注意事项 
 
@@ -124,7 +128,7 @@ EventBridge Streaming 保证了 DTS 事件的顺序性，但存在事件重复�
 
 4. FC 中的服务即为更新 elasticsearch 数据操作。
 
-![7.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1691118123833-37c4e58e-e8cd-459b-8127-414bdbe797ff.png#clientId=u73f1d353-8f4c-4&height=747&id=LPMMS&originHeight=747&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u51d80149-a653-4df6-acb9-290a5a18edf&title=&width=1080)
+![7.png](https://img.alicdn.com/imgextra/i1/O1CN01j9MmHU1pjsXgF3x0k_!!6000000005397-0-tps-1080-747.jpg)
 
 ### 微服务解耦
 
@@ -146,9 +150,10 @@ c. GroupC 仅关心订单状态由“未付款”变为“已付款”的事件�
 
 如果采用接口调用方式，那么用户在下单之后订单系统将分别需要调用缓存更新接口、新建订单接口以及订单付款接口，业务耦合性过高。除此之外，这种模式使得数据消费端不用担心上游订单处理接口返回内容的语义信息，在存储模型不变的情况下，直接从数据层面判断此次数据变更是否需要处理以及需要怎样的处理。同时，消息队列天然的消息堆积能力也可以帮助用户在订单峰值到来时实现业务削峰填谷。
 
-事实上，目前 EventBridge Streaming 支持的消息产品还包括 RabbitMQ、Kafka、MNS 等，在实际操作中用户可以根据自己的需要进行选择。![image.gif](https://intranetproxy.alipay.com/skylark/lark/0/2023/gif/59356401/1691118124425-1b8ab8a1-8d13-4971-9f6a-d9ecfc029091.gif#clientId=u73f1d353-8f4c-4&height=1&id=XZVmg&originHeight=1&originWidth=1&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u5999f87a-38cd-43ec-a2b1-9dc871f8e79&title=&width=1)
+事实上，目前 EventBridge Streaming 支持的消息产品还包括 RabbitMQ、Kafka、MNS 等，在实际操作中用户可以根据自己的需要进行选择。
+<!-- ![image.gif](https://intranetproxy.alipay.com/skylark/lark/0/2023/gif/59356401/1691118124425-1b8ab8a1-8d13-4971-9f6a-d9ecfc029091.gif#clientId=u73f1d353-8f4c-4&height=1&id=XZVmg&originHeight=1&originWidth=1&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u5999f87a-38cd-43ec-a2b1-9dc871f8e79&title=&width=1) -->
 
-![8.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1691118124629-d2aa1b3e-1e76-48b5-ba12-de5999fbe6c4.png#clientId=u73f1d353-8f4c-4&height=381&id=GxPxD&originHeight=381&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=uf6b45a3d-476c-4632-bbac-49d15be8fa3&title=&width=1080)
+![8.png](https://img.alicdn.com/imgextra/i1/O1CN01fSZtfI24xMRHyoBtA_!!6000000007457-0-tps-1080-381.jpg)
 
 ### 数据库备份&异构数据库同步
 
@@ -160,9 +165,10 @@ c. GroupC 仅关心订单状态由“未付款”变为“已付款”的事件�
 
 3. 使用 EventBridge 在目的数据库执行指定 sql，实现数据库备份；
 
-4. 数据变更事件投递到函数计算，用户业务根据数据变化内容更新对应异构数据库。![image.gif](https://intranetproxy.alipay.com/skylark/lark/0/2023/gif/59356401/1691118124571-79a622f0-ba98-4f2d-b6c9-faa37f801b12.gif#clientId=u73f1d353-8f4c-4&height=1&id=eUIs5&originHeight=1&originWidth=1&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ua83d1fc3-c229-4f50-b76f-2b56d8fdb97&title=&width=1)
+4. 数据变更事件投递到函数计算，用户业务根据数据变化内容更新对应异构数据库。
+<!-- ![image.gif](https://intranetproxy.alipay.com/skylark/lark/0/2023/gif/59356401/1691118124571-79a622f0-ba98-4f2d-b6c9-faa37f801b12.gif#clientId=u73f1d353-8f4c-4&height=1&id=eUIs5&originHeight=1&originWidth=1&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ua83d1fc3-c229-4f50-b76f-2b56d8fdb97&title=&width=1) -->
 
-![9.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1691118124730-70c887c8-0aa0-47ca-a7d6-f151adb8e3d5.png#clientId=u73f1d353-8f4c-4&height=530&id=AzNZ3&originHeight=530&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=uf0e6e988-7eea-4542-b855-ddd42ace021&title=&width=1080)
+![9.png](https://img.alicdn.com/imgextra/i3/O1CN01okgw7A25AdvLB6MK8_!!6000000007486-0-tps-1080-530.jpg)
 
 ### 自建 SQL 审计
 
@@ -172,9 +178,10 @@ c. GroupC 仅关心订单状态由“未付款”变为“已付款”的事件�
 
 2. 搭建 EventBridge 事件流，事件提供方为 DTS，事件接收方为日志服务 SLS；
 
-3. 用户需要对 SQL 进行审计时，通过查询 SLS 进行。![image.gif](https://intranetproxy.alipay.com/skylark/lark/0/2023/gif/59356401/1691118124858-6f87d929-1211-4ae4-92af-507625752dcc.gif#clientId=u73f1d353-8f4c-4&height=1&id=q0KS1&originHeight=1&originWidth=1&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ue3daafde-06cb-4a2b-8a11-28b05280de6&title=&width=1)
+3. 用户需要对 SQL 进行审计时，通过查询 SLS 进行。
+<!-- ![image.gif](https://intranetproxy.alipay.com/skylark/lark/0/2023/gif/59356401/1691118124858-6f87d929-1211-4ae4-92af-507625752dcc.gif#clientId=u73f1d353-8f4c-4&height=1&id=q0KS1&originHeight=1&originWidth=1&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ue3daafde-06cb-4a2b-8a11-28b05280de6&title=&width=1) -->
 
-![10.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1691118124946-dd839503-ee8b-4493-bf33-0e2e9f5bf39f.png#clientId=u73f1d353-8f4c-4&height=629&id=O9NQx&originHeight=629&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=uca5c3a0d-9c2b-42f5-840f-69645723377&title=&width=1080)
+![10.png](https://img.alicdn.com/imgextra/i2/O1CN01UXWKv61JA5tSa275S_!!6000000000987-0-tps-1080-629.jpg)
 
 ## 总结
 
@@ -201,7 +208,7 @@ _[8] SUBSCRIBE 消费模式：_[_https://help.aliyun.com/document_detail/223371.
 
 感兴趣的小伙伴们可以扫描下方二维码加入钉钉群讨论（群号：44552972）
 
-![11.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1691118125400-69c199d4-2f5a-48b2-9457-40a2cac2205c.png#clientId=u73f1d353-8f4c-4&height=150&id=AEOYu&originHeight=804&originWidth=802&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u70e13794-7e35-4b54-a958-e301c2fdf37&title=&width=150)
+![11.png](https://img.alicdn.com/imgextra/i2/O1CN01By7HRH1MjJC1z6IUB_!!6000000001470-2-tps-802-804.png)
 
 点击[此处](https://www.aliyun.com/product/aliware/eventbridge)，进入 EventBridge 官网了解更多信息～
 
@@ -211,4 +218,4 @@ _[8] SUBSCRIBE 消费模式：_[_https://help.aliyun.com/document_detail/223371.
 
 1、新用户首次购买包年包月，即可享受全系列 85折优惠！ 了解活动详情：[https://www.aliyun.com/product/rocketmq](https://www.aliyun.com/product/rocketmq)
 
-![e728c42e80cb67bf020e646e58619bcd.jpg](https://intranetproxy.alipay.com/skylark/lark/0/2023/jpeg/59356401/1680576637562-9af35fbf-d64b-4f81-b950-7e72f91b5ca2.jpeg#clientId=u449ffa34-59ce-4&from=paste&height=675&id=u462ad3c6&name=e728c42e80cb67bf020e646e58619bcd.jpg&originHeight=675&originWidth=1920&originalType=binary&ratio=1&rotation=0&showTitle=false&size=258156&status=done&style=none&taskId=u26cea311-dc98-45bd-8c8c-c7884e57c37&title=&width=1920)
+![e728c42e80cb67bf020e646e58619bcd.jpg](https://img.alicdn.com/imgextra/i4/O1CN01Xi1rcu1DM6aIC7ypz_!!6000000000201-0-tps-1920-675.jpg)

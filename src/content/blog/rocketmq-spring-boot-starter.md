@@ -6,7 +6,7 @@ img: "https://img.alicdn.com/imgextra/i3/O1CN01amydvQ1WOpV8A8UEo_!!6000000002779
 tags: ["explore"]
 description: "本文将 rocktmq-spring-boot 的设计实现做一个简单的介绍，读者可以通过本文了解将 RocketMQ Client 端集成为 spring-boot-starter 框架的开发细节，然后通过一个简单的示例来一步一步的讲解如何使用这个 spring-boot-starter 工具包来配置，发送和消费 RocketMQ 消息。"
 ---
-![](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680487565749-0f14a70a-b9ce-4cd3-8d28-4ca61b3cc232.png#clientId=u85f6412e-2d24-4&from=paste&id=u3fb53a9a&originHeight=523&originWidth=1080&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u3cea0133-c097-4ae7-ae03-fa6e2cfcb4f&title=)
+![](https://img.alicdn.com/imgextra/i4/O1CN01SPFYnK1lbr8xMylTv_!!6000000004838-0-tps-1080-523.jpg)
 
 **导读**：本文将 rocktmq-spring-boot 的设计实现做一个简单的介绍，读者可以通过本文了解将 RocketMQ Client 端集成为 spring-boot-starter 框架的开发细节，然后通过一个简单的示例来一步一步的讲解如何使用这个 spring-boot-starter 工具包来配置，发送和消费 RocketMQ 消息。
 在 Spring 生态中玩转 RocketMQ 系列文章：
@@ -16,7 +16,7 @@ description: "本文将 rocktmq-spring-boot 的设计实现做一个简单的介
 - [《RocketMQ-Spring 毕业两周年，为什么能成为 Spring 生态中最受欢迎的 messaging 实现？》](http://mp.weixin.qq.com/s?__biz=MzUzNzYxNjAzMg==&mid=2247500442&idx=1&sn=277a29dab2c75fc97e6726bf23355f71&chksm=fae6c955cd914043940059a0c7c700893cca4e56eed098e9cfb7e956bd8827856ee7a85c5427&scene=21#wechat_redirect)
 
 本文配套可交互教程已登录阿里云知行动手实验室，PC 端登录[start.aliyun.com](https://developer.aliyun.com/article/start.aliyun.com) 在浏览器中立即体验。
-![](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680487565661-75ee4220-7599-49ff-9f9c-7a9557a48ce5.png#clientId=u85f6412e-2d24-4&from=paste&id=u97335b2b&originHeight=251&originWidth=999&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=uf20d1e47-fb36-4580-a756-e9eabacbcf3&title=)
+![](https://img.alicdn.com/imgextra/i4/O1CN01yPYmG91j5g5GfsrzY_!!6000000004497-0-tps-999-251.jpg)
 通过本文，您将了解到：
 
 - Spring 的消息框架介绍
@@ -37,7 +37,7 @@ Spring Messaging 是 Spring Framework 4 中添加的模块，是 Spring 与消�
 如果有兴趣深入的了解 Spring Messaging 及针对不同的消息产品的使用，推荐阅读这个文件。参考 Spring Messaging 的既有实现，RocketMQ 的 spring-boot-starter 中遵循了相关的设计模式并结合 RocketMQ 自身的功能特点提供了相应的 API（如顺序、异步和事务半消息等)。
 ## 2. Spring Cloud Stream
 Spring Cloud Stream 结合了 Spring Integration 的注解和功能，它的应用模型如下：
-![](https://intranetproxy.alipay.com/skylark/lark/0/2023/jpeg/59356401/1680487567022-09b7349f-0277-4192-84f3-3ca147c974b2.jpeg#clientId=u85f6412e-2d24-4&from=paste&id=u661e6c8d&originHeight=416&originWidth=511&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ua0194347-858a-4901-a9a6-f44a888b5de&title=)
+![](https://img.alicdn.com/imgextra/i2/O1CN01zmFVwh28jOpTu3H7N_!!6000000007968-0-tps-511-416.jpg)
 该图片引自 spring cloud stream
 Spring Cloud Stream 框架中提供一个独立的应用内核，它通过输入（@Input）和输出（@Output）通道与外部世界进行通信，消息源端（Source）通过输入通道发送消息，消费目标端（Sink）通过监听输出通道来获取消费的消息。这些通道通过专用的 Binder 实现与外部代理连接。开发人员的代码只需要针对应用内核提供的固定的接口和注解方式进行编程，而不需要关心运行时具体的 Binder 绑定的消息中间件。在运行时，Spring Cloud Stream 能够自动探测并使用在 classpath 下找到的Binder。
 这样开发人员可以轻松地在相同的代码中使用不同类型的中间件：仅仅需要在构建时包含进不同的 Binder。在更加复杂的使用场景中，也可以在应用中打包多个 Binder 并让它自己选择 Binder，甚至在运行时为不同的通道使用不同的 Binder。
@@ -59,7 +59,7 @@ Binder SPI 的方式来让消息中间件产品使用可扩展的 API 来编写�
 - 定义依赖包
 
 它分为两个部分：Spring 自身的依赖包和 RocketMQ 的依赖包。
-![](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680487565100-24705719-b552-42b3-ad67-039f77477837.png#clientId=u85f6412e-2d24-4&from=paste&id=u66e7951a&originHeight=783&originWidth=820&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=uef0da1e5-56c9-4d26-96f9-24171d9fd49&title=)
+![](https://img.alicdn.com/imgextra/i3/O1CN01m6jDPb1xhbVBYTQKX_!!6000000006475-2-tps-820-783.png)
 ### **2）配置文件类**
 定义应用属性配置文件类 RocketMQProperties，这个 Bean 定义一组默认的属性值。用户在使用最终的 starter 时，可以根据这个类定义的属性来修改取值，当然不是直接修改这个类的配置，而是 spring-boot 应用中对应的配置文件：src/main/resources/application.properties。
 ### **3）定义自动加载类**
@@ -78,13 +78,13 @@ Binder SPI 的方式来让消息中间件产品使用可扩展的 API 来编写�
 ## 2. 消息发送端实现
 ### **1）普通发送端**
 发送端的代码封装在 RocketMQTemplate POJO 中，下图是发送端的相关代码的调用关系图：
-![](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680487565082-1e336031-2969-4ed8-845a-62fe5b977178.png#clientId=u85f6412e-2d24-4&from=paste&id=u108ff501&originHeight=409&originWidth=903&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ub3fc4a2e-f802-4bf3-94a0-6b0f732986b&title=)
+![](https://img.alicdn.com/imgextra/i3/O1CN01EqdTe11LOPVSPOBp1_!!6000000001289-0-tps-903-409.jpg)
 为了与 Spring Messaging 的发送模板兼容，在 RocketMQTemplate 集成了 AbstractMessageSendingTemplate 抽象类，来支持相关的消息转换和发送方法，这些方法最终会代理给 doSend() 方法、doSend() 以及 RocoketMQ 所特有的一些方法如异步，单向和顺序等方法直接添加到 RoketMQTempalte 中，这些方法直接代理调用到 RocketMQ 的 Producer API 来进行消息的发送。
 ### **2）事务消息发送端**
 对于事务消息的处理，在消息发送端进行了部分的扩展，参考上面的调用关系类图。
 RocketMQTemplate 里加入了一个发送事务消息的方法 sendMessageInTransaction()，并且最终这个方法会代理到 RocketMQ 的 TransactionProducer 进行调用，在这个 Producer 上会注册其关联的 TransactionListener 实现类，以便在发送消息后能够对 TransactionListener 里的方法实现进行调用。
 ## 3. 消息消费端实现
-![](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680487567335-a2e6b0c9-391d-45b0-921c-8b8bd929d632.png#clientId=u85f6412e-2d24-4&from=paste&id=ucdd19fed&originHeight=351&originWidth=918&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ue921b666-8027-40f7-8766-115e5e48835&title=)
+![](https://img.alicdn.com/imgextra/i3/O1CN01pkY4aK1MBPsw3lPFM_!!6000000001396-0-tps-918-351.jpg)
 在消费端 Spring-Boot 应用启动后，会扫描所有包含 @RocketMQMessageListener 注解的类（这些类需要集成 RocketMQListener 接口，并实现 onMessage()方法），这个 Listener 会一对一的被放置到。
 DefaultRocketMQListenerContainer 容器对象中，容器对象会根据消费的方式（并发或顺序），将 RocketMQListener 封装到具体的 RocketMQ 内部的并发或者顺序接口实现。在容器中创建 RocketMQ Consumer 对象，启动并监听定制的 Topic 消息，如果有消费消息，则回调到 Listener 的 onMessage() 方法。
 # 使用示例
@@ -106,22 +106,22 @@ DefaultRocketMQListenerContainer 容器对象中，容器对象会根据消费�
 
 ## 3. 编写客户端代码
 用户如果使用它，需要在消息的发布和消费客户端的 maven 配置文件 pom.xml 中添加如下的依赖：
-![](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680487567339-5dfc96bf-ee7a-437c-aef8-849fc140df37.png#clientId=u85f6412e-2d24-4&from=paste&id=u078a6ad7&originHeight=182&originWidth=1069&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u06fb5430-8c44-4f94-a647-a364faf6c9a&title=)
+![](https://img.alicdn.com/imgextra/i1/O1CN01CFzIA522IwFfkKZQY_!!6000000007098-2-tps-1069-182.png)
 属性 spring-boot-starter-rocketmq-version 的取值为：1.0.0-SNAPSHOT， 这与上一步骤中执行安装到本地仓库的版本一致。
 ### **1）消息发送端的代码**
 发送端的配置文件 application.properties：
-![](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680487567427-41028f31-e4ac-4f59-bd72-8be22a6f531f.png#clientId=u85f6412e-2d24-4&from=paste&id=ucf181358&originHeight=173&originWidth=850&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ueed8b99d-1d0c-4265-92c0-3b44bf8497d&title=)
+![](https://img.alicdn.com/imgextra/i1/O1CN0195igqK1JhzCdObFaz_!!6000000001061-2-tps-850-173.png)
 发送端的 Java 代码：
-![](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680487567752-8eacf16f-65ca-4a1d-ad9c-0ef4b690d51b.png#clientId=u85f6412e-2d24-4&from=paste&id=u56f7eafb&originHeight=598&originWidth=841&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ub9a8f680-a12d-491f-93f1-66dbc1312c8&title=)
+![](https://img.alicdn.com/imgextra/i4/O1CN01IkgMTR1QnfQQ05tc9_!!6000000002021-2-tps-841-598.png)
 ### **2）消息消费端代码**
 消费端的配置文件 application.properties：
-![](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680487567751-fb3bac86-b807-4285-a851-151aa49f6383.png#clientId=u85f6412e-2d24-4&from=paste&id=u1d79e8db&originHeight=170&originWidth=866&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u22923d63-4c81-4857-ae5b-4f7a5608e24&title=)
+![](https://img.alicdn.com/imgextra/i3/O1CN01KNL9Mk21sNHMyTAWh_!!6000000007040-2-tps-866-170.png)
 消费端的 Java 代码：
-![](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680487567968-de06ee1b-b853-4aeb-b8ba-502eca716b5e.png#clientId=u85f6412e-2d24-4&from=paste&id=u8e767bff&originHeight=401&originWidth=1192&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u7a4cb2db-f7f9-470d-b0c7-37c42258d97&title=)
+![](https://img.alicdn.com/imgextra/i3/O1CN01WWBTE11LnbHrVqkd5_!!6000000001344-2-tps-1192-401.png)
 这里只是简单的介绍了使用 spring-boot 来编写最基本的消息发送和接收的代码，如果需要了解更多的调用方式，如: 异步发送，对象消息体，指定 tag 标签以及指定事务消息，请参看 github 的说明文档和详细的代码。我们后续还会对这些高级功能进行陆续的介绍。
 ### **作者简介**
 **辽天**，阿里巴巴技术专家，Apache RocketMQ 内核控，拥有多年分布式系统研发经验，对 Microservice、Messaging 和 Storage 等领域有深刻理解， 目前专注 RocketMQ 内核优化以及 Messaging 生态建设。
-![](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680487568005-4045c1c9-e13b-4db4-a4bb-4c07f0867eed.png#clientId=u85f6412e-2d24-4&from=paste&id=uc2e8d44a&originHeight=251&originWidth=999&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ubfca7509-e174-4368-a833-7dcf85aed72&title=)
+![](https://img.alicdn.com/imgextra/i4/O1CN01yPYmG91j5g5GfsrzY_!!6000000004497-0-tps-999-251.jpg)
 **在 PC 端登录 start.aliyun.com 知行动手实验室，沉浸式体验在线交互教程。**
 
 # 活动推荐
@@ -130,4 +130,4 @@ DefaultRocketMQListenerContainer 容器对象中，容器对象会根据消费�
 
 1、新用户首次购买包年包月，即可享受全系列 85折优惠！ 了解活动详情：[https://www.aliyun.com/product/rocketmq](https://www.aliyun.com/product/rocketmq)
 
-![e728c42e80cb67bf020e646e58619bcd.jpg](https://intranetproxy.alipay.com/skylark/lark/0/2023/jpeg/59356401/1680576637562-9af35fbf-d64b-4f81-b950-7e72f91b5ca2.jpeg#clientId=u449ffa34-59ce-4&from=paste&height=675&id=u462ad3c6&name=e728c42e80cb67bf020e646e58619bcd.jpg&originHeight=675&originWidth=1920&originalType=binary&ratio=1&rotation=0&showTitle=false&size=258156&status=done&style=none&taskId=u26cea311-dc98-45bd-8c8c-c7884e57c37&title=&width=1920)
+![e728c42e80cb67bf020e646e58619bcd.jpg](https://img.alicdn.com/imgextra/i4/O1CN01Xi1rcu1DM6aIC7ypz_!!6000000000201-0-tps-1920-675.jpg)

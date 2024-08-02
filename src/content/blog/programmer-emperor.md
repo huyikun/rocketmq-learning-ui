@@ -15,7 +15,7 @@ description: "皇帝组建一个内阁团队，不仅可以提高办事效率，
 
 想要了解更多 EventBridge 相关信息，扫描下方二维码加入钉钉群～
 
-![1.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680491796911-7a9a00f5-dc48-4001-8b19-7609c8d638b7.png#clientId=u4225d96a-fe81-4&height=141&id=kyNZf&name=1.png&originHeight=896&originWidth=868&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ueeff4950-77e6-4480-b857-26ef3f8c82d&title=&width=137)
+![1.png](https://img.alicdn.com/imgextra/i2/O1CN01By7HRH1MjJC1z6IUB_!!6000000001470-2-tps-802-804.png)
 
 # 活动推荐
 
@@ -23,4 +23,4 @@ description: "皇帝组建一个内阁团队，不仅可以提高办事效率，
 
 1、新用户首次购买包年包月，即可享受全系列 85折优惠！ 了解活动详情：[https://www.aliyun.com/product/rocketmq](https://www.aliyun.com/product/rocketmq)
 
-![e728c42e80cb67bf020e646e58619bcd.jpg](https://intranetproxy.alipay.com/skylark/lark/0/2023/jpeg/59356401/1680576637562-9af35fbf-d64b-4f81-b950-7e72f91b5ca2.jpeg#clientId=u449ffa34-59ce-4&from=paste&height=675&id=u462ad3c6&name=e728c42e80cb67bf020e646e58619bcd.jpg&originHeight=675&originWidth=1920&originalType=binary&ratio=1&rotation=0&showTitle=false&size=258156&status=done&style=none&taskId=u26cea311-dc98-45bd-8c8c-c7884e57c37&title=&width=1920)
+![e728c42e80cb67bf020e646e58619bcd.jpg](https://img.alicdn.com/imgextra/i4/O1CN01Xi1rcu1DM6aIC7ypz_!!6000000000201-0-tps-1920-675.jpg)

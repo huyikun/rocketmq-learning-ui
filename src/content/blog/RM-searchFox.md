@@ -64,11 +64,11 @@ description: "大多数的视频各部门中使用过的消息中间件，包括
 
 先看一下 MQCloud 的定位：
 
-![1.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680488789588-fe49d37b-6f42-48ec-80f0-08a3a19e6bd6.png#clientId=u77d27230-571f-4&height=360&id=VDNnR&name=1.png&originHeight=360&originWidth=434&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u70d658a1-b87f-4cb0-b0bc-29b077e5678&title=&width=434)
+![1.png](https://img.alicdn.com/imgextra/i4/O1CN01LE4SCy223MmkjWmDW_!!6000000007064-2-tps-434-360.png)
 
 它是集客户端 SDK，监控预警，集群运维于一体的一站式服务平台。MQCloud 的系统架构如下：
 
-![2.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680488789688-88db5e56-c4f9-4ca7-8faa-f4493c0f31a7.png#clientId=u77d27230-571f-4&height=414&id=N6WAh&name=2.png&originHeight=414&originWidth=694&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ud772c0a4-fa71-4ebd-8a11-c0603209837&title=&width=694)
+![2.png](https://img.alicdn.com/imgextra/i4/O1CN01IzwrCE21IBzTcLxCl_!!6000000006961-2-tps-694-414.png)
 
 接下来分别说明一下 MQCloud 如何解决上面提到的痛点。
 
@@ -76,7 +76,7 @@ description: "大多数的视频各部门中使用过的消息中间件，包括
 
 为了实现这个目的，引入了用户，资源两大维度。针对用户和资源加以控制，使不同的用户只聚焦于自己的数据。
 
-![3.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680488791487-7365c409-12f1-4e99-beb2-1bb68dffe80a.png#clientId=u77d27230-571f-4&height=319&id=ChXY4&name=3.png&originHeight=319&originWidth=686&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u1e19e74f-59a0-469a-8316-5c79f795ac0&title=&width=686)
+![3.png](https://img.alicdn.com/imgextra/i3/O1CN01fXNCtJ265tQyzLSyj_!!6000000007611-2-tps-686-319.png)
 
 - 对于生产方来说，他关心的是 topic 配置，消息的发送数据，谁在消费等等问题，这样只对他展示相应的数据即可；
 - 对于消费者来说，只关心消费状况，有没有堆积，消费失败等情况；
@@ -123,11 +123,11 @@ MQCloud 核心功能之一就是**监控预警**，目前支持如下预警：
 
 ### 1、生产异常耗时统计：
 
-![4.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680488789560-f808eada-5c58-4d72-b54e-29a2f98d6ebe.png#clientId=u77d27230-571f-4&height=331&id=TcnGr&name=4.png&originHeight=331&originWidth=907&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u0c894fd7-c2e2-46a6-9f01-61399238708&title=&width=907)
+![4.png](https://img.alicdn.com/imgextra/i4/O1CN01BBsvUd1PQw9Zlxbyl_!!6000000001836-2-tps-907-331.png)
 
 由于 RocketMQ 并没有提供生产者的流量统计（只提供了 topic，但是并不知道每个生产者的情况），所以 MQCloud 实现了对生产者数据进行统计（通过 RocketMQ 的回调钩子实现）:
 
-![5.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680488789528-6949de87-d4b1-401d-9ade-afcdec96d8c6.png#clientId=u77d27230-571f-4&height=190&id=hky7s&name=5.png&originHeight=190&originWidth=370&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u80ac9a5e-d104-44de-8678-9cb3ae1a80e&title=&width=370)
+![5.png](https://img.alicdn.com/imgextra/i4/O1CN01tgte4K23s2DYmhRnU_!!6000000007310-2-tps-370-190.png)
 
 主要统计如下信息：
 
@@ -144,25 +144,30 @@ MQCloud 核心功能之一就是**监控预警**，目前支持如下预警：
 
 第一段：耗时范围 0ms~10ms，时间跨度为 1ms。
 
-![6.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680488791877-d4d96528-dceb-409c-83b9-9958fc2854b0.png#clientId=u77d27230-571f-4&height=112&id=cevW9&name=6.png&originHeight=112&originWidth=288&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u91c1ac39-47a2-4627-ad9e-00961a36a9d&title=&width=288)![](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680488791958-d4893ebc-f05b-4769-a36c-7776514fe56d.png#clientId=u77d27230-571f-4&height=1&id=Ss9OI&originHeight=1&originWidth=1&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u91f91e9e-3bb3-4acb-b74e-34bc994f199&title=&width=1)
+![6.png](https://img.alicdn.com/imgextra/i4/O1CN01v1F5cA1j0dj8F5mf0_!!6000000004486-2-tps-288-112.png)
+<!-- ![](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680488791958-d4893ebc-f05b-4769-a36c-7776514fe56d.png#clientId=u77d27230-571f-4&height=1&id=Ss9OI&originHeight=1&originWidth=1&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u91f91e9e-3bb3-4acb-b74e-34bc994f199&title=&width=1) -->
 
 第二组：耗时范围 11ms~100ms，时间跨度 5ms。
 
-![7.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680488791902-0c98a27a-7fd7-4656-98a7-d4e17775afb0.png#clientId=u77d27230-571f-4&height=114&id=MQxTE&name=7.png&originHeight=114&originWidth=582&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u60541029-cbcb-461e-a5c6-85977a94ee2&title=&width=582)![](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680488791952-eb0e9045-30cd-4120-bd4b-69d1577bb3a1.png#clientId=u77d27230-571f-4&height=1&id=HAjh2&originHeight=1&originWidth=1&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u698a4034-9bb8-4cd8-877c-86bdd4cfee8&title=&width=1)
+![7.png](https://img.alicdn.com/imgextra/i3/O1CN015qnOQh22Tvl3oI4m9_!!6000000007122-2-tps-582-114.png)
+<!-- ![](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680488791952-eb0e9045-30cd-4120-bd4b-69d1577bb3a1.png#clientId=u77d27230-571f-4&height=1&id=HAjh2&originHeight=1&originWidth=1&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u698a4034-9bb8-4cd8-877c-86bdd4cfee8&title=&width=1) -->
 
 第三组：耗时范围 101ms~3500ms，时间跨度 50ms。
 
-![](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680488792156-7d823f7e-161a-4462-a76d-28b2f719028f.png#clientId=u77d27230-571f-4&height=1&id=GAgha&originHeight=1&originWidth=1&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ua96236d4-dbcb-48ac-9d5c-88e05db9353&title=&width=1)![8.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680488792637-b3179818-a7a7-47df-bba0-24777ab5f208.png#clientId=u77d27230-571f-4&height=114&id=JWbyN&name=8.png&originHeight=114&originWidth=587&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=uedf820bf-8cf5-4359-b834-293834774b8&title=&width=587)
+<!-- ![](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680488792156-7d823f7e-161a-4462-a76d-28b2f719028f.png#clientId=u77d27230-571f-4&height=1&id=GAgha&originHeight=1&originWidth=1&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ua96236d4-dbcb-48ac-9d5c-88e05db9353&title=&width=1) -->
+![8.png](https://img.alicdn.com/imgextra/i3/O1CN01yglCTU1TDtKnDtQ3E_!!6000000002349-2-tps-587-114.png)
 
 _优点：此种分段方法占用内存是固定的，比如最大耗时如果为3500ms，那么只需要空间大小为96的数组即可缺点：分段精度需要提前设定好，且不可更改。_
 
 2、针对上面的分段数组，创建一个大小对应的AtomicLong的**计数数组**，支持并发统计：
 
-![9.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680488792816-fef34760-04d5-4166-bf11-c9a3c957f65d.png#clientId=u77d27230-571f-4&height=65&id=KfjAM&name=9.png&originHeight=65&originWidth=628&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ucf37a7f4-6c75-4533-b988-1dd1de24e84&title=&width=628)![](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680488792779-dd99d456-f55a-4881-b45c-0834f7df4e0d.png#clientId=u77d27230-571f-4&height=1&id=bxSIS&originHeight=1&originWidth=1&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=uf6017885-1436-4939-b6df-a49924f62a0&title=&width=1)
+![9.png](https://img.alicdn.com/imgextra/i1/O1CN01XzOTEp1Fz9aN9V6IZ_!!6000000000557-2-tps-628-65.png)
+<!-- ![](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680488792779-dd99d456-f55a-4881-b45c-0834f7df4e0d.png#clientId=u77d27230-571f-4&height=1&id=bxSIS&originHeight=1&originWidth=1&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=uf6017885-1436-4939-b6df-a49924f62a0&title=&width=1) -->
 
 3、耗时统计时，计算耗时对应的**耗时分段数组**下标，然后调用**计数数组**进行统计即可，参考下图：
 
-![10.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680488792770-4beef574-8672-45c3-907e-6a4bdd01f1b2.png#clientId=u77d27230-571f-4&height=300&id=k3NzH&name=10.png&originHeight=300&originWidth=633&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u9b4cc982-a624-406f-9093-588d1550cbc&title=&width=633)![](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680488792841-33668c49-3904-4396-899c-c316a335a033.png#clientId=u77d27230-571f-4&height=1&id=ZxkRd&originHeight=1&originWidth=1&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u994f53a0-66ef-44cd-860b-75c44eb2377&title=&width=1)
+![10.png](https://img.alicdn.com/imgextra/i1/O1CN01IeXD7q1MVZJPnvdnv_!!6000000001440-2-tps-633-300.png)
+<!-- ![](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680488792841-33668c49-3904-4396-899c-c316a335a033.png#clientId=u77d27230-571f-4&height=1&id=ZxkRd&originHeight=1&originWidth=1&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u994f53a0-66ef-44cd-860b-75c44eb2377&title=&width=1) -->
 
 - 例如某次耗时为18ms，首先找到它所属的区间，即归属于[16~20]ms之间，对应的数组下标为12。
 
@@ -173,11 +178,11 @@ _优点：此种分段方法占用内存是固定的，比如最大耗时如果�
 
 这样，从**计数数组**就可以得到实时耗时统计，类似如下：
 
-![11.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680488793213-aefaf33e-339c-416b-94b9-7787189e7518.png#clientId=u77d27230-571f-4&height=153&id=y2RiM&name=11.png&originHeight=153&originWidth=669&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u2a8fd38a-e861-44f4-b77a-885f7961967&title=&width=669)
+![11.png](https://img.alicdn.com/imgextra/i1/O1CN015GtErj1CZ6CvLtm1W_!!6000000000094-2-tps-669-153.png)
 
 4、然后定时采样任务会每分钟对**计数数组**进行快照，产生如下**耗时数据**：
 
-![12.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680488793371-e9b29c86-2122-4fcb-9569-1da0319d9c71.png#clientId=u77d27230-571f-4&height=107&id=VDyJA&name=12.png&originHeight=107&originWidth=670&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u298151c3-8137-4645-9eec-273dd787872&title=&width=670)
+![12.png](https://img.alicdn.com/imgextra/i1/O1CN01KN2YjN1IgK9KgZX56_!!6000000000922-2-tps-670-107.png)
 
 5、由于上面的**耗时数据**天然就是排好序的，可以很容易计算 99%、90%、平均耗时等数据了。
 
@@ -191,8 +196,8 @@ _另外提一点，由于 RocketMQ 4.4.0 新增的 trace 功能也使用 hook �
 
 ## 一、单独定制的客户端
 
-![13.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680488793438-780780ca-488a-4ac6-9c2b-73354557e7f8.png#clientId=u77d27230-571f-4&height=290&id=QGFIc&name=13.png&originHeight=290&originWidth=365&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u41d956d4-b68f-4720-ba47-66203ed5f6e&title=&width=365)
-![](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680488793500-07b24f5e-d744-4dc2-a602-b8cd5bff1916.png#clientId=u77d27230-571f-4&height=1&id=masoN&originHeight=1&originWidth=1&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u65e1553f-aa80-48e6-bfc4-44079f7ee9b&title=&width=1)
+![13.png](https://img.alicdn.com/imgextra/i4/O1CN01T4zQuy1LM7WaBpg10_!!6000000001284-2-tps-365-290.png)
+<!-- ![](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680488793500-07b24f5e-d744-4dc2-a602-b8cd5bff1916.png#clientId=u77d27230-571f-4&height=1&id=masoN&originHeight=1&originWidth=1&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u65e1553f-aa80-48e6-bfc4-44079f7ee9b&title=&width=1) -->
 针对客户端的一些需求，mq-client 在 rocketmq-client 的基础上进行了开发定制：
 
 ### 1、多集群支持
@@ -239,15 +244,15 @@ MQCloud储存了生产者、消费者和集群的关系，通过路由适配，�
 
 MQCloud 提供了一套自动化部署机制，包括停止写入，上下线，本地更新，远程迁移（包含数据校验）:
 
-![14.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680488793740-d102d128-d3b0-45dd-bd71-b0c6e00e7d88.png#clientId=u77d27230-571f-4&height=175&id=lVeHJ&name=14.png&originHeight=175&originWidth=1217&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u0cb48a82-4e37-4d63-8f84-c4ccede0124&title=&width=1217)
+![14.png](https://img.alicdn.com/imgextra/i4/O1CN01K7bL4j1UzoOFfLOBh_!!6000000002589-2-tps-1217-175.png)
 
 **支持一键部署：**
 
-![15.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680488793909-4e2b3413-f6ae-49dd-8c4c-7f7c6d662f2e.png#clientId=u77d27230-571f-4&height=937&id=cNGGB&name=15.png&originHeight=937&originWidth=982&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ueb3ee678-6ed2-4a02-956b-ed06e1a13f4&title=&width=982)
+![15.png](https://img.alicdn.com/imgextra/i4/O1CN01NaCLjd1E9ZMV3CGFd_!!6000000000309-2-tps-982-937.png)
 
 另外，broker 作为 RocketMQ 的核心，其配置有百项之多，而且好多涉及到性能调优，调整时往往需要根据服务器的状况谨慎调整，MQCloud 开发了**配置模板**功能来支持灵活的部署项：
 
-![16.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680488794193-07a8f8f9-9bae-4a60-8216-c42e44d25f29.png#clientId=u77d27230-571f-4&height=751&id=YNnRb&name=16.png&originHeight=751&originWidth=945&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u503112d1-56b4-4936-abb7-4419efff8a4&title=&width=945)
+![16.png](https://img.alicdn.com/imgextra/i3/O1CN01kYE0JT1i88aydQ7nZ_!!6000000004367-2-tps-945-751.png)
 
 ### 2、机器运维
 
@@ -256,7 +261,7 @@ MQCloud 提供了一整套机器的运维机制，大大提升了生产力。
 ### 3、可视化的集群拓扑
 
 
-![17.gif](https://intranetproxy.alipay.com/skylark/lark/0/2023/gif/59356401/1680488794268-3af15836-1925-4a6d-8d0a-ed3c39929e65.gif#clientId=u77d27230-571f-4&height=538&id=lZS9Z&name=17.gif&originHeight=538&originWidth=756&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u5f3fc37f-2217-481a-867d-0174365c91a&title=&width=756)
+![17.gif](https://img.alicdn.com/imgextra/i3/O1CN01JT6tnd1kQZm0Oko6W_!!6000000004678-1-tps-756-538.gif)
 
 ## 三、安全性加固
 
@@ -267,7 +272,7 @@ RocketMQ 从 4.4.0 开始支持 ACL，但是默认没有开启，也就是任何
 
 借鉴 RocketMQ ACL 机制，只针对 RocketMQ 管理员操作加固权限校验：
 
-![18.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680488794190-017d06d7-788d-4052-9d05-53977b21a710.png#clientId=u77d27230-571f-4&height=536&id=KU9nU&name=18.png&originHeight=536&originWidth=219&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u3df45d4b-7d23-435c-a87a-5a68142e28f&title=&width=219)
+![18.png](https://img.alicdn.com/imgextra/i2/O1CN01wDV7xw1RFbaQVCEHG_!!6000000002082-2-tps-219-536.png)
 
 并且支持自定义和热加载管理员请求码，使得非法操作 RocketMQ 集群成为不可能，安全性大大提升。
 
@@ -315,4 +320,4 @@ MQCloud 在充分考虑和吸收实际业务的需求后，以各个角色聚焦
 
 1、新用户首次购买包年包月，即可享受全系列 85折优惠！ 了解活动详情：[https://www.aliyun.com/product/rocketmq](https://www.aliyun.com/product/rocketmq)
 
-![e728c42e80cb67bf020e646e58619bcd.jpg](https://intranetproxy.alipay.com/skylark/lark/0/2023/jpeg/59356401/1680576637562-9af35fbf-d64b-4f81-b950-7e72f91b5ca2.jpeg#clientId=u449ffa34-59ce-4&from=paste&height=675&id=u462ad3c6&name=e728c42e80cb67bf020e646e58619bcd.jpg&originHeight=675&originWidth=1920&originalType=binary&ratio=1&rotation=0&showTitle=false&size=258156&status=done&style=none&taskId=u26cea311-dc98-45bd-8c8c-c7884e57c37&title=&width=1920)
+![e728c42e80cb67bf020e646e58619bcd.jpg](https://img.alicdn.com/imgextra/i4/O1CN01Xi1rcu1DM6aIC7ypz_!!6000000000201-0-tps-1920-675.jpg)

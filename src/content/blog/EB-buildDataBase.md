@@ -15,7 +15,7 @@ description: "本文重点介绍 EventBridge 的新特性：数据库 Sink 事�
 
 ## 数据库 Sink 概述
 
-![640 - 2022-04-14T135929.496.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680491415667-64f005d5-1366-4a41-a712-d3b3d09f52e1.png#clientId=u0e920f6f-ad33-4&height=656&id=dqSW8&name=640%20-%202022-04-14T135929.496.png&originHeight=656&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ub6fd0d63-0102-438b-b2ef-691349320d3&title=&width=1080)
+![640 - 2022-04-14T135929.496.png](https://img.alicdn.com/imgextra/i2/O1CN01Hv8pso1Oh8XwRnSZg_!!6000000001736-0-tps-1080-656.jpg)
 数据库 Sink 事件目标是 EventBridge 支持的事件目标的一种，主要能力是通过 EventBridge 将数据投递至指定数据库表中。
 
 得益于 EventBridge 生态体系，数据库 Sink 支持众多接入方式：
@@ -26,7 +26,7 @@ description: "本文重点介绍 EventBridge 的新特性：数据库 Sink 事�
 
 数据库 Sink 能力重点聚焦在如何将 EventBridge 业务的半结构化 Json 数据转为结构化 SQL 语句，提供 LowCode 交互接入，帮助开发者一站式完成数据入库。
 
-![640 - 2022-04-14T140005.286.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680491415665-79f0654a-2464-4ccf-a2f6-e907b5a5869f.png#clientId=u0e920f6f-ad33-4&height=272&id=IvwFe&name=640%20-%202022-04-14T140005.286.png&originHeight=272&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ud452624c-66bd-4156-ad42-73694b02a0e&title=&width=1080)
+![640 - 2022-04-14T140005.286.png](https://img.alicdn.com/imgextra/i4/O1CN01WCBkrU1W9GB2D1cE9_!!6000000002745-0-tps-1080-272.jpg)
 ## 数据库 Sink 最佳实践
 
 
@@ -40,24 +40,25 @@ description: "本文重点介绍 EventBridge 的新特性：数据库 Sink 事�
 首先现阶段数据库 Sink For MySQL 支持两种方式：一种是基于阿里云的 **RDS MySQL（VPC）**，另一种是用户**自建的 MySQL（公网）**，可根据业务场景选择的不同方式接入。
 
 #### **步骤一 ：点击事件规则并创建事件规则**
-![640 - 2022-04-14T140043.033.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680491435545-876c7d5b-77e1-4222-ae41-abb704523b68.png#clientId=u0e920f6f-ad33-4&height=219&id=lGelG&name=640%20-%202022-04-14T140043.033.png&originHeight=219&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u49391aa2-8123-4500-84e8-ab994acb5c7&title=&width=1080)
+![640 - 2022-04-14T140043.033.png](https://img.alicdn.com/imgextra/i1/O1CN01JIrBA71t29BmkKGwr_!!6000000005843-2-tps-1080-219.png)
 
 #### **步骤二 ：选择事件源**
 
 
 可以选择阿里云官方或者自定义事件源
 
-![image.gif](https://intranetproxy.alipay.com/skylark/lark/0/2023/gif/59356401/1680491415559-c42e8240-8660-4a49-8894-8914bd93d8d7.gif#clientId=u0e920f6f-ad33-4&height=1&id=mKypm&name=image.gif&originHeight=1&originWidth=1&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=uc3ab7b90-e9f7-428d-b3b4-76b82750391&title=&width=1)![640 - 2022-04-14T140056.156.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680491415690-18356ef3-1925-4d3c-9018-afb79669230f.png#clientId=u0e920f6f-ad33-4&height=292&id=DERrq&name=640%20-%202022-04-14T140056.156.png&originHeight=292&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u1d77f8f6-32cf-4227-b804-971890ed441&title=&width=1080)
+<!-- ![image.gif](https://intranetproxy.alipay.com/skylark/lark/0/2023/gif/59356401/1680491415559-c42e8240-8660-4a49-8894-8914bd93d8d7.gif#clientId=u0e920f6f-ad33-4&height=1&id=mKypm&name=image.gif&originHeight=1&originWidth=1&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=uc3ab7b90-e9f7-428d-b3b4-76b82750391&title=&width=1) -->
+![640 - 2022-04-14T140056.156.png](https://img.alicdn.com/imgextra/i3/O1CN01G9EFze1njIoUU4XDx_!!6000000005125-2-tps-1080-292.png)
 #### **步骤三 ：选择事件目标**
 
 
 1）在事件目标下面的服务类型选择数据库，这时会有两个选项就是一个是阿里云的 RDS MySQL，一个是自建 MySQL；
 
-![640 - 2022-04-14T140119.900.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680491435523-d9ec14de-9f41-4625-8f53-3e969743b3ee.png#clientId=u0e920f6f-ad33-4&height=485&id=jGvuU&name=640%20-%202022-04-14T140119.900.png&originHeight=485&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u84cb9f16-88a7-4657-9e36-10917dd0bb0&title=&width=1080)
+![640 - 2022-04-14T140119.900.png](https://img.alicdn.com/imgextra/i4/O1CN017OcLJN1wE0I0cEjI6_!!6000000006275-2-tps-1080-485.png)
 
 2）如果是阿里云 RDS MySQL，需要创建服务的关联角色。
 
-![640 - 2022-04-14T140133.244.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680491435537-36a814ad-70ef-42b3-917b-5028363d7b07.png#clientId=u0e920f6f-ad33-4&height=108&id=oxZhq&name=640%20-%202022-04-14T140133.244.png&originHeight=108&originWidth=597&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u356a2c82-d517-4227-a3f5-c3e25d6a4eb&title=&width=597)
+![640 - 2022-04-14T140133.244.png](https://img.alicdn.com/imgextra/i4/O1CN019mLXDV1QI46462GHb_!!6000000001952-2-tps-597-108.png)
 
 3）授权以后就可以选择用户自己创建的 RDS MySQL 数据库的实例 ID 和数据库名称。
 
@@ -70,17 +71,19 @@ description: "本文重点介绍 EventBridge 的新特性：数据库 Sink 事�
 
 1）快速配置，支持 LowCode 方式快速选择入库内容。
 
-![image.gif](https://intranetproxy.alipay.com/skylark/lark/0/2023/gif/59356401/1680491435504-9b0d00e8-d72d-4b3e-a06b-575bd9a3f0ab.gif#clientId=u0e920f6f-ad33-4&height=1&id=l7a8p&name=image.gif&originHeight=1&originWidth=1&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=udac15dd3-3648-45dc-82b5-90e23f4378c&title=&width=1)![640 - 2022-04-14T140150.795.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680491437318-a351696b-6dfd-4ce3-94cf-53162bb3fffe.png#clientId=u0e920f6f-ad33-4&height=428&id=BPIfc&name=640%20-%202022-04-14T140150.795.png&originHeight=428&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u65ef4a41-ecc8-4471-ae36-55369547d28&title=&width=1080)
+<!-- ![image.gif](https://intranetproxy.alipay.com/skylark/lark/0/2023/gif/59356401/1680491435504-9b0d00e8-d72d-4b3e-a06b-575bd9a3f0ab.gif#clientId=u0e920f6f-ad33-4&height=1&id=l7a8p&name=image.gif&originHeight=1&originWidth=1&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=udac15dd3-3648-45dc-82b5-90e23f4378c&title=&width=1) -->
+![640 - 2022-04-14T140150.795.png](https://img.alicdn.com/imgextra/i4/O1CN01oupZhL1rQlF83xz0L_!!6000000005626-2-tps-1080-428.png)
 
 2）自定义 SQL，支持自定义高级 SQL 语法。
 
-![image.gif](https://intranetproxy.alipay.com/skylark/lark/0/2023/gif/59356401/1680491437553-750eafa9-fdc4-4d05-9fd9-412914f01ea3.gif#clientId=u0e920f6f-ad33-4&height=1&id=q9AJo&name=image.gif&originHeight=1&originWidth=1&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ud9df0da2-02dc-4ec9-b5a7-c8881f9dd27&title=&width=1)![640 - 2022-04-14T140206.829.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680491437661-75a00619-d152-4112-9832-561cc6ad34ba.png#clientId=u0e920f6f-ad33-4&height=281&id=pSD1m&name=640%20-%202022-04-14T140206.829.png&originHeight=281&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u4c891977-9d0d-4d8f-a34e-8a5fcaa3e11&title=&width=1080)
+<!-- ![image.gif](https://intranetproxy.alipay.com/skylark/lark/0/2023/gif/59356401/1680491437553-750eafa9-fdc4-4d05-9fd9-412914f01ea3.gif#clientId=u0e920f6f-ad33-4&height=1&id=q9AJo&name=image.gif&originHeight=1&originWidth=1&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ud9df0da2-02dc-4ec9-b5a7-c8881f9dd27&title=&width=1) -->
+![640 - 2022-04-14T140206.829.png](https://img.alicdn.com/imgextra/i2/O1CN016TwE101GZKsHnj8ig_!!6000000000636-2-tps-1080-281.png)
 #### **步骤五：事件发布**
 
 
 当创建成功以后可以通过控制台进行事件发布：
-![640 - 2022-04-14T140224.657.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680491437692-e0807373-da49-44dd-809d-8fd8398936e1.png#clientId=u0e920f6f-ad33-4&height=612&id=fs3L2&name=640%20-%202022-04-14T140224.657.png&originHeight=612&originWidth=633&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u0eca6129-b13e-43f7-a4a0-e01dc5cee06&title=&width=633)
-![image.gif](https://intranetproxy.alipay.com/skylark/lark/0/2023/gif/59356401/1680491437655-874bf9cd-8ca3-4950-82ae-51a93d13e430.gif#clientId=u0e920f6f-ad33-4&height=1&id=hKS2v&name=image.gif&originHeight=1&originWidth=1&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=uc3859405-7b4b-4952-8289-4dbfd4bb233&title=&width=1)
+![640 - 2022-04-14T140224.657.png](https://img.alicdn.com/imgextra/i3/O1CN01NSndqM1V78j954pEE_!!6000000002605-2-tps-633-612.png)
+<!-- ![image.gif](https://intranetproxy.alipay.com/skylark/lark/0/2023/gif/59356401/1680491437655-874bf9cd-8ca3-4950-82ae-51a93d13e430.gif#clientId=u0e920f6f-ad33-4&height=1&id=hKS2v&name=image.gif&originHeight=1&originWidth=1&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=uc3859405-7b4b-4952-8289-4dbfd4bb233&title=&width=1) -->
 #### **步骤六 ：事件状态追踪和查询**
 
 
@@ -88,7 +91,7 @@ description: "本文重点介绍 EventBridge 的新特性：数据库 Sink 事�
 
 通过事件追踪也可以看到详细的事件轨迹 ：
 
-![640 - 2022-04-14T140243.222.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680491438195-3eefe443-b29b-44c8-84c6-1720d869c455.png#clientId=u0e920f6f-ad33-4&height=444&id=xeU0x&name=640%20-%202022-04-14T140243.222.png&originHeight=444&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ue5344db8-2642-4a11-9b01-3799e8ca896&title=&width=1080)
+![640 - 2022-04-14T140243.222.png](https://img.alicdn.com/imgextra/i4/O1CN01O0GBua1X1lJCywxIb_!!6000000002864-0-tps-1080-444.jpg)
 
 ## 总结
 
@@ -112,7 +115,7 @@ description: "本文重点介绍 EventBridge 的新特性：数据库 Sink 事�
 
 想要了解更多 EventBridge 相关信息，扫描下方二维码加入钉钉群～
 
-![640 - 2022-04-14T140328.772.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680491438343-bd4d1a0b-fd95-471d-9df4-4cfda622ffb4.png#clientId=u0e920f6f-ad33-4&height=424&id=we1Gp&name=640%20-%202022-04-14T140328.772.png&originHeight=1412&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u1a67102b-ce0f-4f88-8c9e-b89dfa9cfa1&title=&width=324.1676025390625)
+![640 - 2022-04-14T140328.772.png](https://img.alicdn.com/imgextra/i4/O1CN01L0gsCV1F2WtC4vMMP_!!6000000000429-0-tps-1080-1412.jpg)
 
 # 活动推荐
 
@@ -120,4 +123,4 @@ description: "本文重点介绍 EventBridge 的新特性：数据库 Sink 事�
 
 1、新用户首次购买包年包月，即可享受全系列 85折优惠！ 了解活动详情：[https://www.aliyun.com/product/rocketmq](https://www.aliyun.com/product/rocketmq)
 
-![e728c42e80cb67bf020e646e58619bcd.jpg](https://intranetproxy.alipay.com/skylark/lark/0/2023/jpeg/59356401/1680576637562-9af35fbf-d64b-4f81-b950-7e72f91b5ca2.jpeg#clientId=u449ffa34-59ce-4&from=paste&height=675&id=u462ad3c6&name=e728c42e80cb67bf020e646e58619bcd.jpg&originHeight=675&originWidth=1920&originalType=binary&ratio=1&rotation=0&showTitle=false&size=258156&status=done&style=none&taskId=u26cea311-dc98-45bd-8c8c-c7884e57c37&title=&width=1920)
+![e728c42e80cb67bf020e646e58619bcd.jpg](https://img.alicdn.com/imgextra/i4/O1CN01Xi1rcu1DM6aIC7ypz_!!6000000000201-0-tps-1920-675.jpg)

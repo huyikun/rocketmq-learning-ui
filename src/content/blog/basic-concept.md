@@ -33,15 +33,15 @@ description: "本文旨在帮助大家对近期消息领域的高频词“消息
 
 在消息驱动通信中，一般链路就是消息生产者（Producer）向消息消费者（Consumer）发送消息。模型如下：
 
-![1.jpeg](https://intranetproxy.alipay.com/skylark/lark/0/2023/jpeg/59356401/1680491163474-ee283a99-e9ce-4fcd-93bb-aca3193174b7.jpeg#clientId=ue9ed203b-b87a-4&height=335&id=kDnJi&name=1.jpeg&originHeight=335&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u3b51cbb7-6f15-4d90-b038-8a92e42b3d7&title=&width=1080)
-![image.gif](https://intranetproxy.alipay.com/skylark/lark/0/2023/gif/59356401/1680491163215-69b9ffa4-c9b6-45a7-b800-645a8cee16f8.gif#clientId=ue9ed203b-b87a-4&height=1&id=P5ODO&name=image.gif&originHeight=1&originWidth=1&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ue8c53ffc-8f5a-4cea-94bd-790b8d9c1b4&title=&width=1)
+![1.jpeg](https://img.alicdn.com/imgextra/i1/O1CN01W982Kv1K9SxztM559_!!6000000001121-0-tps-1080-335.jpg)
+<!-- ![image.gif](https://intranetproxy.alipay.com/skylark/lark/0/2023/gif/59356401/1680491163215-69b9ffa4-c9b6-45a7-b800-645a8cee16f8.gif#clientId=ue9ed203b-b87a-4&height=1&id=P5ODO&name=image.gif&originHeight=1&originWidth=1&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ue8c53ffc-8f5a-4cea-94bd-790b8d9c1b4&title=&width=1) -->
 消息驱动模式下通常会用到中间件，比较常见的中间组件有 RocketMQ，Kafka，RabbitMQ 等。这些中间件的目的是缓存生产者投递的消息直到消费者准备接收这些消息，以此将两端系统解耦。
 
 在消息驱动架构中，消息的格式是基于消费者的需求制定的；消息传递可以是一对一，多对多，一对多或多对一。
 
 消息驱动通讯比较常见的一个例子是商品订单推送，上游组件负责生成订单，下游组件负责接收订单并处理。通过这样的通讯方式上游生成组件其实无需关心整个订单的生命周期，更专注于如何快速生成订单，使单个组件的性能得以提升。
-![image.gif](https://intranetproxy.alipay.com/skylark/lark/0/2023/gif/59356401/1680491183334-049d5e71-f76e-4125-b00d-27d8928fc0db.gif#clientId=ue9ed203b-b87a-4&height=1&id=ctSVF&name=image.gif&originHeight=1&originWidth=1&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ud2538761-aa30-49f2-8425-99a946c2b52&title=&width=1)
-![2.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680491163427-a7a16f18-a45b-46a0-8f09-b1fc1e7b357c.png#clientId=ue9ed203b-b87a-4&height=486&id=KCJDl&name=2.png&originHeight=486&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u24f60468-7056-42b6-aaa5-ca17ef9e11b&title=&width=1080)
+<!-- ![image.gif](https://intranetproxy.alipay.com/skylark/lark/0/2023/gif/59356401/1680491183334-049d5e71-f76e-4125-b00d-27d8928fc0db.gif#clientId=ue9ed203b-b87a-4&height=1&id=ctSVF&name=image.gif&originHeight=1&originWidth=1&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ud2538761-aa30-49f2-8425-99a946c2b52&title=&width=1) -->
+![2.png](https://img.alicdn.com/imgextra/i1/O1CN01GaqDfL27j6xoi4dr3_!!6000000007832-2-tps-1080-486.png)
 
 消息驱动模式在服务之间提供了轻的耦合（这部分耦合指代 Producer/Consumer SDK），并可以对生产和消费服务根据诉求进行扩展。
 
@@ -51,7 +51,7 @@ description: "本文旨在帮助大家对近期消息领域的高频词“消息
 
 在事件驱动模式中，生产者发布事件来表示系统变更，任何感兴趣且有权限接入的服务都可以订阅这些事件，并将这些事件作为触发器来启动某些逻辑/存储/任务。
 
-![3.jpeg](https://intranetproxy.alipay.com/skylark/lark/0/2023/jpeg/59356401/1680491165419-e397d37e-6602-4050-bcf4-f930a3eab706.jpeg#clientId=ue9ed203b-b87a-4&height=331&id=l8FCU&name=3.jpeg&originHeight=331&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=uc58b1150-63bc-48a8-a849-e264102b184&title=&width=1080)
+![3.jpeg](https://img.alicdn.com/imgextra/i1/O1CN01pSHUcY1ytLGbwZUte_!!6000000006636-0-tps-1080-331.jpg)
 
 事件驱动的模式可以是一对一，多对一，一对多或多对多。通常情况下一般是多个目标根据过滤条件执行不同的事件。
 
@@ -75,7 +75,7 @@ description: "本文旨在帮助大家对近期消息领域的高频词“消息
 
 流是一组有序的无界事件或数据，执行操作通常是固定的某个事件段（e.g. 00:00 – 12:00）或一个相对事件（E.g. 过去 12 小时）。
 
-![4.jpeg](https://intranetproxy.alipay.com/skylark/lark/0/2023/jpeg/59356401/1680491183960-918c4cf5-df2e-4427-b5a1-c9afeecaab9f.jpeg#clientId=ue9ed203b-b87a-4&height=289&id=RVgT8&name=4.jpeg&originHeight=289&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u9afe4ba7-970d-4ad9-b43e-d44913a50a3&title=&width=1080)
+![4.jpeg](https://img.alicdn.com/imgextra/i4/O1CN01GkQvtp1OHUMne6DaG_!!6000000001680-0-tps-1080-289.jpg)
 
 通常情况下单个事件往往就是使用事件本身，但是对于流可能的操作大概率是过滤，组合，拆分，映射等等。
 
@@ -128,4 +128,4 @@ Kafka 是最典型的流式中间件，在流式场景中，事件的位置信�
 
 1、新用户首次购买包年包月，即可享受全系列 85折优惠！ 了解活动详情：[https://www.aliyun.com/product/rocketmq](https://www.aliyun.com/product/rocketmq)
 
-![e728c42e80cb67bf020e646e58619bcd.jpg](https://intranetproxy.alipay.com/skylark/lark/0/2023/jpeg/59356401/1680576637562-9af35fbf-d64b-4f81-b950-7e72f91b5ca2.jpeg#clientId=u449ffa34-59ce-4&from=paste&height=675&id=u462ad3c6&name=e728c42e80cb67bf020e646e58619bcd.jpg&originHeight=675&originWidth=1920&originalType=binary&ratio=1&rotation=0&showTitle=false&size=258156&status=done&style=none&taskId=u26cea311-dc98-45bd-8c8c-c7884e57c37&title=&width=1920)
+![e728c42e80cb67bf020e646e58619bcd.jpg](https://img.alicdn.com/imgextra/i4/O1CN01Xi1rcu1DM6aIC7ypz_!!6000000000201-0-tps-1920-675.jpg)

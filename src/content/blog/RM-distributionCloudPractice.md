@@ -24,7 +24,7 @@ _编辑&排版：雯燕_
 
 而本文主要围绕着商业版本的消息队列 RocketMQ，和开源版本 RocketMQ 进行比较，并结合一些实践中的场景来展示大型分布式应用的上云最佳实践。
 
-![1.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680489184790-a57de127-142f-4858-98e1-658927815207.png#clientId=ud2c97884-e439-4&height=447&id=mFxhA&name=1.png&originHeight=447&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ub12517d0-79d3-42fe-aaf2-944cdf1d4e2&title=&width=1080)
+![1.png](https://img.alicdn.com/imgextra/i4/O1CN01oitDiq1owsAGItVMv_!!6000000005290-49-tps-1080-447.webp)
 
 # 核心能力
 ## 
@@ -36,7 +36,8 @@ _编辑&排版：雯燕_
 3. 可观测、免运维能力
 4. 高 SLA 和稳定性保证
 
-![image.gif](https://intranetproxy.alipay.com/skylark/lark/0/2023/gif/59356401/1680489184662-4afc6afa-6d7e-4f31-8af6-fe97f2bfd441.gif#clientId=ud2c97884-e439-4&height=1&id=qACuN&name=image.gif&originHeight=1&originWidth=1&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u48a36e07-349b-4592-a30b-593c0b82cea&title=&width=1)![2.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680489186631-0c02bbcf-b77b-42db-b271-dd51a4490b8a.png#clientId=ud2c97884-e439-4&height=375&id=XtxLH&name=2.png&originHeight=375&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ua61c9e6e-bb12-4ff0-ad71-9053e769d66&title=&width=1080)
+<!-- ![image.gif](https://intranetproxy.alipay.com/skylark/lark/0/2023/gif/59356401/1680489184662-4afc6afa-6d7e-4f31-8af6-fe97f2bfd441.gif#clientId=ud2c97884-e439-4&height=1&id=qACuN&name=image.gif&originHeight=1&originWidth=1&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u48a36e07-349b-4592-a30b-593c0b82cea&title=&width=1) -->
+![2.png](https://img.alicdn.com/imgextra/i3/O1CN01rPKFyL1MYJgjZf5tc_!!6000000001446-49-tps-1080-375.webp)
 
 ### 开箱即用、功能丰富
 
@@ -72,8 +73,8 @@ _编辑&排版：雯燕_
 
 下图是分区顺序消息的应用场景，order ID 即为此时顺序消息的 Sharding Key。
 
-![3.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680489184664-c2a2bd93-3779-4285-89a7-8e39e6647f8d.png#clientId=ud2c97884-e439-4&height=576&id=Gz2xN&name=3.png&originHeight=576&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ua282042b-e63f-4c58-bf09-14dd8f45849&title=&width=1080)
-![image.gif](https://intranetproxy.alipay.com/skylark/lark/0/2023/gif/59356401/1680489184344-14a0d230-4707-4071-a06c-ae72b605eed7.gif#clientId=ud2c97884-e439-4&height=1&id=ayImr&name=image.gif&originHeight=1&originWidth=1&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u52870d98-7d8f-42dc-9134-73ee118ccd5&title=&width=1)
+![3.png](https://img.alicdn.com/imgextra/i4/O1CN01B663CC1H4wCfJJa5p_!!6000000000705-49-tps-1080-576.webp)
+<!-- ![image.gif](https://intranetproxy.alipay.com/skylark/lark/0/2023/gif/59356401/1680489184344-14a0d230-4707-4071-a06c-ae72b605eed7.gif#clientId=ud2c97884-e439-4&height=1&id=ayImr&name=image.gif&originHeight=1&originWidth=1&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u52870d98-7d8f-42dc-9134-73ee118ccd5&title=&width=1) -->
 可以看到，无论是全局顺序消息还是分区顺序消息，都依赖了单一分区天然的 FIFO 特性来保证顺序，因此顺序性也只能在同一个分区内保证，当此分区所在的副本不可用时，顺序消息并不具备重试到其他副本的能力，此时消息的顺序性就难以得到保证。
 
 为了解决这一问题，我们设计并实现了高可用顺序消息。
@@ -85,7 +86,7 @@ _编辑&排版：雯燕_
 - 我们基于 happened-before 的原则设计了一套基于分区位点的排序算法。
 - 根据该算法，消费者在消费某一逻辑分区时，会从其所属的各个物理分区中拉取消息并进行合并排序，得出正确的消息顺序流。
 
-![4.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680489186816-0331c212-4141-46ae-8a76-1c90e11314a9.png#clientId=ud2c97884-e439-4&height=1480&id=nbSPF&name=4.png&originHeight=1480&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ua539032a-321c-4ce8-b6ec-3e8b64b1369&title=&width=1080)
+![4.png](https://img.alicdn.com/imgextra/i1/O1CN01D0WVor1t7dwRC9v5Q_!!6000000005855-49-tps-1080-1480.webp)
 
 通过这样的设计，高可用顺序消息解决了下列几点问题：
 
@@ -100,9 +101,10 @@ _编辑&排版：雯燕_
 
 定时消息，是指客户端当前发送但希望在未来的某个时间内收到的消息。定时消息广泛应用于各类调度系统或者业务系统之中。比如支付订单，产生一个支付消息，系统通常需要在一定时间后处理该消息，判断用户是否支付成功，然后系统做相应处理。
 
-开源版本的 RocketMQ 只支持几个指定的延迟级别，并不支持秒级精度的定时消息。而面向集团内和云上多样化的需求，开源版本的定时消息并不能满足我们的需求，因此我们推出了秒级精准定时消息。![image.gif](https://intranetproxy.alipay.com/skylark/lark/0/2023/gif/59356401/1680489186718-7a493d5c-f884-4c9e-8585-ae57c320d568.gif#clientId=ud2c97884-e439-4&height=1&id=bylSE&name=image.gif&originHeight=1&originWidth=1&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u61079152-9551-48ad-b231-19e791f3c3b&title=&width=1)
+开源版本的 RocketMQ 只支持几个指定的延迟级别，并不支持秒级精度的定时消息。而面向集团内和云上多样化的需求，开源版本的定时消息并不能满足我们的需求，因此我们推出了秒级精准定时消息。
+<!-- ![image.gif](https://intranetproxy.alipay.com/skylark/lark/0/2023/gif/59356401/1680489186718-7a493d5c-f884-4c9e-8585-ae57c320d568.gif#clientId=ud2c97884-e439-4&height=1&id=bylSE&name=image.gif&originHeight=1&originWidth=1&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u61079152-9551-48ad-b231-19e791f3c3b&title=&width=1) -->
 
-![5.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680489186817-7f281b2f-9392-4fb8-a3f1-ef063d227768.png#clientId=ud2c97884-e439-4&height=581&id=nbDl4&name=5.png&originHeight=581&originWidth=765&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u965e9e9b-3b22-4fac-a446-9f8fc6bf32a&title=&width=765)
+![5.png](https://img.alicdn.com/imgextra/i3/O1CN01rgB9WG1rSapLmozRG_!!6000000005630-49-tps-765-581.webp)
 
 如下图所示，我们基于时间轮设计并实现了支持任意定时时间的秒级精准定时消息，同时满足以下特性：
 
@@ -113,7 +115,7 @@ _编辑&排版：雯燕_
 - 高可用
 - 高性能
 
-![6.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680489186857-0602be07-1b6a-478c-8bfb-a61550ab81bb.png#clientId=ud2c97884-e439-4&height=769&id=jQSwd&name=6.png&originHeight=769&originWidth=1076&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u461407c5-8aad-4e69-a20e-cb01b97a305&title=&width=1076)
+![6.png](https://img.alicdn.com/imgextra/i1/O1CN01TM0RJH1MjJC2yNI1g_!!6000000001470-49-tps-1076-769.webp)
 
 内部某用户有这样的场景，期望在未来的某一分钟的 30s 时刻处理这样一个定时请求，开源版本的定时消息并不符合其需要，而秒级精准定时消息在保证高可用、高性能的同时，满足了其业务需求。
 
@@ -121,7 +123,7 @@ _编辑&排版：雯燕_
 
 如下图所示，在传统的事务处理中，多个系统之间的交互耦合到一个事务中，造成整体的相应时间长，回滚过程复杂，从而潜在影响了系统的可用性；而 RocketMQ 提供的分布式事务功能，在保证了系统松耦合和数据最终一致性的前提下，实现了分布式事务。
 
-![7.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680489187513-573cf4e3-1dda-458c-9924-8e0313d3af28.png#clientId=ud2c97884-e439-4&height=1126&id=uxrAn&name=7.png&originHeight=1126&originWidth=1036&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u1f59359b-ea28-45cc-b924-7bd1d77eef6&title=&width=1036)
+![7.png](https://img.alicdn.com/imgextra/i3/O1CN01zL8CCA1IQIHobXaDc_!!6000000000887-49-tps-1036-1126.webp)
 
 消息队列 RocketMQ 提供的事务消息处理步骤如下：
 
@@ -132,8 +134,8 @@ _编辑&排版：雯燕_
 
 基于这样的实现，我们通过消息实现了分布式事务特性，即本地事务的执行结果会最终反应到订阅方是否能接收到该条消息。
 
-![8.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680489187527-c2d7d005-70cf-4459-80b2-810ce6a1bdef.png#clientId=ud2c97884-e439-4&height=604&id=qrJ0X&name=8.png&originHeight=604&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ua5dc3332-2717-4a38-99f2-bf8f469008b&title=&width=1080)
-![image.gif](https://intranetproxy.alipay.com/skylark/lark/0/2023/gif/59356401/1680489187481-28f267cb-92cf-49d0-8fd6-401de21ccfd7.gif#clientId=ud2c97884-e439-4&height=1&id=AH4yg&name=image.gif&originHeight=1&originWidth=1&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u8be9dd73-835a-49a7-87ca-7a027869d87&title=&width=1)
+![8.png](https://img.alicdn.com/imgextra/i2/O1CN01J0QhAP1ajDjrSW7Nl_!!6000000003365-49-tps-1080-604.webp)
+<!-- ![image.gif](https://intranetproxy.alipay.com/skylark/lark/0/2023/gif/59356401/1680489187481-28f267cb-92cf-49d0-8fd6-401de21ccfd7.gif#clientId=ud2c97884-e439-4&height=1&id=AH4yg&name=image.gif&originHeight=1&originWidth=1&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u8be9dd73-835a-49a7-87ca-7a027869d87&title=&width=1) -->
 消息队列 RocketMQ 的分布式事务消息广泛地应用于阿里巴巴核心交易链路中，通过分布式事务消息，实现了最小事务单元；交易系统和消息队列之间，组成一个事务处理；下游系统（购物车、积分、其它）相互隔离，并行处理。
 
 ### 分级存储
@@ -156,11 +158,11 @@ _编辑&排版：雯燕_
 2. historyNode 节点将用户对冷数据的拉取请求转发至 OSS 上
 3. 在 OSS 中是按照 Queue 粒度来组织文件结构的，即每个 Queue 会由独立的文件进行存储，从而保证了我们可以针对于租户定义消息的存储时长。
 
-![9.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680489187715-af2c6885-bb01-4eda-82bf-ab80e8a94b94.png#clientId=ud2c97884-e439-4&height=662&id=tGH2x&name=9.png&originHeight=662&originWidth=746&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u79480cd4-42e3-400f-b428-c4252fac679&title=&width=746)
+![9.png](https://img.alicdn.com/imgextra/i1/O1CN01OGr9rd1DtXV0uViVj_!!6000000000274-49-tps-746-662.webp)
 
 通过这样的设计，我们实现了消息数据的冷热分离。
-![image.gif](https://intranetproxy.alipay.com/skylark/lark/0/2023/gif/59356401/1680489187701-178bcfc3-2e61-419a-b854-4a3033e7e867.gif#clientId=ud2c97884-e439-4&height=1&id=t30sj&name=image.gif&originHeight=1&originWidth=1&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=uf29db23e-1f2e-40bc-8fbe-dd620ed1c57&title=&width=1)
-![10.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680489188235-04da98a4-519f-4a31-9b56-3cc7d079ff97.png#clientId=ud2c97884-e439-4&height=441&id=g6Ew8&name=10.png&originHeight=441&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u68998531-7cf6-45f2-b8c6-f99dafb39ff&title=&width=1080)
+<!-- ![image.gif](https://intranetproxy.alipay.com/skylark/lark/0/2023/gif/59356401/1680489187701-178bcfc3-2e61-419a-b854-4a3033e7e867.gif#clientId=ud2c97884-e439-4&height=1&id=t30sj&name=image.gif&originHeight=1&originWidth=1&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=uf29db23e-1f2e-40bc-8fbe-dd620ed1c57&title=&width=1) -->
+![10.png](https://img.alicdn.com/imgextra/i3/O1CN01lt6ndN1IapOfCmiPY_!!6000000000910-49-tps-1080-441.webp)
 
 #### 使用场景
 
@@ -178,7 +180,7 @@ _编辑&排版：雯燕_
 
 2012 年，RocketMQ 作为阿里巴巴全新一代的消息引擎问世，并随后开源至社区，第一代 RocketMQ 高可用架构也随之诞生。如下图所示，第一代高可用架构采取当时流行的 Master-Slave 主从架构，写流量经过 Master 节点同步至 Slave 节点，读流量也经过 Master 节点并将消费记录同步至 Slave 节点。当 Master 节点不可用时，整个副本组可读不可写。
 
-![11.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680489188312-4c3ed072-f998-4bdb-8492-9d3ef7e63afc.png#clientId=ud2c97884-e439-4&height=231&id=PLFuL&name=11.png&originHeight=231&originWidth=761&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u4c7e8f9e-0f7b-45b9-879b-7bdd2ecf31a&title=&width=761)
+![11.png](https://img.alicdn.com/imgextra/i3/O1CN01QeFWIK1zgLeDLcYVl_!!6000000006743-49-tps-761-231.webp)
 
 2016 年，RocketMQ 云产品正式开始商业化，云时代单点故障频发，云产品需要完全面向失败而设计，因此 RocketMQ 推出了第二代多副本架构，依托于 Zookeeper 的分布式锁和通知机制，引入 Controller 组件负责 Broker 状态的监控以及主备状态机转换，在主不可用时，备自动切换为主。第二代架构是消息云产品规模化进程中的核心高可用架构，为云产品规模化立下了汗马功劳。
 
@@ -205,8 +207,8 @@ RocketMQ 高可用架构已经走过了三代，在集团、公有云和专有�
 - 灵活的 Quorum 数量：最终所有的消息都会同步到整个副本组上，但副本组内可以灵活配置写成功最小副本数。例如 2-3 模式，3 副本情况下，2 副本成功即为写成功。同时，在副本不可用的情况下，Quorum 数量也可以动态自行降级。
 
 在上述副本组的概念下，故障转移可以复用当前 RocketMQ 客户端的机制来完成。如下图所示：
-![image.gif](https://intranetproxy.alipay.com/skylark/lark/0/2023/gif/59356401/1680489188294-93beebb9-e62a-44f7-9985-559fbc9d790d.gif#clientId=ud2c97884-e439-4&height=1&id=XhVyP&name=image.gif&originHeight=1&originWidth=1&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u0ef72eab-6374-4f70-80eb-532c1502bb0&title=&width=1)
-![12.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680489188398-da9d407b-154a-40a6-86f4-028cd0a609d4.png#clientId=ud2c97884-e439-4&height=341&id=X61Pg&name=12.png&originHeight=341&originWidth=705&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=uda4fb940-3dc7-44e9-9160-a6136d2020a&title=&width=705)
+<!-- ![image.gif](https://intranetproxy.alipay.com/skylark/lark/0/2023/gif/59356401/1680489188294-93beebb9-e62a-44f7-9985-559fbc9d790d.gif#clientId=ud2c97884-e439-4&height=1&id=XhVyP&name=image.gif&originHeight=1&originWidth=1&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u0ef72eab-6374-4f70-80eb-532c1502bb0&title=&width=1) -->
+![12.png](https://img.alicdn.com/imgextra/i2/O1CN01AG3LQY1kPeyqsL733_!!6000000004676-49-tps-705-341.webp)
 
 - Producer 在主不可用时，灵活快速地切换至另一个副本组。
 - Consumer 在某个副本不可用时可快速切换至同副本组另一个副本上进行消息消费。
@@ -217,13 +219,13 @@ RocketMQ 高可用架构已经走过了三代，在集团、公有云和专有�
 
 我们在可观测性方面也做了大量的工作，为用户提供了一个消息系统的可观测性健康数据大盘。如下图所示，用户能够清晰的看到实例级别、topic 级别、group 级别的各种监控数据，能够全方面地监控、诊断问题。
 
-![13.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680489188509-84c2bb3f-d67d-4d4f-930b-19a318b1b77c.png#clientId=ud2c97884-e439-4&height=594&id=d8fGS&name=13.png&originHeight=594&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u5075c9a1-80a3-4c30-bb23-ed498a2c70e&title=&width=1080)
+![13.png](https://img.alicdn.com/imgextra/i4/O1CN01M6mPvY1UPd6M8sd9b_!!6000000002510-49-tps-1080-594.webp)
 
 #### 消息链路追踪
 
 另外我们还基于消息轨迹提供了消息全链路轨迹追踪功能。如下图所示，用户能够在控制台上看到完整的消息生命周期、从消息的发送、存储、到消费，整个链路都能被完整地记录下来。
 
-![14.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680489188904-3f314ee2-c8a3-40ff-82a8-29c922091d0b.png#clientId=ud2c97884-e439-4&height=628&id=KSWgc&name=14.png&originHeight=628&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u3dbb1eea-fd82-4083-9c0f-045091dacee&title=&width=1080)
+![14.png](https://img.alicdn.com/imgextra/i4/O1CN01OEYh0w1MNKBLrJa7A_!!6000000001422-49-tps-1080-628.webp)
 
 #### 应用场景
 
@@ -251,11 +253,11 @@ RocketMQ 高可用架构已经走过了三代，在集团、公有云和专有�
 
 而借助事件总线 EventBridge 提供的事件源功能，我们能够打通消息到事件的链路，使得消息队列 RocketMQ 具备事件驱动的动力，从而拥抱整个事件生态。接下来我们将借助一个案例，如下图所示，为大家展示这一功能。
 
-![15.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680489188943-e2f140fb-5332-4596-be27-fff1c6619cde.png#clientId=ud2c97884-e439-4&height=312&id=JDweQ&name=15.png&originHeight=312&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u00d3c22b-4bdf-4834-b779-9876614eec8&title=&width=1080)
+![15.png](https://img.alicdn.com/imgextra/i3/O1CN014RXY9x1k5xwvFCXoq_!!6000000004633-49-tps-1080-312.webp)
 
 #### 创建消息队列 RocketMQ 主题
 
-![16.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680489189001-9b1466aa-5cb7-4470-8e1b-bc7c3cf2be30.png#clientId=ud2c97884-e439-4&height=449&id=hjZr3&name=16.png&originHeight=449&originWidth=781&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u5b74a5f8-962b-4c61-9484-789ab3c5b97&title=&width=781)
+![16.png](https://img.alicdn.com/imgextra/i2/O1CN01Ot1HEG1SDbTG8BXAm_!!6000000002213-49-tps-781-449.webp)
 
 #### 创建目标服务
 
@@ -286,34 +288,35 @@ RocketMQ 高可用架构已经走过了三代，在集团、公有云和专有�
             - containerPort: 8080
 
 
-前往容器服务控制台，进入服务与路由的服务页面，创建一个私网访问类型的 Service，并做好端口映射。![image.gif](https://intranetproxy.alipay.com/skylark/lark/0/2023/gif/59356401/1680489188971-eda72710-f4f9-464d-9827-b00eb6606a0b.gif#clientId=ud2c97884-e439-4&height=1&id=q877Y&name=image.gif&originHeight=1&originWidth=1&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=uf4f1208c-cdac-4d55-928b-171b1d85cd7&title=&width=1)
+前往容器服务控制台，进入服务与路由的服务页面，创建一个私网访问类型的 Service，并做好端口映射。
+<!-- ![image.gif](https://intranetproxy.alipay.com/skylark/lark/0/2023/gif/59356401/1680489188971-eda72710-f4f9-464d-9827-b00eb6606a0b.gif#clientId=ud2c97884-e439-4&height=1&id=q877Y&name=image.gif&originHeight=1&originWidth=1&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=uf4f1208c-cdac-4d55-928b-171b1d85cd7&title=&width=1) -->
 
-![17.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680489189166-905cac56-5718-4ebb-a64b-4373ebb4b210.png#clientId=ud2c97884-e439-4&height=658&id=QBcGV&name=17.png&originHeight=658&originWidth=783&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u2afa9d6b-75da-4838-aa9f-ed4287d9445&title=&width=783)
+![17.png](https://img.alicdn.com/imgextra/i1/O1CN01VKad3x1Ie2AYXtjku_!!6000000000917-49-tps-783-658.webp)
 
 #### 创建事件总线 EventBridge 自定义总线
 
 我们来到事件总线 EventBridge 控制台，创建一个自定义总线 demo-with-k8s。
 
-![18.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680489189638-1de96cbf-1ae5-4d41-949e-097099f0378b.png#clientId=ud2c97884-e439-4&height=200&id=hSC3M&name=18.png&originHeight=200&originWidth=782&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u9a573d54-006e-4f0c-a936-79a013e290d&title=&width=782)
+![18.png](https://img.alicdn.com/imgextra/i2/O1CN01Epb6cl1DACHuhmD8F_!!6000000000175-49-tps-782-200.webp)
 
 #### 创建事件总线 EventBridge 自定义总线规则
 
 我们为总线 demo-with-k8s 创建一个规则，并选择 HTTP 作为事件目标，选择专有网络类型，选中对应的 VPC、 VSwitch 以及安全组，并指定目标URL，如下图所示：
 
-![19.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680489189590-a723ca4d-fb62-4dd5-aff7-8a12e558c81c.png#clientId=ud2c97884-e439-4&height=487&id=NuGFw&name=19.png&originHeight=487&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ud00b3178-fbbc-4b67-b1ef-edf7eff9660&title=&width=1080)
+![19.png](https://img.alicdn.com/imgextra/i1/O1CN01m0EHAW1F5jf0k51ZX_!!6000000000436-49-tps-1080-487.webp)
 
 #### **创建事件总线 EventBridge 事件源**
 
 我们为该自定义事件总线添加消息队列 RocketMQ 版的自定义事件源。
 
-![20.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680489189589-e5f63e67-5520-4992-a7bf-11541eb8fb7f.png#clientId=ud2c97884-e439-4&height=1207&id=lcVfR&name=20.png&originHeight=1207&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u40d464da-c216-4f81-9498-5a2a9ac1325&title=&width=1080)
+![20.png](https://img.alicdn.com/imgextra/i3/O1CN01szuaUV27BDeg8pwiD_!!6000000007758-49-tps-1080-1207.webp)
 
 #### 发送 RocketMQ 消息
 
 接下来我们回到消息队列 RocketMQ 控制台，通过控制台的快速体验消息生产功能发送一条内容为 hello eventbridge 的消息到对应的主题中去。
 
-![21.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680489189603-2c0eefcf-17b0-488b-abc4-c76e91137585.png#clientId=ud2c97884-e439-4&height=395&id=lPejf&name=21.png&originHeight=395&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u664ec143-7d91-4cd2-924e-06a7652b48f&title=&width=1080)
-![image.gif](https://intranetproxy.alipay.com/skylark/lark/0/2023/gif/59356401/1680489189726-e2fa2125-ef24-4a1f-924c-5a8e42bc2c91.gif#clientId=ud2c97884-e439-4&height=1&id=tHa99&name=image.gif&originHeight=1&originWidth=1&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u29888cad-002a-466b-9ac1-186f834861f&title=&width=1)
+![21.png](https://img.alicdn.com/imgextra/i4/O1CN01cHAfNc26UcoyJY19O_!!6000000007665-49-tps-1080-395.webp)
+<!-- ![image.gif](https://intranetproxy.alipay.com/skylark/lark/0/2023/gif/59356401/1680489189726-e2fa2125-ef24-4a1f-924c-5a8e42bc2c91.gif#clientId=ud2c97884-e439-4&height=1&id=tHa99&name=image.gif&originHeight=1&originWidth=1&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u29888cad-002a-466b-9ac1-186f834861f&title=&width=1) -->
 接下来我们就可以发现，这条 RocketMQ 消息，以 CloudEvent 的形式被投递到了对应的服务中去，我们从而打通了消息到事件的链路。同时，基于我们上述提到的分级存储功能，消息队列 RocketMQ 转变成了一个能够源源不断提供事件的数据仓库，为整个事件生态提供了更加广阔的场景。
 
 事件驱动是未来商业组织和业务系统的重要趋势，而消息队列 RocketMQ 会坚定地拥抱这一趋势，将消息融入到事件的生态中。
@@ -326,4 +329,4 @@ RocketMQ 高可用架构已经走过了三代，在集团、公有云和专有�
 
 1、新用户首次购买包年包月，即可享受全系列 85折优惠！ 了解活动详情：[https://www.aliyun.com/product/rocketmq](https://www.aliyun.com/product/rocketmq)
 
-![e728c42e80cb67bf020e646e58619bcd.jpg](https://intranetproxy.alipay.com/skylark/lark/0/2023/jpeg/59356401/1680576637562-9af35fbf-d64b-4f81-b950-7e72f91b5ca2.jpeg#clientId=u449ffa34-59ce-4&from=paste&height=675&id=u462ad3c6&name=e728c42e80cb67bf020e646e58619bcd.jpg&originHeight=675&originWidth=1920&originalType=binary&ratio=1&rotation=0&showTitle=false&size=258156&status=done&style=none&taskId=u26cea311-dc98-45bd-8c8c-c7884e57c37&title=&width=1920)
+![e728c42e80cb67bf020e646e58619bcd.jpg](https://img.alicdn.com/imgextra/i4/O1CN01Xi1rcu1DM6aIC7ypz_!!6000000000201-0-tps-1920-675.jpg)

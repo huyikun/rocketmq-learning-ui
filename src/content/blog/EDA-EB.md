@@ -13,7 +13,7 @@ description: "事件驱动型架构 (EDA) 方兴未艾，作为一种 Serverless
 
 # **消息事件领域的发展趋势**
 
-![图片 1.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680489020142-a4cd393f-ac45-4b3a-927a-5f91cc693104.png#clientId=uecb6297d-84a5-4&height=347&id=YiKoe&name=%E5%9B%BE%E7%89%87%201.png&originHeight=347&originWidth=866&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=uc5efde14-a312-4612-b3eb-972196825ac&title=&width=866)
+![图片 1.png](https://img.alicdn.com/imgextra/i4/O1CN01Y16lX21OgDkuY2WHy_!!6000000001734-2-tps-866-347.png)
 早在 2018 年，Gartner 评估报告将 Event-Driven Model 列为 10 大战略技术趋势之一，事件驱动架构（EDA）将成为未来微服务的主流，并做出以下断言：
 
 - 到 2022 年，事件通知的软件模型将成为超过 60% 的新型数字化商业的解决方案；
@@ -21,7 +21,7 @@ description: "事件驱动型架构 (EDA) 方兴未艾，作为一种 Serverless
 
 George Santayana 在《 The Life of Reason》曾提到， Those who fail to learn History are doomed to repeat it.（不懂历史的人注定会重蹈覆辙）。我们以史为鉴，来看看为什么会架构会演进到事件驱动。
 
-![图片 2.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680489020282-316a2e9c-7257-4246-b062-2da043a19b2d.png#clientId=uecb6297d-84a5-4&height=381&id=Lkkzi&name=%E5%9B%BE%E7%89%87%202.png&originHeight=381&originWidth=866&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=uaf1db095-ed15-4d4e-8015-13e7edc5768&title=&width=866)
+![图片 2.png](https://img.alicdn.com/imgextra/i2/O1CN01m9ZvuM1DX65kJRQqk_!!6000000000225-2-tps-866-381.png)
 
 架构本身没有优劣之分，它本身就是一组技术决策，决定后续项目的所有功能开发（框架，编码规范，文档，流程….），这里聊聊为什么会引入某些框架，这个框架解决了软件开发中的什么问题。
 
@@ -38,11 +38,11 @@ George Santayana 在《 The Life of Reason》曾提到， Those who fail to lear
 
 EDA 事件驱动架构( Event-Driven Architecture ) 是一种系统架构模型，它的核心能力在于能够发现系统“事件”或重要的业务时刻（例如交易节点、站点访问等）并实时或接近实时地对相应的事件采取必要行动。这种模式取代了传统的“ request/response ”模型，在这种传统架构中，服务必须等待回复才能进入下一个任务。事件驱动架构的流程是由事件提供运行的。
 
-![图片 3.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680489022091-4feddd2b-e00f-4245-9b01-01017ca383fa.png#clientId=uecb6297d-84a5-4&height=285&id=nVfJI&name=%E5%9B%BE%E7%89%87%203.png&originHeight=285&originWidth=866&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u7d308924-a1b7-4871-8bdb-d5d1ee3c53d&title=&width=866)
+![图片 3.png](https://img.alicdn.com/imgextra/i3/O1CN01qgnxI21cld3F87N7R_!!6000000003641-2-tps-1080-356.png)
 
 上图其实很好的解释了 EDA 架构的模型，但是其实还不够明确。所以，这里我们和单体架构一起对比看看他们之间差异。
 
-![图片 4.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680489020071-89b25842-c247-4874-8994-4d2606125215.png#clientId=uecb6297d-84a5-4&height=416&id=uUnKi&name=%E5%9B%BE%E7%89%87%204.png&originHeight=416&originWidth=866&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ue9334fad-36b8-44ba-a035-d6dc1e0acff&title=&width=866)
+![图片 4.png](https://img.alicdn.com/imgextra/i3/O1CN016eqypN1e9jVpAt6Ub_!!6000000003829-0-tps-1080-519.jpg)
 
 在如上对比图中，我们其实可以较为清楚看到它与传统架构的区别。在一般传统架构中，创建订单操作发生后，一系列的操作其实都是通过一个系统完成的。而事件驱动的概念则是将全部操作都转换为 “事件” 概念，下游通过捕获某个 “事件” 来决定调用什么系统完成什么样的操作。
 
@@ -50,7 +50,7 @@ EDA 事件驱动架构( Event-Driven Architecture ) 是一种系统架构模型�
 
 我们了解了 EDA 架构的整个处理过程，但是还没解决这个所谓的“EventBUS”到底是啥样。
 
-![图片 5.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680489020111-98a16771-d1fe-420c-8679-a9492257fc64.png#clientId=uecb6297d-84a5-4&height=424&id=aqjpJ&name=%E5%9B%BE%E7%89%87%205.png&originHeight=424&originWidth=866&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u7be0a374-d2f1-4816-b1af-79b28372313&title=&width=866)
+![图片 5.png](https://img.alicdn.com/imgextra/i1/O1CN0171IQOq1lgtV0mcM24_!!6000000004849-0-tps-1080-530.jpg)
 
 上图就是事件驱动的核心逻辑架构。是不是非常像某个传统 MQ？别着急，下面我会讲到这个架构的复杂部分。讲完 EventBus，我们回过头来看“事件”，刚刚介绍中比较重要部分其实是将操作转换为某类事件进行分发。那这的事件我们怎么定义呢？
 
@@ -63,16 +63,16 @@ EDA 事件驱动架构( Event-Driven Architecture ) 是一种系统架构模型�
 每个事件都可能触发一个或多个选项作为响应。
 
 关于事件其实云原生 CNCF 基金会在 2018 年托管了开源 CloudEvents 项目，该项目旨在用统一和规范的格式来描述事件，来加强不同的服务、平台以及系统之间的互操作性。在该项目定义下，通用的事件规范是这样的：
-![image.gif](https://intranetproxy.alipay.com/skylark/lark/0/2023/gif/59356401/1680489022546-7b95cd50-d701-4ed1-8848-d91051f3810f.gif#clientId=uecb6297d-84a5-4&height=1&id=DEQQv&name=image.gif&originHeight=1&originWidth=1&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u8b531103-9fa7-4662-9182-e3c447a9d91&title=&width=1)
-![图片 6.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680489023302-1d320bcd-b46d-455f-b53c-56731d5fdf43.png#clientId=uecb6297d-84a5-4&height=602&id=sjwz7&name=%E5%9B%BE%E7%89%87%206.png&originHeight=602&originWidth=866&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u6d1d3542-0e8d-435b-95f5-ff1be8f5908&title=&width=866)
+<!-- ![image.gif](https://intranetproxy.alipay.com/skylark/lark/0/2023/gif/59356401/1680489022546-7b95cd50-d701-4ed1-8848-d91051f3810f.gif#clientId=uecb6297d-84a5-4&height=1&id=DEQQv&name=image.gif&originHeight=1&originWidth=1&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u8b531103-9fa7-4662-9182-e3c447a9d91&title=&width=1) -->
+![图片 6.png](https://img.alicdn.com/imgextra/i1/O1CN018TJXnH20kl4rqt1bV_!!6000000006888-2-tps-1080-752.png)
 
 事件主要由 Json 体构成，通过不同字段描述发生的事件。 
 
 # **EDA 架构的落地实践思考**
 
 在开始介绍落地实践时，我们先来看一个经典的 EDA 架构模型：
-![image.gif](https://intranetproxy.alipay.com/skylark/lark/0/2023/gif/59356401/1680489023109-d689b013-63c6-4fed-a3db-0d4cc26f0374.gif#clientId=uecb6297d-84a5-4&height=1&id=Wm5ZO&name=image.gif&originHeight=1&originWidth=1&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=uc3d23bac-6955-430f-9ab1-d74c30be3f5&title=&width=1)
-![图片 7.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680489023282-d3480417-02a8-49bd-b713-599fdbc6897c.png#clientId=uecb6297d-84a5-4&height=424&id=sVGYN&name=%E5%9B%BE%E7%89%87%207.png&originHeight=424&originWidth=866&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u0657a278-5e7e-44d2-9d9f-a74bcea9d09&title=&width=866)
+<!-- ![image.gif](https://intranetproxy.alipay.com/skylark/lark/0/2023/gif/59356401/1680489023109-d689b013-63c6-4fed-a3db-0d4cc26f0374.gif#clientId=uecb6297d-84a5-4&height=1&id=Wm5ZO&name=image.gif&originHeight=1&originWidth=1&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=uc3d23bac-6955-430f-9ab1-d74c30be3f5&title=&width=1) -->
+![图片 7.png](https://img.alicdn.com/imgextra/i3/O1CN01GNDnsw1ZsYBqQgdjc_!!6000000003250-0-tps-1080-528.jpg)
 
 这是一个非常经典 EDA 订单架构，该架构主要使用了 EventBridge 和 FC 函数计算（如果不太熟悉 FaaS 的同学可以把 FC 节点当作 ECS 或 K8s 的某个 POD 节点），通过事件驱动各个业务进行协作。
 
@@ -84,7 +84,7 @@ EDA 事件驱动架构( Event-Driven Architecture ) 是一种系统架构模型�
 
 通常情况下，要实现这三个能力是比较困难的，比如：Event Capturing 可能需要熟悉 Dell Boomi, Snaplogic, MuleSoft, Dataflow, Apache Apex 等，Routing 部分可能通过 RocketMQ，RabbitMQ, ActiveMQ, Apache Kafka ，Event Processing 需要了解 Apache Storm, Apache Flink 。所以之前讲的逻辑架构其实非常理想，要想实现完成的 EDA 事件驱动还需要包括这些核心能力。
  
-![图片 8.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680489023218-38fe166d-8795-4dc4-a320-3839f232476f.png#clientId=uecb6297d-84a5-4&height=420&id=bkpZm&name=%E5%9B%BE%E7%89%87%208.png&originHeight=420&originWidth=866&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u5f8fd59f-5bcc-4e3d-b376-35f49f85817&title=&width=866)
+![图片 8.png](https://img.alicdn.com/imgextra/i1/O1CN01H4R0VH1sPDWXqsyoC_!!6000000005758-2-tps-1080-525.png)
 
 其实，从刚刚的架构中我们也能窥探到一些信息，EDA 架构其实看起来没有那么简单，那它有何优劣呢？下面我就简单罗列下 EDA 架构在实践中的优势：
 
@@ -105,8 +105,8 @@ EDA 事件驱动架构( Event-Driven Architecture ) 是一种系统架构模型�
 # **阿里云 EventBridge 如何解决 EDA 场景下的困境**
 
 针对 EDA 场景下面临的这些问题，阿里云推出了 EventBridge，一款无服务器事件总线服务，其使命是作为云事件的枢纽，以标准化的 CloudEvents 1.0 协议连接云产品和应用，应用和应用，提供中心化的事件治理和驱动能力，帮助用户轻松构建松耦合、分布式的事件驱动架构；另外，在阿里云之外的云市场上有海量垂直领域的 SaaS 服务，EventBridge 将以出色的跨产品、跨组织以及跨云的集成与被集成能力，助力客户打造一个完整的、事件驱动的、高效可控的上云体验。并针对 EDA 困境提供了针对性的解决方案。
-![image.gif](https://intranetproxy.alipay.com/skylark/lark/0/2023/gif/59356401/1680489023194-a5a06202-d0fa-4b63-86d3-16d2c4c0ad90.gif#clientId=uecb6297d-84a5-4&height=1&id=QfRaG&name=image.gif&originHeight=1&originWidth=1&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u3d611aa3-1325-4c2d-baab-1cfe22ff2c2&title=&width=1)
-![图片 9.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680489023656-58d0c43b-0e13-4129-a7a0-c17c8589e33a.png#clientId=uecb6297d-84a5-4&height=397&id=pSwpm&name=%E5%9B%BE%E7%89%87%209.png&originHeight=397&originWidth=866&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u730cfde8-b6f2-447f-b8f7-ff5d5ffe53a&title=&width=866)
+<!-- ![image.gif](https://intranetproxy.alipay.com/skylark/lark/0/2023/gif/59356401/1680489023194-a5a06202-d0fa-4b63-86d3-16d2c4c0ad90.gif#clientId=uecb6297d-84a5-4&height=1&id=QfRaG&name=image.gif&originHeight=1&originWidth=1&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u3d611aa3-1325-4c2d-baab-1cfe22ff2c2&title=&width=1) -->
+![图片 9.png](https://img.alicdn.com/imgextra/i4/O1CN01TexHfS1fgztWOMGa1_!!6000000004037-0-tps-1080-495.jpg)
 
 架构复杂：提供业内通用的  Source ，Buses，Rules，Targets  模块管理能力，同时支持 EventBus 和 EventStream 两种模式。大幅度降低事件驱动架构难度。
 
@@ -120,15 +120,16 @@ EDA 事件驱动架构( Event-Driven Architecture ) 是一种系统架构模型�
 
 **1. 经典 EDA 事件驱动：**事件总线（EventBridge）最重要的能力是通过连接应用程序，云服务和 Serverless 服务构建 EDA（Event-driven Architectures） 事件驱动架构，驱动应用与应用，应用与云的连接。
 
-![图片 10.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680489023728-870278e8-9fad-485d-a14c-dbbb4ac623d8.png#clientId=uecb6297d-84a5-4&height=370&id=rReMe&name=%E5%9B%BE%E7%89%87%2010.png&originHeight=370&originWidth=866&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u92b92907-ac5d-4c00-ae84-d5fc12df23b&title=&width=866)
+![图片 10.png](https://img.alicdn.com/imgextra/i1/O1CN01iqgxVQ26K5iBcVLgX_!!6000000007642-0-tps-1080-461.jpg)
 
 **2. 流式 ETL 场景：**EventBridge 另一个核心能力是为流式的数据管道的责任，提供基础的过滤和转换的能力，在不同的数据仓库之间、数据处理程序之间、数据分析和处理系统之间进行数据同步/跨地域备份等场景，连接不同的系统与不同服务。
-![image.gif](https://intranetproxy.alipay.com/skylark/lark/0/2023/gif/59356401/1680489023790-0378eff4-e69e-46d9-afbb-5b7fccddd799.gif#clientId=uecb6297d-84a5-4&height=1&id=ysVdy&name=image.gif&originHeight=1&originWidth=1&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u3bd200a1-3446-45db-a2a8-87b1b30f538&title=&width=1)
-![图片 11.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680489024707-8f62d18f-9ac1-41f3-a3a5-b6c98bf2b8df.png#clientId=uecb6297d-84a5-4&height=279&id=QOacS&name=%E5%9B%BE%E7%89%87%2011.png&originHeight=279&originWidth=866&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=uf8c68694-b946-4085-9721-88ff60588b3&title=&width=866)
+<!-- ![image.gif](https://intranetproxy.alipay.com/skylark/lark/0/2023/gif/59356401/1680489023790-0378eff4-e69e-46d9-afbb-5b7fccddd799.gif#clientId=uecb6297d-84a5-4&height=1&id=ysVdy&name=image.gif&originHeight=1&originWidth=1&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u3bd200a1-3446-45db-a2a8-87b1b30f538&title=&width=1) -->
+![图片 11.png](https://img.alicdn.com/imgextra/i1/O1CN0116Dcg31w7akE6p1jc_!!6000000006261-0-tps-1080-349.jpg)
 
 **3. 统一事件通知服务：**EventBridge 提供丰富的云产品事件源与事件的全生命周期管理工具，您可以通过总线直接监听云产品产生的数据，并上报至监控，通知等下游服务。 
 
-![图片 12.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680489024831-cf56a2b6-bfe2-4238-ac5d-06f98b930581.png#clientId=uecb6297d-84a5-4&height=412&id=TAowL&name=%E5%9B%BE%E7%89%87%2012.png&originHeight=412&originWidth=866&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ua33c7f4b-9675-4125-bf9b-06c4893696a&title=&width=866)![image.gif](https://intranetproxy.alipay.com/skylark/lark/0/2023/gif/59356401/1680489024659-5a0d5753-576b-402e-ba65-478a44f94544.gif#clientId=uecb6297d-84a5-4&height=1&id=GO4K1&name=image.gif&originHeight=1&originWidth=1&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ua9c70133-fd0b-41dc-a3ce-571e84ba495&title=&width=1)
+![图片 12.png](https://img.alicdn.com/imgextra/i1/O1CN01G0PwZl1SIBQkaPM80_!!6000000002223-0-tps-1080-514.jpg)
+<!-- ![image.gif](https://intranetproxy.alipay.com/skylark/lark/0/2023/gif/59356401/1680489024659-5a0d5753-576b-402e-ba65-478a44f94544.gif#clientId=uecb6297d-84a5-4&height=1&id=GO4K1&name=image.gif&originHeight=1&originWidth=1&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ua9c70133-fd0b-41dc-a3ce-571e84ba495&title=&width=1) -->
 
 目前事件总线免费公测，点击下方链接，立即体验！
 [https://www.aliyun.com/product/aliware/eventbridge?spm=5176.19720258.J_8058803260.46.70c22c4aFzf3Pq](https://www.aliyun.com/product/aliware/eventbridge?spm=5176.19720258.J_8058803260.46.70c22c4aFzf3Pq)
@@ -139,4 +140,4 @@ EDA 事件驱动架构( Event-Driven Architecture ) 是一种系统架构模型�
 
 1、新用户首次购买包年包月，即可享受全系列 85折优惠！ 了解活动详情：[https://www.aliyun.com/product/rocketmq](https://www.aliyun.com/product/rocketmq)
 
-![e728c42e80cb67bf020e646e58619bcd.jpg](https://intranetproxy.alipay.com/skylark/lark/0/2023/jpeg/59356401/1680576637562-9af35fbf-d64b-4f81-b950-7e72f91b5ca2.jpeg#clientId=u449ffa34-59ce-4&from=paste&height=675&id=u462ad3c6&name=e728c42e80cb67bf020e646e58619bcd.jpg&originHeight=675&originWidth=1920&originalType=binary&ratio=1&rotation=0&showTitle=false&size=258156&status=done&style=none&taskId=u26cea311-dc98-45bd-8c8c-c7884e57c37&title=&width=1920)
+![e728c42e80cb67bf020e646e58619bcd.jpg](https://img.alicdn.com/imgextra/i4/O1CN01Xi1rcu1DM6aIC7ypz_!!6000000000201-0-tps-1920-675.jpg)

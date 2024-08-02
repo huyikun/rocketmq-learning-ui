@@ -25,7 +25,7 @@ SaaS（Software-as-a-Service，软件即服务）源自于美国 Salesforce 公�
 
 SaaS 分类比较繁琐，一般有两个分类维度。一个维度按照使用场景，另一个维度按照商业价值。
 
-![1.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680492002832-99d9ccee-4038-4a5c-a62c-85683a08b0d1.png#clientId=u1ec0614c-088a-4&height=713&id=bi5NP&name=1.png&originHeight=713&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u08f5511d-3de3-4cb9-b9d5-e48410dc20e&title=&width=1080)
+![1.png](https://img.alicdn.com/imgextra/i2/O1CN01ZCPHS71mMZXcmvL8G_!!6000000004940-0-tps-1080-713.jpg)
 
 SaaS 一般分类为 通用 SaaS 和 行业 SaaS 两个基础类。
 
@@ -40,14 +40,14 @@ SaaS 一般分类为 通用 SaaS 和 行业 SaaS 两个基础类。
 商业 SaaS 产品虽然风险更大，但在国内特色的商业环境、管理水平及人才结构下，更容易快速实现客户价值和自我价值。
 
 ### SaaS 在中国的发展历程
-![image.gif](https://intranetproxy.alipay.com/skylark/lark/0/2023/gif/59356401/1680492002582-8c18d9ee-4498-4f4a-bdc5-155b89be57e5.gif#clientId=u1ec0614c-088a-4&height=1&id=Z8E7z&name=image.gif&originHeight=1&originWidth=1&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ude6a8e09-f808-40d5-9aeb-1d7a98a886c&title=&width=1)
-![2.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680492004473-b0f9ae58-ee08-4998-86b7-1adf9db0f0af.png#clientId=u1ec0614c-088a-4&height=346&id=iNzDb&name=2.png&originHeight=346&originWidth=924&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ua41abf39-6c52-4b06-beef-bb4d92f790e&title=&width=924)
+<!-- ![image.gif](https://intranetproxy.alipay.com/skylark/lark/0/2023/gif/59356401/1680492002582-8c18d9ee-4498-4f4a-bdc5-155b89be57e5.gif#clientId=u1ec0614c-088a-4&height=1&id=Z8E7z&name=image.gif&originHeight=1&originWidth=1&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ude6a8e09-f808-40d5-9aeb-1d7a98a886c&title=&width=1) -->
+![2.png](https://img.alicdn.com/imgextra/i1/O1CN01BzPzgL1rFJLBSmR1i_!!6000000005601-0-tps-924-346.jpg)
 
 对于 SaaS 领域来讲，云服务的普及提振了大家对 SaaS 服务稳定性和数据安全性的信心。同时，人口红利消退使得 SaaS 成本优势凸显。当下疫情环境也加快了市场教育，企业主转变思路，降本增效的需求显著上升。随着整个行业的渗透率加快，SaaS 场景和行业越做越深，SaaS 市场可以遇见在未来会有高速的增长。很多企业会在新业务场景使用 SaaS 服务，小步快跑试错，解决活下来的问题，而不是重复造轮子。
 
 ### 什么是 B2B ？
 
-![3.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680492002964-6d52c1fe-4f73-4a04-a654-b943b1cdb4fa.png#clientId=u1ec0614c-088a-4&height=534&id=c5HZs&name=3.png&originHeight=534&originWidth=929&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u47978067-61d0-4211-b533-a9e97f61b17&title=&width=929)
+![3.png](https://img.alicdn.com/imgextra/i3/O1CN01Yt2Tiz23AyzE4ORnM_!!6000000007216-2-tps-929-534.png)
 
 B2B 即 Business-to-Business (B2B) integration 是指将两个或者多个组织之间的业务流程和通讯自动化，通过自动化关键业务流程，实现不用应用和组织关系的打通，有效促进应用提供方和客户之间的数据打通与合作。
 
@@ -64,7 +64,7 @@ B2B 即 Business-to-Business (B2B) integration 是指将两个或者多个组织
 
 实现结构如下：
 
-![4.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680492002777-6057ac6c-af93-4245-8d38-0cdb2bca33d4.png#clientId=u1ec0614c-088a-4&height=222&id=VpCm2&name=4.png&originHeight=222&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=uf9387f72-d0e7-4304-9654-726943a5ac4&title=&width=1080)
+![4.png](https://img.alicdn.com/imgextra/i1/O1CN01OmhMIm1fhugb1OQEk_!!6000000004039-2-tps-1080-222.png)
 
 业内通用方案通几乎均为同步方案，通过 API + 中间网关对调用做解耦和映射。该方案的主要问题是调用追溯难；其次如出现上下游接口限制不一致问题，会导致下游调用大量失败。
 
@@ -103,7 +103,7 @@ B2B 即 Business-to-Business (B2B) integration 是指将两个或者多个组织
 
 针对业内 SaaS 系统集成的种种痛点，EventBridge 推出一站式企业 SaaS 集成方案。通过收敛 SaaS 集成痛点诉求，EventBridge 推出 API 集成方案和数据集成方案，打通应用与应用，云与应用的连接。
 
-![5.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680492004890-5b37f95e-9d35-42d3-af5c-f9c80fb6630d.png#clientId=u1ec0614c-088a-4&height=556&id=iyjWI&name=5.png&originHeight=556&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ubd5289ab-1abc-4639-bac8-09f6321c3c8&title=&width=1080)
+![5.png](https://img.alicdn.com/imgextra/i1/O1CN01daib6x1ng62aQtQAD_!!6000000005118-0-tps-1080-556.jpg)
 
 ### 低代码集成平台
 
@@ -159,4 +159,4 @@ EventBridge 支持云上数据库、云上消息队列、云产品事件对接 S
 
 1、新用户首次购买包年包月，即可享受全系列 85折优惠！ 了解活动详情：[https://www.aliyun.com/product/rocketmq](https://www.aliyun.com/product/rocketmq)
 
-![e728c42e80cb67bf020e646e58619bcd.jpg](https://intranetproxy.alipay.com/skylark/lark/0/2023/jpeg/59356401/1680576637562-9af35fbf-d64b-4f81-b950-7e72f91b5ca2.jpeg#clientId=u449ffa34-59ce-4&from=paste&height=675&id=u462ad3c6&name=e728c42e80cb67bf020e646e58619bcd.jpg&originHeight=675&originWidth=1920&originalType=binary&ratio=1&rotation=0&showTitle=false&size=258156&status=done&style=none&taskId=u26cea311-dc98-45bd-8c8c-c7884e57c37&title=&width=1920)
+![e728c42e80cb67bf020e646e58619bcd.jpg](https://img.alicdn.com/imgextra/i4/O1CN01Xi1rcu1DM6aIC7ypz_!!6000000000201-0-tps-1920-675.jpg)

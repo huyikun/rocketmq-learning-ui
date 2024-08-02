@@ -25,7 +25,7 @@ EventBridge 作为构建 EDA 架构的基础设施，通过一些核心概念和
 - **事件处理：**对事件进行脱敏处理，并对事件进行初步的过滤和筛选；
 - **事件路由：**分析事件内容并将事件路由分发至下游产品。
 
-![640 (45).png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680491364006-798798da-92e9-4821-bf44-bf5ce179171f.png#clientId=ub53ea64b-fcbe-4&height=355&id=QoZ3I&name=640%20%2845%29.png&originHeight=355&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ub6850d02-3102-4a27-b057-fd80d172fea&title=&width=1080)
+![640 (45).png](https://img.alicdn.com/imgextra/i3/O1CN01mD1DxY1oAKBMfkdx9_!!6000000005184-0-tps-1080-355.jpg)
 
 事件驱动架构具有以下优势：
 
@@ -40,8 +40,8 @@ EventBridge 作为构建 EDA 架构的基础设施，通过一些核心概念和
 
 事件总线 EventBridge 是阿里云提供的一款无服务器事件总线服务。EventBridge 提供的几个核心概念，可以满足构建 EDA 架构的需要。
 
-![640 (46).png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680491363997-81791963-0ccc-4ba8-b338-516b1befc253.png#clientId=ub53ea64b-fcbe-4&height=808&id=BrSqJ&name=640%20%2846%29.png&originHeight=808&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ua48177fa-8e26-4e8b-aa40-1360fc54252&title=&width=1080)
-![image.gif](https://intranetproxy.alipay.com/skylark/lark/0/2023/gif/59356401/1680491365810-808c76c0-df47-45fd-a685-08453fef7ee5.gif#clientId=ub53ea64b-fcbe-4&height=1&id=oXC6d&name=image.gif&originHeight=1&originWidth=1&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u7532c365-c7ae-40b4-9f89-6a9fe1b1e42&title=&width=1)
+![640 (46).png](https://img.alicdn.com/imgextra/i2/O1CN01ogzOeg27xldYpawEW_!!6000000007864-2-tps-1080-808.png)
+<!-- ![image.gif](https://intranetproxy.alipay.com/skylark/lark/0/2023/gif/59356401/1680491365810-808c76c0-df47-45fd-a685-08453fef7ee5.gif#clientId=ub53ea64b-fcbe-4&height=1&id=oXC6d&name=image.gif&originHeight=1&originWidth=1&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u7532c365-c7ae-40b4-9f89-6a9fe1b1e42&title=&width=1) -->
 事件总线 EventBridge 支持以下事件源：
 
 - **阿里云官方事件源**
@@ -64,7 +64,7 @@ EventBridge 提供了简洁的事件模式匹配语法，同时具备灵活的�
 - **事件追踪：**可以查看发布到事件总线 EventBridge 的事件内容和处理轨迹；
 - **事件分析：**对发布到事件总线的各种事件进行查询分析处理和可视化图表展示，以便发现事件内在价值。
 
-![640 (47).png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680491364042-93d8efdc-1d3e-406d-ba4c-1c5dbe5e13b7.png#clientId=ub53ea64b-fcbe-4&height=382&id=CFChf&name=640%20%2847%29.png&originHeight=382&originWidth=960&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u280778f3-cd5d-479e-9234-3c90e310ba4&title=&width=960)
+![640 (47).png](https://img.alicdn.com/imgextra/i3/O1CN01sZ8hJ81ZrdOmJrkk4_!!6000000003248-2-tps-960-382.png)
 
 ## IaC 简介
 
@@ -189,19 +189,19 @@ terraform 作为 IaC 领域的佼佼者，提供了强大的自动化管理基�
 - 预览变更 terraform plan
 - 应用变更 terraform apply
 
-![image.gif](https://intranetproxy.alipay.com/skylark/lark/0/2023/gif/59356401/1680491363761-0dd8121e-8b73-4bd9-9542-b7515a9cee39.gif#clientId=ub53ea64b-fcbe-4&height=1&id=LEZHj&name=image.gif&originHeight=1&originWidth=1&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u40087170-2d11-4dec-97e7-459ceae5369&title=&width=1)
-![640 (48).png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680491366319-03dc4bb2-96a4-4a2b-ad1b-cd6cad4b38c4.png#clientId=ub53ea64b-fcbe-4&height=573&id=ZZKsZ&name=640%20%2848%29.png&originHeight=573&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u5cc02484-4862-4907-938d-b13b035e1ba&title=&width=1080)
+<!-- ![image.gif](https://intranetproxy.alipay.com/skylark/lark/0/2023/gif/59356401/1680491363761-0dd8121e-8b73-4bd9-9542-b7515a9cee39.gif#clientId=ub53ea64b-fcbe-4&height=1&id=LEZHj&name=image.gif&originHeight=1&originWidth=1&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u40087170-2d11-4dec-97e7-459ceae5369&title=&width=1) -->
+![640 (48).png](https://img.alicdn.com/imgextra/i3/O1CN01RcLnxk1YkTaitNf6z_!!6000000003097-0-tps-1080-573.jpg)
 在云产品控制台进行操作，这里以 KMS 为例
 
-![640 (49).png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680491366516-16655be4-8ba0-435d-8213-aa287d4a9dc7.png#clientId=ub53ea64b-fcbe-4&height=629&id=qKCEP&name=640%20%2849%29.png&originHeight=629&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u9731c220-7840-43c7-91ca-34493214f83&title=&width=1080)
+![640 (49).png](https://img.alicdn.com/imgextra/i2/O1CN01uFB13z27Qn7YdRqZl_!!6000000007792-0-tps-1080-629.jpg)
 
 钉钉上收到消息通知
 
-![640 (50).png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680491366522-0b32fe1a-8be1-4705-9bcf-56475ffabfad.png#clientId=ub53ea64b-fcbe-4&height=294&id=IVRiR&name=640%20%2850%29.png&originHeight=294&originWidth=960&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ubd94db5b-6b8a-4abb-a682-1f3be4a7475&title=&width=960)
+![640 (50).png](https://img.alicdn.com/imgextra/i3/O1CN01HT7U4h1ju3eUyCExC_!!6000000004607-0-tps-960-294.jpg)
 
 在 EventBridge 控制台查看事件轨迹
 
-![640 (51).png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680491366580-cca2b7df-87da-46b4-9bf5-bd2b888002f4.png#clientId=ub53ea64b-fcbe-4&height=519&id=COdws&name=640%20%2851%29.png&originHeight=519&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u936804e6-6430-45be-9794-fef9e707239&title=&width=1080)
+![640 (51).png](https://img.alicdn.com/imgextra/i2/O1CN01ukhmm11IXccjtJlJ6_!!6000000000903-0-tps-1080-519.jpg)
 ### 案例 2：自定义总线触发 FunctionCompute
 
 假设一个用户的应用会产生一些事件，其中一个链路是通过 FunctionCompute 对这些事件进行弹性的处理。那么就可以通过 EventBridge 的自定义事件源和函数计算事件目标来实现这个方案。
@@ -315,19 +315,19 @@ resource "alicloud_event_bridge_rule" "demo_rule" {
 - 预览变更 terraform plan
 - 应用变更 terraform apply
 
-![640 (52).png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680491366566-3ade7840-45c2-4854-a392-a19aa935fdd0.png#clientId=ub53ea64b-fcbe-4&height=633&id=qVICT&name=640%20%2852%29.png&originHeight=633&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=uea77055b-5134-427a-95db-6f7d9087ef5&title=&width=1080)
+![640 (52).png](https://img.alicdn.com/imgextra/i4/O1CN01ClqrQk1xR7FAwgOTO_!!6000000006439-0-tps-1080-633.jpg)
 
 在控制台模拟自定义事件源发布事件
 
-![640 (53).png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680491367210-22a79b62-9608-427f-b808-57ccbce25ac1.png#clientId=ub53ea64b-fcbe-4&height=631&id=TXD0q&name=640%20%2853%29.png&originHeight=631&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u1c28d231-413e-48d7-8f9d-ee6a90f21fa&title=&width=1080)
+![640 (53).png](https://img.alicdn.com/imgextra/i3/O1CN01ISnmKR1Wz0vu9o9jU_!!6000000002858-0-tps-1080-631.jpg)
 
 在 FunctionCompute 的控制台页面查看函数调用日志
 
-![640 (54).png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680491367311-c5eb08f1-8155-45a0-811f-d1d3f02be62a.png#clientId=ub53ea64b-fcbe-4&height=485&id=m3NWT&name=640%20%2854%29.png&originHeight=485&originWidth=960&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u6232f107-e944-48df-8e75-a2390a474ec&title=&width=960)
+![640 (54).png](https://img.alicdn.com/imgextra/i3/O1CN01kaQ8n721KwMojTVs2_!!6000000006967-0-tps-960-485.jpg)
 
 在 EventBridge 控制台查看事件轨迹
 
-![55.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680491367379-8c18765f-b73b-4d45-a270-072b473c4f2f.png#clientId=ub53ea64b-fcbe-4&height=491&id=qOKLW&name=55.png&originHeight=491&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u1fd1d9dd-4cf1-4c44-bc5d-9367aed262e&title=&width=1080)
+![55.png](https://img.alicdn.com/imgextra/i3/O1CN016sKUlh1GS0XFCykga_!!6000000000620-0-tps-1080-491.jpg)
 **_总结_**
 
 EventBridge 作为构建 EDA 架构的基础设施，通过一些核心概念和特性提供了灵活丰富的事件收集、处理和路由的能力，并支持通过 OpenAPI、terraform 等方式将这些能力方便快捷的带给用户。本文介绍了 EventBridge 和 IaC 的重点概念和特性，然后演示了如何应用 IaC 理念自动化部署 EventBridge 来使用这些概念和特性。
@@ -351,4 +351,4 @@ EventBridge 作为构建 EDA 架构的基础设施，通过一些核心概念和
 
 1、新用户首次购买包年包月，即可享受全系列 85折优惠！ 了解活动详情：[https://www.aliyun.com/product/rocketmq](https://www.aliyun.com/product/rocketmq)
 
-![e728c42e80cb67bf020e646e58619bcd.jpg](https://intranetproxy.alipay.com/skylark/lark/0/2023/jpeg/59356401/1680576637562-9af35fbf-d64b-4f81-b950-7e72f91b5ca2.jpeg#clientId=u449ffa34-59ce-4&from=paste&height=675&id=u462ad3c6&name=e728c42e80cb67bf020e646e58619bcd.jpg&originHeight=675&originWidth=1920&originalType=binary&ratio=1&rotation=0&showTitle=false&size=258156&status=done&style=none&taskId=u26cea311-dc98-45bd-8c8c-c7884e57c37&title=&width=1920)
+![e728c42e80cb67bf020e646e58619bcd.jpg](https://img.alicdn.com/imgextra/i4/O1CN01Xi1rcu1DM6aIC7ypz_!!6000000000201-0-tps-1920-675.jpg)

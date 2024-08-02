@@ -6,7 +6,7 @@ img: "https://img.alicdn.com/imgextra/i1/O1CN014qaKZI1uYx29y6HT6_!!6000000006050
 tags: ["practice"]
 description: "我们在几年前决定引入 MQ 时，市场上已经有不少成熟的解决方案，比如 RabbitMQ , ActiveMQ，NSQ，Kafka 等。考虑到稳定性、维护成本、公司技术栈等因素，我们选择了 RocketMQ。"
 ---
-![](https://intranetproxy.alipay.com/skylark/lark/0/2023/jpeg/59356401/1680488719050-8b1990f3-92d9-427d-9bc5-3147f6ac2349.jpeg#clientId=u111e1e84-2636-4&from=paste&id=u0ff033b8&originHeight=523&originWidth=800&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ued30e642-2290-49e3-a39d-8c582f4aedc&title=)
+![](https://img.alicdn.com/imgextra/i4/O1CN01brS9y11QsFO1WJMMv_!!6000000002031-0-tps-800-523.jpg)
 # 背景介绍
 ## 为何选择 RocketMQ
 我们在几年前决定引入 MQ 时，市场上已经有不少成熟的解决方案，比如 RabbitMQ , ActiveMQ，NSQ，Kafka 等。考虑到稳定性、维护成本、公司技术栈等因素，我们选择了 RocketMQ ：
@@ -26,7 +26,7 @@ description: "我们在几年前决定引入 MQ 时，市场上已经有不少�
 
 由于公司技术栈原因，client sdk 我们提供了 java sdk ；对于其他语言，收敛到 http proxy ，屏蔽语言细节，节约维护成本。按照各大业务线，对后端存储节点进行了隔离，相互不影响。
 
-![](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680488719066-4159a6e9-d376-43a3-ad67-e7da68e62b8b.png#clientId=u111e1e84-2636-4&from=paste&id=ub49ef748&originHeight=437&originWidth=866&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u08074ef1-a275-45f0-8b2f-e372cbcb876&title=)
+![](https://img.alicdn.com/imgextra/i2/O1CN01NJE4Wy1k6QLTO64f7_!!6000000004634-2-tps-866-437.png)
 # MQ 双中心改造
 之前单机房出现过网络故障，对业务影响较大。为保障业务高可用，同城双中心改造提上了日程。
 
@@ -42,14 +42,14 @@ description: "我们在几年前决定引入 MQ 时，市场上已经有不少�
 
 两个独立的 MQ 集群, 用户流量写到一个主集群，数据实时同步到备用集群，社区有成熟的 RocketMQ Replicator 方案，需要定期同步元数据，比如主题，消费组，消费进度等。
 
-![](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680488721086-66e309ce-fea1-417c-850c-125c6bdd2b26.png#clientId=u111e1e84-2636-4&from=paste&id=ub2220cc8&originHeight=420&originWidth=866&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ua0399fa0-6b62-4c6b-a98e-dba141fbfc7&title=)
+![](https://img.alicdn.com/imgextra/i2/O1CN01Y0BbHw1InC5gEEh8I_!!6000000000937-2-tps-866-420.png)
 2）同城双活
 
 两个独立 MQ 集群，用户流量写到各自机房的 MQ 集群，数据相互不同步。
 
 平时业务写入各自机房的 MQ 集群，若一个机房挂了，可以将用户请求流量全部切到另一个机房，消息也会生产到另一个机房。
 
-![](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680488718943-09774a0c-cc23-4aa4-bf4f-329b38c56a2f.png#clientId=u111e1e84-2636-4&from=paste&id=u587b592b&originHeight=391&originWidth=675&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ub9d0dd62-66fb-4bf9-b277-1721f673475&title=)
+![](https://img.alicdn.com/imgextra/i1/O1CN01md1AdN1g6Bg3VluCb_!!6000000004092-2-tps-675-391.png)
 
 对于双活方案，需要解决 MQ 集群域名。
 1）若两个集群用一个域名，域名可以动态解析到各自机房。此方式要求生产、消费必须在同一个机房。假如生产在 idc1 ，消费在 idc2 ，这样生产、消费各自连接一个集群，没法消费数据。
@@ -75,7 +75,7 @@ description: "我们在几年前决定引入 MQ 时，市场上已经有不少�
 需要与运维同学一起配合，在节点装机时，将自身的一些元数据，比如机房信息等写入本地配置文件，启动时直接读写配置文件即可。
 我们采用了第二个方案，无组件依赖，配置文件中 logicIdcUK 的值为机房标志。
 
-![](https://intranetproxy.alipay.com/skylark/lark/0/2023/jpeg/59356401/1680488719009-3838b15c-79c4-40cf-ba3a-e01d3120fca6.jpeg#clientId=u111e1e84-2636-4&from=paste&id=u94185b25&originHeight=230&originWidth=1226&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u790673bb-d2ce-4421-be9b-1809a573d3e&title=)
+![](https://img.alicdn.com/imgextra/i4/O1CN01gGucwA26QxeWmWt89_!!6000000007657-0-tps-1226-230.jpg)
 **客户端节点如何识别在同一个机房的服务端节点？**
 
 客户端节点可以拿到服务端节点的 ip 以及 broker 名称的，因此：
@@ -89,7 +89,7 @@ description: "我们在几年前决定引入 MQ 时，市场上已经有不少�
 基于上述分析，就近生产思路很清晰，默认优先本机房就近生产；
 
 若本机房的服务节点不可用，可以尝试扩机房生产，业务可以根据实际需要具体配置。
-![](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680488721497-9d79e359-e974-488b-8fe7-723526716e6b.png#clientId=u111e1e84-2636-4&from=paste&id=u74414efe&originHeight=345&originWidth=866&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ua47d93d6-c29f-47d3-b05a-f7332d21b3b&title=)
+![](https://img.alicdn.com/imgextra/i2/O1CN01lfl8kC24WL4WsCZrM_!!6000000007398-2-tps-866-345.png)
 ## 就近消费
 优先本机房消费，默认情况下又要保证所有消息能被消费。
 
@@ -111,9 +111,9 @@ for(element in mqs){
 消费场景主要是消费端单边部署与双边部署。
 
 单边部署时，消费端默认会拉取每个机房的所有消息。
-![](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680488721703-bef1ab62-57f1-48c0-b957-17e7e6caa3db.png#clientId=u111e1e84-2636-4&from=paste&id=ua8da3a05&originHeight=452&originWidth=866&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ue3a583e6-2f3b-4c18-80a2-acf37cca6ea&title=)
+![](https://img.alicdn.com/imgextra/i1/O1CN01FBr0i01oat9Zvm0E9_!!6000000005242-2-tps-866-452.png)
 双边部署时，消费端只会消费自己所在机房的消息，要注意每个机房的实际生产量与消费端的数量，防止出现某一个机房消费端过少。
-![](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680488721597-c143448c-32fa-4ff1-9cd7-944cbc45e680.png#clientId=u111e1e84-2636-4&from=paste&id=uc49e0132&originHeight=347&originWidth=866&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ua5a36a23-6805-47b0-a53a-ded43403d74&title=)
+![](https://img.alicdn.com/imgextra/i2/O1CN01jee0hr1TvOxdLckjy_!!6000000002444-2-tps-866-347.png)
 ## 单机房故障
 
 - 每组 broker 配置
@@ -130,7 +130,7 @@ ns 元数据系统中的节点位于三个机房（有一个第三方的云机�
 
 客户端节点获取元数据时, 从 leader，follower 中均可读取数据。
 
-![](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680488721983-a151ab1e-7114-4ab1-95cc-a814fa0e9f9a.png#clientId=u111e1e84-2636-4&from=paste&id=u2d8c2dbb&originHeight=375&originWidth=866&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ua02f717b-7b2e-4726-a70e-c13419fda6d&title=)
+![](https://img.alicdn.com/imgextra/i3/O1CN01jl0rnz2A15kCodO9V_!!6000000008142-2-tps-866-375.png)
 ### 切主流程
 
 - 若 nameserver leader 监控到 broker 主节点异常, 并要求其他 follower 确认；半数 follower 认为 broker 节点异常，则 leader 通知在 broker 从节点中选主，同步进度大的从节点选为主;
@@ -138,17 +138,18 @@ ns 元数据系统中的节点位于三个机房（有一个第三方的云机�
 - 生产端无法向旧 broker 主节点发送消息。
 
 流程图如下
-![](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680488722091-d710b0a2-c44b-4e3a-9cb5-307a1d749cae.png#clientId=u111e1e84-2636-4&from=paste&id=ub7381f19&originHeight=393&originWidth=866&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u71b59458-11b6-40e1-8766-05afd246cdc&title=)![](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680488722510-025c0e7e-157e-40fe-bf49-77d679693a32.png#clientId=u111e1e84-2636-4&from=paste&id=u99c2efe1&originHeight=1&originWidth=1&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ub8294af3-fe4f-4738-9426-9a0bd8c2840&title=)
+![](https://img.alicdn.com/imgextra/i1/O1CN010ybnkz1PCHTmX3gyT_!!6000000001804-2-tps-866-393.png)
+<!-- ![](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680488722510-025c0e7e-157e-40fe-bf49-77d679693a32.png#clientId=u111e1e84-2636-4&from=paste&id=u99c2efe1&originHeight=1&originWidth=1&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ub8294af3-fe4f-4738-9426-9a0bd8c2840&title=) -->
 
 **切中心演练**
 
 用户请求负载到双中心，下面的操作先将流量切到二中心---回归双中心---切到一中心。确保每个中心均可承担全量用户请求。
 先将用户流量全部切到二中心
-![](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680488722606-0f0c0a80-8ab2-472b-a56e-16b9efba732f.png#clientId=u111e1e84-2636-4&from=paste&id=u0e063d06&originHeight=381&originWidth=866&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ud67a6d80-07a6-41be-b9dc-ffc6953b4f4&title=)
-![](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680488722613-a414e06f-8e5c-4b13-a932-c94fd08e8a1a.png#clientId=u111e1e84-2636-4&from=paste&id=ud4407da3&originHeight=1&originWidth=1&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u6db61a33-c97d-40b4-918b-a316390d41c&title=)
+![](https://img.alicdn.com/imgextra/i4/O1CN01s6Qwk31ddfmu0whqA_!!6000000003759-2-tps-866-381.png)
+<!-- ![](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680488722613-a414e06f-8e5c-4b13-a932-c94fd08e8a1a.png#clientId=u111e1e84-2636-4&from=paste&id=ud4407da3&originHeight=1&originWidth=1&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u6db61a33-c97d-40b4-918b-a316390d41c&title=) -->
 流量回归双中心，并切到一中心
 
-![](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680488722752-14a1dd8a-91cd-422d-84ee-ab75324b3077.png#clientId=u111e1e84-2636-4&from=paste&id=u7ff90971&originHeight=370&originWidth=866&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ub573ef39-67f4-423b-944c-1775d8668e8&title=)
+![](https://img.alicdn.com/imgextra/i2/O1CN01f60NwT1biaoKmzR0A_!!6000000003499-2-tps-866-370.png)
 **回顾**
 
 - 全局 Global 集群
@@ -211,13 +212,13 @@ ns 元数据系统中的节点位于三个机房（有一个第三方的云机�
 
 **部分后台操作展示**
 主题与消费组申请
-![](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680488722977-40cf6d14-2b7f-4c43-992c-1992228f31cc.png#clientId=u111e1e84-2636-4&from=paste&id=u5d4b7496&originHeight=437&originWidth=866&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u0375c15e-6082-4679-a613-d75011f9904&title=)
+![](https://img.alicdn.com/imgextra/i4/O1CN01Y2fPDn1thpEQlsskh_!!6000000005934-2-tps-866-437.png)
 生产，消费，堆积实时统计
 
-![](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680488723438-aa1308c0-d752-41de-9692-52091aa2fde6.png#clientId=u111e1e84-2636-4&from=paste&id=ue4041d3e&originHeight=481&originWidth=866&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u838695df-fa49-4817-92ff-ea88a3402eb&title=)
+![](https://img.alicdn.com/imgextra/i1/O1CN01ITZYIL29DAZbwV7WS_!!6000000008033-2-tps-866-481.png)
 
 集群监控
-![](https://intranetproxy.alipay.com/skylark/lark/0/2023/jpeg/59356401/1680488723374-35b53c61-558a-4cb0-bf9c-a88ceef5ad9e.jpeg#clientId=u111e1e84-2636-4&from=paste&id=uc399a8a5&originHeight=443&originWidth=864&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u67e15dd2-464d-4779-9483-9b14cad222d&title=)
+![](https://img.alicdn.com/imgextra/i1/O1CN01rge0aF1sywPtBKRQL_!!6000000005836-0-tps-864-443.jpg)
 **踩过的坑**
 
 社区对 MQ 系统经历了长时间的改进与沉淀，我们在使用过程中也到过一些问题，要求我们能从深入了解源码，做到出现问题心不慌，快速止损。
@@ -240,4 +241,4 @@ ns 元数据系统中的节点位于三个机房（有一个第三方的云机�
 
 1、新用户首次购买包年包月，即可享受全系列 85折优惠！ 了解活动详情：[https://www.aliyun.com/product/rocketmq](https://www.aliyun.com/product/rocketmq)
 
-![e728c42e80cb67bf020e646e58619bcd.jpg](https://intranetproxy.alipay.com/skylark/lark/0/2023/jpeg/59356401/1680576637562-9af35fbf-d64b-4f81-b950-7e72f91b5ca2.jpeg#clientId=u449ffa34-59ce-4&from=paste&height=675&id=u462ad3c6&name=e728c42e80cb67bf020e646e58619bcd.jpg&originHeight=675&originWidth=1920&originalType=binary&ratio=1&rotation=0&showTitle=false&size=258156&status=done&style=none&taskId=u26cea311-dc98-45bd-8c8c-c7884e57c37&title=&width=1920)
+![e728c42e80cb67bf020e646e58619bcd.jpg](https://img.alicdn.com/imgextra/i4/O1CN01Xi1rcu1DM6aIC7ypz_!!6000000000201-0-tps-1920-675.jpg)

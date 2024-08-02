@@ -6,7 +6,7 @@ img: "https://img.alicdn.com/imgextra/i3/O1CN01P14kGT1q7Eb8dygIN_!!6000000005448
 tags: ["practice"]
 description: "阿里云希望跟社会各界的朋友一起在云原生领域里面做更多的探索，希望通过云原生技术，真正为企业带来更多的业务价值，助力企业整体的业务创新。"
 ---
-![](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680487671115-a6980615-7cc6-4d1d-8428-f1e4c5acf43c.png#clientId=u2ba62797-e33e-4&from=paste&id=ubbbb8580&originHeight=720&originWidth=1080&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u98bf2fa2-388f-42b5-9bb9-597897dbf44&title=)
+![](https://img.alicdn.com/imgextra/i2/O1CN01pEIQhe1Ogg9P1rsPm_!!6000000001735-0-tps-1080-720.jpg)
 
 作者｜李小平
 
@@ -20,7 +20,7 @@ description: "阿里云希望跟社会各界的朋友一起在云原生领域里
 
 除此以外，系统的**稳定性**也是大家非常关注的方面。云原生就是把整个软件构造过程中非功能性特性拉出来放到云原生产品上去，帮助应用开发从非功能性处理过程中解脱出来，更多的专注在功能性。同样的，云原生有很多工具理念，可以让我们变得更好，整个软件开发从代码到上线的时间大幅缩短。同样的，今天在基于云原生可观测性上面我们会积累非常多的数据，这些数据可以结合机器学习这些能力，帮助我们改善企业的用户体验。这些对于业务来讲会带来比较大的价值。
 
-![](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680487671133-6564b1a0-1f8c-4597-9e08-d790a36163ab.png#clientId=u2ba62797-e33e-4&from=paste&id=u7bc3c5e5&originHeight=593&originWidth=1080&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ua20afbb2-9f2f-40e1-8d60-7b446406116&title=)
+![](https://img.alicdn.com/imgextra/i2/O1CN01f7CZiH1qQTNUDHj67_!!6000000005490-0-tps-1080-593.jpg)
 # 阿里云原生的实践历程
 
 今天，云原生在 CNCF、国内相关的开源、还有三方组织的推动下，可以使得一家企业在做技术选型的时候有非常多的选项。大家通常会面临一个问题，在这么多选择里面，要真正达到生产可用的目的到底选谁？特别是当我们的业务需要在非常短的时间内就上线，在业务高速发展的阶段，我们应该选什么样的架构，选什么样的开源开放的产品，这个是摆在广大企业技术决策者以及架构师面前的难题。
@@ -28,14 +28,14 @@ description: "阿里云希望跟社会各界的朋友一起在云原生领域里
 在云原生领域中，阿里云是相对比较早开始做自研的。从 2006 年到 2009 年互联网的中间件开始发展，到阿里云正式成立，整个过程中我们通过云原生解决很多业务问题。通过应用云原生相关技术，从早期很好地支持了淘宝的高速发展，到了 2015 年以后很好地支持了阿里的中台建设，以及到今天随着阿里巴巴整个生产系统、核心系统全部 100% 上云，这个过程中我们运用的云原生技术，像容器技术、微服务技术支持的规模都是百万级以上。
 
 相关调研显示，这样的云原生落地规模在全球范围内都是非常领先的。实际上，对于很多企业来讲，也许用不到这些规模，但是阿里通过解决这样的大规模下的性能、稳定性问题，积累了非常多的硬核技术，最终能够把这些技术转变成了产品，通过阿里云对外输出，服务于各行各业的广大客户。
-![](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680487672899-2d6c04b4-2763-4879-a163-caf140524829.png#clientId=u2ba62797-e33e-4&from=paste&id=ufcf2d0c8&originHeight=591&originWidth=1080&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ue7a47261-e4b6-4a9c-a8e7-deff565aef6&title=)
+![](https://img.alicdn.com/imgextra/i3/O1CN01f9Hzvd1vEdDVleKr9_!!6000000006141-0-tps-1080-591.jpg)
 我们认为，云原生对于整个软件的改变，或者对软件公司的开发流程的改变是非常深刻的。首先 K8s 已经变成了软件交付的标准界面，它改变的不止是运维，而是从 CICD 到后续发布上线整个生产链条。由于所有生产流程得到改变，以及很多企业通过云原生技术重塑了软件架构，使得软件架构从传统架构变成了新的、我们称之为现代化的应用架构，因此云原生可以通过这种生产工具的改良进一步改变企业的生产关系，最终影响企业，使得企业在软件开发过程中得到了极大的提速。
 
 阿里云在云原生实践过程中，积累了很强的技术竞争力，体现在这些方面：
 
 一、我们有非常多领先的技术解决云原生领域里面的稳定性问题、可靠性问题，大规模下的高并发问题等。同时，我们会把所有的这些技术通过开源开放的形式输出。我们知道，在云原生的世界，企业需要的是开源开放的技术，而不是被像阿里这样单独一个厂商所锁定的技术。这个过程中我们基于开源开放技术标准积累了很多产品的硬核能力。在产品上，除了大家看到的基于云原生应用架构里，还包括云原生数据库、云原生大数据等。
 
-![](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680487671166-029446b8-ba34-440f-8ca2-d900426eca05.png#clientId=u2ba62797-e33e-4&from=paste&id=udc64eae9&originHeight=587&originWidth=1080&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u4108cb96-6eba-4c7d-a914-62b03bad99f&title=)
+![](https://img.alicdn.com/imgextra/i4/O1CN01twMPaN1arSrpWCkfH_!!6000000003383-0-tps-1080-587.jpg)
 在云原生相关的领域有比较多的测评，在这些测评里，**例如阿里云容器产品 ACK，在去年 Gartner 评测中拿到满分，全球厂商中只有两个厂商拿到满分，阿里云是其中之一。今年，阿里云再次入选 Gartner 容器竞争格局。在新兴的计算形态领域中，今年阿里云进入 Forrester FaaS 领导者象限，函数计算获得了全球 FaaS 产品最高分。**
 
 在可观测性里，阿里云代表国内云厂商进入 Gartner APM 象限。所有这些三方评估从另外一个层面反映了阿里云产品的能力。容器架构上，我们基于开源开放的 K8s 技术体系，基于阿里云的硬件做深度的优化，在比较多的领域和场景里为广大 K8s 应用提供服务。我们把在 K8s 集群里面超大规模集群管理的能力输出到 ACK 产品里面，使得阿里云的客户在管理集群的时候，可以摆脱大规模集群的管理复杂性问题。
@@ -74,10 +74,10 @@ description: "阿里云希望跟社会各界的朋友一起在云原生领域里
 1、支持多操作系统、多架构镜像的矩阵构建，支持大规模并发任务构建。
 2、支持多级缓存的构建加速，平均构建提速 30%。
 3、支持自动构建加速镜像，实现 AI 等大镜像秒级按需加载，平均启动时间减少 60 %。
-![](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680487671203-6bafb924-cf68-4b31-96c3-1d9350deab84.png#clientId=u2ba62797-e33e-4&from=paste&id=u0c453708&originHeight=615&originWidth=1080&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ua403533e-c688-4b1e-8a3f-adb2f740de5&title=)
+![](https://img.alicdn.com/imgextra/i1/O1CN01y1ZblE1cn0F0CAj9W_!!6000000003644-0-tps-1080-615.jpg)
 在微服务领域，越来越多的应用考虑采用服务网格技术。用户希望服务网格在开源技术之上有更强的微服务治理能力，因此阿里云推出专业版 ASM Pro，具备增强多协议支持，提升动态扩展能力，精细化服务治理，完善零信任安全体系。专业版相比去年发布的普通版，在性能及规模上均有显著提升，与开源的差异化竞争力进一步增强，降低用户在生产环境落地服务网格的门槛。
 
-![](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680487674138-0fc13149-e6b6-470a-ada2-56c9dc824362.png#clientId=u2ba62797-e33e-4&from=paste&id=u94fe2f0a&originHeight=606&originWidth=1080&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ue4329f3e-172b-4eb9-a784-c049aeae7ff&title=)
+![](https://img.alicdn.com/imgextra/i2/O1CN01NZ11EG1O5a4Nm1wGi_!!6000000001654-0-tps-1080-606.jpg)
 Gartner 预测，未来事件驱动将成为业务开发的主流架构。企业客户上云过程中对于低代码、无服务器弹性应用架构，如何轻量集成众多异构云服务的数据流有着明确的痛点和诉求。基于此趋势，阿里云发布了事件总线 EventBridge 这款产品，其目标在于统一阿里云云服务、第三方 SaaS 厂商、用户自定义的事件标准，通过标准、弹性、轻量的核心能力帮助用户快速低成本获取并处理海量事件，驱动业务开发。
 
 在过去的一段时间，我们对 EventBridge 的产品能力做了进一步的扩充和升级：
@@ -86,7 +86,7 @@ Gartner 预测，未来事件驱动将成为业务开发的主流架构。企业
 - 在事件触达和处理方式上，内置了十多种过滤匹配转换逻辑，并且新增了跨网络、跨地域、跨账号等深度触达方式，方便企业大客户做深层次的安全、隔离等定制；
 - 在此基础上，阿里云 EventBridge 首次推出事件驱动应用中心，内置常见的事件驱动应用模板，用户无需代码和部署即可简单配置完成常见的事件 ETL 处理、数据同步等场景功能。
 
-![](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680487674706-e50113e8-0a6c-492b-bf50-a6b0fcb45288.png#clientId=u2ba62797-e33e-4&from=paste&id=ue9cc95c4&originHeight=595&originWidth=1080&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u3242a4c2-b96e-40a3-ad03-cef1aa8bda2&title=)
+![](https://img.alicdn.com/imgextra/i2/O1CN012zSHYY1HiKGSswFUY_!!6000000000791-0-tps-1080-595.jpg)
 阿里云拥有最广泛的云原生客户群体。随着更多的企业客户上云，将有更多复杂的场景，对于云原生技术、产品以及云原生理念提出更高的要求。阿里云希望跟社会各界的朋友一起在云原生领域里面做更多的探索，希望通过云原生技术，真正为企业带来更多的业务价值，助力企业整体的业务创新。
 
 # 活动推荐
@@ -95,4 +95,4 @@ Gartner 预测，未来事件驱动将成为业务开发的主流架构。企业
 
 1、新用户首次购买包年包月，即可享受全系列 85折优惠！ 了解活动详情：[https://www.aliyun.com/product/rocketmq](https://www.aliyun.com/product/rocketmq)
 
-![e728c42e80cb67bf020e646e58619bcd.jpg](https://intranetproxy.alipay.com/skylark/lark/0/2023/jpeg/59356401/1680576637562-9af35fbf-d64b-4f81-b950-7e72f91b5ca2.jpeg#clientId=u449ffa34-59ce-4&from=paste&height=675&id=u462ad3c6&name=e728c42e80cb67bf020e646e58619bcd.jpg&originHeight=675&originWidth=1920&originalType=binary&ratio=1&rotation=0&showTitle=false&size=258156&status=done&style=none&taskId=u26cea311-dc98-45bd-8c8c-c7884e57c37&title=&width=1920)
+![e728c42e80cb67bf020e646e58619bcd.jpg](https://img.alicdn.com/imgextra/i4/O1CN01Xi1rcu1DM6aIC7ypz_!!6000000000201-0-tps-1920-675.jpg)
