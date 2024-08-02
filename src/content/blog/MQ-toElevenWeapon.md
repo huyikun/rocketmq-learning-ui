@@ -16,11 +16,11 @@ _编辑&排版：雯燕_
 
 在新冠肺炎疫情催化下，数字化生活方式渐成新常态。“4982 亿，58.3 万笔/秒”是 2020 天猫双 11 全球狂欢节（简称:天猫双 11 ）对数字经济的先发优势和巨大潜能的直观体现。
 
-![](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680489222254-8d83b16d-74b1-49f7-abea-2b4d5cb94ea9.png#clientId=uc9a0e5b0-fb0e-4&from=paste&id=uf43bc348&originHeight=470&originWidth=712&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u83a30bc7-172f-4719-be06-f55ba37c99d&title=)
+![](https://img.alicdn.com/imgextra/i2/O1CN01razRQK1TgkHv0elXf_!!6000000002412-49-tps-712-470.webp)
 
 面对千万级并发、万亿级的流量洪峰，背后有力支撑的便是双十一交易核心链路的官方指定产品：消息队列 RocketMQ 。
 
-![](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680489222401-8a71e773-94e9-487f-9a7e-3b2e1c488763.png#clientId=uc9a0e5b0-fb0e-4&from=paste&id=u0ff220a9&originHeight=312&originWidth=812&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u6039e836-d24e-4ed1-8b11-27428efecc3&title=)
+![](https://img.alicdn.com/imgextra/i4/O1CN01lIiN4J1sPfv0zAIrx_!!6000000005759-49-tps-812-312.webp)
 
 # **双十一交易场景业务痛点**
 
@@ -41,7 +41,7 @@ _编辑&排版：雯燕_
 
 面对如此复杂且庞大的系统，避免系统业务之间相互耦合影响，便要用到消息队列 RocketMQ 的“异步解耦”功能，通过消息队列 RocketMQ 实现上、下游业务系统松耦合，松耦合可以降低系统的复杂度，缩短用户请求的响应时间（将原多个步骤的所需时间之和压缩到只需一条消息的时间），保证下游某个子系统的故障不影响整个链路。
 
-![](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680489223890-bacab0d1-2000-4b9e-8736-aa958c4a10e7.png#clientId=uc9a0e5b0-fb0e-4&from=paste&id=ue07eeae8&originHeight=486&originWidth=1080&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ud3f24c5d-b594-46f1-81bd-3a6da5765ba&title=)
+![](https://img.alicdn.com/imgextra/i3/O1CN01ccOU2v1L5dGZ3SI8w_!!6000000001248-49-tps-1080-486.webp)
 
 ### 武器二：“削峰填谷”
 
@@ -50,7 +50,7 @@ _编辑&排版：雯燕_
 
 为解决这些问题，就要用到消息队列 RocketMQ 的“削峰填谷”功能，可在应用和下游通知系统之间加入消息队列 RocketMQ，RocketMQ 支持高并发的消息低延迟写入，以及无限的堆积能力，可以避免超高流量的冲击，确保下游业务在安全水位内平滑稳定的运行。
 
-![](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680489222067-f6c7cef5-9ad3-44d7-9f49-80e77e82a8a1.png#clientId=uc9a0e5b0-fb0e-4&from=paste&id=uf7c307c9&originHeight=485&originWidth=1080&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u8bfb3a77-b19d-4b54-bb8a-88b86fef5f0&title=)
+![](https://img.alicdn.com/imgextra/i4/O1CN01jrb2xl1il4GEsL9LO_!!6000000004452-49-tps-1080-485.webp)
 
 ### 武器三：“分布式事务消息”
 
@@ -59,7 +59,7 @@ _编辑&排版：雯燕_
 
 这个时候消息队列 RocketMQ 的“分布式事务消息”的功能便起到了关键作用，通过原创的轻量级订单流转事务协调能力，只需发送一条消息，就可以实现消息最终一致性的分布式事务，同时确保订单状态持久化和下游调用一致。
 
-![](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680489222220-d45d4550-924d-4274-931a-ae54b940c606.png#clientId=uc9a0e5b0-fb0e-4&from=paste&id=u6c76e741&originHeight=511&originWidth=1080&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u3bf811fa-9eaf-4656-899b-88f6f659eb9&title=)
+![](https://img.alicdn.com/imgextra/i1/O1CN01LnHq3A1UUfSTVSZf1_!!6000000002521-49-tps-1080-511.webp)
 
 ### 武器四：“消息过滤”
 
@@ -75,7 +75,7 @@ _编辑&排版：雯燕_
 
 
 
-![](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680489224306-f33ff257-deeb-4723-9f45-a028d51d560a.png#clientId=uc9a0e5b0-fb0e-4&from=paste&id=u78f01db1&originHeight=777&originWidth=1080&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ue5997429-b7a1-4549-989c-db80e7e0f5c&title=)
+![](https://img.alicdn.com/imgextra/i1/O1CN01KkR9rz1DyZr3qpHzK_!!6000000000285-49-tps-1080-777.webp)
 
 ### 武器五：“定时消息”
 
@@ -84,23 +84,23 @@ _编辑&排版：雯燕_
 
 这个业务用到的是消息队列 RocketMQ 的“定时消息”功能，消息队列 RocketMQ 可以实现自定义秒级精度间隔的定时消息，通过消息触发一些定时任务，比如在某一固定时间点向用户发送提醒消息，最终实现海量订单状态变更超时的中心调度。
 
-![](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680489224301-e818e357-5a21-4543-a7d9-e41c508ff4ab.png#clientId=uc9a0e5b0-fb0e-4&from=paste&id=u580e89f4&originHeight=558&originWidth=1080&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u7d2fb379-34d7-49cc-a0f3-9699a215f91&title=)
-
-### ![](https://intranetproxy.alipay.com/skylark/lark/0/2023/gif/59356401/1680489224303-4f438b9f-c370-47ce-a87b-13372771d28b.gif#clientId=uc9a0e5b0-fb0e-4&from=paste&id=u36694659&originHeight=1&originWidth=1&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ud5ed3b08-361b-4bfd-96fd-72289a73cfa&title=)武器六：“顺序收发”
+![](https://img.alicdn.com/imgextra/i2/O1CN01pxKrVC1vXrqpisjRQ_!!6000000006183-49-tps-1080-558.webp)
+<!-- ![](https://intranetproxy.alipay.com/skylark/lark/0/2023/gif/59356401/1680489224303-4f438b9f-c370-47ce-a87b-13372771d28b.gif#clientId=uc9a0e5b0-fb0e-4&from=paste&id=u36694659&originHeight=1&originWidth=1&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ud5ed3b08-361b-4bfd-96fd-72289a73cfa&title=) -->
+### 武器六：“顺序收发”
 
 
 **背景：**在双 11 大促中，买家业务侧和交易系统本身会面临诸多问题，卖家侧也会遇到一些难点，比如，买家买了东西，卖家自己却看不到。
 
 为了解决这个问题，一般需要使用消息队列的顺序消息同步能力将买家表的变更订阅同步到卖家表。此时依赖 RocketMQ 的无热点、高性能、高可靠顺序消息可以保障数据库变更的顺序同步，保证买卖家订单同步。
 
-![](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680489224352-6aee7402-05eb-42a4-8f3c-ad09b680a4ed.png#clientId=uc9a0e5b0-fb0e-4&from=paste&id=u96694a11&originHeight=768&originWidth=1080&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u0cfc2483-0ff9-43b3-bd28-cb4f21de0f4&title=)**
+![](https://img.alicdn.com/imgextra/i1/O1CN01oz2fhW1K0lRQbn2pB_!!6000000001102-49-tps-1080-768.webp)**
 
 # **总结**
 
 
 通过以上介绍，带您了解了消息队列 RocketMQ 的六大武器在双十一“战场”上的威力，2021 年“双十一”开战在即，消息队列 RocketMQ 为您双十一的业务保架护航，同时铂金版可提供 99.99% 的服务可用性和 99.99999999% 的数据可靠性，联系我们，期待陪您的业务一起在 2021 双十一中“乘风破浪”。
 
-![](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680489224784-f9bc54c3-d395-4425-8795-3e6b268ee988.png#clientId=uc9a0e5b0-fb0e-4&from=paste&id=u2f322580&originHeight=2704&originWidth=800&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u90b6569f-4226-4d26-9b5f-d532b4ef96c&title=)
+![](https://img.alicdn.com/imgextra/i1/O1CN01ZfubWs1s8jGUI7exY_!!6000000005722-49-tps-800-2704.webp)
 
 # 活动推荐
 
@@ -108,4 +108,4 @@ _编辑&排版：雯燕_
 
 1、新用户首次购买包年包月，即可享受全系列 85折优惠！ 了解活动详情：[https://www.aliyun.com/product/rocketmq](https://www.aliyun.com/product/rocketmq)
 
-![e728c42e80cb67bf020e646e58619bcd.jpg](https://intranetproxy.alipay.com/skylark/lark/0/2023/jpeg/59356401/1680576637562-9af35fbf-d64b-4f81-b950-7e72f91b5ca2.jpeg#clientId=u449ffa34-59ce-4&from=paste&height=675&id=u462ad3c6&name=e728c42e80cb67bf020e646e58619bcd.jpg&originHeight=675&originWidth=1920&originalType=binary&ratio=1&rotation=0&showTitle=false&size=258156&status=done&style=none&taskId=u26cea311-dc98-45bd-8c8c-c7884e57c37&title=&width=1920)
+![e728c42e80cb67bf020e646e58619bcd.jpg](https://img.alicdn.com/imgextra/i4/O1CN01Xi1rcu1DM6aIC7ypz_!!6000000000201-0-tps-1920-675.jpg)

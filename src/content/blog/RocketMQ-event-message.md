@@ -24,7 +24,7 @@ description: "本篇文章通过拆解 RocketMQ 事务消息的使用场景、�
 - 积分系统状态变更：变更用户积分，更新用户积分表；
 - 购物车系统状态变更：清空购物车，更新用户购物车记录。 
 
-![1.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680492813984-8aed153b-3493-4ac8-beb3-27f2f8cfebe8.png#clientId=u35af942e-4c6f-4&height=491&id=yydqB&name=1.png&originHeight=491&originWidth=1018&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u99ec056f-afa4-4804-bd90-ecb5b08b67e&title=&width=1018)
+![1.png](https://img.alicdn.com/imgextra/i4/O1CN01xBJhEt1lzfjptCsuQ_!!6000000004890-2-tps-1018-491.png)
 
 分布式系统调用的特点是：一个核心业务逻辑的执行，同时需要调用多个下游业务进行处理。因此，如何保证核心业务和多个下游业务的执行结果完全一致，是分布式事务需要解决的主要问题。
 
@@ -36,8 +36,8 @@ description: "本篇文章通过拆解 RocketMQ 事务消息的使用场景、�
 
 将上述基于 XA 事务的方案进行简化，将订单系统变更作为本地事务，剩下的系统变更作为普通消息的下游来执行，事务分支简化成普通消息+订单表事务，充分利用消息异步化的能力缩短链路，提高并发度。
 
-![2.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680492814005-2f99264a-157a-45b3-a6e2-1ecb26e9b894.png#clientId=u35af942e-4c6f-4&height=726&id=uUGKh&name=2.png&originHeight=726&originWidth=1056&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ue7c42ae6-8fb5-436a-939d-9f90274a53e&title=&width=1056)
-![image.gif](https://intranetproxy.alipay.com/skylark/lark/0/2023/gif/59356401/1680492815682-287945a7-7d23-47c9-a43a-f9147fc18907.gif#clientId=u35af942e-4c6f-4&height=1&id=PkpP8&name=image.gif&originHeight=1&originWidth=1&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u881eb248-235f-4d9f-919f-d7f373d868f&title=&width=1)
+![2.png](https://img.alicdn.com/imgextra/i2/O1CN01tzmTP324k4x77jfye_!!6000000007428-2-tps-1056-726.png)
+<!-- ![image.gif](https://intranetproxy.alipay.com/skylark/lark/0/2023/gif/59356401/1680492815682-287945a7-7d23-47c9-a43a-f9147fc18907.gif#clientId=u35af942e-4c6f-4&height=1&id=PkpP8&name=image.gif&originHeight=1&originWidth=1&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u881eb248-235f-4d9f-919f-d7f373d868f&title=&width=1) -->
 该方案中消息下游分支和订单系统变更的主分支很容易出现不一致的现象，例如：
 
 - 消息发送成功，订单没有执行成功，需要回滚整个事务；
@@ -48,9 +48,10 @@ description: "本篇文章通过拆解 RocketMQ 事务消息的使用场景、�
 
 上述普通消息方案中，普通消息和订单事务无法保证一致的本质原因是普通消息无法像单机数据库事务一样，具备提交、回滚和统一协调的能力。
 
-而基于消息队列 RocketMQ 版实现的分布式事务消息功能，在普通消息基础上，支持二阶段的提交能力。将二阶段提交和本地事务绑定，实现全局提交结果的一致性。![image.gif](https://intranetproxy.alipay.com/skylark/lark/0/2023/gif/59356401/1680492813785-bb23b248-89a6-4be3-93e7-f02c479e322b.gif#clientId=u35af942e-4c6f-4&height=1&id=msDpx&name=image.gif&originHeight=1&originWidth=1&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u9fab5182-caa6-48c6-b720-2004fdf2ee8&title=&width=1)
+而基于消息队列 RocketMQ 版实现的分布式事务消息功能，在普通消息基础上，支持二阶段的提交能力。将二阶段提交和本地事务绑定，实现全局提交结果的一致性。
+<!-- ![image.gif](https://intranetproxy.alipay.com/skylark/lark/0/2023/gif/59356401/1680492813785-bb23b248-89a6-4be3-93e7-f02c479e322b.gif#clientId=u35af942e-4c6f-4&height=1&id=msDpx&name=image.gif&originHeight=1&originWidth=1&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u9fab5182-caa6-48c6-b720-2004fdf2ee8&title=&width=1) -->
 
-![3.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680492813948-58f34318-551d-417c-8c39-309eb096ac07.png#clientId=u35af942e-4c6f-4&height=726&id=Ilk98&name=3.png&originHeight=726&originWidth=1056&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u692bc24e-3b90-4bc8-8a24-eb1cf7d28cf&title=&width=1056)
+![3.png](https://img.alicdn.com/imgextra/i1/O1CN01DEEeRT27QKiyj1GDR_!!6000000007791-2-tps-1056-726.png)
 
 消息队列 RocketMQ 版事务消息的方案，具备**高性能、可扩展、业务开发简单**的优势。
 
@@ -67,7 +68,7 @@ description: "本篇文章通过拆解 RocketMQ 事务消息的使用场景、�
 
 ### 事务消息生命周期
 
-![4.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680492816011-3437d2ed-48f4-4a07-855e-6348fc753245.png#clientId=u35af942e-4c6f-4&height=198&id=Zbdyf&name=4.png&originHeight=198&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ub99b8da6-36ae-46cb-b1b8-6117c07f6c9&title=&width=1080)
+![4.png](https://img.alicdn.com/imgextra/i4/O1CN01IbfsLR1ZFA82ek7nj_!!6000000003164-2-tps-1080-198.png)
 
 - **初始化**：半事务消息被生产者构建并完成初始化，待发送到服务端的状态； 
 
@@ -87,8 +88,8 @@ description: "本篇文章通过拆解 RocketMQ 事务消息的使用场景、�
 
 事务消息交互流程如下图所示：
 
-![5.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680492816008-1c651a79-f41c-48a1-af46-8a5a01f2b31b.png#clientId=u35af942e-4c6f-4&height=342&id=tC6cv&name=5.png&originHeight=342&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u9b63e509-ec4a-47ce-8d81-682e4dcfe54&title=&width=1080)
-![image.gif](https://intranetproxy.alipay.com/skylark/lark/0/2023/gif/59356401/1680492816001-59a93f21-763f-4e15-b9c1-23726c4e1d87.gif#clientId=u35af942e-4c6f-4&height=1&id=rmtwm&name=image.gif&originHeight=1&originWidth=1&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=uf5a6a7ba-d02e-4df5-9a7e-da69fe65821&title=&width=1)
+![5.png](https://img.alicdn.com/imgextra/i1/O1CN01gnWFop25bCtfFXAp1_!!6000000007544-0-tps-1080-342.jpg)
+<!-- ![image.gif](https://intranetproxy.alipay.com/skylark/lark/0/2023/gif/59356401/1680492816001-59a93f21-763f-4e15-b9c1-23726c4e1d87.gif#clientId=u35af942e-4c6f-4&height=1&id=rmtwm&name=image.gif&originHeight=1&originWidth=1&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=uf5a6a7ba-d02e-4df5-9a7e-da69fe65821&title=&width=1) -->
 
 1. 生产者将消息发送至 RocketMQ 服务端； 
 
@@ -111,7 +112,7 @@ description: "本篇文章通过拆解 RocketMQ 事务消息的使用场景、�
 ## 实现细节：RocketMQ 事务消息如何实现
 
 
-![6.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680492816190-9736b0b6-0ee8-40be-88eb-04c8079bf4a1.png#clientId=u35af942e-4c6f-4&height=510&id=CCRu6&name=6.png&originHeight=510&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=uec030975-976d-42b3-b64e-326f3a6ef46&title=&width=1080)
+![6.png](https://img.alicdn.com/imgextra/i4/O1CN0107pUUm1vEAot3zARQ_!!6000000006140-0-tps-1080-510.jpg)
 
 根据发送事务消息的基本流程的需要，实现分为三个主要流程：接收处理 Half 消息、Commit 或 Rollback 命令处理、事务消息 check。
 
@@ -119,15 +120,16 @@ description: "本篇文章通过拆解 RocketMQ 事务消息的使用场景、�
 
 发送方第一阶段发送 Half 消息到 Broker 后，Broker 处理 Half 消息。Broker 流程参考下图：
 
-![7.jpeg](https://intranetproxy.alipay.com/skylark/lark/0/2023/jpeg/59356401/1680492816300-7fe70ac9-eb6e-4fbc-a527-7edf57437873.jpeg#clientId=u35af942e-4c6f-4&height=345&id=JsL6Z&name=7.jpeg&originHeight=345&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u9465080a-f596-4b2c-b6b6-cfd920f5d82&title=&width=1080)
+![7.jpeg](https://img.alicdn.com/imgextra/i1/O1CN011ved8S20qFpVr869p_!!6000000006900-0-tps-1080-345.jpg)
 
 具体流程是首先把消息转换 Topic 为 RMQ_SYS_TRANS_HALF_TOPIC，其余消息内容不变，写入 Half 队列。具体实现参考 SendMessageProcessor 的逻辑处理。
 
 ### Commit 或 Rollback 命令处理
 ### 
-发送方完成本地事务后，继续发送 Commit 或 Rollback 到 Broker。由于当前事务已经完结，Broker 需要删除原有的 Half 消息，由于 RocketMQ 的 appendOnly 特性，Broker通过 OP 消息实现标记删除。Broker 流程参考下图：![image.gif](https://intranetproxy.alipay.com/skylark/lark/0/2023/gif/59356401/1680492816557-37a5d464-3ea2-4dc4-8b34-f0df37c939b8.gif#clientId=u35af942e-4c6f-4&height=1&id=uDJk5&name=image.gif&originHeight=1&originWidth=1&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u45ac00d9-16dd-4e65-b345-a1cdea492a3&title=&width=1)
+发送方完成本地事务后，继续发送 Commit 或 Rollback 到 Broker。由于当前事务已经完结，Broker 需要删除原有的 Half 消息，由于 RocketMQ 的 appendOnly 特性，Broker通过 OP 消息实现标记删除。Broker 流程参考下图：
+<!-- ![image.gif](https://intranetproxy.alipay.com/skylark/lark/0/2023/gif/59356401/1680492816557-37a5d464-3ea2-4dc4-8b34-f0df37c939b8.gif#clientId=u35af942e-4c6f-4&height=1&id=uDJk5&name=image.gif&originHeight=1&originWidth=1&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u45ac00d9-16dd-4e65-b345-a1cdea492a3&title=&width=1) -->
 
-![8.jpeg](https://intranetproxy.alipay.com/skylark/lark/0/2023/jpeg/59356401/1680492816628-b31376d7-d4da-4889-9bb8-b887a9082ef6.jpeg#clientId=u35af942e-4c6f-4&height=704&id=rK8HD&name=8.jpeg&originHeight=704&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=uf688ce6c-d3e0-4249-a962-afe8b0b59b7&title=&width=1080)
+![8.jpeg](https://img.alicdn.com/imgextra/i4/O1CN01UoNCYI1TDtKq1n2wN_!!6000000002349-0-tps-1080-704.jpg)
 
 - **Commit**。Broker 写入 OP 消息，OP 消息的 body 指定 Commit 消息的 queueOffset，标记之前 Half 消息已被删除；同时，Broker 读取原 Half 消息，把 Topic 还原，重新写入 CommitLog，消费者则可以拉取消费； 
 
@@ -139,9 +141,10 @@ description: "本篇文章通过拆解 RocketMQ 事务消息的使用场景、�
 
 如果发送端事务时间执行过程，发送 UNKNOWN 命令，或者 Broker/发送端重启发布等原因，流程 2 的标记删除的 OP 消息可能会缺失，因此增加了事务消息 check 流程，该流程是在异步线程定期执行（transactionCheckInterval 默认 30s 间隔），针对这些缺失 OP 消息的 Half 消息进行 check 状态。具体参考下图：
 
-![9.jpeg](https://intranetproxy.alipay.com/skylark/lark/0/2023/jpeg/59356401/1680492816772-cbf88134-3b8c-49c0-8de9-0cc4a19b5a54.jpeg#clientId=u35af942e-4c6f-4&height=588&id=ztRQu&name=9.jpeg&originHeight=588&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=uc221fa3c-9717-4941-b253-7bd6ffb0b46&title=&width=1080)
+![9.jpeg](https://img.alicdn.com/imgextra/i1/O1CN01GvCXPg1JZk4ZxQsPn_!!6000000001043-0-tps-1080-588.jpg)
 
-![image.gif](https://intranetproxy.alipay.com/skylark/lark/0/2023/gif/59356401/1680492816903-d594744f-9a68-43e7-bf1e-94f33e71c299.gif#clientId=u35af942e-4c6f-4&height=1&id=JXHsc&name=image.gif&originHeight=1&originWidth=1&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u931f4cbd-8038-4040-9de5-1cee4689811&title=&width=1)事务消息 check 流程扫描当前的 OP 消息队列，读取已经被标记删除的 Half 消息的 queueOffset。如果发现某个 Half 消息没有 OP 消息对应标记，并且已经超时（transactionTimeOut 默认 6 秒），则读取该 Half 消息重新写入 half 队列，并且发送 check 命令到原发送方检查事务状态；如果没有超时，则会等待后读取 OP 消息队列，获取新的 OP 消息。
+<!-- ![image.gif](https://intranetproxy.alipay.com/skylark/lark/0/2023/gif/59356401/1680492816903-d594744f-9a68-43e7-bf1e-94f33e71c299.gif#clientId=u35af942e-4c6f-4&height=1&id=JXHsc&name=image.gif&originHeight=1&originWidth=1&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u931f4cbd-8038-4040-9de5-1cee4689811&title=&width=1) -->
+事务消息 check 流程扫描当前的 OP 消息队列，读取已经被标记删除的 Half 消息的 queueOffset。如果发现某个 Half 消息没有 OP 消息对应标记，并且已经超时（transactionTimeOut 默认 6 秒），则读取该 Half 消息重新写入 half 队列，并且发送 check 命令到原发送方检查事务状态；如果没有超时，则会等待后读取 OP 消息队列，获取新的 OP 消息。
 
 另外，为了避免发送方的异常导致长期无法确定事务状态，如果某个 Half 消息的 bornTime 超过最大保留时间（transactionCheckMaxTimeInMs 默认 12 小时），则会自动跳过此消息，不再 check。
 
@@ -154,18 +157,18 @@ TransactionalMessageServiceImpl#check 方法。
 
 了解了 RocketMQ 事务消息的原理后，我们看下如何使用事务。首先，我们需要创建一个 “事务消息” 类型的 Topic，可以使用控制台或者 CLi 命令创建。
 
-![10.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680492817125-b6015170-9bd2-4ccb-b7bd-f1d3065ad8fa.png#clientId=u35af942e-4c6f-4&height=721&id=BPFZh&name=10.png&originHeight=721&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u9fd70bf7-937e-46c4-be21-41c5760b4b0&title=&width=1080)
+![10.png](https://img.alicdn.com/imgextra/i1/O1CN01Dgr5zB21fYBnY2zLR_!!6000000007012-2-tps-1080-721.png)
 
 事务消息相比普通消息发送时需要修改以下几点：
 
 - 发送事务消息前，需要开启事务并关联本地的事务执行。
 - 为保证事务一致性，在构建生产者时，必须设置事务检查器和预绑定事务消息发送的主题列表，客户端内置的事务检查器会对绑定的事务主题做异常状态恢复。 
 
-![11.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680492817226-2641f95d-0e16-4a80-90de-075312bc8b9b.png#clientId=u35af942e-4c6f-4&height=847&id=Snh24&name=11.png&originHeight=847&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u80ea107e-2505-4e6b-95bc-11d341243a5&title=&width=1080)
+![11.png](https://img.alicdn.com/imgextra/i3/O1CN01qRFFat1LUMea4p5f9_!!6000000001302-0-tps-1080-847.jpg)
 
 当事务消息 commit 之后，这条消息其实就是一条投递到用户 Topic 的普通消息而已。所以对于消费者来说，和普通消息的消费没有区别。
 
-![12.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680492817294-1ef67e95-53ac-4e44-b7a1-6445578dc3e4.png#clientId=u35af942e-4c6f-4&height=899&id=qdbtC&name=12.png&originHeight=899&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u0124df0b-3cf5-4a9c-a36a-292ddee409d&title=&width=1080)
+![12.png](https://img.alicdn.com/imgextra/i1/O1CN017JRU7a1fbV8fSWMMR_!!6000000004025-0-tps-1080-899.jpg)
 
 注意：
 
@@ -179,4 +182,4 @@ TransactionalMessageServiceImpl#check 方法。
 
 1、新用户首次购买包年包月，即可享受全系列 85折优惠！ 了解活动详情：[https://www.aliyun.com/product/rocketmq](https://www.aliyun.com/product/rocketmq)
 
-![e728c42e80cb67bf020e646e58619bcd.jpg](https://intranetproxy.alipay.com/skylark/lark/0/2023/jpeg/59356401/1680576637562-9af35fbf-d64b-4f81-b950-7e72f91b5ca2.jpeg#clientId=u449ffa34-59ce-4&from=paste&height=675&id=u462ad3c6&name=e728c42e80cb67bf020e646e58619bcd.jpg&originHeight=675&originWidth=1920&originalType=binary&ratio=1&rotation=0&showTitle=false&size=258156&status=done&style=none&taskId=u26cea311-dc98-45bd-8c8c-c7884e57c37&title=&width=1920)
+![e728c42e80cb67bf020e646e58619bcd.jpg](https://img.alicdn.com/imgextra/i4/O1CN01Xi1rcu1DM6aIC7ypz_!!6000000000201-0-tps-1920-675.jpg)

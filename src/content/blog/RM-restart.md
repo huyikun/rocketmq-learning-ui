@@ -12,7 +12,7 @@ description: "万物皆云的时代，RocketMQ 让数字化转型更简单高效
 
 今天，阿里巴巴的开源项目总数超过 3000 个，涵盖云计算、大数据、AI、中间件、数据库、容器、Serverless、高可用等领域，拥有超过 30000 名 Contributor，超过百万 Star，位列中国企业社区贡献榜首，连续十年蝉联中国厂商开源活跃度第一、影响力第一。未来，阿里云也将会持续投入 RocketMQ 的开源建设，构建更加繁荣的社区生态。希望与更多的开发者、贡献者一起，追求极致、开放共享，实现开源技术的普惠。
 
-![1.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680492646027-aad98c91-3b2a-4f98-bfd3-1fc704b0d18a.png#clientId=u7c4ad3bf-943a-4&height=608&id=wFHHj&name=1.png&originHeight=608&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ua6f262c0-0df3-49b0-bc88-ce7f5bf53c7&title=&width=1080)
+![1.png](https://img.alicdn.com/imgextra/i1/O1CN0185gcnO1TJO5WZV1Kr_!!6000000002361-0-tps-1080-608.jpg)
 
 ## 基于自身实践，RocketMQ 社区对于消息队列演进趋势的洞察
 
@@ -34,7 +34,7 @@ description: "万物皆云的时代，RocketMQ 让数字化转型更简单高效
 ## 四大方向，全面解读 RocketMQ 5.0 架构演进
 
 
-![2.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680492647706-478a9e1b-66a7-41fc-90fb-4c8151351fcd.png#clientId=u7c4ad3bf-943a-4&height=608&id=Ekxgu&name=2.png&originHeight=608&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u04e71bed-6cc6-4f5c-926e-b57d62a5c61&title=&width=1080)
+![2.png](https://img.alicdn.com/imgextra/i3/O1CN01NziuKN1N30DxOipPJ_!!6000000001513-0-tps-1080-608.jpg)
 
 ### 1. 面向微服务
 
@@ -110,4 +110,4 @@ RocketMQ 基于端云一体化架构，实现完整物联网消息队列能力�
 
 1、新用户首次购买包年包月，即可享受全系列 85折优惠！ 了解活动详情：[https://www.aliyun.com/product/rocketmq](https://www.aliyun.com/product/rocketmq)
 
-![e728c42e80cb67bf020e646e58619bcd.jpg](https://intranetproxy.alipay.com/skylark/lark/0/2023/jpeg/59356401/1680576637562-9af35fbf-d64b-4f81-b950-7e72f91b5ca2.jpeg#clientId=u449ffa34-59ce-4&from=paste&height=675&id=u462ad3c6&name=e728c42e80cb67bf020e646e58619bcd.jpg&originHeight=675&originWidth=1920&originalType=binary&ratio=1&rotation=0&showTitle=false&size=258156&status=done&style=none&taskId=u26cea311-dc98-45bd-8c8c-c7884e57c37&title=&width=1920)
+![e728c42e80cb67bf020e646e58619bcd.jpg](https://img.alicdn.com/imgextra/i4/O1CN01Xi1rcu1DM6aIC7ypz_!!6000000000201-0-tps-1920-675.jpg)

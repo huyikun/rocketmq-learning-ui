@@ -13,7 +13,8 @@ description: "今天，EventBridge 联合钉钉连接器，打通了钉钉生态
 
 截止目前为止，EventBridge 已集成 85+ 阿里云产品，提供了 941+ 事件类型，集成 50+ SaaS产品，通过事件规则可轻松驱动 10+ 阿里系一方云产品的计算力。
 
-![image.gif](https://intranetproxy.alipay.com/skylark/lark/0/2023/gif/59356401/1680491836935-17146771-964d-4e85-b58f-017175a177d3.gif#clientId=u2ba6174e-e813-4&height=1&id=CAA7l&name=image.gif&originHeight=1&originWidth=1&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u02be674c-4fe2-48e7-993b-214c042ca6a&title=&width=1)![1.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680491837045-3a1eb220-0c5e-4d4e-934b-35f406e801e3.png#clientId=u2ba6174e-e813-4&height=536&id=IKsQE&name=1.png&originHeight=536&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u8adc21b9-adb5-449d-afae-c90dbe381e5&title=&width=1080)
+<!-- ![image.gif](https://intranetproxy.alipay.com/skylark/lark/0/2023/gif/59356401/1680491836935-17146771-964d-4e85-b58f-017175a177d3.gif#clientId=u2ba6174e-e813-4&height=1&id=CAA7l&name=image.gif&originHeight=1&originWidth=1&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u02be674c-4fe2-48e7-993b-214c042ca6a&title=&width=1) -->
+![1.png](https://img.alicdn.com/imgextra/i1/O1CN01vb4h9J1kunue9q9VC_!!6000000004744-0-tps-1080-536.jpg)
 
 另一方面，钉钉生态空前繁荣，拥有 4000+ 家的生态伙伴，包括 ISV 生态伙伴、硬件生态伙伴、服务商、咨询生态和交付生态伙伴等。通过事件将钉钉生态与阿里云生态联通，是践行「云钉一体」战略的重要途径，EventBridge 作为阿里云标准化的事件枢纽，其重要性不言而喻。
 
@@ -27,23 +28,23 @@ EventBridge 集成阿里云和钉钉生态的方案，核心能力由钉钉连�
 
 钉钉连接平台通过可视化拖拽配置、一键订阅等零代码方式，简单高效的实现钉钉、企业内部系统、知名厂商系统（金蝶、用友、SAP 等）、钉钉第三方企业应用之间数据互通和集成。
 
-![2.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680491838724-8a484a0e-20de-43c7-b154-0e310712cb30.png#clientId=u2ba6174e-e813-4&height=282&id=Udix5&name=2.png&originHeight=282&originWidth=1013&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u7b1f41f0-fdf4-452a-a5fd-f052150d2c5&title=&width=1013)
+![2.png](https://img.alicdn.com/imgextra/i4/O1CN01asABvv1cJEUmbsvp0_!!6000000003579-2-tps-1013-282.png)
 
 近期，钉钉连接器在「连接流」中发布了「HTTP Webhook」的执行动作能力，支持将钉钉生态开放给外部生态，EventBridge 正是通过该能力将钉钉生态接入到阿里云生态。
 
-![3.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680491836929-49d7c403-405d-4ec0-8ed0-c8b04da072d8.png#clientId=u2ba6174e-e813-4&height=786&id=mviIb&name=3.png&originHeight=786&originWidth=714&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u1e810c44-2d6f-4e51-88c0-65c73f8da41&title=&width=714)
+![3.png](https://img.alicdn.com/imgextra/i2/O1CN014L0MF41VauTKGKr2U_!!6000000002670-0-tps-714-786.jpg)
 
 ### EventBridge HTTP 事件源
 
 事件源是事件驱动的基石，如何获取更多事件源也是 EventBridge 一直在探索和尝试的方向。针对市场上其他云厂商和垂直领域的 Saas 服务，EventBridge 发布了 HTTP 事件源能力，提供简单且易于集成的三方事件推送 ，帮助客户更加高效、便捷地实现业务上云。
 
-![4.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680491836834-20d67f07-4871-40be-a9ba-87dc67d36c0d.png#clientId=u2ba6174e-e813-4&height=427&id=PhFd0&name=4.png&originHeight=427&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u6918f902-d875-4f33-902c-7f9c13ab55d&title=&width=1080)
-![image.gif](https://intranetproxy.alipay.com/skylark/lark/0/2023/gif/59356401/1680491838982-aaedb785-8cd8-4e33-bb1a-5becc417562d.gif#clientId=u2ba6174e-e813-4&height=1&id=XO6C9&name=image.gif&originHeight=1&originWidth=1&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u9efb60cd-ce6f-491e-8763-2242ffd342c&title=&width=1)
+![4.png](https://img.alicdn.com/imgextra/i1/O1CN01a2O1GF20EExPTEcS5_!!6000000006817-2-tps-1080-427.png)
+<!-- ![image.gif](https://intranetproxy.alipay.com/skylark/lark/0/2023/gif/59356401/1680491838982-aaedb785-8cd8-4e33-bb1a-5becc417562d.gif#clientId=u2ba6174e-e813-4&height=1&id=XO6C9&name=image.gif&originHeight=1&originWidth=1&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u9efb60cd-ce6f-491e-8763-2242ffd342c&title=&width=1) -->
 具体而言，HTTP 事件源是 EventBridge 支持的事件源的一种，它以 Webhook 形式暴露了发布事件的 HTTP 请求地址，用户可以在有 URL 回调的场景配置 HTTP  事件源，或者直接使用最简单的 HTTP 客户端来完成事件的发布。HTTP  事件源提供了支持 HTTP 与 HTTPS，公网与阿里云 VPC 等不同请求方式、不同网络环境的 Webhook URL，便于用户将其集成到各类应用中。接入时无需使用客户端，仅需保证应用可以访问到对应 Webhook URL 即可，这使得接入过程变得简单而高效。
 
 在将 HTTP 请求转换为 CloudEvent 的时候，EventBridge 会将请求的头部和消息体部分置于 CloudEvent 字段中，其余字段会依据用户 EventBridge 资源属性以及系统默认规则进行填充。用户可以在事件规则中，对所需的内容进行过滤、提取，最终按照模板拼装成所需的消息内容投递给事件目标。
 
-![5.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680491839341-0800a28e-a862-4314-8e61-dc42f35aebc6.png#clientId=u2ba6174e-e813-4&height=507&id=iZFVL&name=5.png&originHeight=507&originWidth=972&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u4bdba153-2311-41b5-a09f-9c96858bbfc&title=&width=972)
+![5.png](https://img.alicdn.com/imgextra/i2/O1CN015uL7Gj1WDq8Ytfmhz_!!6000000002755-2-tps-972-507.png)
 
 在安全方面，HTTP 事件源不需要用户进行复杂的签名鉴权，支持 3 种类型开箱即用的安全设置，分别是请求方法、源 IP 以及请求来源域名。
 
@@ -58,7 +59,7 @@ EventBridge 集成阿里云和钉钉生态的方案，核心能力由钉钉连�
 - 官方连接器，来源主要是钉钉官方的应用，比如视频会议、日程、通讯录、审批流、钉盘、宜搭等，企业和 SaaS 厂商可以充分利用这些官方应用的事件构建企业级的应用系统，也可以将钉钉的官方数据流与其他系统做深度集成。
 - 第三方连接器，来源主要是钉钉的生态合作伙伴，比如金蝶、行翼云、集简云、用友、易快报、销帮帮等。SaaS 厂商可以通过开放连接器来开放数据，与其它应用互联互通。
 
-![6.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680491839384-8ee99a63-35ec-4cd7-b54a-fc0aea0f2e4c.png#clientId=u2ba6174e-e813-4&height=599&id=BMtmi&name=6.png&originHeight=599&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ud59c5677-fb30-4572-963d-bd01aff615e&title=&width=1080)
+![6.png](https://img.alicdn.com/imgextra/i4/O1CN01a3v4mU1nabHvzYBMt_!!6000000005106-0-tps-1080-599.jpg)
 
 如上图所示，借助钉钉连接器，可以将钉钉官方事件源和钉钉 SaaS 事件源连接到阿里云 EventBridge，从而能驱动云上的弹性资源。SaaS 厂商能够借助 EventBridge 连接的能力快速构建云原生的 SaaS 应用，借助云的弹性能力，采用云原生最新的技术栈，快速高效地开发 SaaS 应用，同时利用 EventBridge 获取钉钉和其它 SaaS 应用的数据源，轻松进行业务创新。
 
@@ -77,7 +78,8 @@ EventBridge 集成阿里云和钉钉生态的方案，核心能力由钉钉连�
 
 整个方案涉及到钉钉、钉钉连接器、EventBridge、阿里云数据库等产品，整个链路如下图所示：
 
-![image.gif](https://intranetproxy.alipay.com/skylark/lark/0/2023/gif/59356401/1680491839522-7e586f31-4821-47da-8367-cf5cd1ddcee8.gif#clientId=u2ba6174e-e813-4&height=1&id=NTE5y&name=image.gif&originHeight=1&originWidth=1&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u3bc64798-1c35-4f4b-8742-0901cac9696&title=&width=1)![7.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680491839590-4ca9140a-0557-479d-a36a-ec4eed67b037.png#clientId=u2ba6174e-e813-4&height=247&id=FG9hc&name=7.png&originHeight=247&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u44c6a04f-044b-4350-b716-b7142ee9d47&title=&width=1080)
+<!-- ![image.gif](https://intranetproxy.alipay.com/skylark/lark/0/2023/gif/59356401/1680491839522-7e586f31-4821-47da-8367-cf5cd1ddcee8.gif#clientId=u2ba6174e-e813-4&height=1&id=NTE5y&name=image.gif&originHeight=1&originWidth=1&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u3bc64798-1c35-4f4b-8742-0901cac9696&title=&width=1) -->
+![7.png](https://img.alicdn.com/imgextra/i2/O1CN01KtiSRF1DlklWk15lF_!!6000000000257-0-tps-1080-247.jpg)
 前置条件：
 
 - 拥有一个钉钉账号，并创建一个团队成为管理员，并能登陆钉钉开放平台。
@@ -91,27 +93,28 @@ EventBridge 集成阿里云和钉钉生态的方案，核心能力由钉钉连�
 
 首先登陆 EventBridge 控制台，创建一个事件总线和 HTTP 事件源，如下图所示，可以先跳过规则和目标的创建。
 
-![8.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680491839856-e595b77b-bcac-4a2e-8740-dada36c1e9fd.png#clientId=u2ba6174e-e813-4&height=859&id=kTtp0&name=8.png&originHeight=859&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ub7c8d056-f7d9-4a6d-a8e6-64c876a08dc&title=&width=1080)
+![8.png](https://img.alicdn.com/imgextra/i2/O1CN01aEZmjd1Oyzzbaaw8G_!!6000000001775-0-tps-1080-859.jpg)
 
 创建完成后，进入事件总线的详情列表，获取 HTTP 事件源的公网「Webhook 地址」，如下图所示：
 
-#### ![9.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680491840236-2c8ae4a7-1ad2-4113-a431-1444e22a4ec8.png#clientId=u2ba6174e-e813-4&height=606&id=iS2hS&name=9.png&originHeight=606&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=uf511cd6f-7b2d-4b19-a4fb-6aa7c89cad3&title=&width=1080)
+#### ![9.png](https://img.alicdn.com/imgextra/i4/O1CN01kPuVLj1HvbkYwugex_!!6000000000820-0-tps-1080-606.jpg)
 #### 2）创建钉钉连接流
 
 登陆钉钉开放平台，进入连接平台，在「我的连接」下创建连接流，在创建界面，选择触发器为「官方-通讯录-通讯录用户增加」。
 
-![image.gif](https://intranetproxy.alipay.com/skylark/lark/0/2023/gif/59356401/1680491840395-c9c3d9ce-0b7a-476d-8e6b-77254bc018b2.gif#clientId=u2ba6174e-e813-4&height=1&id=VNeHG&name=image.gif&originHeight=1&originWidth=1&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=uefcd5ce8-2410-45e9-94da-d5bb3a7083a&title=&width=1)![10.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680491840516-c9c0e09b-df31-48a1-934e-507785eaae9d.png#clientId=u2ba6174e-e813-4&height=681&id=zuIyB&name=10.png&originHeight=681&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=uc59ac98c-a25f-43b6-a23e-8e7ce8e9d4c&title=&width=1080)
+<!-- ![image.gif](https://intranetproxy.alipay.com/skylark/lark/0/2023/gif/59356401/1680491840395-c9c3d9ce-0b7a-476d-8e6b-77254bc018b2.gif#clientId=u2ba6174e-e813-4&height=1&id=VNeHG&name=image.gif&originHeight=1&originWidth=1&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=uefcd5ce8-2410-45e9-94da-d5bb3a7083a&title=&width=1) -->
+![10.png](https://img.alicdn.com/imgextra/i1/O1CN01XVhXwq1VCdTs6NAn6_!!6000000002617-0-tps-1080-681.jpg)
 
 连接流创建完成后，进入编辑页面，添加一个「HTTP Webhook」的节点，在「请求地址」一栏填入上个步骤获取到的「HTTP 事件源」地址。
 
-![11.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680491840975-750ded52-7d79-498a-90ba-8916eee1817b.png#clientId=u2ba6174e-e813-4&height=922&id=CvgZ1&name=11.png&originHeight=922&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=uec73e513-1095-48f0-9783-a7f25b8edde&title=&width=1080)
+![11.png](https://img.alicdn.com/imgextra/i3/O1CN01V9MoRJ1LZrPESFRp6_!!6000000001314-0-tps-1080-922.jpg)
 #### 
 #### 3）钉钉触发新增员工事件
 
 
 打开钉钉，进入团队，邀请另一个账号加入团队，然后进入事件总线的「事件追踪」页面，可以发现该员工新增事件已经投递到了事件总线之上。
 
-![12.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680491841066-196a8d53-687d-46c2-b0cd-7dfb905aa208.png#clientId=u2ba6174e-e813-4&height=313&id=enwlU&name=12.png&originHeight=313&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u37f4d4b9-efdd-4ec7-a114-2fe8a32ab9e&title=&width=1080)
+![12.png](https://img.alicdn.com/imgextra/i1/O1CN01AQFAly1wCAhiBlBgK_!!6000000006271-0-tps-1080-313.jpg)
 
 该事件被转换成了一个「CloudEvents」格式，其「$.data.body」为事件的详情，包含 dingId, userId, department 等字段。
 
@@ -182,20 +185,21 @@ EventBridge 集成阿里云和钉钉生态的方案，核心能力由钉钉连�
 
 首先创建规则，过滤第一步创建的 HTTP 事件源。
 
-![image.gif](https://intranetproxy.alipay.com/skylark/lark/0/2023/gif/59356401/1680491841088-fdfc2b17-8c8e-4fce-83fa-2878e67da676.gif#clientId=u2ba6174e-e813-4&height=1&id=ZNdz7&name=image.gif&originHeight=1&originWidth=1&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u2d7f65d5-113d-454e-ab2a-130c1821ef0&title=&width=1)![13.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680491841401-5d7f4da0-2f4e-49a2-bb47-8e153136564b.png#clientId=u2ba6174e-e813-4&height=336&id=uWh1y&name=13.png&originHeight=336&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ua07910d7-4ee3-403e-bc3d-69ef4b4a7e8&title=&width=1080)
+<!-- ![image.gif](https://intranetproxy.alipay.com/skylark/lark/0/2023/gif/59356401/1680491841088-fdfc2b17-8c8e-4fce-83fa-2878e67da676.gif#clientId=u2ba6174e-e813-4&height=1&id=ZNdz7&name=image.gif&originHeight=1&originWidth=1&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u2d7f65d5-113d-454e-ab2a-130c1821ef0&title=&width=1) -->
+![13.png](https://img.alicdn.com/imgextra/i1/O1CN019r01gl21eB07uqMRS_!!6000000007009-0-tps-1080-336.jpg)
 
 然后选择 RDS 目标，做好参数映射。
-![image.gif](https://intranetproxy.alipay.com/skylark/lark/0/2023/gif/59356401/1680491841560-3af20ed6-7499-43da-9acd-ab5d9fb4e324.gif#clientId=u2ba6174e-e813-4&height=1&id=UiT34&name=image.gif&originHeight=1&originWidth=1&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ua486071e-563d-40a1-8f1c-e2006b3277b&title=&width=1)
-#### ![14.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680491841797-682ba7cf-77b2-4347-a059-69059aaad266.png#clientId=u2ba6174e-e813-4&height=381&id=J74ht&name=14.png&originHeight=381&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=uf9787f36-f583-4a65-8438-54713e0d71c&title=&width=1080)
+<!-- ![image.gif](https://intranetproxy.alipay.com/skylark/lark/0/2023/gif/59356401/1680491841560-3af20ed6-7499-43da-9acd-ab5d9fb4e324.gif#clientId=u2ba6174e-e813-4&height=1&id=UiT34&name=image.gif&originHeight=1&originWidth=1&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ua486071e-563d-40a1-8f1c-e2006b3277b&title=&width=1) -->
+#### ![14.png](https://img.alicdn.com/imgextra/i1/O1CN01QAY2Bv20PgrJOY6jb_!!6000000006842-0-tps-1080-381.jpg)
 #### 6）触发事件入库
 
 
 第三步触发事件时，因未配置规则和目标，事件没有被消费，故需要通过钉钉重新触发一次事件，然后从 EventBridge 控制台观察推送轨迹。
 
-![15.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680491842041-0b46e844-eb70-4604-8734-7e09d153ff61.png#clientId=u2ba6174e-e813-4&height=487&id=ddGgL&name=15.png&originHeight=487&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u10786bea-8890-453e-b4d5-56e7775a31a&title=&width=1080)
+![15.png](https://img.alicdn.com/imgextra/i4/O1CN01yvWstw1eZq5VibcbV_!!6000000003886-0-tps-1080-487.jpg)
 从轨迹中可以看出推送成功，然后通过 RDS 控制台可以查询到该条记录。
 
-![16.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680491842092-aac238f3-6466-4fa9-8d17-1d358f69581a.png#clientId=u2ba6174e-e813-4&height=193&id=R92bB&name=16.png&originHeight=193&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u7aab6397-fb44-4fb4-a42e-f722f821b56&title=&width=1080)
+![16.png](https://img.alicdn.com/imgextra/i4/O1CN01QPa4AY1Q5F0UXqzFn_!!6000000001924-0-tps-1080-193.jpg)
 至此，一个钉钉团队新员工入职的记录通过 0 代码的方式入库到企业数据库当中，可以非常低的成本开发企业级管理应用。
 
 _**参考链接：**_
@@ -216,4 +220,4 @@ _**参考链接：**_
 
 1、新用户首次购买包年包月，即可享受全系列 85折优惠！ 了解活动详情：[https://www.aliyun.com/product/rocketmq](https://www.aliyun.com/product/rocketmq)
 
-![e728c42e80cb67bf020e646e58619bcd.jpg](https://intranetproxy.alipay.com/skylark/lark/0/2023/jpeg/59356401/1680576637562-9af35fbf-d64b-4f81-b950-7e72f91b5ca2.jpeg#clientId=u449ffa34-59ce-4&from=paste&height=675&id=u462ad3c6&name=e728c42e80cb67bf020e646e58619bcd.jpg&originHeight=675&originWidth=1920&originalType=binary&ratio=1&rotation=0&showTitle=false&size=258156&status=done&style=none&taskId=u26cea311-dc98-45bd-8c8c-c7884e57c37&title=&width=1920)
+![e728c42e80cb67bf020e646e58619bcd.jpg](https://img.alicdn.com/imgextra/i4/O1CN01Xi1rcu1DM6aIC7ypz_!!6000000000201-0-tps-1920-675.jpg)

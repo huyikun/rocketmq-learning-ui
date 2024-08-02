@@ -6,7 +6,7 @@ img: "https://img.alicdn.com/imgextra/i4/O1CN01nx36881UQ5MAhiFfP_!!6000000002511
 tags: ["practice"]
 description: "Matrix 经过一年多的建设，目前已具备多渠道统一接入、第三方生态互联互通、基金特色交易场景化封装等功能特性。Matrix 通过建设有品质、有温度的陪伴，从技术上和体验上，让用户理解风险，理解投资，进而为客户持续创造价值。"
 ---
-![](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680488606860-420ff3e5-21ae-49f8-9d30-5bd91867f299.png#clientId=u18583d16-efd9-4&from=paste&id=u2102c632&originHeight=651&originWidth=1080&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ua6aa11e9-64e5-4044-8a73-99c04801b21&title=)
+![](https://img.alicdn.com/imgextra/i2/O1CN01cp1sKv1d27JN5vF71_!!6000000003677-0-tps-1080-651.jpg)
 作者｜伍振河 博时基金互联网金融部架构师 、曾志 博时基金互联网金融部开发主管
 随着近两年业绩的抢眼，公募基金迎来了乘风破浪式的发展，截至 2021 年 1 月底，资产管理规模已破 20 万亿，创下了历史新高。
 
@@ -48,13 +48,13 @@ Matrix 开放给经过博时互联网平台资质认证后的第三方平台使�
 
 基于 Spring Cloud 微服务套件和 RocketMQ 消息中间件，搭建的企业级云原生架构。
 
-![](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680488606931-63b03bd1-64b1-478f-981a-55d3b43b3cac.png#clientId=u18583d16-efd9-4&from=paste&id=u9627624a&originHeight=485&originWidth=866&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u05850bd7-1f51-48ed-b4d1-4541cf1444c&title=)
+![](https://img.alicdn.com/imgextra/i2/O1CN01QJ09Wx1cCox3X3vxs_!!6000000003565-2-tps-866-485.png)
 ## 2、关键组件
 1）API 网关
 
 API 网关是微服务架构重要组件之一，是服务唯一入口。API 网关封装内部系统架构，横向抽离通用功能，如：权限校验、熔断限流、负载均衡等。通过 API 网关可以把内部 API 统一管控起来。
 
-![](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680488608635-7cf14e1e-0336-430d-b6ac-0810dbd663d0.png#clientId=u18583d16-efd9-4&from=paste&id=ueac8e770&originHeight=389&originWidth=866&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u8234c0db-ce6a-466d-ad01-abc4222b59c&title=)
+![](https://img.alicdn.com/imgextra/i3/O1CN01kp2rKX1Ln8tTZP2um_!!6000000001343-2-tps-866-389.png)
 
 目前博时基金的互联网业务接入入口主要分为 3 类：
 
@@ -92,11 +92,11 @@ RocketMQ 是阿里巴巴自主研发及双 11 交易核心链路消息产品，�
 Matrix 基于 RocketMQ 的事务消息搭建了一个高可靠、高可用的事务消息平台---事务中心，涉及业务流程如下：
 第一阶段是 Prepare ，即业务系统将 RocketMQ 的半事务消息发送到事务中心，事务中心不做发布，等待二次确认。Prepare 完成之后，业务系统执行主事务，即购买货币基金，成功后 commit 到事务中心，由事务中心投递消息到从事务。如果主事务失败，就投递 rollback 给事务中心。
 
-![](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680488607037-228141d8-d120-4763-bbef-a6fcd23aa207.png#clientId=u18583d16-efd9-4&from=paste&id=uedee76cc&originHeight=527&originWidth=806&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u99b3c696-3b2d-4e32-8781-0b951070791&title=)
+![](https://img.alicdn.com/imgextra/i1/O1CN01VQ4Ew21OR6gUfUtIc_!!6000000001701-2-tps-806-527.png)
 反查机制：
 
 由于网络抖动、业务系统重启等原因，可能导致事务消息的二次确认丢失。此时需要依赖反查机制恢复整个分布式事务的上下文。RocketMQ 提供的 Message Status Check 机制正是为解决分布式事务中的超时问题而设计的。事务中心的反查机制流程主要是，先检查事务中心的内部状态，再通过反查接口检查本地事务的执行结果，恢复事务上下文后，正常推进后续的流程。
-![](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680488606976-abc24b7c-8e0b-4821-b8ad-b577bf3c5e62.png#clientId=u18583d16-efd9-4&from=paste&id=ua46ae4cc&originHeight=529&originWidth=787&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=uf05913bb-0fc9-4b1b-839a-c860a1dc85d&title=)
+![](https://img.alicdn.com/imgextra/i1/O1CN01RuOuSz1KBkwnTpfxg_!!6000000001126-2-tps-787-529.png)
 依赖于 RocketMQ 提供的事务消息，事务中心在应用层实现了分布式事务，大大提升了对金融产品的场景化包装能力。
 2) 用于系统间解耦
 
@@ -108,7 +108,7 @@ Matrix 基于 RocketMQ 的事务消息搭建了一个高可靠、高可用的事
 
 部门 A 的陪伴事件触发服务和部门 B 的陪伴触达服务之间通过 RocketMQ 消息进行业务解耦，即双方没有依赖关系，也不必同时在线。
 
-![](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680488609338-0a59c2d7-6c57-4ec8-a437-aee5236a6240.png#clientId=u18583d16-efd9-4&from=paste&id=u46cfc9b5&originHeight=554&originWidth=866&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u64351dd5-7d31-41a9-91f5-890502e0310&title=)
+![](https://img.alicdn.com/imgextra/i3/O1CN01MHe1rr1LADECEBiBy_!!6000000001258-2-tps-866-554.png)
 
 3) 异步调用
 
@@ -131,4 +131,4 @@ Matrix 经过一年多的建设，目前已具备多渠道统一接入、第三�
 阿里云基于 Apache RocketMQ 构建的企业级产品-消息队列RocketMQ 5.0版现开启活动：
 
 1、新用户首次购买包年包月，即可享受全系列 85折优惠！ 了解活动详情：[https://www.aliyun.com/product/rocketmq](https://www.aliyun.com/product/rocketmq)
-![e728c42e80cb67bf020e646e58619bcd.jpg](https://intranetproxy.alipay.com/skylark/lark/0/2023/jpeg/59356401/1680576637562-9af35fbf-d64b-4f81-b950-7e72f91b5ca2.jpeg#clientId=u449ffa34-59ce-4&from=paste&height=675&id=u462ad3c6&name=e728c42e80cb67bf020e646e58619bcd.jpg&originHeight=675&originWidth=1920&originalType=binary&ratio=1&rotation=0&showTitle=false&size=258156&status=done&style=none&taskId=u26cea311-dc98-45bd-8c8c-c7884e57c37&title=&width=1920)
+![e728c42e80cb67bf020e646e58619bcd.jpg](https://img.alicdn.com/imgextra/i4/O1CN01Xi1rcu1DM6aIC7ypz_!!6000000000201-0-tps-1920-675.jpg)

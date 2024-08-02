@@ -6,7 +6,7 @@ img: "https://img.alicdn.com/imgextra/i1/O1CN0155795P259Gaz3IwRz_!!6000000007483
 tags: ["practice"]
 description: "随着公司业务的不断发展，流量也在不断增长。我们发现生产中的一些重大事故，往往是被突发的流量冲跨的，对流量的治理和防护，保障系统高可用就尤为重要。"
 ---
-![](https://intranetproxy.alipay.com/skylark/lark/0/2023/jpg/59356401/1680487748175-6a021b5a-fe7d-4b13-acc5-ef95db6de7e0.jpg#clientId=ubb84d0d5-2c39-4&from=paste&id=u63de2dc0&originHeight=3785&originWidth=5677&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u79751774-1f91-4b0d-a418-74a5fa740a8&title=)
+![](https://img.alicdn.com/imgextra/i1/O1CN01Dsov0i1DAegSC1qxX_!!6000000000176-0-tps-5677-3785.jpg)
 # 作者｜梁勇
 # 背景
 
@@ -88,12 +88,12 @@ description: "随着公司业务的不断发展，流量也在不断增长。我
 
 提供统一的 SDK 封装了（ Kafka / RocketMQ ）两种消息中间件。
 
-![](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680487748180-d7cd6e0c-5084-4a43-ad7a-0895fadcbbbb.png#clientId=ubb84d0d5-2c39-4&from=paste&id=ub4aa2e8e&originHeight=387&originWidth=1080&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ubff55ee8-b952-4dd6-a404-eab2acb5b34&title=)
+![](https://img.alicdn.com/imgextra/i1/O1CN01iC5qF520envggf8Ag_!!6000000006875-2-tps-1080-387.png)
 #### 一次申请
 
 主题消费组自动创建不适合生产环境，自动创建会导致失控，不利于整个生命周期管理和集群稳定。需要对申请流程进行控制，但是应尽可能简单。例如：一次申请各个环境均生效、生成关联告警规则等。
 
-![](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680487750067-8ced4052-dd8d-488a-85e2-89bc76838155.png#clientId=ubb84d0d5-2c39-4&from=paste&id=u6f3b1c5b&originHeight=272&originWidth=1080&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u7a99c3af-bbc6-400d-aa90-42b761f6b20&title=)
+![](https://img.alicdn.com/imgextra/i4/O1CN01f3VTFm1Gn4kz1BUyE_!!6000000000666-0-tps-1080-272.jpg)
 ## 客户端治理
 #### 设计指南
 监控客户端使用是否规范，找到合适的措施治理
@@ -201,7 +201,7 @@ description: "随着公司业务的不断发展，流量也在不断增长。我
 ### **最核心指标聚焦**
 
 如果说这些关键指标中哪一个最重要？我会选择集群中每个节点的心跳检测，即：响应时间（ RT ），下面看看影响 RT 可能哪些原因。
-![](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680487748106-344f6ad7-4712-432e-96cd-868c28fd220a.png#clientId=ubb84d0d5-2c39-4&from=paste&id=u5b96515a&originHeight=1294&originWidth=812&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u7f086592-6df2-4959-b9e8-fb2303b7fa4&title=)
+![](https://img.alicdn.com/imgextra/i4/O1CN01G4I31u29NFHmxAp11_!!6000000008055-0-tps-812-1294.jpg)
 ### 关于告警
 
 - 监控指标大多是秒级探测
@@ -210,14 +210,14 @@ description: "随着公司业务的不断发展，流量也在不断增长。我
 ### 消息平台图示
 ### **架构图**
 
-![](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680487748211-1ba0e197-73a9-4f79-8401-3eeee0ee084f.png#clientId=ubb84d0d5-2c39-4&from=paste&id=u41bfdccc&originHeight=836&originWidth=1080&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u5bf30e47-cf2d-4b6b-bb35-b49a4c5d2a9&title=)
+![](https://img.alicdn.com/imgextra/i3/O1CN01PvL0B91DSyWigmaWe_!!6000000000216-0-tps-1080-836.jpg)
 ### **看板图示**
 
 - 多维度：集群维度、应用维度
 - 全聚合：关键指标全聚合
 
-![](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680487750558-ab833e7d-1e01-42ae-8240-2b9795a0406b.png#clientId=ubb84d0d5-2c39-4&from=paste&id=uf5f2d7d2&originHeight=619&originWidth=1080&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u21bf0f55-8d0a-44d0-a24a-ef0908f6025&title=)
-![](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680487750641-00e1ff6f-0c10-41d3-842c-7dc2e5d4265e.png#clientId=ubb84d0d5-2c39-4&from=paste&id=ua421719d&originHeight=585&originWidth=1080&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u487af458-2d51-43d5-a93f-34a400bafeb&title=)
+![](https://img.alicdn.com/imgextra/i1/O1CN01dIW3Pn206SDw7VMIS_!!6000000006800-2-tps-1080-619.png)
+![](https://img.alicdn.com/imgextra/i2/O1CN019VQMBT1iGq7boUq36_!!6000000004386-2-tps-1080-585.png)
 # RocketMQ 实战中踩过的坑和解决方案
 ### 行动指南
 
@@ -227,11 +227,11 @@ description: "随着公司业务的不断发展，流量也在不断增长。我
 #### 问题描述
 **
 RocketMQ 从节点、主节点频繁 CPU 飙高，很明显的毛刺，很多次从节点直接挂掉了。
-![](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680487750925-806d92ac-fd1f-409f-8e6e-bea77bae5caa.png#clientId=ubb84d0d5-2c39-4&from=paste&id=u8f3fcc73&originHeight=393&originWidth=1080&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ud3371971-4113-486f-bf1f-c63419f5fe1&title=)
+![](https://img.alicdn.com/imgextra/i2/O1CN01E8a4gl26iMhePBoTw_!!6000000007695-0-tps-1080-393.jpg)
 只有系统日志有错误提示
 2020-03-16T17:56:07.505715+08:00 VECS0xxxx kernel:[] ? __alloc_pages_nodemask+0x7e1/0x9602020-03-16T17:56:07.505717+08:00 VECS0xxxx kernel: java: page allocation failure. order:0, mode:0x202020-03-16T17:56:07.505719+08:00 VECS0xxxx kernel: Pid: 12845, comm: java Not tainted 2.6.32-754.17.1.el6.x86_64 #12020-03-16T17:56:07.505721+08:00 VECS0xxxx kernel: Call Trace:2020-03-16T17:56:07.505724+08:00 VECS0xxxx kernel:[] ? __alloc_pages_nodemask+0x7e1/0x9602020-03-16T17:56:07.505726+08:00 VECS0xxxx kernel: [] ? dev_queue_xmit+0xd0/0x3602020-03-16T17:56:07.505729+08:00 VECS0xxxx kernel: [] ? ip_finish_output+0x192/0x3802020-03-16T17:56:07.505732+08:00 VECS0xxxx kernel: [] ?
 各种调试系统参数只能减缓但是不能根除，依然毛刺超过 50%
-![](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680487751070-8b122c0c-d915-4903-8532-433d61d09bb5.png#clientId=ubb84d0d5-2c39-4&from=paste&id=ud46cb66a&originHeight=441&originWidth=1080&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u03051c08-9e2d-4fd4-9010-69d8a9554f4&title=)
+![](https://img.alicdn.com/imgextra/i2/O1CN01DARxdP1Nv2xc6JYgb_!!6000000001631-0-tps-1080-441.jpg)
 #### 解决方案
 将集群所有系统升级从 centos 6 升级到 centos 7 ，内核版本也从从 2.6 升级到 3.10 ，CPU 毛刺消失。
 
@@ -272,24 +272,24 @@ S1 服务是公司的核心服务，是重点保障的对象，需保障其不�
 - 非核心服务调用 S1 服务流量路由到 Standalone 环境
 - S1 服务调用非核心服务需配置熔断策略
 
-![](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680487752019-d987e365-6da5-46d8-992c-a40b8469d809.png#clientId=ubb84d0d5-2c39-4&from=paste&id=u9d34ffcc&originHeight=699&originWidth=1080&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ubcc2c83e-958f-4fa0-9e79-424214e067e&title=)
+![](https://img.alicdn.com/imgextra/i4/O1CN01Nh61661oxKYhbwp41_!!6000000005291-0-tps-1080-699.jpg)
 ### 多种限流熔断能力建设
 ### **我们建设的高可用平台能力**
-![](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680487752345-64dce9f3-31e4-49c6-82e1-f076e094576a.png#clientId=ubb84d0d5-2c39-4&from=paste&id=u7775a2bf&originHeight=931&originWidth=1080&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u5f63d9d6-f67b-42a9-bee2-a3ceb6cfa16&title=)
+![](https://img.alicdn.com/imgextra/i2/O1CN015AdCRr20Q9FtQkiB7_!!6000000006843-0-tps-1080-931.jpg)
 ### **部分限流效果图**
 **
 
 - 预热图示
 
-![](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680487752499-85ffa327-9cb4-4771-90ae-42e4ec038e3d.png#clientId=ubb84d0d5-2c39-4&from=paste&id=u35912a6e&originHeight=154&originWidth=746&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u6ec6e1a3-d2c8-4f46-8477-acaac476e87&title=)
+![](https://img.alicdn.com/imgextra/i1/O1CN01GnbF4Y1OqIT4u3nLZ_!!6000000001756-0-tps-746-154.jpg)
 
 - 排队等待
 
-![](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680487752633-9f136003-1453-4409-9f35-af1680e3b72c.png#clientId=ubb84d0d5-2c39-4&from=paste&id=ud0c0718f&originHeight=154&originWidth=746&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=udc856ba2-f259-45fa-b7d4-70d959a84b2&title=)
+![](https://img.alicdn.com/imgextra/i4/O1CN01ezIZTw1vg6yrGoTMN_!!6000000006201-0-tps-746-154.jpg)
 
 - 预热+排队
 
-![](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680487752894-2b7ec334-5001-420a-9f30-98e8fa721676.png#clientId=ubb84d0d5-2c39-4&from=paste&id=u05343d87&originHeight=144&originWidth=746&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u43a35eb0-729c-47ba-85a7-3cbe771a571&title=)
+![](https://img.alicdn.com/imgextra/i2/O1CN01ANu97v1xKFIsi7N3z_!!6000000006424-0-tps-746-144.jpg)
 ### **高可用平台图示**
 **
 
@@ -297,7 +297,7 @@ S1 服务是公司的核心服务，是重点保障的对象，需保障其不�
 - 动态配置实时生效
 - 每个资源和 IP 节点详细流量
 
-![](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680487753162-c19676b1-7a9e-4e31-bd28-26d10055a0c9.png#clientId=ubb84d0d5-2c39-4&from=paste&id=ued1c424a&originHeight=496&originWidth=1080&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u00af47c4-d226-40ea-8342-393acfaf7ea&title=)
+![](https://img.alicdn.com/imgextra/i2/O1CN01oXy5Do1Zs5nN0nhNp_!!6000000003249-0-tps-1080-496.jpg)
 ### 总结
 
 - 哪些是我们的关键指标，哪些是我们的次要指标，这是消息治理的首要问题
@@ -310,4 +310,4 @@ S1 服务是公司的核心服务，是重点保障的对象，需保障其不�
 
 1、新用户首次购买包年包月，即可享受全系列 85折优惠！ 了解活动详情：[https://www.aliyun.com/product/rocketmq](https://www.aliyun.com/product/rocketmq)
 
-![e728c42e80cb67bf020e646e58619bcd.jpg](https://intranetproxy.alipay.com/skylark/lark/0/2023/jpeg/59356401/1680576637562-9af35fbf-d64b-4f81-b950-7e72f91b5ca2.jpeg#clientId=u449ffa34-59ce-4&from=paste&height=675&id=u462ad3c6&name=e728c42e80cb67bf020e646e58619bcd.jpg&originHeight=675&originWidth=1920&originalType=binary&ratio=1&rotation=0&showTitle=false&size=258156&status=done&style=none&taskId=u26cea311-dc98-45bd-8c8c-c7884e57c37&title=&width=1920)
+![e728c42e80cb67bf020e646e58619bcd.jpg](https://img.alicdn.com/imgextra/i4/O1CN01Xi1rcu1DM6aIC7ypz_!!6000000000201-0-tps-1920-675.jpg)

@@ -6,7 +6,7 @@ img: "https://img.alicdn.com/imgextra/i4/O1CN01bw2lu31fXNQyYczCa_!!6000000004016
 tags: ["practice"]
 description: "在众多开源消息队列产品中，一名优秀架构师如何给出高性价比方案"
 ---
-![](https://intranetproxy.alipay.com/skylark/lark/0/2023/jpg/59356401/1680487615376-befe6012-f55f-4118-ab10-71914b7898f3.jpg#clientId=u3dd57860-83a0-4&from=paste&id=u9c4c3707&originHeight=5304&originWidth=7952&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=uea01df45-1bdd-45ae-8a7f-e9a3d4c68b1&title=)
+![](https://img.alicdn.com/imgextra/i1/O1CN01mCzXRq1XSKHVio5CU_!!6000000002922-0-tps-7952-5304.jpg)
 作者：李伟
 说起消息队列，ActiveMQ、RabbitMQ、RocketMQ、Kafka、Pulsar 等纷纷涌入我们的脑海中， 在如此众多的开源消息队列产品中，作为一名合格的架构师如何给出高性价比的方案呢？商业化的产品暂不纳入选项中。
 接下来我将从**选型要素、RocketMQ 的优势**两个方面解释为什么选择 RocketMQ 。
@@ -88,7 +88,7 @@ description: "在众多开源消息队列产品中，一名优秀架构师如何
 
 **1. 技术成本**
 
-![](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680487615458-07f2dc75-ebcf-4d8c-9e0e-9d5cbab5933a.png#clientId=u3dd57860-83a0-4&from=paste&id=udc288fad&originHeight=431&originWidth=597&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u556257a3-97b8-421a-a595-661a41c26ba&title=)
+![](https://img.alicdn.com/imgextra/i4/O1CN01ix9izt1o2zqU5pOMW_!!6000000005168-0-tps-597-431.jpg)
 就技术成熟度而言，在经历阿里双十一数万亿洪峰、微众银行、民生银行、蚂蚁金服、平安、字节跳动、快手、美团、京东、网易等各种行业大厂的考验后，就不言而喻了。
 
 RocketMQ 对于服务器的配置要求不高， 普通的云主机都可以。曾经我们验证 8C 16G 500G SSD 的 2 主 2 从的集群，发送 tps 可以到 4～5w ，消费 tps 峰值 20w +，稳定在 8w～9w 。并且，还能根据业务实际的需求无感的横向扩展。
@@ -106,7 +106,7 @@ java 也是目前中间件采用的比较主流的语言，使用的技术人员
 RocketMQ 社区也比较活跃，钉钉群、微信群、QQ 群众多，社区文档非常丰富和完善，原理剖析视频、文档也非常多，非常易于学习和入门。
 
 下面是钉钉群，欢迎大家加群留言、答疑。
-![](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680487616905-a378456a-8d82-4f19-b458-a4fcb363c109.png#clientId=u3dd57860-83a0-4&from=paste&id=udec4b6e8&originHeight=990&originWidth=750&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ua0cfac1f-8850-4adc-9f39-d516e98a95a&title=)
+![](https://img.alicdn.com/imgextra/i2/O1CN01y1vix91PWtIkq856P_!!6000000001849-0-tps-750-990.jpg)
 对于 java 方面的消息队列方面的人才相比 C/C++、C#、Python、Go 等还是更多的：主流的 Kafka 是 scala + java、pulsar 是 java ，对于招聘也有极大的优势。
 
 综合而言，RocketMQ 技术员对于人力成本比较友好。
@@ -175,19 +175,19 @@ RocketMQ 适用于金融转账消息、订单状态变更消息、手机消息 P
 - Apache RocketMQ 开源入门最佳实践：
 
 [https://start.aliyun.com/course?spm=a2ck6.17690074.0.0.53c52e7dSi19ML&id=eAz6VTK5](https://start.aliyun.com/course?spm=a2ck6.17690074.0.0.53c52e7dSi19ML&id=eAz6VTK5)
-![](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680487615447-0a1433f0-9918-4207-87c6-d7f21441862a.png#clientId=u3dd57860-83a0-4&from=paste&id=u7ac73675&originHeight=1048&originWidth=1590&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u848a86c1-bf17-4011-b256-2bd9cbd7f1c&title=)
+![](https://img.alicdn.com/imgextra/i4/O1CN01UTpS9c1wU29UUwZLo_!!6000000006310-0-tps-1590-1048.jpg)
 
 - 《RocketMQ 分布式消息中间件：核心原理与最佳实践》随书实战：_[https://start.aliyun.com/course?spm=a2ck6.17690074.0.0.7aec2e7dCPMDFG&id=ASeJlmpX_](https://start.aliyun.com/course?spm=a2ck6.17690074.0.0.7aec2e7dCPMDFG&id=ASeJlmpX_)
 
-![](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680487615459-b7328016-c60c-44b7-983a-272245673711.png#clientId=u3dd57860-83a0-4&from=paste&id=u59fadd0d&originHeight=1334&originWidth=1598&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=uf241d63d-1d7e-4e2d-8687-0cc586f99de&title=)
+![](https://img.alicdn.com/imgextra/i4/O1CN01fKz6g91wwQhy3wKq5_!!6000000006372-0-tps-1598-1334.jpg)
 
 - 在 Spring 生态中玩转 RocketMQ：
 
 [https://start.aliyun.com/course?spm=a2ck6.17690074.0.0.241e2e7d0aEIxJ&id=hzidp9W1](https://start.aliyun.com/course?spm=a2ck6.17690074.0.0.241e2e7d0aEIxJ&id=hzidp9W1)
-![](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680487617295-525136fe-88df-490b-9ccf-5dc598f65d42.png#clientId=u3dd57860-83a0-4&from=paste&id=u14582649&originHeight=484&originWidth=1582&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u8c473972-1193-4af8-8796-92c42a9b26a&title=)
+![](https://img.alicdn.com/imgextra/i4/O1CN01poVTWH1rRg2E32MF5_!!6000000005628-0-tps-1582-484.jpg)
 实验预览图如下：
 
-![](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680487617753-6a61e8fd-01f5-4a01-87ed-0322467147a9.png#clientId=u3dd57860-83a0-4&from=paste&id=u9745eb40&originHeight=831&originWidth=1920&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=uc5cd2feb-400d-4127-bf60-79d7f69ee1a&title=)
+![](https://img.alicdn.com/imgextra/i4/O1CN01N6O18N1e6z8WRJyKI_!!6000000003823-0-tps-1920-831.jpg)
 # 其他资源
 
 - RocketMQ vs. ActiveMQ vs. Kafka：
@@ -235,4 +235,4 @@ RocketMQ 适用于金融转账消息、订单状态变更消息、手机消息 P
 
 1、新用户首次购买包年包月，即可享受全系列 85折优惠！ 了解活动详情：[https://www.aliyun.com/product/rocketmq](https://www.aliyun.com/product/rocketmq)
 
-![e728c42e80cb67bf020e646e58619bcd.jpg](https://intranetproxy.alipay.com/skylark/lark/0/2023/jpeg/59356401/1680576637562-9af35fbf-d64b-4f81-b950-7e72f91b5ca2.jpeg#clientId=u449ffa34-59ce-4&from=paste&height=675&id=u462ad3c6&name=e728c42e80cb67bf020e646e58619bcd.jpg&originHeight=675&originWidth=1920&originalType=binary&ratio=1&rotation=0&showTitle=false&size=258156&status=done&style=none&taskId=u26cea311-dc98-45bd-8c8c-c7884e57c37&title=&width=1920)
+![e728c42e80cb67bf020e646e58619bcd.jpg](https://img.alicdn.com/imgextra/i4/O1CN01Xi1rcu1DM6aIC7ypz_!!6000000000201-0-tps-1920-675.jpg)

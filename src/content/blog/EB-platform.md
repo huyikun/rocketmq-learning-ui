@@ -20,7 +20,7 @@ EventBridge 实时事件分析平台依托基于事件的实时处理引擎，�
 
 EventBridge 实时事件分析平台依托基于事件的实时处理引擎，提供数值检索，可视化分析，多组态分析，事件轨迹，事件溯源，Schema 管理等能力。EventBridge 实时事件具有无入侵，无需数据上报，低成本，操作快捷等特点，通过简单的引导式交互，即可快速实现基于事件的流式查询与分析。
 
-![](https://intranetproxy.alipay.com/skylark/lark/0/2023/gif/59356401/1680489523700-be151d1d-6614-49da-a6e4-93db06ffb530.gif#clientId=ua2acb84e-22c2-4&from=paste&id=u52ebe793&originHeight=2160&originWidth=3840&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=uba248e78-81d3-4d41-955b-96bfa049cd1&title=)
+![](https://img.alicdn.com/imgextra/i3/O1CN01GNFES41j6asTA20g2_!!6000000004499-1-tps-3840-2160.gif)
 
 ## 核心功能
 
@@ -28,7 +28,7 @@ EventBridge 实时事件分析平台依托基于事件的实时处理引擎，�
 ### 多场景支持
 
 
-![](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680489523840-d18b8c8d-e238-4ce8-9cac-1eac313fc254.png#clientId=ua2acb84e-22c2-4&from=paste&id=ud0746367&originHeight=792&originWidth=1080&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ub7894783-50c7-4338-a5d1-fde1c86540a&title=)
+![](https://img.alicdn.com/imgextra/i1/O1CN01jlerwm20kIgHyZw9m_!!6000000006887-49-tps-1080-792.webp)
 
 目前市面上比较流行的是事件查询平台，但是分析和查询还是有些本质区别，分析基于查询，但是查询并不是分析的全部。
 
@@ -53,25 +53,25 @@ EventBridge 提供更高效、通用的事件分析平台，基于该平台可�
 
 
 
-![](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680489525599-e3a8ccf7-0307-4754-b8c4-cf8aa7e98985.png#clientId=ua2acb84e-22c2-4&from=paste&id=ua221cdaa&originHeight=453&originWidth=371&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ue143efef-949f-4aa8-bb53-2560df6b50c&title=)
-![](https://intranetproxy.alipay.com/skylark/lark/0/2023/gif/59356401/1680489523502-58404d2b-02b9-4a07-883e-3862d72da94b.gif#clientId=ua2acb84e-22c2-4&from=paste&id=u33b44958&originHeight=1&originWidth=1&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u47f04250-95ca-4faf-9ed3-02aac481e37&title=)
+![](https://img.alicdn.com/imgextra/i1/O1CN01vNBvvV1sOl7yJOHbC_!!6000000005757-49-tps-371-453.webp)
+<!-- ![](https://intranetproxy.alipay.com/skylark/lark/0/2023/gif/59356401/1680489523502-58404d2b-02b9-4a07-883e-3862d72da94b.gif#clientId=ua2acb84e-22c2-4&from=paste&id=u33b44958&originHeight=1&originWidth=1&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u47f04250-95ca-4faf-9ed3-02aac481e37&title=) -->
 
 - 可视化分析：提供 GROUP BY，ORDER BY 等可视化分析能力，支持多组态，多图表，多维度分析能力。
 
 
 
-![](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680489525743-fcb59dee-dcbb-4b32-923f-80e13a5d3b4d.png#clientId=ua2acb84e-22c2-4&from=paste&id=u47e217f3&originHeight=353&originWidth=1080&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u0c30e007-2909-4b31-a975-724b86432b6&title=)
+![](https://img.alicdn.com/imgextra/i4/O1CN01wKnM3Q1GkmmAwNmen_!!6000000000661-49-tps-1080-353.webp)
 
 - 链路追踪：提供事件轨迹能力，还原事件整体链路状态。帮助开发者快速排障，快速定位链路问题。
 
 
 
-![](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680489526082-f0c4f002-8e3e-4f78-ae61-b595f0e40889.png#clientId=ua2acb84e-22c2-4&from=paste&id=uf1eaacac&originHeight=336&originWidth=1080&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u93bda84b-f995-41ec-8a8f-60658e8e799&title=)
+![](https://img.alicdn.com/imgextra/i1/O1CN01lxUrIq1N2XpMv3JhT_!!6000000001512-49-tps-1080-336.webp)
 ### 
 低成本接入
 
 
-![](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680489525924-4a58e476-5ab5-48fe-a258-c8bd856f9d87.png#clientId=ua2acb84e-22c2-4&from=paste&id=u54f15fe7&originHeight=456&originWidth=1080&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ufc233d4b-a070-41ca-9763-5784002b69b&title=)
+![](https://img.alicdn.com/imgextra/i2/O1CN01J0Zkyu1qHlqsRLOBR_!!6000000005471-49-tps-1080-456.webp)
 
 EventBridge 支持以事件总线（EventBus）形式接入，分为云服务事件总线和自定义事件总线。云服务总线支持几乎全部阿里云产品事件，无缝支持云服务事件接入事件分析平台；自定义事件总线支持 RocketMQ、Kafka 或其他自定义事件接入（当前版本仅支持少量云服务事件）。
 
@@ -87,4 +87,4 @@ EventBridge 提供更便捷高效的事件分析工具，可以帮助开发人�
 
 1、新用户首次购买包年包月，即可享受全系列 85折优惠！ 了解活动详情：[https://www.aliyun.com/product/rocketmq](https://www.aliyun.com/product/rocketmq)
 
-![e728c42e80cb67bf020e646e58619bcd.jpg](https://intranetproxy.alipay.com/skylark/lark/0/2023/jpeg/59356401/1680576637562-9af35fbf-d64b-4f81-b950-7e72f91b5ca2.jpeg#clientId=u449ffa34-59ce-4&from=paste&height=675&id=u462ad3c6&name=e728c42e80cb67bf020e646e58619bcd.jpg&originHeight=675&originWidth=1920&originalType=binary&ratio=1&rotation=0&showTitle=false&size=258156&status=done&style=none&taskId=u26cea311-dc98-45bd-8c8c-c7884e57c37&title=&width=1920)
+![e728c42e80cb67bf020e646e58619bcd.jpg](https://img.alicdn.com/imgextra/i4/O1CN01Xi1rcu1DM6aIC7ypz_!!6000000000201-0-tps-1920-675.jpg)

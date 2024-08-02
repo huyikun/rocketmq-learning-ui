@@ -20,7 +20,7 @@ description: "目前以“事件驱动”构建的数字化商业生态才刚起
 
 消息队列本身作为云计算的PaaS服务之一，要进一步发挥“解耦”的能力，帮助业务构建现代化应用，这里最关键的一个能力演进是Eventing的演进。通过将消息升华为“事件”，提供面向标准 CloudEvent 的编排过滤、发布订阅等能力构建更大范围的解耦，包括云服务事件和业务应用的解耦、跨组织SaaS业务事件的解耦、遗留应用和现代化应用的解耦等，同时事件驱动也是天然符合云计算 Serverless 函数计算的范式，是应用 Serverless 化演进的催化剂。
 
-![1.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680490222770-638745c8-c325-4986-ab2d-1ed70e319b31.png#clientId=u6159f0af-e0c8-4&height=609&id=SwCOy&name=1.png&originHeight=609&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=ub4076f83-9c73-452f-9976-81e0086afc0&title=&width=1080)
+![1.png](https://img.alicdn.com/imgextra/i3/O1CN01LX2iw61vWUfCWK5gT_!!6000000006180-49-tps-1080-609.webp)
 
 云原生对于消息中间件而言，还有另一层含义就是消息队列自身架构的云原生化演进，如何充分发挥云的弹性计算、存储、网络，让自己获得更强的技术指标和 Serverless 弹性能力。
 
@@ -38,7 +38,7 @@ description: "目前以“事件驱动”构建的数字化商业生态才刚起
 
 **在过去“分”往往是技术实现的妥协，而现在“合”才是用户的真正需求。**RocketMQ 5.0基于统一Commitlog扩展多元化索引，包括时间索引、百万队列索引、事务索引、KV索引、批量索引、逻辑队列等技术。在场景上同时支撑了RabbitMQ、Kafka、MQTT、边缘轻量计算等产品能力，真正实现了“消息、事件、流”，“云边端”一体化架构。
 
-![2.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680490220716-08a6258a-2b74-4f28-bb1c-c19ae7973571.png#clientId=u6159f0af-e0c8-4&height=601&id=fEyZg&name=2.png&originHeight=601&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u32cec63f-0778-4cc6-bec2-71007159cb6&title=&width=1080)
+![2.png](https://img.alicdn.com/imgextra/i4/O1CN01Y18t1a1I4lfjAgKNJ_!!6000000000840-49-tps-1080-601.webp)
 
 #### 2. 云原生架构
  
@@ -48,7 +48,8 @@ RocketMQ 是 2011 年诞生于淘宝核心电商系统，一开始是定位于�
 
 为此，RocketMQ 5.0 面向云计算的场景进行重新设计，期望从架构层面解决根本性问题，对客户端、Broker到存储引擎全面升级：
 
-![image.gif](https://intranetproxy.alipay.com/skylark/lark/0/2023/gif/59356401/1680490220694-59b802de-8b58-46cd-97aa-0fc95abd9f0f.gif#clientId=u6159f0af-e0c8-4&height=1&id=XB5uv&name=image.gif&originHeight=1&originWidth=1&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=uf8ab084d-329e-4d4b-9195-c6cab6e20b2&title=&width=1)![3.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680490220865-4b2c5d8d-a9a2-4322-a0c0-06c81ce650c4.png#clientId=u6159f0af-e0c8-4&height=606&id=p8PKy&name=3.png&originHeight=606&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u4655cb8a-51ed-4311-975d-54e16aecccc&title=&width=1080)
+<!-- ![image.gif](https://intranetproxy.alipay.com/skylark/lark/0/2023/gif/59356401/1680490220694-59b802de-8b58-46cd-97aa-0fc95abd9f0f.gif#clientId=u6159f0af-e0c8-4&height=1&id=XB5uv&name=image.gif&originHeight=1&originWidth=1&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=uf8ab084d-329e-4d4b-9195-c6cab6e20b2&title=&width=1) -->
+![3.png](https://img.alicdn.com/imgextra/i4/O1CN01C1J8WD1U3Bh6e10ty_!!6000000002461-49-tps-1080-606.webp)
 
 **客户端轻量化。**RocketMQ 5.0 SDK 把大量逻辑下沉到服务端，代码行数精简三分之二，开发维护多语言 SDK 的成本大幅度降低；轻量的 SDK 更容易被 Service Mesh、Dapr等云原生代表技术集成。
 
@@ -84,7 +85,7 @@ Gartner预测，未来超过60%的新型数字化商业的解决方案会采用�
 
 为了应对这个趋势，Messaing 往 Eventing 演进，出现了 EventBridge （EventBroker）的产品形态。在 EventBridge 里，“事件”这个概念成为一等公民，事件的发布者和订阅者不耦合任何一种具体的消息队列SDK和实现。EventBroker 围绕标准的 CloudEvent 规范构建更加泛化的发布订阅模式，能够链接一切跨组织、跨环境的异构事件源和事件处理目标。
 
-![4.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680490220749-b903d083-b9de-4a92-b5bd-957c703fd2a1.png#clientId=u6159f0af-e0c8-4&height=604&id=ClUeS&name=4.png&originHeight=604&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u5b81f7e8-1b43-4655-a84f-7f838cf6848&title=&width=1080)
+![4.png](https://img.alicdn.com/imgextra/i1/O1CN01eWQKDi1j68Tn2YG6N_!!6000000004498-49-tps-1080-604.webp)
 
 目前以“事件驱动”构建的数字化商业生态才刚起步，未来 EventBridge 将围绕事件这一抽象层次实现更强大的能力，比如事件的全链路可观测、事件分析计算、低代码开发等特性，帮助企业全面落地云时代的“事件驱动”架构。
 
@@ -98,4 +99,4 @@ Gartner预测，未来超过60%的新型数字化商业的解决方案会采用�
 
 1、新用户首次购买包年包月，即可享受全系列 85折优惠！ 了解活动详情：[https://www.aliyun.com/product/rocketmq](https://www.aliyun.com/product/rocketmq)
 
-![e728c42e80cb67bf020e646e58619bcd.jpg](https://intranetproxy.alipay.com/skylark/lark/0/2023/jpeg/59356401/1680576637562-9af35fbf-d64b-4f81-b950-7e72f91b5ca2.jpeg#clientId=u449ffa34-59ce-4&from=paste&height=675&id=u462ad3c6&name=e728c42e80cb67bf020e646e58619bcd.jpg&originHeight=675&originWidth=1920&originalType=binary&ratio=1&rotation=0&showTitle=false&size=258156&status=done&style=none&taskId=u26cea311-dc98-45bd-8c8c-c7884e57c37&title=&width=1920)
+![e728c42e80cb67bf020e646e58619bcd.jpg](https://img.alicdn.com/imgextra/i4/O1CN01Xi1rcu1DM6aIC7ypz_!!6000000000201-0-tps-1920-675.jpg)

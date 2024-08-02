@@ -23,8 +23,8 @@ description: "目前，函数计算已具备接入EventBridge所有事件源的�
 - 接入标准化：函数计算选择和 EventBridge 集成，无论是产品服务类型众多的阿里云官方事件源，还是第三方 SaaS 系统，EventBridge 都能够为函数计算和其它系统集成提供统一的集成界面，函数计算无需关注上游事件源的具体实现细节，只需要专注于事件处理，将事件的集成和投递全部交给 EventBridge 来处理；
 
 EventBridge  + Function Compute 的结合让事件驱动型应用程序的构建变得简单，因为它可以为您完成事件摄取和交付、安全保障、授权以及错误处理工作。允许您构建松散耦合和分布的事件驱动型架构，帮助提高开发人员敏捷性和应用程序弹性。函数计算系统提供了完善的函数创建， 发布和运行体系，灵活的构建能力结合极致的运行时弹性能力将帮助业务构建云原生时代最富显著特征的事件驱动型架构。
-![image.gif](https://intranetproxy.alipay.com/skylark/lark/0/2023/gif/59356401/1680489430222-c6dce613-fa31-4344-a860-1966def27d85.gif#clientId=u6d65494b-96a0-4&height=1&id=QpXMi&name=image.gif&originHeight=1&originWidth=1&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=uf437c26f-bb6c-48b9-a41c-18b580f8dbb&title=&width=1)
-![1.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680489430361-ea11f50e-3a84-4cb9-9a56-694f7c6911b2.png#clientId=u6d65494b-96a0-4&height=604&id=CWnT6&name=1.png&originHeight=604&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u26af68a8-9300-45ee-98ee-9de071a8866&title=&width=1080)
+<!-- ![image.gif](https://intranetproxy.alipay.com/skylark/lark/0/2023/gif/59356401/1680489430222-c6dce613-fa31-4344-a860-1966def27d85.gif#clientId=u6d65494b-96a0-4&height=1&id=QpXMi&name=image.gif&originHeight=1&originWidth=1&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=uf437c26f-bb6c-48b9-a41c-18b580f8dbb&title=&width=1) -->
+![1.png](https://img.alicdn.com/imgextra/i1/O1CN01AlsLN8272W86Kdskf_!!6000000007739-49-tps-1080-604.webp)
 
 同时，EventBridge 能够提供来自事件源（例如 MQ、OSS、RDB等）的实时数据流，并将该数据路由到阿里云函数计算作为目标。您可以设置路由规则来确定发送数据的目的地，以便构建能够实时响应所有数据源的应用程序架构。
 
@@ -56,20 +56,20 @@ EventBridge 和函数计算控制台数据互通，用户在 EventBridge 控制�
 
 采用新的 EDA 架构，采用 EventBridge 对接业务自定义事件数据，规则驱动过滤逻辑简单。采用 FC 可以轻量化实现常见的数据分析操作，代码编写调试更简单；同时利用EventBridge 丰富的推送能力，可以实现分析结果快速触达受众。
 
-![2.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680489432104-a5559ddd-1295-40a2-9c5a-fef59cdd8f9a.png#clientId=u6d65494b-96a0-4&height=523&id=Lz7QJ&name=2.png&originHeight=523&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u17c8a461-41a9-4c39-ad14-30ba71f2928&title=&width=1080)
+![2.png](https://img.alicdn.com/imgextra/i2/O1CN01m215RT2696ClQjkYl_!!6000000007618-49-tps-1080-523.webp)
 
 ### 异步解耦
 
 以交易引擎为例，交易系统引擎作为最核心的系统，每笔交易订单数据需要被几十几个下游业务系统关注，包括物品批价、发货、积分、流计算分析等等，多个系统对消息的处理逻辑不一致，单个系统不可能去适配每一个关联业务。结合 EventBridge 事件中心和函数计算灵活的逻辑扩展能力构建业务逻辑。
 
-![3.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680489430320-678789ff-71f2-4ad6-9622-6ff35db6cd79.png#clientId=u6d65494b-96a0-4&height=526&id=QbpB0&name=3.png&originHeight=526&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u6d4a9253-46db-4d6f-8d81-1a3008edb8e&title=&width=1080)
+![3.png](https://img.alicdn.com/imgextra/i4/O1CN01atPtYA1owsA8nkAkS_!!6000000005290-49-tps-1080-526.webp)
 
 ### 新零售大促场景 Serverless + EDA 整合
 
 大型新零售场景会伴随不定期大促，平时流量不大的业务在大促场景也会产生系统流量突增，极致弹性和稳定解耦的架构至关重要。基于传统模式开发稳定可靠、高弹性的后台服务人力不足、工期紧张；大促场景保障峰值流量需要预留大量资源，平时低峰期资源闲置浪费。新零售大促场景利用函数计算 + EventBridge + API 网关搭建 Serverless 模式服务中台，支撑海量请求访问， 系统具备极致弹性，无需预留管理 IaaS 资源，极大程度降低闲置成本；同时函数计算提供敏捷开发结合 EventBridge 低代码异步驱动，业务迭代效率大幅提升。
 
-![4.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/59356401/1680489430468-b8ace8f3-71d9-4716-a270-902f272638b0.png#clientId=u6d65494b-96a0-4&height=545&id=ZRX9M&name=4.png&originHeight=545&originWidth=1080&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u332f5407-0704-41aa-b7f3-0ba22e09872&title=&width=1080)
-![image.gif](https://intranetproxy.alipay.com/skylark/lark/0/2023/gif/59356401/1680489432467-f4bcacbb-fcc0-41c0-88cc-3deb9238ea46.gif#clientId=u6d65494b-96a0-4&height=1&id=EAXFB&name=image.gif&originHeight=1&originWidth=1&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u292a9460-437a-4432-856b-cc3c20b5d5f&title=&width=1)
+![4.png](https://img.alicdn.com/imgextra/i3/O1CN01EW7GQO2A7VI2ZRFYp_!!6000000008156-49-tps-1080-545.webp)
+<!-- ![image.gif](https://intranetproxy.alipay.com/skylark/lark/0/2023/gif/59356401/1680489432467-f4bcacbb-fcc0-41c0-88cc-3deb9238ea46.gif#clientId=u6d65494b-96a0-4&height=1&id=EAXFB&name=image.gif&originHeight=1&originWidth=1&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u292a9460-437a-4432-856b-cc3c20b5d5f&title=&width=1) -->
 ## 总结
 
 如果说事件背后的服务是阿里云生态服务的积木， 那么 Serverless 函数计算将是能够将这些积木通过轻巧的方式组合起来艺术化的最佳手段；你可以利用函数计算为这些积木涂上更绚丽的色彩，同时能够将他们串联起来，搭建一个具有无比想象空间的 SaaS/PaaS 服务艺术品。
@@ -84,4 +84,4 @@ EventBridge 和函数计算控制台数据互通，用户在 EventBridge 控制�
 
 1、新用户首次购买包年包月，即可享受全系列 85折优惠！ 了解活动详情：[https://www.aliyun.com/product/rocketmq](https://www.aliyun.com/product/rocketmq)
 
-![e728c42e80cb67bf020e646e58619bcd.jpg](https://intranetproxy.alipay.com/skylark/lark/0/2023/jpeg/59356401/1680576637562-9af35fbf-d64b-4f81-b950-7e72f91b5ca2.jpeg#clientId=u449ffa34-59ce-4&from=paste&height=675&id=u462ad3c6&name=e728c42e80cb67bf020e646e58619bcd.jpg&originHeight=675&originWidth=1920&originalType=binary&ratio=1&rotation=0&showTitle=false&size=258156&status=done&style=none&taskId=u26cea311-dc98-45bd-8c8c-c7884e57c37&title=&width=1920)
+![e728c42e80cb67bf020e646e58619bcd.jpg](https://img.alicdn.com/imgextra/i4/O1CN01Xi1rcu1DM6aIC7ypz_!!6000000000201-0-tps-1920-675.jpg)
