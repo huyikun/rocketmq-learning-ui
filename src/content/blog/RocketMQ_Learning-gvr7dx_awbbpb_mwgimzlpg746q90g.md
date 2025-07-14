@@ -1,6 +1,6 @@
 ---
-title: "C5GAME 游戏饰品交易平台借助 RocketMQ Serverless 保障千万级玩家流畅体验"
-description: "C5GAME 游戏饰品交易平台借助 RocketMQ Serverless 保障千万级玩家流畅体验"
+title: "C5GAME 游戏饰品交易平台借助 Apache RocketMQ Serverless 保障千万级玩家流畅体验"
+description: "C5GAME 游戏饰品交易平台借助 Apache RocketMQ Serverless 保障千万级玩家流畅体验"
 date: "2025-07-08"
 category: "case"
 keywords: ["RocketMQ_Learning"]
