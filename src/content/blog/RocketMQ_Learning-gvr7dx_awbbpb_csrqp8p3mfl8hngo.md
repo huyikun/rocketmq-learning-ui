@@ -1,6 +1,6 @@
 ---
-title: "CommunityOverCode Asia 2025 Messaging 专题预告，RocketMQ 邀您共探相关议题"
-description: "CommunityOverCode Asia 2025 Messaging 专题预告，RocketMQ 邀您共探相关议题"
+title: "CommunityOverCode Asia 2025 Messaging 专题预告，Apache RocketMQ 邀您共探相关议题"
+description: "CommunityOverCode Asia 2025 Messaging 专题预告，Apache RocketMQ 邀您共探相关议题"
 date: "2025-07-14"
 category: "announcement"
 keywords: ["RocketMQ_Learning"]
@@ -241,6 +241,8 @@ authors: "heimanba"
 
 <font style="color:rgb(0, 0, 0);">2018 年加入小米，专注于消息和存储系统，负责小米 MQ、HBase、ElasticSearch 等平台。</font>
 
-</font>**<font style="color:rgba(0, 0, 0, 0.9);"> </font>**<font style="color:rgba(0, 0, 0, 0.9);">点击</font>[阅读原文](https://www.bagevent.com/event/8984866?bag_track=RocketMQ)<font style="color:rgba(0, 0, 0, 0.9);">即可参与报名！</font>
+# **<font style="color:rgba(0, 0, 0, 0.9);"></font>**<font style="color:rgba(0, 0, 0, 0.9);">点击</font>[阅读原文](https://www.bagevent.com/event/8984866?bag_track=RocketMQ)<font style="color:rgba(0, 0, 0, 0.9);">即可参与报名！</font>
+![](https://img.alicdn.com/imgextra/i1/O1CN01nXcMOk1iV2Uo0lP6U_!!6000000004417-49-tps-200-200.webp)
 
+# ![](https://img.alicdn.com/imgextra/i1/O1CN01XrgyIb1vDiWNnxgOh_!!6000000006139-49-tps-1080-3712.webp)
 
