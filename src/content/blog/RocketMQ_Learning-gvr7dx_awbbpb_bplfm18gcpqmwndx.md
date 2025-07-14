@@ -1,6 +1,6 @@
 ---
-title: "朗新科技集团如何用云消息队列 RocketMQ 版“快、准、狠”破解业务难题？"
-description: "朗新科技集团如何用云消息队列 RocketMQ 版“快、准、狠”破解业务难题？"
+title: "朗新科技集团如何用Apache RocketMQ“快、准、狠”破解业务难题？"
+description: "朗新科技集团如何用Apache RocketMQ“快、准、狠”破解业务难题？"
 date: "2025-07-08"
 category: "case"
 keywords: ["RocketMQ_Learning"]
