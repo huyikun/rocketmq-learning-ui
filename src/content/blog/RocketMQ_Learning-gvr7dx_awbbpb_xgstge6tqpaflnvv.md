@@ -1,6 +1,6 @@
 ---
 title: "从 Transform 到 Transformer，用 EventBridge 与百炼构建实时智能的 ETL 数据管道"
-description: "从 Transform 到 Transformer，用 EventBridge 与百炼构建实时智能的 ETL 数据管道"
+description: "EventBridge 通过与百炼结合，利用大语言模型重塑传统 ETL 数据管道，让 AI 数据处理链路更加智能、高效。"
 date: "2025-11-27"
 category: "article"
 keywords: ["RocketMQ_Learning"]
@@ -123,7 +123,7 @@ authors: "heimanba"
 ## <font style="color:#2F8EF4;">总结</font>
 <font style="color:rgba(0, 0, 0, 0.9);">用 Transformer（LLM）升级 Transform（转换），并以事件驱动架构（EDA）作为承载，是 AI 时代数据处理范式的一次“智”变。阿里云 EventBridge 与百炼的结合，为开发者提供了一条低门槛、高灵活性的路径，将强大的 AI 能力无缝融入实时数据流，让你的应用轻松实现智能化。</font>
 
-<font style="color:rgba(0, 0, 0, 0.9);">目前，该解决方案已在阿里云官网上线，欢迎点击</font>**<font style="color:rgba(0, 0, 0, 0.9);">阅读原文</font>**<font style="color:rgba(0, 0, 0, 0.9);">即可部署体验～</font>
+<font style="color:rgba(0, 0, 0, 0.9);">目前，该解决方案已在阿里云官网上线，欢迎点击</font>[**阅读原文**](https://www.aliyun.com/solution/tech-solution/etl-for-ai-data-a-one-stop-platform-for-ai-data-processing)<font style="color:rgba(0, 0, 0, 0.9);">即可部署体验～</font>
 
 <font style="color:rgba(0, 0, 0, 0.9);">邀请您</font>**<font style="color:rgba(0, 0, 0, 0.9);">钉钉扫码</font>**<font style="color:rgba(0, 0, 0, 0.9);">加入 EventBridge 用户交流群，探索更多产品功能，与我们共同定义和构建 AI 数据处理的未来！</font>
 
