@@ -1,6 +1,6 @@
 ---
-title: "下单丝滑，大促自由：古茗奶茶背后的云原生力量"
-description: "下单丝滑，大促自由：古茗奶茶背后的云原生力量"
+title: "古茗奶茶：借助 RocketMQ Serverless 实现下单丝滑、大促自由，综合降本 40%"
+description: "古茗奶茶：借助 RocketMQ Serverless 实现下单丝滑、大促自由，综合降本 40%"
 date: "2026-02-25"
 category: "case"
 keywords: ["RocketMQ_Learning"]
