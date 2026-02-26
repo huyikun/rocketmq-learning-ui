@@ -1,6 +1,6 @@
 ---
-title: "秒触达、零资损：亲宝宝基于 RocketMQ 支撑千万家庭实时互动与成长记录"
-description: "秒触达、零资损：亲宝宝基于 RocketMQ 支撑千万家庭实时互动与成长记录"
+title: "秒触达、零资损：亲宝宝基于 Apache RocketMQ 支撑千万家庭实时互动与成长记录"
+description: "秒触达、零资损：亲宝宝基于 Apache RocketMQ 支撑千万家庭实时互动与成长记录"
 date: "2026-02-26"
 category: "case"
 keywords: ["RocketMQ_Learning"]
